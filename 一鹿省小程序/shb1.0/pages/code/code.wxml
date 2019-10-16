@@ -1,0 +1,40 @@
+<!--pages/code/code.wxml-->
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+
+<image src="../../images/back.png" class="back" bindtap="navigate"></image>   
+
+
+<view class="codebox">
+  <view class="code">
+    <view class="redtop"></view>
+    <view class="code_detail"> 
+      <view class="sn">验证码： <text>{{order_code}}</text></view>
+      <view>手机号：{{mobile}}</view>
+      <view class="aspectFit">
+        <image   wx:for="{{myQrcodeSrc}}" wx:key='index' mode="aspectFit" src="{{item?item:'../../images/loading.gif'}}"  bindtap="tapQrcode"></image>
+      </view>
+      <view>出示二维码给商家扫一扫验证更方便，快捷</view>
+      <!-- <text>消费成功可获得30积分</text> -->
+    </view>
+    <view class="redbottom"></view>
+  </view>
+</view>
+<view class="order_info">
+  <view class="order_top flexbox spaceBetween">
+    <view>订单号：{{order_sn}}</view>
+    <text>{{order_status==2?'未使用':''}}{{order_status==3?'已使用':''}}</text>
+  </view>
+  <view class="order_bottom" >
+    <view class="name">{{store_name}}</view>
+    <view>时间： <text>{{add_time}}</text></view>
+    <view class="goods flexbox">
+      <text>商品：</text>
+      <view>
+        <view  wx:for='{{list_goods}}' wx:key='index'>{{item.goods_name}}({{item.goods_num}})</view> 
+      </view> 
+      
+    </view>
+  </view>
+
+</view>

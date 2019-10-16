@@ -1,0 +1,14 @@
+<view class="container">
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+    <view class="storeLocaltion">
+        <image class="storeInco" src="../../images/cake.png"></image>
+        <text class="storeName">火烈鸟甜品（湖里万达店）</text>
+        <text class="detailLocaltion">湖里万达广场L4-053</text>
+        <text class="distance">距离您</text>
+        <text class="distanceDetail">1.2km</text>
+        <text class="expectedTime">预计10分钟到达</text>
+        <text class="line"></text>
+        <text class="viewRoute" bindtap="localtion">查看路线</text>
+    </view> 
+</view>

@@ -1,0 +1,24 @@
+<!--pages/share/share.wxml-->
+
+<image  wx:for='{{imgsrc}}' style="width:{{width}}px;height:{{height}}px"  wx:key='index' src="{{item}}" bindtap="shareImage"></image>
+
+<canvas canvas-id="canvas" style="width:{{width}}px;height:{{height}}px" ></canvas>
+<canvas canvas-id="canvas1" id="canvas1" style="width:{{width}}px;height:{{height}}px" ></canvas>
+ <!-- 
+ <view class="showmaskbox">
+    <view class="box">
+      <view class="mind">
+        <text>温馨提示</text>
+        <view>提提示提提提示提提提示提示提提提示提示提示提提提示提示提提提示提示提示提</view>
+      </view>
+      <view class="flexbox" bindtap="close">
+        <view class="cancle">取消</view>
+        <view>
+          <button bindtap='showLoading'  open-type="getUserInfo" bindgetuserinfo="getUserInfo">确定</button>
+          <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+

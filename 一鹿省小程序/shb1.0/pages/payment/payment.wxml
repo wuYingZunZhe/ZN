@@ -1,0 +1,27 @@
+<view class="container">
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+    <view class="wrap">
+        <view class="payMerchant">付款给 {{store_name}}</view>
+        <image class="merchantInco" src="{{img}}"></image>
+        <view class="amount">金额</view>
+        <form>
+            <label for="money" class="moneySign">￥</label>
+            <input type="number" class="inputMoney" name="money" type='digit'  auto-focus focus='{{focus}}' value="{{value}}" title="" bindinput="handleInput" bindblur="validate" maxlength="10"></input>
+            <text class="line"></text>
+            <view class="deskNum flexbox " wx:if="{{category}}">
+              <text>桌号</text>
+              <input class="inputNum" placeholder-class="place-holder" type='digit' value="{{table_number}}"  placeholder="请填写桌号                    （非必填)" bindinput="table_numbe"></input>
+            </view>
+            <view class="remarks flexbox">
+            
+              <text>备注</text>
+              <textarea  class="remarksContent" maxlength="25"  placeholder-class="place-holder"  placeholder="请填写备注信息"  value="{{userInput}}" bindinput="handleContentInput">{{remarks}}</textarea>
+            </view>
+            <view bindtap="payForWechat">
+              <view class="mask" wx:if="{{isMask}}"></view>
+                <button type="submit" class="payForWechat">微信支付</button>
+            </view>
+        </form>
+    </view>
+</view>

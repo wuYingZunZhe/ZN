@@ -1,0 +1,195 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+ .header{
+   margin-bottom: -1px;
+ }
+ .header view{
+   background: #FD0D1A;
+ }
+
+.wrap{
+    position: relative;
+    width: 100%;
+    height:1840rpx;
+    background: #eeeeee;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size:30rpx;
+}
+.topBackground{
+    position: absolute;
+    width: 100%;
+    height: 190rpx;
+    background:linear-gradient(180deg,rgba(253,13,26,1),rgba(255,39,78,1));
+}
+.paidText{
+    padding-top: 41rpx;
+    padding-left: 57rpx;
+    color:rgba(255,255,255,1);
+    font-size: 36rpx;
+}
+.storePanel{
+  position: absolute;
+  top: 120rpx;
+  left: 24rpx;
+  width:672rpx;
+  height:132rpx;
+  line-height: 132rpx;
+  padding: 18rpx 0 18rpx 30rpx;
+  color: #939090;
+  font-size: 24rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  z-index: 1000;
+}
+.storePanel_detail{
+  line-height: 42rpx;
+  width: 390rpx;
+
+}
+.storePanel image{
+  width:132rpx;
+  height:132rpx;
+  border-radius:6rpx;
+  margin-right: 12rpx;
+}
+.storeName{
+  font-size: 30rpx;
+  color: #323232;
+}
+
+.timeStyle{
+    color: #FF274E;
+}
+.storePanel_detail .mtop{
+  margin-top: 20rpx;
+  line-height: 48rpx;
+}
+.heightline{
+  width: 100%;
+  height: 310rpx;
+}
+.radiusbox{
+  width: 642rpx;
+  padding: 20rpx 30rpx ;
+}
+.code{
+  color: #111111;
+  line-height: 40rpx;
+}
+.code_info{
+  border-right: 1px solid rgba(0, 0, 0, .5);
+  width: 520rpx;
+}
+.leftline{
+  display: inline-block;
+  width: 6rpx;
+  height: 40rpx;
+  background:rgba(249,77,30,1);
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.code text{
+  color: #939090;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+.codenum{
+  font-size: 40rpx;
+  margin-top: 40rpx;
+}
+
+.code .mode{
+  width: 96rpx;
+  height: 96rpx;
+  margin-top: 16rpx;
+}
+.code .aspectFit{
+  width: 96rpx;
+  height: 96rpx;
+}
+
+
+.detail_title{
+  color: #111;
+  padding:6rpx 0 20rpx;
+}
+.order_sec_title{
+  color:rgba(147,144,144,1);
+}
+.pink{
+  font-weight: 500;
+}
+.order_detail{
+  line-height: 2;
+}
+.order_detail_content text{
+  color: #939090;
+  font-size: 24rpx;
+  margin-left: 6rpx;
+}
+.money_detail_content{
+  line-height: 78rpx;
+  color: #737370;
+  padding-bottom:  30rpx;
+}
+.money_item{
+  border-bottom: 1px solid rgba(2,2,2,.05);
+}
+.other_item {
+  line-height: 72rpx;
+  color: #939090;
+}
+.other_item text{
+  color:#666;
+}
+
+.other_item .blockw {
+  display: block;
+  max-width: 450rpx;
+  text-align: left;
+}
+.button{
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 40rpx;
+  font-size: 22rpx;
+  width:70rpx;
+  height:36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border:1px solid rgba(229,229,229,1);
+}
+.order_button{
+  justify-content: flex-end;
+}
+.payForWechat,.cancleOrder{
+  width:178rpx;
+  height:80rpx;
+  background-color:  #FB953E;
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ffffff;
+  margin:0 24rpx 30rpx;
+}
+.payForWechat{
+  background-color: #FF274E;
+}
+/* 桌号 */
+.remark .order_detail_content{
+  padding: 26rpx 0 ;
+  border-bottom: 1px solid #e1e1e1;
+}
+.remark_textarea .clear{
+  width: 32rpx;
+  height: 32rpx;
+}
+.remark_input,
+.remark_textarea{
+  width:560rpx;
+}
+.inputRemarks {
+  width: 560rpx;
+  height: 40rpx;
+}

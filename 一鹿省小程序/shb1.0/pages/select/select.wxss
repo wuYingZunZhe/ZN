@@ -1,0 +1,110 @@
+/* pages/select/select.wxss */
+ @import "/template/wxss/waterfall.wxss"; 
+ page{
+   background-color: #F3F3F3;
+ }
+ .MT{
+   margin-top: 20rpx;
+ }
+ .scrollBox {
+   background-color: #fff;
+ }
+.save_item {
+  border-bottom: 1px solid #ebf0ea;
+}
+.save_item1{
+  border-bottom: 0;
+} 
+.selection{
+  width: 100%;
+  padding: 40rpx 0;
+  color: #FF2041;
+   background-color: #fff;
+}
+.selectbtn{
+  width:600rpx;
+  height: 64rpx;
+  overflow: hidden;
+  margin-left: 40rpx;
+  border-radius:32rpx;
+  font-size: 28rpx;
+   background-color: #f3f3f3;
+}
+.selectbtn image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 16rpx 16rpx 16rpx 24rpx;
+
+}
+
+.selectbtn .logo{
+  width:70rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.placeholder{
+  color: #939090;
+}
+.selectbtn input {
+  width: 100%;
+  height: 60rpx;
+  color: #000;
+}
+.selection text{
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+.paddingbox{
+  padding:20rpx 0 20rpx 20rpx ;
+  background-color: #fff;
+  margin-bottom: 6rpx;
+}
+
+.hottitle{
+  /* border-bottom: 1px solid #f3f3f3; */
+  padding: 0  0 10rpx 20rpx;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+}
+.tags text{
+  display: inline-block;
+  max-width: 162rpx;
+  height: 36rpx;
+  line-height:36rpx;
+  padding: 4rpx 12rpx;
+  border: 1px solid #f3f3f3;
+  margin-right: 20rpx;
+  margin-bottom: 16rpx;
+  border-radius: 26rpx;
+  font-size: 24rpx;
+}
+
+.nearTime image{
+  width: 30rpx;
+  height: 30rpx;
+  
+}
+.nearTime{
+  padding-bottom: 100rpx;
+}
+.nearTime .hottitle{
+  justify-content: space-between;
+  padding-right: 40rpx;
+}
+.scrollview{
+  margin-top: 34rpx;
+}
+.noStore{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+}
+.noStore image{
+  width: 60%;
+  margin: 100rpx auto 40rpx;
+}
+.money{
+  line-height: 40rpx;
+  height: 40rpx;
+}

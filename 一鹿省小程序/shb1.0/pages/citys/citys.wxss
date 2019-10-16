@@ -1,0 +1,220 @@
+ @import "/template/wxss/waterfall.wxss"; 
+page{
+  overflow-y: hidden;
+}
+.searchLetter {
+  position: fixed;
+  top: 400rpx;
+  right: 0;
+  bottom: 0;
+  width: 80rpx;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: #666;
+  z-index: 99;
+}
+
+.search view {
+  margin-top: 4rpx;
+  color: #FD0D1A;
+  font-size: 24rpx;
+}
+
+.touchClass {
+  background-color: #f7f7f7;
+  color: #fff;
+}
+
+.showSlectedLetter {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -100rpx;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  font-size: 52rpx;
+  z-index: 1;
+}
+
+.selection {
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.location image{
+  width: 40rpx;
+  height: 30rpx;
+  vertical-align: text-top;
+  margin-top: 6rpx;
+}
+.change_local image{
+  margin-top: 2rpx;
+}
+.item_letter {
+  display: flex;
+  background-color: #EEEEEE;
+  height: 40rpx;
+  padding:10rpx 0 10rpx 24rpx;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item_city {
+  display: flex;
+  background-color: #fff;
+  height: 100rpx;
+  padding-left: 34rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #ededed;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.hotcity-common {
+  font-size: 26rpx;
+  color: #939090;
+  padding: 20rpx ;
+  display: block;
+}
+
+.thisCity {
+  padding-top: 30rpx;
+  color: #939090;
+}
+.thisCityName {
+  font-size: 30rpx;
+  color: #323232;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  position: relative;
+}
+
+.thisCityName .fz24{
+  font-size: 24rpx;
+  color: #939090;
+}
+.order_local{
+  width: 650rpx;
+  padding:10rpx 40rpx 20rpx 24rpx;
+  flex-wrap: wrap;
+  max-height: 420rpx;
+  overflow-y: scroll;
+  margin-top: 20rpx;
+}
+.order_local view{
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  margin:0 52rpx 30rpx 0;
+  text-align: center;
+  border:1px solid rgba(238,238,238,1);
+  border-radius:5px;
+}
+.searchLetter .thishotText  {
+  width:50rpx;
+  padding: 5rpx;
+  height:50rpx;
+  border-radius: 50%;
+  background:#FD0D1A;
+  margin: 10rpx auto;
+}
+.searchLetter .thishotText view{
+  width: 40rpx;
+  height: 40rpx;
+  line-height:22rpx;
+  margin: 0 auto;
+  font-size: 18rpx;
+  color: rgba(255,255,255,1);
+
+}
+.scrollView{
+  background-color: #EEE;
+}
+.slectCity {
+  border-color: #2ab4ff !important;
+}
+
+.slectCity view {
+  color: #2ab4ff !important;
+}
+.weui-grids{
+  flex-wrap: wrap;
+  padding-left: 8rpx;
+}
+.weui-grid {
+  margin: 14rpx 16rpx;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 6rpx;
+  background-color: #fff;
+}
+
+.weui-grid__label {
+  text-align: center;
+  color: #333;
+  font-size: 24rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+.selection{
+  width: 100%;
+  color: #FF2041;
+   background-color: #fff;
+}
+.selectbtn{
+  width:600rpx;
+  height: 64rpx;
+  overflow: hidden;
+  margin-left: 40rpx;
+  border-radius:32rpx;
+  font-size: 28rpx;
+   background-color: #f3f3f3;
+}
+.selectbtn image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 16rpx 16rpx 16rpx 24rpx;
+
+}
+
+.selectbtn .logo{
+  width:70rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.placeholder{
+  color: #939090;
+}
+.selectbtn input {
+  width: 100%;
+  height: 60rpx;
+  color: #000;
+}
+.selecbox {
+  padding-top: 20rpx;
+}
+.selecbox text{
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+.paddingbox{
+  padding:20rpx 0 20rpx 20rpx ;
+  background-color: #fff;
+  margin-bottom: 6rpx;
+}

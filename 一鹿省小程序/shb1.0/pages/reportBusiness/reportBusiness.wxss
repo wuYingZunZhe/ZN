@@ -1,0 +1,232 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    position: relative;
+}
+
+/* 举报外框 */
+
+.reportWrap {
+    position: absolute;
+    top: 23rpx;
+    left: 25rpx;
+    width: 700rpx;
+    height: 1105rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+
+/* 店铺图片 */
+
+.storeImg {
+    width: 130rpx;
+    height: 130rpx;
+    position: absolute;
+    left: 40rpx;
+    top: 40rpx;
+    /* border: 1rpx solid red; */
+}
+
+/* 商店名称 */
+
+.storeName, .reportType {
+    position: absolute;
+    top: 91rpx;
+    left: 201rpx;
+    font-size: 30rpx;
+    color: #2f2e2e;
+    font-weight: 400;
+}
+
+/* 举报类型 */
+
+.reportType {
+    top: 217rpx;
+    left: 40rpx;
+    color: #323232;
+}
+
+/* .reQuality,.rePrice,.reAdress,.reOther{
+    position: absolute;
+    top: 284rpx;
+    left: 41rpx;
+    color: #939090;
+    font-size: 28rpx;
+}
+.rePrice{
+    left: 416rpx;
+}
+.reAdress{
+    top: 379rpx;
+}
+.reOther{
+    top: 379rpx;
+    left: 416rpx;
+} */
+
+/* .reportInco1,.reportInco2,.reportInco3,.reportInco4{
+    position: absolute;
+    top: 275rpx;
+    left: 241rpx;
+    width: 44rpx;
+    height: 44rpx;
+}
+.reportInco2{
+    left: 616rpx;
+}
+.reportInco3{
+    top: 370rpx;
+}
+.reportInco4{
+    top: 370rpx;
+    left: 616rpx;
+    border-color: orange;
+} */
+
+.tagArea {
+    margin-top: 270rpx;
+    width: 615rpx;
+    height: 159rpx;
+    /* border: 1rpx solid red; */
+    margin-left: 40rpx;
+   
+}
+
+.select {
+    width: 200rpx;
+    height: 25rpx;
+    display: inline-block;
+    line-height: 25rpx;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    margin-left: 65rpx;
+    margin-top: 15rpx;
+    margin-bottom: 10rpx;
+    font-size: 24rpx;
+    color: #999;
+    border: 1rpx solid #999;
+    border-radius: 50rpx;
+    text-align: center;
+}
+
+.active {
+    width: 200rpx;
+    height: 25rpx;
+    display: inline-block;
+    color: #f44232;
+    /* box-shadow: 0 5rpx 15rpx #f44232; */
+    font-size: 24rpx;
+    padding-top: 15rpx;
+    padding-bottom: 15rpx;
+    margin-left: 65rpx;
+    margin-top: 15rpx;
+    margin-bottom: 10rpx;
+    border: 1rpx solid #f44232;
+    border-radius: 50rpx;
+    line-height: 25rpx;
+    text-align: center;
+}
+
+/* 分割线 */
+
+.line, .line1, .line2 {
+    position: absolute;
+    left: 41rpx;
+    top: 443rpx;
+    width: 619rpx;
+    height: 1rpx;
+    border: 1rpx solid rgba(238, 238, 238, 1);
+}
+
+.line1 {
+    top: 744rpx;
+}
+
+.line2 {
+    top: 935rpx;
+}
+
+/* 添加图片 */
+
+.addPicTitle {
+    position: absolute;
+    top: 473rpx;
+    left: 41rpx;
+    font-size: 30rpx;
+    color: #323232;
+}
+
+.addPicWrap {
+    position: absolute;
+    left: 31rpx;
+    top: 511rpx;
+    width: 475rpx;
+    height: 215rpx;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    white-space: nowrap;
+}
+
+.addPic1 {
+    width: 170rpx;
+    height: 170rpx;
+    margin: 10rpx;
+    margin-top: 30rpx;
+    margin-left: 15rpx;
+    /* border: 1rpx solid rebeccapurple; */
+    display: inline-block;
+}
+
+.addPic3 {
+    position: absolute;
+    left: 431rpx;
+    top: 544rpx;
+    width: 170rpx;
+    height: 170rpx;
+    margin-left: 10rpx;
+    /* border: 1rpx solid rebeccapurple; */
+}
+
+.deletePic1 {
+    position: absolute;
+    margin-top: 12rpx;
+    margin-left: -27rpx;
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.addMore {
+    position: absolute;
+    top: 775rpx;
+    left: 40rpx;
+}
+
+.addMoreTextarea {
+    position: absolute;
+    top: 843rpx;
+    left: 41rpx;
+    width: 539rpx;
+    height: 75rpx;
+    /* border: 1rpx solid forestgreen; */
+    overflow: scroll;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.reSubmit {
+    position: absolute;
+    top: 976rpx;
+    width: 619rpx;
+    height: 90rpx;
+    border-radius: 10rpx;
+    background-color: #f00 !important;
+    left: 41rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    line-height: 90rpx;
+}

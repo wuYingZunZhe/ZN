@@ -1,0 +1,91 @@
+
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+
+<view class="loadingmask" hidden="{{isLoad}}" catchtouchmove="returnTap" style="height:{{loadingmaskH}}px"></view>
+
+<!-- 条件选择 -->
+<view class="conditions" hidden="{{redBack}}">
+  <!--  搜索附近-->
+
+  <view class="selection selet_near flexbox">
+    <navigator class="selectbtn flexbox"  url="../../pages/select/select?city={{city}}&&longitude={{longitude}}&latitude={{latitude}}">
+      <label><image src="../../images/select.png" mode="aspectFit"></image></label>
+      <text class="placeholder">搜索附近</text>
+    </navigator>
+  </view>
+  <view class="conditions_title flexbox">
+    <view class="categories {{onOff1?'active':''}}" bindtap="changeC" data-key="key1" >
+      <text class="ellipsis">{{category_name}}</text>
+      <image  wx:if="{{onOff1}}" mode="aspectFit" src="../../images/redtop.png"  lazy-load="true"></image>
+      <image wx:else mode="aspectFit" src="../../images/graybottom.png"  lazy-load="true"></image>
+    </view>
+    <view class="categories  {{onOff2?'active':''}}" bindtap="changeC" data-key="key2">
+      <text class="ellipsis">{{near_name}}</text>
+      <image  wx:if="{{onOff2}}" mode="aspectFit" src="../../images/redtop.png"  lazy-load="true"></image>
+      <image  wx:else  mode="aspectFit" src="../../images/graybottom.png"  lazy-load="true"></image>
+    </view>
+    <view class="categories  {{onOff3?'active':''}}" bindtap="changeC" data-key="key3">
+      <text  class="ellipsis">{{sort_name}}</text>
+      <image  wx:if="{{onOff3}}" mode="aspectFit" src="../../images/redtop.png"  lazy-load="true"></image>
+      <image  wx:else  mode="aspectFit" src="../../images/graybottom.png"  lazy-load="true"></image>
+    </view>
+  </view>
+  
+  <view class="fruit" wx:if="{{isShowFruit}}">
+      <view style="background: #fff;">
+        <view class="categories_list flexbox" wx:if='{{showList == "key1"}}'>
+          <scroll-view  scroll-y='true' class="categories_list_left">
+            <block wx:for='{{goodlist}}' wx:for-index='cateIndex' wx:key='index'>
+              <view bindtap="changeSecond" class="{{cateIndex ==activeIndex? 'active' :''}}" data-index="{{cateIndex}}" data-category_id="{{item.category_id}}" >{{item.category_name}} <text>({{item.store_count}})</text></view>
+            </block>
+          </scroll-view>
+          <scroll-view  scroll-y='true' class="categories_list_right">
+            <block wx:for='{{list_second}}' wx:for-item='cateitem'  wx:for-index='cateIndex' wx:key="index">
+              <view  bindtap="secondData" class="{{cateIndex ==activeIndex1? 'active' :''}}" data-index="{{cateIndex}}"  data-category_id="{{cateitem.f_id}}" data-sec_category_id="{{cateitem.category_id}}"   data-category_name="{{cateitem.category_name}}" >{{cateitem.category_name}} </view>
+            </block>
+          </scroll-view>
+        </view>
+        <view class="categories_list flexbox"  wx:if='{{showList == "key2"}}'>
+          <scroll-view  scroll-y='true' class="categories_list_left distance">
+            <block wx:for='{{nearData}}' wx:for-index='cateIndex' wx:key='index'>
+              <view  bindtap="nearSecond" class="{{cateIndex ==nactiveIndex? 'active' :''}}" data-index="{{cateIndex}}"  data-near_name="{{item.name}}" data-id="{{item.id}}" >{{item.name}} <text></text></view>
+            </block>
+          </scroll-view>
+          <scroll-view  scroll-y='true' class="categories_list_right">
+            <block wx:for='{{districts}}' wx:for-index='cateIndex' wx:key="index">
+              <view  bindtap="secondData" class="{{cateIndex ==nactiveIndex1? 'active' :''}}"  data-index="{{cateIndex}}"    data-near_name="{{item.name}}" >{{item.name}} </view>
+            </block>
+          </scroll-view>
+        </view>
+        <view class="categories_list flexbox"  wx:if='{{showList == "key3"}}'>
+          <scroll-view scroll-y='true' class="categories_list_left">
+          
+            <block wx:for='{{sortData}}' wx:for-index='cateIndex'>
+              <view   bindtap="secondData" class="{{cateIndex ==sactiveIndex? 'active' :''}}" data-store_area="{{store_area}}" data-index="{{cateIndex}}" data-sort="{{item.sort}}" data-sortname="{{item.name}}">{{item.name}}</view>
+            </block>
+          </scroll-view>
+        </view>
+        <image class="morec" catchtap="touchHandler" mode="aspectFit" src="../../images/morec.png"></image>
+      </view>
+      
+      <view class="mask"  catchtap="touchHandler" catchtouchmove="touchHandler" style="height:{{fruitH}}px"></view>
+  </view>
+</view>
+
+
+<scroll-view class="scrollBox {{is_choice?'scrollBoxGray':''}}" style="height:{{contentH}}px" scroll-y bindscrolltolower="contentScroll" scroll-top='{{topNum}}' bindscroll="scrolltoupper" >
+  
+  <template is="waterfall_choice" wx:if="{{is_choice}}" data="{{stores,floorstatus,city}}"></template>
+  <template is="waterfall_save" wx:else data="{{stores,floorstatus,city,half,num}}"></template>
+
+  <!-- <template is="waterfall" wx:else data="{{stores,floorstatus,city}}"></template> -->
+  <!-- <template is="waterfall" data="{{stores,floorstatus,city}}"></template> -->
+  
+  <view class="noStore" style="height:{{noStoreH}}px" hidden="{{noResult}}">
+    <image src="../../images/nodata.png" mode="aspectFit"></image>
+    <!-- <view>暂无数据</view> -->
+  </view>
+</scroll-view>
+
+

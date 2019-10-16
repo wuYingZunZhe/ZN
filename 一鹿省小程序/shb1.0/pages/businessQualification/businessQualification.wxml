@@ -1,0 +1,21 @@
+<!-- 营业资质界面 -->
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+<view class="container">
+    <view class="publicity">
+        <text class="publictyTitle">食品安全监督公示</text>
+        <text class="publicityName">单位名称：{{businessQualification.name}}</text>
+        <text class="publictyAdress">经营地址:</text>
+        <text class="puAdressDetail">{{businessQualification.address}}</text>
+        <text class="legalPerson">法定代表人:    {{businessQualification.person}}</text>
+        <text class="license">许可证号：{{businessQualification.reg_num}}</text>
+        <text class="mainPart">主体业态：{{businessQualification.business}}</text>
+        <text class="validityPeriod">有效期：{{businessQualification.valid_period}}</text>
+    </view>
+    <view class="qualificationWrap">
+        <text class="qualificationTitle">商家资质信息公示</text>
+        <block wx:for="{{pics}}" wx:key='item'>
+            <image class="qualificationPic" src="{{item.pic}}"></image>
+        </block>
+    </view>
+</view>

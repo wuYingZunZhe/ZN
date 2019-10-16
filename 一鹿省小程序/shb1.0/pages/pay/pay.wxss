@@ -1,0 +1,91 @@
+/* pages/pay/pay.wxss */
+@import "/template/wxss/waterfall.wxss"; 
+.header1 view {
+  border-bottom: 1px solid #e1e1e1;
+}
+page{
+  font-size: 30rpx;
+}
+.top{
+  text-align: center;
+  padding: 80rpx 0;
+  line-height: 120rpx;
+  color: #939090;
+}
+.top text{
+  color: #FD0D1A;
+}
+
+.toHome{
+  width: 48rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 72rpx;
+  left: 10rpx;
+  z-index: 9999999999999999;
+}
+
+
+.backhome{
+  display: none;
+}
+.store{
+  line-height: 48rpx;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+.top image{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right:18rpx;
+}
+.money{
+  color: #111;
+}
+.money text{
+  font-size: 36rpx;
+  color: #111;
+  font-weight: 500;
+}
+.method{
+  padding: 0 30rpx;
+}
+.changeMethod {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left:18rpx;
+  border-left: 2px solid #FD0D1A; 
+  color: #111;
+  margin-bottom: 80rpx;
+}
+.wechatImg image{
+  width: 56rpx;
+  height: 56rpx;
+  margin-right:26rpx;
+  vertical-align: middle;
+}
+.wechat{
+  line-height: 56rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #e1e1e1;
+}
+.isCheck{
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 12rpx;
+}
+.button{
+  width: 100%;
+  position: absolute;
+  bottom: 50rpx;
+}
+.button view{
+  width: 702rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #FD0D1A;  
+  margin: 0 auto;
+  border-radius:10rpx;
+}

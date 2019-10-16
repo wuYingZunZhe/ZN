@@ -1,0 +1,25 @@
+<!--pages/pay/pay.wxml-->
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+
+<image mode="aspectFit"  src="../../images/back.png" class="toHome" bindtap="toHome"></image>
+<template is="showModal" data="{{istoStore}}"></template>
+ 
+<view class="top">
+  <view>请在<text>{{msg}}</text>内完成支付</view>
+  <view class="money">¥<text>{{actual_money}}</text></view>
+  <view class="flexbox store">
+    <image mode="aspectFit" src="{{store_logo}}"></image>{{store_name}}
+  </view>
+</view>
+<view class="method">
+  <view class="changeMethod">请选择支付方式</view>
+  <view class="wechat flexbox spaceBetween">
+    <view class="wechatImg">
+      <image  mode="aspectFit" src="../../images/wechat.png"></image>
+    微信支付
+    </view>
+    <image class="isCheck" mode="aspectFill" src="../../images/right1.png"></image>
+  </view>
+</view>
+<view class="button" bindtap="payForWechat"><view>确定支付</view></view>

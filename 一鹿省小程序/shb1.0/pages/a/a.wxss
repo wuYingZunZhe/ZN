@@ -1,0 +1,120 @@
+
+page{
+  font-size: 24rpx;
+  background-color: #F3F3F3;
+  position: relative;
+  z-index: -2;
+}
+
+.bgimg{
+  width: 100%;
+  height: 432rpx;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.personHead{
+  height: 102rpx;
+  color: #fff;
+  padding: 140rpx 50rpx 50rpx;
+}
+.personHead .flexbox,.tags,.yellow_box{
+  justify-content: space-between;
+} 
+.logo {
+  width:  102rpx;
+  height: 102rpx;
+}
+.toright{
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 30rpx;
+}
+.user_info{
+  width: 478rpx;
+}
+.user_info .user_name{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  line-height: 1.4;
+  margin-bottom: 10rpx;
+}
+.user_info .user_phone{
+  font-size:22rpx;
+  font-weight:500;
+  width:190rpx;
+  height:30rpx;
+  line-height: 30rpx;
+  background:rgba(218,17,44,1);
+  border-radius: 10rpx;
+  text-align: center;
+}
+.tags{
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  margin-bottom: 90rpx;
+
+}
+.tags_li{
+  width: 25%;
+}
+.num{
+  font-size: 34rpx;
+}
+.wallet {
+  padding-bottom: 30rpx;
+}
+.wallet_title{
+  font-size:30rpx;
+  line-height: 70rpx;
+  width: 650rpx;
+  margin: 0 auto 30rpx ;
+  border-bottom: 1px solid #F5F4F4;
+}
+.wallet_info{
+  width: 162rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #878787;
+}
+.wallet_info image{
+  width: 44rpx;
+  height: 44rpx;
+  margin-bottom: 18rpx;
+}
+.yellow_box{
+  background-color: #F4C938;
+  padding-top: 20rpx;
+  padding-bottom: 6rpx;
+}
+.yellow_box image{
+  width:165rpx;
+  height:165rpx;
+}
+.yellow_box_title{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(230,46,68,1);
+
+}
+.yellow_box_infos{
+  width: 340rpx;
+  line-height: 2;
+  padding-left: 30rpx;
+}
+.service_box{
+  padding-bottom: 0;
+}
+.yellow_box_info{
+  color: #fff;
+  font-size: 30rpx;
+}
+.service_infos{
+  flex-wrap: wrap;
+}
+
+.service_infos .wallet_info{
+  margin-bottom: 30rpx;
+}

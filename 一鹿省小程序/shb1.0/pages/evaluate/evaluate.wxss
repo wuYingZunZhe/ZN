@@ -1,0 +1,165 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.header view{
+  border-bottom: 1px solid #e1e1e1;
+}
+.backhome{
+  display: none;
+}
+.back{
+  position: fixed;
+  top: 38px;
+  left: 8rpx;
+  z-index: 999999999999;
+  width: 50rpx;
+  height: 46rpx;
+
+}
+.wrap{
+  padding: 24rpx;
+}
+.eva_store_info{
+  line-height: 82rpx;
+  padding-bottom: 36rpx;
+  font-size: 30rpx;
+  color:rgba(50,50,50,1);
+}
+.storeInco{
+  width:82rpx;
+  height:82rpx;
+  border-radius:6rpx;
+  margin-right: 16rpx;
+}
+.stars {
+  width: 444rpx;
+  margin: 0 auto;
+}
+.stars image{
+  width:60rpx;
+  height:58rpx;
+}
+.describe{
+  color:rgba(253,13,26,1);
+  font-size:30rpx;
+  text-align: center;
+  margin: 33rpx 0 44rpx;
+}
+
+.eva_tags {
+  display: flex;
+  justify-content:  center;
+}
+.eva_tags view{
+  width: 530rpx;
+  flex-wrap: wrap;
+}
+.eva_tags text{
+  display: inline-block;
+  height:42rpx;
+  font-size: 24rpx;
+  color:#939090;
+  line-height: 42rpx;
+  padding:0 12rpx;
+  margin :0 68rpx 30rpx 0;
+  border:1px solid #939090;
+  border-radius:22rpx;
+}
+.eva_tags text:nth-of-type(3n){
+  margin-right: 0;
+}
+.eva_tags .active{
+  border-color:  rgba(249,77,30,1);
+  color:  rgba(249,77,30,1);
+}
+.textarea{
+  width:662rpx;
+  height:146rpx;
+  padding: 24rpx 20rpx;
+  background:rgba(238,238,238,1);
+  color: #737370;
+  font-size: 30rpx;
+  line-height: 1.6;
+  margin-bottom: 40rpx;
+}
+
+.textarea textarea{
+  height: 122rpx;
+}
+
+.textarea view{
+  padding-top: 6rpx;
+  height: 24rpx;
+  font-size: 24rpx;
+  line-height: 1;
+  text-align: right;
+}
+.upLoadImg{
+  flex-wrap: wrap;
+}
+.upLoadImg>view{
+  margin: 0 36rpx 40rpx 0;
+}
+
+.upLoad{
+  flex-wrap: wrap;
+  justify-content:  center;
+  width:162rpx;
+  height:162rpx;
+  color: #939090;
+  font-size:28rpx;
+  line-height: 1.6rpx;
+  text-align: center;
+  background:rgba(238,238,238,1);
+}
+.upLoad image{
+  width: 60rpx;
+  height: 48rpx;
+  margin-top: 50rpx;
+}
+.images{
+  width:162rpx;
+  height:162rpx;
+  position: relative;
+
+}
+.images image{
+  width:162rpx;
+  height:162rpx;
+}
+
+.images  .error{
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: -18rpx;
+  left: -18rpx;
+}
+.anonymous {
+  color: #666;
+  padding-bottom: 100rpx;
+  font-size: 26rpx;
+}
+.anonymous view{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:  center;
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 16rpx;
+  border: 1px solid #A0A0A0;
+}
+.anonymous image{
+  width: 28rpx;
+  height: 28rpx;
+
+}
+.button{
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  width:702rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  background:linear-gradient(0deg,rgba(253,13,26,1),rgba(255,39,78,1));
+  border-radius:10rpx;
+}

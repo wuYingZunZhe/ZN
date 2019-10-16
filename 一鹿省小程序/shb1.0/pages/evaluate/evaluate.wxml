@@ -1,0 +1,43 @@
+
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+<image class="back" src="../../images/back.png" mode="aspectFill" bindtap="navigateback"></image>
+
+<view class="wrap">
+  <view class="flexbox eva_store_info">
+    <image class="storeInco" src="{{store_logo?store_logo:'../../images/noImg.png'}}" mode="aspectFill"></image>
+    <view class="storeName">{{store_name}}</view>
+  </view>
+
+  <view class="stars flexbox spaceBetween" bindtap="selectStar">
+    <image wx:for='{{stars}}' wx:key='index'  src="{{isDes>item.score-1 ?'../../images/starR.png':'../../images/star.png'}}" mode="aspectFill" data-index="{{item.score}}"></image>
+  </view>
+  <view class="describe">
+    <text  wx:for='{{stars}}' wx:key='index' wx:if="{{isDes==item.score}}">{{item.evaluate}}</text>
+  </view>
+  <view class="eva_tags ">
+    <view class="flexbox spaceBetween">
+      <text wx:for='{{tags}}'  class="{{item.ischoice?'active':''}}"  bindtap="choice" wx:for-index='index' data-tag_id="{{item.tag_id}}"  data-index="{{index}}" >{{item.tag_name}}</text>
+    </view>
+  </view>
+  <view class="textarea">
+    <textarea placeholder="请输入您的评价" placeholder-class="placeholder" value="{{textareaValue}}" maxlength="100" bindinput="handleContentInput"></textarea>
+    <view>{{contentCount}}/100</view>
+  </view>
+  <view class="upLoadImg flexbox">
+    <view class="upLoad flexbox" bindtap="chooseImage">
+       <image src="../../images/camera.png" mode="aspectFill"></image>
+       <view>上传图片</view>
+    </view>
+    <view class="images" wx:for="{{images}}" wx:key="index" wx:for-index='index'>
+      <image class="error" src="../../images/eva/error.png" mode="aspectFill" data-index="{{index}}"   bindtap="deleteImage"></image>
+      <image src="{{item}}" mode="aspectFill" bindtap="previewIamge"></image>
+    </view>
+  
+  </view>
+  <view class="anonymous flexbox"  bindtap="anonymous">
+    <view><image wx:if="{{is_anonymous==1}}" class="error" src="../../images/eva/checked.png" mode="aspectFill"></image></view> 匿名评价
+    
+  </view>
+  <view class="button" bindtap="sentData" data-onOff="{{onOff}}">发布</view>
+</view>

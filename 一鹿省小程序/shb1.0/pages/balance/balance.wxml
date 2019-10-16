@@ -1,0 +1,46 @@
+
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+<view class="redbg">
+
+  <view class="balance_box balance_box_bg radiusbox"></view>
+  <view class="balance_box">
+
+    <view class="balance_title">当前余额</view>
+    
+    <view class="balance_amount flexbox spaceBetween">
+      <view>¥3604.86</view>
+      <navigator>提现
+        <image mode="aspect" src="../../images/right.png"></image>
+      </navigator> 
+    </view>
+    <view class="proceeds flexbox spaceBetween">
+      <view>昨日收益：￥500.00</view>
+      <view>累计收益：￥9000.00</view>
+    </view>
+  </view>
+</view>
+<view class="check_tag flexbox ">
+  <view class="{{isShow==1?'active':''}}" bindtap="showDetail" data-index="1"><text>收入</text></view>
+  <view class="{{isShow==2?'active':''}}"  bindtap="showDetail" data-index="2"><text>支出</text></view>
+</view>
+<view class="check_details">
+  <scroll-view class="scrollView" wx:if='{{isShow==1}}'>
+    <view class="detail  flexbox  spaceBetween">
+      <view>
+        <view>180****3190支付收入</view>
+        <view class="time">06-01  22:00</view>
+      </view>
+      <view class="orange">+<text>110</text></view>
+    </view>
+  </scroll-view>
+  <scroll-view class="scrollView" wx:if='{{isShow==2}}'>
+    <view class="detail  flexbox  spaceBetween">
+      <view>
+        <view>微信提现</view>
+        <view class="time">06-01  22:00</view>
+      </view>
+      <view class="orange">-<text>110</text></view>
+    </view>
+  </scroll-view>
+</view>

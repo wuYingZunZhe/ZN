@@ -1,0 +1,105 @@
+<!--pages/mine/mine.wxml-->
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+<image class="bgimg" lazy-load="true" mode="aspectFill" src="../../images/redimg.png"></image>
+<view class="personHead">
+  <view class="flexbox">
+    <view class="flexbox">
+      <image class="logo" lazy-load="true" mode="aspectFit" src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../images/logo.png'}}"></image>
+      <view class="user_info" wx:if="{{userInfo.avatarUrl}}">
+        <view class="user_name">eluson粉丝壹号</view>
+        <view class="user_phone">18812345678</view>
+      </view>
+      <view class="no_user" wx:else>
+        登录/注册
+      </view>    
+    </view>
+    <image class="toright" lazy-load="true" mode="aspectFit" src="../../images/right.png"></image>
+  </view>
+</view>
+<view class="tags flexbox">
+  <view class="tags_li">
+    <view class="num">0</view>
+    <view>收藏夹</view>
+  </view>
+  <view class="tags_li">
+    <view class="num">0</view>
+    <view>足迹</view>
+  </view>
+  <view class="tags_li">
+    <view class="num">0</view>
+    <view>评价</view>
+  </view>
+  <view class="tags_li">
+    <view class="num">0</view>
+    <view>社区</view>
+  </view>
+</view>
+<!-- 钱包 -->
+<view class="wallet radiusbox">
+  <view class="wallet_title">
+    我的钱包
+  </view>
+  <view class="wallet_infos flexbox">
+    <navigator class="wallet_info"  url="../../pages/balance/balance">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>钱包</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>粉丝</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>分享</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>积分</view>
+    </navigator>
+  </view>
+</view>
+<!-- 一鹿省 -->
+<view class="radiusbox yellow_box flexbox">
+  <view class="yellow_box_infos">
+    <view class="yellow_box_title">一鹿省</view>
+    <view class="yellow_box_info">全新升级 带你一“鹿”省</view>
+  </view>
+  <image class="" lazy-load="true" mode="aspectFit" src="../../images/logo.png"></image>
+</view>
+<!-- 小鹿服务 -->
+<view class="radiusbox service_box ">
+  <view class="wallet_title">
+    小鹿服务
+  </view>
+  <view class="wallet_infos service_infos flexbox">
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>会员中心</view>
+    </navigator>
+    <view class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>我的银行卡</view>
+    </view>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>帮助与客服</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>加盟代理</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>关于我们</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>发票助手</view>
+    </navigator>
+    <navigator class="wallet_info">
+      <image class="" lazy-load="true" mode="aspectFit" src="../../images/cake.png"></image>
+      <view>商家入驻</view>
+    </navigator>
+  </view>
+</view>

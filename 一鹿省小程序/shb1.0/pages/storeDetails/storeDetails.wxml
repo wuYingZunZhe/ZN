@@ -1,0 +1,277 @@
+<wxs module="numFr" src="../../filter/numFr.wxs"></wxs>
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+<image mode="aspectFill"  src="../../images/left.png" class="toHome" bindtap="toHome"></image>
+<view class="container">
+     <!-- 轮播图 -->
+    <view class="swipercontainer">
+        <swiper id='loop' indicator-dots="true" indicator-color='#939090' indicator-active-color='#FF1D3A' circular class="swiper" current="{{swiperCurrent}}" source  bindchange="swiperChange">
+            <block wx:for="{{imgUrls}}"  wx:key="item">
+                <swiper-item>
+                    <image lazy-load='true' src="{{item.store_pic?item.store_pic:'../../images/noImg1.png'}}" mode="aspectFit" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <!-- 页码 -->
+        <!-- <view class="dots">
+          <block>
+             <view>{{swiperCurrent+1}}<text>/</text>{{totalSwiper}}</view>  
+          </block>
+        </view>  -->
+    </view>
+    <!-- 店铺信息 --> 
+    <view class="storeInfo">
+        <text class="storeName">{{storeDetails.store_name}}</text>
+        <view class="starsBox">
+          <block wx:for="{{stars}}" wx:key="stars">
+              <image class="pentagram" style="left: {{item*23}}rpx" src="{{store_score > item ?(store_score == 0.5?                             halfSrc:selectedSrc) : normalSrc}}">
+                  <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap=""></view>
+                  <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap=""></view>
+              </image>
+          </block>
+          <text class="storeScore">{{store_score}}分</text>
+          <text class="perCapita">均价{{storeDetails.average_price}}</text>
+          <text class="monthSales">月售{{storeDetails.month_count}}</text>
+        </view>
+        <!--  hidden="{{storeDetails.list_tips.length>0}}" -->
+        <view class="businessTime" decode="true">营业时间:  {{storeDetails.business_hours}}<text>{{storeDetails.status==1?'营业中':'休息中'}}</text></view>
+        <!-- <text class="businessStatus" decode="true">&nbsp;|&nbsp;&nbsp;{{businessStatus}}</text> -->
+        <view class="contact">
+          <image src="../../images/storeDetails/tel.png" bindtap="powerDrawer" data-statu="open"></image>
+        </view>
+
+        <!--拨打商家电话-->
+        <view class="drawer_screen" bindtap="powerDrawer" catchtouchmove='powerDrawer' data-statu="close" wx:if="{{showModalStatus}}"></view>
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+            <!--drawer content-->
+            <view class="drawer_content">
+                <view class="drawer_title">在线预约</view>
+                <view class="drawer_title" wx:if="{{storeDetails.store_mobile}}"  data-telephone ='{{storeDetails.store_mobile}}' bindtap='to_call'>{{storeDetails.store_mobile?storeDetails.store_mobile:''}}</view>
+                <view class="drawer_title lineCancle"  wx:if="{{storeDetails.store_telephone}}"  data-telephone="{{storeDetails.store_telephone}}" bindtap='to_call'>
+                    {{storeDetails.store_telephone?storeDetails.store_telephone:''}}</view>
+                <view class="drawer_title" bindtap="powerDrawer"  data-statu="close" wx:if="{{showModalStatus}}">取消 </view>
+            </view>
+        </view>
+    </view>
+    <!-- 分割线 -->
+    <view class="line"></view>
+    <!-- 定位-->
+    <view class="storePosition flexbox" bindtap="localtion">
+        <image class="positionIcon" src="../../images/storeDetails/adress.png"></image>
+        <view class="detailedLocation">{{storeDetails.store_address}}</view>
+        <view wx:if='{{disance}}' class="leftborder">{{disance }}km</view>
+    </view>
+    <!-- 分割 -->
+    <view class="parting"></view>
+    <!-- 优惠商品 用户评价 温馨提醒 goods_wrapbox-->
+    
+    <view class="goods_wrapbox" >
+      <view class="goods_innerbox " style="top:{{goods_movedTop}}px">
+      <view class="storeDetails">
+          <view class="storeDetails flexbox" id="storeDetails" scroll-x="true" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+            <view class="navInfo1 {{currentTab==0 ? 'active' : ''}}" data-tab="0"  bindtap="menuTap"><view>优惠商品</view><text wx:if='{{currentTab==0}}'></text></view>
+            <view class="navInfo2 {{currentTab==1 ? 'active' : ''}}" data-tab="1"  bindtap="menuTap"><view>用户评价</view><text wx:if='{{currentTab==1}}'></text></view>
+            <view class="navInfo3 {{currentTab==2 ? 'active' : ''}}" data-tab="2" bindtap="menuTap"><view>温馨提醒</view><text wx:if='{{currentTab==2}}'></text></view>
+          </view>
+        </view>
+        <!-- 优惠商品面板 -->
+        <swiper class="tab1 {{currentTab ==0?'tab1a':'tab1b'}}"  id="tab1" current="{{currentTab}}" bindchange="changeTab">
+          <swiper-item style='overflow-y: scroll; -webkit-overflow-scrolling: touch;'>
+            <view class="goods"  wx:if='{{goodsItem.length>0}}'>
+             <!-- 左 -->
+                <view class='tab-left'  style="height:{{height}}px" >
+                    <view style="padding-bottom: 50rpx;" >
+                      <view  wx:for="{{goodsItem}}" wx:for-index='index'wx:key="id" bindtap="left" data-id="{{item.id}}" data-tcategory="{{item.category}}"   data-tintroduce="{{item.introduce}}">
+                        <view  class="tabArr {{item.id==currentLeftSelect? 'active' : ''}}" data-category="{{index}}"  >
+                            <view class="flexbox">
+                              <image mode="aspectFit" src='{{item.category=="活动区"?"../../images/storeDetails/active.png":""}}' wx:if="{{item.category=='活动区'}}" class="activeInco"></image>
+                              <image mode="aspectFit" src='{{item.category=="优惠区"?"../../images/storeDetails/offer.png":""}}' wx:elif="{{item.category=='优惠区'}}"  class="activeInco"></image>
+                              <text class="textTitle" id="tab-hd01" data-id="0" value="0" bindtap='click' data-menuItem="{{item.category}}">{{item.category}}</text>
+                            </view>
+                            <view class="nums" wx:if="{{item.select_nums>0}}">{{item.select_nums}}</view>
+                        </view>
+               
+                      </view>
+                    </view>
+                </view>
+
+                <!-- 右 -->
+                <view  class='tab-right'>
+                  <!-- <view class="discountedGoodsTitle fixed-title">
+                    <view class="position">
+                      <image src="../../images/storeDetails/jian.png" lazy-load='true' class="preInco"></image>
+                      <text class="preferential">{{tcategory}}</text>
+                      <text class="mustSee">{{tintroduce}}</text>
+                    </view>
+                  </view> -->
+                  <scroll-view class="absolute"  style='overflow-y: scroll; -webkit-overflow-scrolling: touch;' scroll-with-animation="true"  scroll-y="true" style="height:{{height}}px"  bindscroll="right" scroll-into-view="{{toView}}" >
+                      <view wx:for="{{goodsItem}}" wx:for-item='item' wx:for-index = 'index' wx:key="id"  id="{{item.id}}">
+                        <view class="right-item" data-parentid="{{item.id}}" >
+
+                          <view class="discountedGoodsTitle" hidden="{{index==currentLeftSelect}}">
+                            <view>
+                              <image src="../../images/storeDetails/jian.png" lazy-load='true' class="preInco"></image>
+                              <text class="preferential">{{item.category}}</text>
+                              <text class="mustSee">{{item.introduce}}</text>
+                            </view>
+                          </view>
+                          <view class="specificProduct flexbox"  wx:for="{{item.list_goods}}" wx:for-item='gooditem' wx:for-index="goodindex" wx:key="goodindex" >
+                          
+                            <navigator url="../productDetails/productDetails?goods_id={{gooditem.goods_id}}&goods_type={{item.goods_type}}">
+                              <image class="productImage" src="{{gooditem.goods_pic}}" mode="aspectFill"></image>
+                            </navigator>
+                            <view class="goodsInfosbox " style="line-height:{{gooditem.goods_desc?'1.2':'2'}}">
+                              <view class="productDescription flexbox spaceBetween">
+                                <view>{{gooditem.goods_name}}</view><text class="saleMonth">月售{{gooditem.month_count}} </text>
+                              </view>
+                              <view class="name" wx:if='{{gooditem.goods_desc}}'>
+                                <text>{{gooditem.goods_desc}}</text><text class="diningNum">{{gooditem.diningNum}}</text>
+                              </view>
+                              <view class="platformPrice">
+                                <image wx:if="{{ item.category =='活动区'}}" src="../../images/storeDetails/evar.png"></image>
+                                <text >平台价</text>
+                                <text>¥{{gooditem.discount_price}}</text>
+                              </view>
+                              <view class="storePrice">门店价: ¥{{gooditem.goods_price}}</view>
+                              <view class="addToCart flexbox spaceBetween">
+                                <view>
+                                  <view  class="gray" >
+                                    <text class="range " style="width:{{gooditem.per*150}}rpx"></text>
+                                  </view>
+                                  <text class="remainder">剩余{{gooditem.stock_count}}份</text>
+                                </view>
+                                <view wx:if="{{gooditem.noGood}}">
+                                  <image data-index="{{index}}" data-goodindex="{{goodindex}}" data-goods_desc="{{item.goods_desc}}"  data-is_fanbuy="{{item.is_fanbuy}}" data-goods_count="{{gooditem.goods_count}}"  data-goodsId="{{gooditem.goods_id}}" data-goods_selenum="{{gooditem.num?gooditem.num:0}}"  data-goods_price="{{gooditem.goods_price}}" data-discount_price="{{gooditem.discount_price}}"  data-goods_name="{{gooditem.goods_name}}" data-goods_pic="{{gooditem.goods_pic}}"  data-goods_type="{{item.goods_type}}" data-stock_count="{{gooditem.stock_count}}"  bindtap="reduceFromCart"  class="circleLess" src="../../images/storeDetails/less.png"></image>
+                                  <text class="amount"  >{{gooditem.num?gooditem.num:0}}</text>
+                                  <image data-index="{{index}}"  data-goods_count="{{gooditem.goods_count}}"  data-is_fanbuy="{{item.is_fanbuy}}" data-goodindex="{{goodindex}}" data-goodsId="{{gooditem.goods_id}}" data-goods_pic="{{gooditem.goods_pic}}"  data-goods_desc="{{item.goods_desc}}" data-goods_price="{{gooditem.goods_price}}" data-discount_price="{{gooditem.discount_price}}"  data-goods_name="{{gooditem.goods_name}}" data-goods_selenum="{{gooditem.num?gooditem.num:0}}"  data-stock_count="{{gooditem.stock_count}}" data-goods_type="{{item.goods_type}}"  bindtap="addToCart" class="circleAdd"  src="../../images/storeDetails/add.png"></image>
+                                  
+                                </view>
+                                <text class="circleAdd noGood " wx:else>已售罄</text>
+                              </view>
+                            </view>
+                          </view>
+                        </view>
+                        
+                      </view>
+                  </scroll-view>
+                </view>
+            </view>
+          </swiper-item>
+          <swiper-item class="tabs-content-item">
+            <view class="content">
+              <view class="marks flexbox">
+                <view class='{{menuTapCurrenta=="0"?"active":""}}' data-current="0" bindtap="evaluatefn">晒图({{list_type[1].evaluate_count}})</view>
+                <view class='{{menuTapCurrenta=="1"?"active":""}}' data-current="1" bindtap="evaluatefn">好评({{list_type[2].evaluate_count}})</view>
+                <view class='{{menuTapCurrenta=="2"?"active":""}}' data-current="2" bindtap="evaluatefn">低分({{list_type[3].evaluate_count}})</view>
+                <view   class='{{menuTapCurrenta=="3"?"active":""}}' data-current="3" bindtap="evaluatefn">全部({{list_type[0].evaluate_count}})</view>
+              </view>
+              <view class="comments">
+                <block  wx:for="{{list_evaluate}}" wx:for-item="list_evaluate" wx:for-index="index" wx:key="list_evaluate" hidden="{{len==0}}">
+                
+                  <view class="comment_item flexbox">
+                    
+                      <view  class="userimg">
+                        <image mode="aspectFill" src="{{list_evaluate.head_pic}}" ><view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap=""></view>
+                                            <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap=""></view></image>
+                      </view>
+                      <view class="comment_infos {{index==len-1?'noBor':''}}">
+                        <view class="username flexbox">
+                          <view>{{list_evaluate.user_name}}</view>
+                          <view>{{list_evaluate.add_time}}</view>
+                        </view>
+                        <view class="commentstars">
+                          <image  src="{{list_evaluate.score<1?'../../images/storeDetails/normal.png':'../../images/storeDetails/selected.png'}}" ></image>
+                          <image  src="{{list_evaluate.score<2?'../../images/storeDetails/normal.png':'../../images/storeDetails/selected.png'}}" ></image>
+                          <image  src="{{list_evaluate.score<3?'../../images/storeDetails/normal.png':'../../images/storeDetails/selected.png'}}" ></image>
+                          <image  src="{{list_evaluate.score<4?'../../images/storeDetails/normal.png':'../../images/storeDetails/selected.png'}}" ></image>
+                          <image  src="{{list_evaluate.score<5?'../../images/storeDetails/normal.png':'../../images/storeDetails/selected.png'}}" ></image>
+                          <text>{{list_evaluate.evaluate}}</text>
+                        </view>
+                        <view class="commentinfo">{{list_evaluate.content}}</view>
+                        <scroll-view scroll-x="true"  class="comment_shareimg flexbox">
+                            <image  src="{{picItem}}" wx:for="{{list_evaluate.pics}}" wx:key='index' wx:for-item='picItem' ></image>
+                        </scroll-view>
+                        <view class="commentmark flexbox">
+                          <image  src="../../images/storeDetails/eva.png" ></image>
+                          <text>{{list_evaluate.tags}}</text>
+                        </view>
+                      </view>
+                      
+                  </view>
+                
+                </block>
+                <view class="nocomment flexbox" hidden="{{len>0}}">
+                  <image mode="aspectFill" src="../../images/storeDetails/nocomment.png"></image>
+                  <text>还没评论哦，快来抢沙发~</text>
+                </view>
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item class="tabs-content-item remind ">
+            <view class="content">
+              <view class="remindTitle flexbox">
+                <image mode="aspectFit" src="../../images/storeDetails/right.png"></image>
+                <text>温馨提醒</text>
+                <image mode="aspectFit" src="../../images/storeDetails/left.png"></image>
+              </view>
+              <view class="reminds">
+                <block wx:for="{{tips}}" wx:for-item="tips" wx:key="index">
+                  <view class="remindsdot flexbox"><view></view><text>{{tips}}</text></view>
+                </block>
+              </view>
+              <view class="parting"></view>
+              <view class="qualification flexbox" bindtap="navigator">
+                <view>营业资质</view>
+                <image mode="aspectFill" src="../../images/storeDetails/youjiantou.png"></image>
+              </view>
+              <view class="parting"></view>
+              <view class="report">
+                <button bindtap="report"><image mode="aspectFill" src="../../images/storeDetails/gantanhao.png"></image>举报商家</button>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view> 
+    </view> 
+    <!-- 购物车弹窗 -->
+    <view class="cartBox_mask"  bindtap="powerDrawer" catchtouchmove='powerDrawer'  data-statu="car"  wx:if="{{cartBoxStatus}}"></view> 
+    <view class="cartBox" id='cartBox' animation="{{animationData}}" wx:if="{{cartBoxStatus}}" >
+      <view class="cartInner" >
+        <view class="cartTitle">
+          <text>已选商品({{total_num}})</text>
+          <image src="../../images/storeDetails/dele.png" bindtap="deleFn"></image>
+        </view>
+        <block wx:for="{{choosedList}}" wx:for-item='gooditem' wx:for-index='goodindex' wx:key='item'>
+          <view class="cartDetail">
+            <image class="cart_goodImg" src="{{gooditem.goods_pic}}"></image>
+            <view class="cart_good_desc">
+              <view>{{gooditem.goods_name}}</view>
+              <view>¥{{gooditem.discount_price}}</view>
+            </view>
+            <view class="cart_fn">
+              <image data-index="{{gooditem.index}}" data-goodindex="{{gooditem.goodindex}}" data-goods_count="{{gooditem.goods_count}}"   data-goodsId="{{gooditem.goodsid}}"  data-goods_selenum="{{gooditem.goods_selenum?gooditem.goods_selenum:0}}"  data-goods_price="{{gooditem.goods_price}}"  data-goods_type="{{gooditem.goods_type}}" data-discount_price="{{gooditem.discount_price}}"  data-goods_name="{{gooditem.goods_name}}" data-goods_pic="{{gooditem.goods_pic}}"  data-goods_desc="{{item.goods_desc}}" data-stock_count="{{gooditem.stock_count}}" data-is_fanbuy="{{gooditem.is_fanbuy}}"  bindtap="reduceFromCart"  src="../../images/storeDetails/less.png"></image>
+              <text >{{gooditem.goods_selenum}}</text>
+              <image data-index="{{gooditem.index}}"  data-goods_count="{{gooditem.goods_count}}" data-goodindex="{{gooditem.goodindex}}"  data-goods_type="{{gooditem.goods_type}}" data-goodsId="{{gooditem.goodsid}}"  data-goods_pic="{{gooditem.goods_pic}}" data-goods_price="{{gooditem.goods_price}}" data-discount_price="{{gooditem.discount_price}}"  data-goods_name="{{gooditem.goods_name}}" data-is_fanbuy="{{gooditem.is_fanbuy}}"  data-goods_desc="{{item.goods_desc}}" data-goods_selenum="{{gooditem.goods_selenum?gooditem.goods_selenum:0}}"  data-stock_count="{{gooditem.stock_count}}" bindtap="addToCart" src="../../images/storeDetails/add.png"></image>
+              
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+     <!-- tabBar 是否营业 business-->
+        <view class="tab-bar"  hidden="{{currentTab!='0'}}">
+            <block wx:if="{{storeDetails.status!=1}}">  
+              <view class="rest">店铺休息中</view>
+            </block>
+            <block wx:else>
+              <image class="anInco" mode="aspectFit" src="../../images/storeDetails/shopcar.png" bindtap="openCart" data-num="{{total_num}}"></image>
+                <view class="shoppingNum" hidden="{{total_num==0}}">{{total_num}}</view>
+                <view class="money">￥{{order_cost}}</view>
+                <view class="settlement"> 
+                  <view class="settlementmask" wx:if="{{isMask}}"></view>
+                  <view   bindtap="toPay">去结算</view>
+              </view>
+            </block>
+        </view>
+</view>

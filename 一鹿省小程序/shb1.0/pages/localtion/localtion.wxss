@@ -1,0 +1,78 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.storeLocaltion{
+    position: absolute;
+    left: 24rpx;
+    top: 759rpx;
+    width:702rpx;
+    height:401rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0rpx 3rpx 5rpx 1rpx rgba(37,36,36,0.08);
+    border-radius:30px;
+    /* border: 1rpx solid red;   */
+}
+.storeInco{
+    position: absolute;
+    top: 42rpx;
+    left:58rpx;
+    width:140rpx;
+    height:140rpx;
+    /* border: 1rpx solid red; */
+}
+.storeName{
+    position: absolute;
+    top: 42rpx;
+    left: 236rpx;
+    font-size:33rpx;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+}
+.detailLocaltion{
+    position: absolute;
+    top: 97rpx;
+    left: 237rpx;
+    font-size:26rpx;
+    font-weight:500;
+    color:rgba(50,50,50,1);
+}
+.distance,.distanceDetail{
+    position: absolute;
+    top: 156rpx;
+    left: 237rpx;
+    font-size:26rpx;
+    font-weight:500;
+    color:rgba(115,115,112,1);
+}
+.distanceDetail{
+     left:330rpx;
+}
+.expectedTime{
+    position: absolute;
+    top: 207rpx;
+    right: 44rpx;
+    font-size:20rpx;
+    font-weight:500;
+    color:rgba(147,144,144,1);
+}
+.line{
+    position: absolute;
+    top: 244rpx;
+    background:rgba(0,0,0,1);
+    width:701rpx;
+    height:1px;
+    background:rgba(0,0,0,1);
+    opacity:0.1;
+}
+.viewRoute{
+    position: absolute;
+    top:309rpx;
+    left: 292rpx;
+    font-size:30rpx;
+    font-weight:500;
+    color:rgba(249,77,30,1);
+}   

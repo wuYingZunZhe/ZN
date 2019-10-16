@@ -1,0 +1,2 @@
+<!--pages/webview/webview.wxml-->
+<web-view src="https://exbuy.double.com.cn/index/download/index.html" />

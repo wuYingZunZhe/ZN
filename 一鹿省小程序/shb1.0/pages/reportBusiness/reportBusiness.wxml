@@ -1,0 +1,46 @@
+<!-- 举报商家 -->
+<form bindsubmit="formSubmit">
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+    <view class="container">
+        <view class="reportWrap">
+            <image class="storeImg" src="{{store_logo}}"></image>
+            <text class="storeName">{{store_name}}</text>
+            <text class="reportType">举报类型</text>
+            <!-- <text class="reQuality">商家资质问题</text>
+        <image class="reportInco1"  src="{{playIcon}}" bindtap="changePic"></image>
+        <text class="rePrice">商品价格问题</text>
+        <image class="reportInco2" src="{{playIcon}}"></image>
+        <text class="reAdress">商家地址问题</text>
+        <image class="reportInco3" src="{{playIcon}}"></image>
+        <text class="reOther">其他问题</text>
+        <image class="reportInco4" src="{{playIcon}}"></image> -->
+
+            <view class='tagArea'>
+                <text wx:for="{{selectall}}" wx:for-item="selectall" wx:key="{{type}}"
+                    bindtap="submit" class="{{currentid==selectall.type?'active':'select'}}" data-id="{{selectall.type}}">{{selectall.title}}</text>
+            </view>
+            <!-- 分割线 -->
+            <text class="line"></text>
+            <!-- 添加图片 -->
+            <text class="addPicTitle">添加图片</text>
+            <view class="addPicWrap">
+                <view class="imgs_area" wx:for="{{images}}" wx:key="*this">
+                    <image class="addPic1" src="{{item}}" data-id="{{index}}" mode="aspectFill" bindtap="previewIamge">
+                    </image>
+                    <image class="deletePic1" src="../../images/report/delete.png" mode="aspectFill" data-id="{{index}}" bindtap="deleteImage">
+                    </image>
+                </view>
+            </view>
+            <image class="addPic3" src="../../images/report/addpic.png" bindtap="chooseImage"></image>
+            <!-- 分割线 -->
+            <text class="line1"></text>
+            <!-- 补充更多信息 -->
+            <text class="addMore">补充更多信息（必填）</text>
+            <!-- <textarea class="addMoreTextarea"></textarea> -->
+            <textarea class="addMoreTextarea" placeholder="请输入内容..." maxlength="200" placeholder-style="color:#b3b3b3;font-size:28rpx;" bindinput="handleContentInput" value="{{content}}"></textarea>
+            <text class="line2"></text>
+            <button class="reSubmit" bindtap="submitClick" type="primary" form-type="submit">提交</button>
+        </view>
+    </view>
+</form>

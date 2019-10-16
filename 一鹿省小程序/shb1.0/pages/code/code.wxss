@@ -1,0 +1,75 @@
+/* pages/code/code.wxss */
+@import "/template/wxss/waterfall.wxss"; 
+.codebox{
+  padding: 20rpx 24rpx;
+  background-color: #EEEEEE;
+}
+.backhome1 image{
+  display: none;
+}
+.back{
+  position: fixed;
+  top: 32px;
+  left: 24rpx;
+  z-index: 9999;
+  width: 50rpx;
+  height: 46rpx;
+}
+.aspectFit{
+  width: 266rpx;
+  height: 266rpx;
+  margin: 0 auto;
+}
+.aspectFit image{
+  width: 266rpx;
+  height: 266rpx;
+}
+.code_detail{
+  text-align: center;
+  font-size:28rpx;
+  color: #737370;
+  background: #fff;
+  line-height: 64rpx;
+  padding: 30rpx 0;
+}
+.sn{
+  color: #323232;
+  font-size:36rpx;
+  font-weight: 500;
+}
+.redtop,.redbottom{
+  width: 100%;
+  height: 60rpx;
+  background:#FD0D1A;
+  border-radius:20px 20px 0  0;
+}
+.redbottom{
+  height:22rpx;
+  border-radius: 0  0 20px 20px;
+}
+.code_detail text,.order_bottom text{
+  color: #FF1D3A;
+}
+
+.order_top{
+  padding:0 30rpx;
+  border-bottom: 1px solid #e1e1e1;
+  line-height: 124rpx;
+  font-size:30rpx;
+  color:rgba(81,81,81,1);
+}
+.order_bottom{
+  font-size:30rpx;
+  color:rgba(102,102,102,1);
+  line-height: 62rpx;
+  padding: 40rpx 30rpx;
+}
+.name{
+  font-size:36rpx;
+  color:rgba(50,50,50,1);
+  font-weight: bold;
+}
+.goods text{
+  color: rgba(81,81,81,1);
+  margin-right: 16rpx;
+}

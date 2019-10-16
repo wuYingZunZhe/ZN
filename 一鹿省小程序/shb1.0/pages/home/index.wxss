@@ -1,0 +1,344 @@
+
+@import "/template/wxss/waterfall.wxss"; 
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 9;
+}
+
+.buttonmask{
+  background-color: rgba(255, 255, 255, .6);
+  z-index: 99;
+}
+page{
+  font-size: 24rpx;
+  background-color: #F3F3F3;
+  position: relative;
+  z-index: -2;
+}
+.fixedredbox{
+  height: 96px;
+}
+
+.fixedredboxinner{
+  position: fixed;
+  width: 100%;
+  top: 70px;
+  z-index: 9999;
+}
+.advert,.advertbox{
+  height: 36px;
+  line-height: 26px;
+  background-color: #FF2041;
+  color: #fff;
+}
+.advert .flexbox{
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, .2);
+  height: 36px;
+  padding: 5px 26rpx;
+}
+
+.leftlogo image{
+  width: 43rpx;
+  height: 41rpx;
+  margin-right: 15rpx;
+  vertical-align: middle;
+}
+.leftlogo text{
+  font-size: 26rpx;
+}
+.advert .leftlogo,
+.advert  .download{
+  display: flex;
+  align-items:center;
+}
+.download image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 26rpx;
+}
+
+.download .contact{
+  width: 100rpx;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-size: 20rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  background:rgba(253,13,26,1);  
+}
+
+.buttons{
+  position: relative;
+}
+.buttons .usermask{
+  position: absolute;  
+} 
+.toutiao{
+  font-size: 30rpx;color: #FF2041;
+}
+.backhome{
+  display: none;
+}
+
+.welcome{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .6);
+  z-index: 99999999999999999999;
+}
+.bgimg{
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+.selectionBox{
+  width: 94%;
+  height: 90rpx;
+  color: #fff;
+  font-size: 18rpx;
+  padding:20rpx 3% 0;
+  background-color: #FF2041;
+}
+.selectbtn{
+  width: 500rpx;
+  height: 64rpx;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+}
+
+.selection .logo{
+  width:70rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.location{
+  width: 120rpx;
+
+}
+.curcity{
+  font-size: 28rpx;
+  line-height: 1;
+  margin-bottom: 10rpx;
+}
+.location image{
+  width: 20rpx;
+  height: 10rpx;
+  vertical-align: text-top;
+  margin-top: 10rpx;
+}
+.selectbtn image{
+  width: 36rpx;
+  height: 36rpx;
+  margin: 16rpx 16rpx 16rpx 24rpx;
+}
+.selectbtn input{
+  height: 60rpx;
+}
+.moreSelect image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom:4rpx;
+}
+.moreSelect {
+  width: 40rpx;
+  text-align: center;
+}
+.placeholder{
+  color: #939090;
+  line-height: 60rpx;
+}
+.swiperbox{
+  width: 94%;
+  height: 276rpx; 
+  margin: 0 auto 40rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.swiper{
+  height: 310rpx;
+}
+.slide-image{
+  width: 100%;
+  /* height: 310rpx; */
+  border-radius: 10rpx;
+}
+.dots{
+  width: 100%;
+  position: absolute;
+  bottom: 10rpx;
+  height: 4rpx;
+  display: flex;
+  justify-content: center; 
+
+}
+.dot{
+  display: inline-block;
+  width: 16rpx;
+  height: 6rpx;
+  border-radius: 3rpx;
+  margin-right: 8rpx;
+  background-color: rgba(255, 255, 255, .6);
+}
+.dotactive{
+  width: 22rpx;
+  background-color: rgba(255, 255, 255, 1);
+}
+/* nav */
+.nav{
+  width: 710rpx;
+  padding: 0 20rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: content-box;
+  overflow: hidden;
+  margin-right:-20rpx;
+}
+.nav_item{
+  width: 128rpx;
+  height: 144rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+  position: relative;
+}
+.nav1 .nav_item{
+  margin-bottom: 0;
+}
+.nav_item navigator{
+  position: absolute;
+  z-index: 9;
+}
+.nav image{
+  width: 53px;
+  height: 53px;
+  border-radius: 10rpx;
+}
+.nav1 image{
+  width: 30px;
+  height: 30px;
+}
+
+.adds{
+  height: 66rpx;
+  font-size: 20rpx;
+  line-height: 66rpx;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 999;
+}
+.z9999{
+  position: absolute;
+  z-index: 9999
+}
+.adds image{
+  width: 110rpx;
+  height: 60rpx;
+}
+.adds .new {
+  margin: 20rpx;
+  width: 52rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  font-size: 18rpx;
+  border-radius: 11rpx;
+  background-color: #FFE8EA;
+  color: #FF1E32;
+}
+.add {
+  width: 510rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+.add swiper{
+  height: 60rpx;
+}
+
+.goods_item_head{
+  justify-content: space-between;
+  line-height: 66rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+  margin-bottom: 20rpx;
+}
+.goods_item_head text{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.goods_item_head navigator{
+  font-size: 24rpx;
+  color: #B8B8B8;
+}
+.goods_img{
+  width:210rpx;
+  height:178rpx;
+  margin-bottom: 22rpx;
+}
+.goods_img image{
+  width:210rpx;
+  height:178rpx;
+  border-radius:10rpx;
+}
+.address,.money,.selection {
+  justify-content: space-between;
+}
+
+.goods_item_body{
+  width:690rpx;
+  flex-direction: row;
+}
+image.goods_item_body {
+  height:260rpx;
+}
+.goods_item_scroll{
+  margin-right: -20rpx;white-space: nowrap;
+}
+.goods_title{
+  width: 68%;
+  height: 30rpx;
+  color: #111;
+  font-size: 24rpx;
+  text-align: left;
+  margin-bottom: 6rpx;
+  text-indent: 10rpx;
+   
+}
+.tehui{
+  width: 54rpx;
+height: 28rpx;
+
+}
+.stars{
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 4rpx;
+  margin-left: 10rpx;
+}
+.goods_item_detail{
+  display: inline-block;
+  width: 210rpx;
+  margin-right: 20rpx;
+}
+.goods_item_detail text{
+  color: #AEADAA;
+  font-size: 19rpx;
+}
+
+.goods_item_detail .pink{
+  color: #FF1D3A;
+  font-size: 22rpx;
+  margin: 0 20rpx 20rpx 6rpx;
+}

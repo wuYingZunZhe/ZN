@@ -1,0 +1,63 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+/* 最外层大容器 */
+.container{
+    width: 750rpx;
+    height: 70vh;
+    position: relative;
+}
+.bgimg{
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.toHome{
+  width: 48rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 72rpx;
+  left: 10rpx;
+  z-index: 9999999999999999;
+}
+
+/* 点单图标 */
+.orderInco,.paymentInco{
+  position: absolute;
+  top:346rpx;
+  left: 98rpx;
+  width: 240rpx;
+  height: 240rpx;
+}
+.paymentInco{
+  left: 416rpx;
+}
+/* 付款图标 */
+/* 点单文字 */
+.oerderText,.paymentText{
+  position:absolute;
+  top:  638rpx;
+  left: 176rpx;
+  color: #FF1D3A;
+  font-size: 40rpx;
+}
+/* 付款文字 */
+.paymentText{
+  left: 496rpx;
+  color: #FB953E;
+}
+.button-hover,
+ button::after{
+  border: 0;
+}
+ button{
+  background: transparent;
+ }
+
+.backhome{
+  display: none;
+}

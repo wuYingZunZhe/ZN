@@ -1,0 +1,71 @@
+<!--pages/myorder/myorder.wxml-->
+
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+
+<template is="showModal" data="{{isUser}}"></template>
+<template is="showModal" data="{{isPhone}}"></template>
+<view  class="usermask"  wx:if='{{isshowModal }}'   bindtap='showModal'></view>
+<!-- <button class="usermask" wx:if='{{isUser}}' bindtap='showLoading'  open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+<button class="usermask phonemask"  wx:if="{{isPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button> -->
+
+<view class="options">
+  <view class=" flexbox spaceBetween" bindtap="changeoption">
+    <view class="option {{isActive==0?'active':''}}" data-index="0">
+      <text data-index="0">全部</text>
+    </view>
+    <view class="option {{isActive==1?'active':''}}" data-index="1">
+      <text data-index="1">待付款</text><view class="order_num {{unpaid_count>99?'order_num1':''}}" wx:if="{{unpaid_count>0}}"><image mode="aspectFill" hidden="{{unpaid_count>99}}"  src="../../images/circle.png"></image><view>{{unpaid_count}}</view></view>
+    </view>
+    <view class="option {{isActive==2?'active':''}}" data-index="2">
+      <text data-index="2">待使用</text><view class="order_num {{unused_count>99?'order_num1':''}}" wx:if="{{unused_count>0}}"><image mode="aspectFill" hidden="{{unpaid_count>99}}" src="../../images/circle.png"></image><view>{{unused_count}}</view></view>
+    </view>
+    <view class="option {{isActive==3?'active':''}}" data-index="3">
+      <text data-index="3">待评价</text><view class="order_num {{unevaluate_count>99?'order_num1':''}}" wx:if="{{unevaluate_count>0}}"><image mode="aspectFill"  hidden="{{unpaid_count>99}}" src="../../images/circle.png"></image><view>{{unevaluate_count}}</view></view>
+    </view>
+  </view>
+</view>
+<view class="scrollView" scroll-y='true' style="height:{{nodata?scrollH:''}}px"  bindscrolltolower="contentScroll">
+<!-- <image class="bigImg" mode="aspectFit" src=""></image> -->
+  <block  wx:for="{{orderData}}" wx:key='index' wx:for-index='index' data-store_id="{{item.store_id}}" data-order_id="{{item.order_id}}" bindtap="methods" >
+    <view class="order_item radiusbox"  hidden="{{nodata}}" >
+      <view class="order_store_info flexbox ">
+        <image mode="aspectFill" src="../../images/myorderlogo.png"></image>
+        <view class="store_name">{{item.store_name}}</view>
+        <view>
+          <text wx:if='{{item.order_status==1}}'>待付款</text>
+          <text wx:if='{{item.order_status==2}}'>待使用</text>
+          <text wx:if='{{item.order_status==3}}'>待评价</text>
+          <text wx:if='{{item.order_status==4}}'>已评价</text>
+          <text wx:if='{{item.order_status==5}}'>已取消</text>
+        </view>
+      </view>
+      <navigator class="order_info flexbox" url="../pendingPayment/pendingPayment?order_id={{item.order_id}}&store_id={{item.store_id }}&msg={{item.msg}}&order_status={{item.order_status}}">
+        <image mode="aspectFill" src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}"></image>
+        <view class="count">
+          <view wx:if='{{item.order_status==1}}'>数量：<text>{{item.order_count}}</text></view>
+          <view wx:if='{{item.order_status!=1}}'>下单时间：<text>{{item.add_time}}</text></view>
+          <view>总价： <text>{{item.actual_money}}元</text>已省： <text>{{item.save_money}}元</text></view>
+        </view>
+      </navigator>
+      <view class="other_info flexbox spaceBetween"  wx:if="{{item.order_status!=5}}">
+        <view class="countdown" > <view wx:if="{{item.msg}}">将于<text>{{item.msg}}</text>后自动取消</view> </view>
+        <view class="button flexbox">
+          <button wx:if="{{item.order_status==1&&item.msg}}"  bindtap="cancleOrder" data-order_id="{{item.order_id}}" data-index="{{index}}">取消订单</button>
+          <navigator wx:if="{{item.order_status==1&&item.msg}}"  url="../pendingPayment/pendingPayment?order_id={{item.order_id}}&store_id={{item.store_id }}&order_status={{item.order_status}}&msg={{item.msg}}"  data-index="2">去支付</navigator>
+        
+          <navigator   wx:if="{{item.order_status==3}}"  url="../evaluate/evaluate?order_id={{item.order_id}}&store_id={{item.store_id }}&store_name={{item.store_name }}&store_logo={{item.store_logo }}&order_status={{item.order_status}}"  data-index="3">去评价</navigator>
+          <button  wx:if="{{item.order_status==2&&item.is_effective==1 || item.order_status==3&&item.is_effective==1 || item.order_status==4&&item.is_effective==1}}" data-order_id="{{item.order_id}}" hidden='{{isOpenset}}' data-store_id="{{item.store_id}}" bindtap="shareSave">立即分享</button>
+          <button open-type="openSetting" bindopensetting='handleSetting'  hidden='{{!isOpenset}}'>去授权</button>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="nodata flexbox" wx:if="{{nodata}}" >
+    <image mode="aspectFit" src="../../images/noorder.png" lazy-load="true"></image>
+  </view>
+  <canvas canvas-id="canvas"></canvas>
+  <canvas canvas-id="canvas1"></canvas>
+
+</view>
+<view class="nomore-tip" style="margin-top:-16rpx;  text-align: center" ></view> 

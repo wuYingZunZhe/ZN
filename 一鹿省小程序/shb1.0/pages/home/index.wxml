@@ -1,0 +1,178 @@
+
+<import src="/template/wxml/waterfall.wxml" />
+<!-- <view class="mask" catchtouchmove="returnTap" wx:if='{{isMask}}'></view> -->
+
+<scroll-view class="scrollBox"  scroll-y bindscrolltolower="contentScroll" scroll-top='{{topNum}}' bindscroll="scrolltoupper" >
+    <image class="bgimg" mode="aspectFill" src="../../images/redimg.png"></image>
+   <template is="head" data="{{titlename}}"></template>
+  <view class="fixedredbox"  style="height:{{closeH}}px"> 
+    <view class="fixedredboxinner" style="height:{{closeH}}px">
+      <view class="advert" hidden='{{closeadvert}}'>
+          <view class=" flexbox spaceBetween">
+            <view class="leftlogo">
+              <image mode="aspectFit" src="../../images/logoy.png"></image><text>下载一鹿省APP享受更多优惠</text>
+            </view>
+            <view class="download">
+              <view class="buttons">
+                <view class="contact" >下载APP</view>
+                <!-- <button class="contact"    session-from="nickName={{userInfo.nickName}}|avatarUrl={{userInfo.avatarUrl}}|{'input_key'='1'}|referrerTitle='下载APP'"  open-type="contact"  bindcontact="handleContact" send-message-title="下载APP">下载APP</button>
+                <button class="usermask" wx:if='{{isUser}}' hidden="{{zIndex==0}}"   open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+                <button class="usermask phonemask"  wx:if="{{isPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button> -->
+              </view>
+              <image class=""  mode="aspectFit" src="../../images/closew.png"  bindtap="closeadvert"></image>
+            </view>
+          </view>
+      </view>
+      <view class="selectionBox">
+        <view class="selection flexbox ">
+          <view class="flexbox">
+            <image class="logo"  lazy-load="true" mode="aspectFill" src="{{logosrc}}"></image>
+            <view class="location"  bindtap="changeCity">
+              <view class="curcity"> {{store_area !=''?store_area:curCity}}
+                <image mode="aspectFill" src="../../images/bottom.png"></image>
+              </view>
+              <view>{{weather.wea}} {{weather.tem}}</view>
+            </view>
+            <navigator class="selectbtn flexbox"  url="../../pages/select/select?city={{store_area !=''?fcity:curCity}}&store_area={{store_area}}&&longitude={{longitude}}&latitude={{latitude}}">
+              <label><image src="../../images/select.png" mode="aspectFill"></image></label>
+              <!-- <input placeholder="一鹿省全新升级  " placeholder-class="placeholder"></input> -->
+              <text class="placeholder">一鹿省</text>
+            </navigator>
+          </view>
+          <!-- <view class="moreSelect" bindtap="saoma">
+            <image src="../../images/more10.png" mode="aspectFill"></image>更多
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="swiperbox">
+    <swiper id='loop'	 circular class="swiper" source current="{{swiperCurrent}}"  bindchange="swiperChange">
+      <block wx:for="{{list_ad}}"  wx:key="item">
+          <swiper-item>
+              <image lazy-load='true' src="{{item.ad_pic}}" mode="widthFix" class="slide-image" />
+          </swiper-item>
+      </block>
+    </swiper>
+  
+      <!--重置小圆点的样式  -->
+      <view class="dots">  
+          <block wx:for="{{list_ad}}" wx:key="item">  
+              <view class="dot {{index == swiperCurrent ? ' dotactive' : ''}}"></view>  
+          </block>  
+      </view> 
+  </view>
+  <view wx:if='{{isShowCate}}' class="nav flexbox">
+    <block  wx:for='{{list_category}}' wx:key='index'>
+        <navigator class="nav_item"  url="../../pages/classification/classification?category_id={{item.category_id}}&sec_category_id={{item.sec_category_id}}&category_name={{item.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{store_area !=''?fcity:curCity}}&store_area={{store_area}}&store_street={{store_street}}" hover-class="navigator-hover" >
+        <image mode="aspectFill" src="{{item.category_pic}}"></image>
+        <view>{{item.category_name}}</view>
+      </navigator>
+    
+    </block>
+  </view>
+  <!-- 二级分类导航 -->
+  <view  wx:if='{{isShowCate}}'  class="nav nav1 flexbox"> 
+  
+    <block  wx:for='{{list_category_second}}' wx:key='index'>
+      <navigator class="nav_item"  wx:if="{{item.category_name=='全部'}}"  url="../../pages/allCategories/allCategories?category_id={{item.category_id}}&sec_category_id={{item.sec_category_id}}&category_name={{item.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}&store_area={{store_area}}&store_street={{store_street}}" hover-class="navigator-hover" >
+      <image  mode="aspectFill" src="{{item.category_pic}}"></image>
+      <view>{{item.category_name}}</view>
+      </navigator>
+        <navigator class="nav_item" wx:else  url="../../pages/classification/classification?category_id={{item.category_id}}&sec_category_id={{item.sec_category_id}}&category_name={{item.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}&store_area={{store_area}}&store_street={{store_street}}" hover-class="navigator-hover" >
+        <image src="{{item.category_pic}}"></image>
+        <view>{{item.category_name}}</view>
+      </navigator>
+    
+    </block>
+  </view>
+  <view class="adds flexbox radiusbox">
+    <image src="../../images/toutiao.png"  mode="aspectFit"></image>
+    <view class="new">NEW</view>
+    <view class="add">
+      <swiper  autoplay="true" vertical='true' circular='true' interval='1500' >
+        <swiper-item wx:for='{{list_headlines}}' wx:key='item'  catchtouchmove="returnTap">{{item.content}}</swiper-item>
+      </swiper>
+    </view>
+  </view>
+  <view class="goods_item radiusbox" >
+    <navigator class="goods_item_head flexbox" url="../../pages/classification/classification?store_url=list_store_save_more&category_name=省到爆&store_city={{curCity}}&&longitude={{longitude}}&latitude={{latitude}}">
+      <text>省到爆</text>
+      <view>更多 ></view>
+    </navigator>
+    <view class="goods_item_body" wx:if='{{list_store_save.length>0}}'>
+      
+      <scroll-view scroll-x='true' class="goods_item_scroll" enable-flex='true' style="">
+        <navigator class="goods_item_detail" wx:for="{{list_store_save}}" wx:key='index' url="../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{curcity}} ">
+          <view class="goods_img">
+            <image  lazy-load="true"  src="{{item.store_logo?item.store_logo:'../../images/noImg1.png'}}"  mode="aspectFill"></image>
+          </view>
+          <view class="flexbox spaceBetween"><view class="goods_title ellipsis">{{item.store_name}}</view><image  class="tehui" src="../../images/th.png"></image></view>
+          <view class="flexbox">
+            <image class="stars"src="../../images/redstar.png"  mode="aspectFill"></image>
+            <text class="pink">{{item.store_score}}</text>
+            <text>月售{{item.month_count}}</text>
+          </view>
+        </navigator>
+
+      </scroll-view>
+    </view>
+    <image  class="goods_item_body" mode="aspectFit" src="../../images/nosave.png" wx:else></image>
+  </view>
+  <view class="goods_item radiusbox">
+    <navigator class="goods_item_head flexbox" url="../../pages/classification/classification?store_url=list_store_choice_more&category_name=小鹿精选&store_city={{curCity}}&&longitude={{longitude}}&latitude={{latitude}}">
+      <text>小鹿精选</text>
+      <view>更多 ></view>
+    </navigator>
+    <view class="goods_item_body"  wx:if='{{list_store_choice.length>0}}'>
+      
+      <scroll-view scroll-x='true' class="goods_item_scroll" enable-flex='true' style="">
+        <navigator class="goods_item_detail" wx:for="{{list_store_choice}}" wx:key='index' url="../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{curcity}} ">
+          <view class="goods_img">
+            <image  lazy-load="true"  src="{{item.store_logo?item.store_logo:'../../images/noImg1.png'}}"  mode="aspectFill"></image>
+          </view>
+          
+          <view class="flexbox spaceBetween"><view class="goods_title ellipsis">{{item.store_name}}</view><image  class="tehui" src="../../images/th.png"></image></view>
+          <view class="flexbox">
+            <image class="stars"src="../../images/redstar.png"  mode="aspectFill"></image>
+            <text class="pink">{{item.store_score}}</text>
+            <text>月售{{item.month_count}}</text>
+          </view>
+        </navigator>
+
+      </scroll-view>
+    </view>
+    
+    <image  class="goods_item_body"  mode="aspectFit"  src="../../images/nochoice.png" wx:else></image>
+  </view>
+  <view class="store_items">
+    <template is="morefall" data="{{stores,floorstatus,curCity}}"></template>
+  </view>
+
+</scroll-view>
+
+<view class="help">
+  <button   session-from="nickName={{userInfo.nickName}}|avatarUrl={{userInfo.avatarUrl}}}"  open-type="contact"  bindcontact="handleContact"></button>
+  
+  <button class="usermask" wx:if='{{isUser}}' hidden="{{zIndex==0}}"   open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  <button class="usermask phonemask"  wx:if="{{isPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+  <image src="../../images/help.png" style="zIndex:{{zIndex}}" ></image>
+</view>
+
+<view class="nomore-tip" style="margin-top:-16rpx;  text-align: center" ><text  wx:if="{{ nomoreL==1&& stores.length<1 }}">没有更多数据了哦~</text><image  wx:else src="../../images/loading.gif"></image></view> 
+
+<view class="popup" catchtouchmove="returnTap" wx:if='{{isCityMask}}'>
+  <view class="mask"></view>
+  <view class="popupbox">
+    <view class="popupbg flexbox">
+      <image src="../../images/nosave.png" mode="aspectFit"></image>
+    </view>
+    <view class="popupbg flexbox"><view style="line-height:{{isCityMask1==1?'88rpx':'1.6'}}">{{text1}}</view></view>
+    <view class="popupbutton flexbox spaceBetween">
+      <button class="cancle" bindtap="showMnew">取消</button>
+      <button class="sure" bindtap="getLocal" wx:if='{{isCityMask1==1}}'>确定</button>
+      <button class="sure" bindtap="getLocal" wx:elif='{{isCityMask1==2}}'>确定</button>
+      <button class="sure"  wx:else  open-type="openSetting" bindopensetting='handleSetting'>确定</button>
+    </view>
+  </view>
+</view>

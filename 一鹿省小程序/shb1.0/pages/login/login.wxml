@@ -1,0 +1,20 @@
+<form bindsubmit="formSubmit">
+    <view class="container">
+    <text class="registered">手机号登录/注册</text>
+    <text class="agree">登录注册表示用户同意</text>
+    <text class="userAgreement">《用户协议》</text>
+    <image class="phoneNum" src="../../images/registered/phone.png"></image>
+    <input class="inputPhone" placeholder="请输入手机号" placeholder-style="color:#EEEEEE" 
+        name="mobile" value=""></input>
+    <text class="line"></text>
+    <image class="verificationCode" src="../../images/registered/yan.png"></image>
+    <input class="inputVerificationCode" placeholder="请输入密码" placeholder-style="color:#EEEEEE" 
+        name="password" value="" type="password"></input>
+    <text class="line1"></text>
+    <text class="forgetpsd">忘记密码</text>
+    <navigator url="../registered/registered">
+        <text class="login">手机验证码登录</text>
+    </navigator>
+        <button class="enter" type="primary" form-type="submit">进入一鹿省</button>
+    </view>
+</form>

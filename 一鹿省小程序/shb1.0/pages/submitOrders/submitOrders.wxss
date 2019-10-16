@@ -1,0 +1,352 @@
+
+
+ @import "/template/wxss/waterfall.wxss"; 
+/* 整体大容器 */
+
+.container{
+  width: 750rpx;
+  min-height: 1200rpx;
+  padding-bottom: 120rpx;
+  background-color: #EEEEEE;
+  position: relative;
+}
+
+/* 店铺详情 */
+.storeDetails{
+  margin: 20rpx 0;
+  width: 702rpx;
+  height:179rpx;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+/* 图标 */
+.icon{
+  width: 60rpx;
+  height: 56rpx;
+  margin: 50rpx 30rpx 0 30rpx;
+  border-radius: 5px;
+}
+/* 店名 */
+.storeName{
+    font-size: 26rpx;
+    line-height: 1.6;
+    padding:20rpx 0 ;
+}
+/* 具体位置信息 */
+.detailLocaltion{
+  display: block;
+  width: 551rpx;
+  height:77rpx;
+  overflow: scroll;
+  left: 117rpx;
+  top: 76rpx;
+  color: #939090;
+  line-height: 38rpx;
+}
+/* 订单详细信息 */
+.orderDetails{
+  position: relative;
+  width:702rpx;
+  max-height:500rpx;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.orderWrap{
+  width:702rpx;
+  height: 146rpx;
+  border: 1rpx solid transparent;
+}
+/* 商品图片 */
+.orderImg{
+  margin: 30rpx 0 0 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+/* 订单描述 */
+.orderdesc{
+  width: 50%;
+  line-height: 1.8;
+  padding: 20rpx;
+}
+.orderDescript{
+  font-size: 28rpx;
+  color: #323232;
+}
+/* 订单名 */
+.orderName{
+  
+  /* margin-left: 162rpx; */
+  top: 106rpx;
+  font-size: 22rpx;
+  color: #939090;
+}
+/* 用餐人数 */
+.userNum{
+  
+  /* margin-left: 274rpx; */
+  top:106rpx;
+  font-size: 19rpx;
+  color: #939090;
+}
+/* 商品份数 */
+.orderNum{
+  color: #323232;
+  font-size: 30rpx;
+  margin-right: 50rpx;
+}
+/* 商品价格 */
+.orderPrice{
+  color: #323232;
+  font-size: 36rpx;
+}
+/* 分割线 */
+.boline{
+  width: 75%;
+  border-bottom: 1rpx solid rgba(0,0,0,0.1);
+  padding: 20rpx 0;
+  align-items:center;
+}
+.nobor{
+  border-bottom-color:transparent; 
+}
+/* 下拉提示 */
+.backWhite{
+  height: 50rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+}
+.more{
+  position: absolute;
+  bottom: 20rpx;
+  left: 45%;
+  width: 36rpx;
+  height: 20rpx;
+  display: block;
+}
+/* 桌号备注信息 */
+.deskRemarks{
+  border-radius: 20rpx;
+  background-color: #FFFFFF;
+  padding: 20rpx 30rpx ;
+}
+
+/* 桌号 */
+.deskNum{
+  height: 100rpx;
+  line-height: 80rpx;
+}
+
+.deskNum  view,.remarks view{
+  width: 80rpx;
+}
+.remarks{
+  height: 140rpx;
+  position: relative;
+}
+.deskNum,.remarks{
+  width: 640rpx;
+  color: #323232;
+  font-size: 30rpx;
+}
+/*桌号输入框 */
+.inputNum,.inputRemarks{
+  width: 85%;
+  height: 80rpx;
+  color: #939090;
+  font-size: 28rpx;
+  border-bottom:1px solid #f1f1f1; 
+  position: static;
+  z-index: 0;
+}
+/* 备注 */
+.inputRemarks{
+  height: auto;
+  border-bottom: 0;
+   padding-top: 6rpx;
+  width: 80%;
+  position: absolute;
+  left: 80rpx;
+  min-height: 80rpx;
+}
+.place-holder {
+    color: #939090;
+    font-size: 28rpx;
+}
+.clear{
+    position: absolute;
+    top: 36rpx;
+    right: 20rpx;
+    width: 31rpx;
+    height: 31rpx;
+}
+
+/* 底部tarBar */
+ .tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  padding-left: 20rpx;
+}
+/* 在线付 */
+.moneyBox{
+  width: 56%;
+  padding: 20rpx 0;
+  line-height: 1.4;
+}
+.onlinePay{
+  
+  left: 24rpx;
+  top: 25rpx;
+  color: #323232;
+  font-size: 32rpx;
+}
+/* 具体金额 */
+.totalMoney{
+  
+  top: 25rpx;
+  left: 127rpx;
+  color: #FF1D3A;
+  font-size: 32rpx;
+}
+/* 已优惠 */
+.offer,.offerMoney{
+  
+  top: 66rpx;
+  left: 24rpx;
+  color: #939090;
+  font-size: 20rpx;
+}
+.offerMoney{
+  color: #fb8f44;
+  left:115rpx;
+}
+/* 明细 */
+.detail{
+  width: 60rpx;
+  color: #fb8f44;
+  font-size: 20rpx;
+  line-height: 110rpx;
+}
+/* 明细图标 */
+.detailInco{
+  width:20rpx;
+  height: 11rpx;
+}
+/* 微信支付 */
+.settlement{
+  position: absolute;
+  bottom: 0;
+  right: 0rpx;
+  background-color: #FF1D3A;
+  width: 208rpx;
+  height: 110rpx;
+  color: #FFFFFF;
+  line-height: 110rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+/*mask*/
+.drawer_screen {
+  width: 100%;
+  height: 91.8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+}
+.drawer_content{
+  padding: 16rpx 24rpx;
+}
+/*content*/
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom:106rpx;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.moneyDetailsWrap{
+  width:702rpx;
+  overflow-y: scroll;
+  align-items:center;
+  padding-top: 16rpx;
+}
+.moneyDetails{
+    height:80rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    font-size: 30rpx;
+    color: #737370;
+    line-height: 80rpx; 
+}
+.money{
+    color: #FF1D3A;
+}
+.proDetails{
+    color: #111111;
+    font-size: 30rpx;
+}
+.ainco{
+    color: #FF1D3A;
+    font-weight: bold;
+    font-size: 40rpx;
+    margin-right: 16rpx;
+}
+/* 购物车遮罩层 */
+.submit{   
+  position: fixed;   
+  left: 0;  
+  bottom: 0;   
+  }  
+.mingXi{   
+  display: inline-block;   
+  height: 120rpx;   
+  width: 100rpx;   
+  float: right;   
+  line-height: 120rpx;   
+  margin-right: 20rpx;  
+  }  
+
+/*遮罩层 */  
+.shade{   
+  width:100%;   
+  height:100%;   
+  top:0;   
+  background:rgba(0,0,0,0.5);   
+  overflow: hidden;     
+  z-index: 1;   
+    
+  }   
+  
+/*显示与隐藏的内容即点击核算后所展示的详细内容 */  
+.conts{   
+  width: 100%;   
+  height: 428rpx;   
+  background-color: white;   
+  position: fixed;   
+  top: 636rpx;   
+  text-indent: 60rpx;  
+  }  
+    
+/*显示整个conts */  
+.show{   
+  display: block;  
+  }  
+/*隐藏整个conts */  
+.hide{   
+  display: none;  
+  }  
+

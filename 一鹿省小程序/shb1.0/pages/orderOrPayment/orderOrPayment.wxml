@@ -1,0 +1,28 @@
+<image mode="aspectFit"  src="../../images/left.png" class="toHome" bindtap="toHome"></image>
+<image mode="aspectFit"  src="../../images/orderOrPayment/bg.png" class="bgimg" style="height:{{containerH}}px" ></image>
+
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+<!-- <button   session-from="nickName={{userInfo.nickName}}|avatarUrl={{userInfo.avatarUrl}}}"  open-type="contact"  bindcontact="handleContact">联系客服</button> -->
+<!-- <template is="showModal" data="{{isUser}}"></template>
+<template is="showModal" data="{{isPhone}}"></template> -->
+<!-- <view  class="usermask"  wx:if='{{isshowModal}}'   bindtap='showModal'></view> -->
+<view class="container">
+  <button class="usermask" wx:if='{{isUser}}' bindtap='showLoading'  open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+  <button class="usermask phonemask"  wx:if="{{isPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+  <!-- <navigator wx:if='{{hasGoods}}' url="../storeDetails/storeDetails?store_id={{store_id}}&user_id={{user_id}}&token={{token}}&category_id={{category_id}}">
+      <image class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png"></image>
+  </navigator> -->
+  <view wx:if='{{hasGoods}}' bindtap="toStoreDetail">
+      <image class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png"></image>
+  </view>
+   <image wx:else class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png" bindtap="getStoreData" data-index="1"></image>
+    <text class="oerderText">点单</text>
+  <view bindtap="gotoPay"> 
+    
+      <image class="paymentInco" mode="aspectFit" src="../../images/orderOrPayment/pay.png"></image>
+      
+      <text class="paymentText">付款</text>
+  </view>
+  
+</view>

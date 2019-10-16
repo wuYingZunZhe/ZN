@@ -1,0 +1,372 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.content{
+    position: relative;
+    width: 100%;
+    
+    overflow-x: hidden;
+}
+.swiperWrap{
+    position: relative;
+  width: 100%;
+  height:484rpx;
+  top: 20rpx;
+}
+.swiper{
+  position: absolute;
+  width: 100%;
+  height:484rpx;
+  top: 0rpx;
+  left: 0rpx;
+  }
+.slide-image{
+  width: 100%;
+}
+.goodsDetails{
+  width: 94%;
+  margin: 0 auto;
+  padding-bottom: 16rpx;
+  height: 320rpx;
+  position: relative;
+  border-bottom: 1rpx solid rgba(0, 0, 0, .1);
+}
+.productName{
+    position: absolute;
+    top: 125rpx;
+    left: 0;
+    color: #323232;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+.monthSale{
+    position: absolute;
+    top: 125rpx;
+    right: 0;
+    color: #939090;
+    font-size: 24rpx;
+}
+.platformPrice{
+    position: absolute;
+    top: 198rpx;
+    left: 0;
+    color: #FF1D3A;
+    font-size: 32rpx;
+}
+.storePrice{
+    position: absolute;
+    top: 264rpx;
+    left: 0;
+    color: #939090;
+    font-size: 30rpx;
+}
+.remainder{
+    position: absolute;
+    top: 246rpx;
+    right: 186rpx;
+    color: #939090;
+    font-size: 24rpx;
+}
+.range{
+    position: absolute;
+    top: 257rpx;
+    right:1rpx;
+    color: #939090;
+    font-size: 24rpx;
+    width: 148rpx;
+    height: 13rpx;
+    background:#FF1D3A;
+    border:1rpx solid #FF1D3A;
+    border-radius:7rpx;
+}
+.line{
+    position: absolute;
+    top: 346rpx;
+    left: 24rpx;
+    width:702rpx;
+    height:1rpx;
+    background:rgba(27,27,27,1);
+    opacity:0.1;
+}
+.wrapa,.evaluatebox{
+    width: 92%;
+    padding:40rpx 4% 20rpx;
+    line-height: 2;
+}
+.evaluatebox .proDetails{
+  margin: 40rpx 0 40rpx 0;
+}
+
+.proDetails,.evaluateText,.ownBusiness{
+    color: #111111;
+    font-size: 30rpx;
+}
+.proDetails{
+  border-left: 2px solid #FF1D3A;
+  padding-left: 20rpx
+}
+.evaluateText{
+    top: 35rpx;
+}
+.ownBusiness{
+    top: 2269rpx;
+}
+.detailsName{
+  margin: 20rpx 0;
+  color: #323232;
+  font-size: 28rpx;
+}
+.remark{
+  margin-top: 20rpx;
+    color: #939090;
+    font-size: 30rpx;
+}
+
+.remarkWrap{
+  font-size: 28rpx;
+  color: #323232;
+  line-height: 2
+
+}
+
+.parting{
+    width:750rpx;
+    height:10rpx;
+    background:rgba(238,238,238,1);
+}
+.evaluateWrap{
+    position: absolute;
+    width: 100%;
+    height: 1000rpx;
+    top: 1154rpx;
+    overflow-y: hidden;
+    /* border: 1rpx solid blue; */
+}
+  /* 评价详情 */
+.allEvaluate{
+  position:relative;
+  width: 730rpx;
+  height: 330rpx;
+  margin-left: 25rpx;
+  /* border: 1rpx solid blue; */
+}
+.allEvaluateImg{
+  height:435rpx;
+  /* border: 1rpx solid orangel; */
+}
+/* 头像 */
+.avatar{
+  position: absolute;
+  top: 110rpx;
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 1rpx solid salmon; */
+  border-radius: 50%;
+}
+/* 昵称 */
+.nickName,.evaDate{
+  position: absolute;
+  top: 90rpx;
+  left: 125rpx;
+  font-size: 26rpx;
+  color: #939090;
+}
+/* 日期 */
+.evaDate{ 
+  left: 564rpx;
+  font-size: 24rpx;
+}
+/* 星星 */
+.evaStar{
+  order: 1px solid blue;
+  width: 115rpx;
+  height: 23rpx;
+  position: absolute;
+  top: 145rpx;
+  left: 125rpx;
+  display: block;
+  background-color: red；
+}
+/* 非常满意 */
+.evaDescription{
+  position: absolute;
+  left: 246rpx;
+  top: 145rpx;
+  font-size: 24rpx;
+  color: #FF1D3A;
+}
+/* 详细评价 */
+.evaDetails{
+  position: absolute;
+  left: 125rpx;
+  top: 200rpx;
+  font-size: 30rpx;
+  color: #323232;
+}
+/* 评价图标 */
+.evaInco,.evaIncoHaveImg{
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  left: 125rpx;
+  top:270rpx;
+  /* border: 1rpx solid salmon; */
+}
+.evaIncoHaveImg{
+  top: 500rpx;
+}
+/* 更多评价  */
+.evaMore,.evaMoreHaveImg{
+  position: absolute;
+  left: 170rpx;
+  font-size: 24rpx;
+  color: #BFBFBF;
+  top:270rpx;
+}
+.evaMoreHaveImg{
+  top:500rpx;
+}
+/* 分割线 */
+.evaLine,.evaLineImg{
+  position: absolute;
+  left: 127rpx;
+  top:360rpx;
+  width: 621rpx;
+  border: 1rpx solid #EEEEEE;
+}
+.evaLineImg{
+  top:570rpx;
+}
+.evaImgWrap{
+   margin-left: 95rpx;
+}
+.evaImg{
+  float: left;
+  /* position: absolute; */
+  width: 190rpx;
+  height: 190rpx;
+  margin-left: 15rpx;
+  margin-top: 290rpx;
+  /* border: 1rpx solid yellow; */
+}
+.watchMore,.watchMoreTo{
+    position: absolute;
+    top: 2140rpx;
+    right:60rpx;
+    color: #FF1D3A;
+    font-size: 24rpx;
+}
+.watchMoreTo{
+    top: 2130rpx;
+    right: 24rpx;
+    font-size: 40rpx;
+}
+.partingLine{
+    position: absolute;
+    top: 2212rpx;
+    width:750rpx;
+    height:10rpx;
+    background:rgba(238,238,238,1);
+}
+.storeNameBottom{
+    position: absolute;
+    top: 2333rpx;
+    left: 24rpx;
+    color: #111111;
+    font-size: 33rpx;
+}
+.toOrder{
+    position: absolute;
+    top: 2360rpx;
+    right: 24rpx;
+    width:130rpx;
+    height:63rpx;
+    background:linear-gradient(0deg,rgba(249,77,30,1) 0%,rgba(251,149,62,1) 100%);
+    border-radius:10rpx;
+    text-align: center;
+    line-height: 63rpx;
+    color: #FFFEFE;
+    font-size: 30rpx;
+}
+.star{
+    position: absolute;
+    left: 24rpx;
+    top: 2396rpx;
+    width: 120rpx;
+    height: 23rpx;
+    border: 1rpx solid red;
+}
+.score{
+    position: absolute;
+    top: 2390rpx;
+    left: 163rpx;
+    color: #FF1D3A;
+    font-size: 24rpx;
+}
+.adressDesc,.type,.perCapita{
+    position: absolute;
+    top: 2390rpx;
+    left: 245rpx;
+    color: #939090;
+    font-size: 24rpx;
+}
+.type{
+    left: 342rpx;
+}
+.perCapita{
+    left: 459rpx;
+}
+
+.comment_item .userimg{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.comment_item .userimg image{
+  width: 100%;
+}
+.comment_infos{
+  width: 90%;
+  margin-left: 20rpx;
+  line-height: 2;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, .1)
+}
+.username{
+  justify-content:space-between;
+  color: #939090;
+  font-size: 20rpx;
+}
+.commentstars{
+  position: relative;
+  color: #FF1D3A;
+  font-size: 24rpx;
+}
+.commentstars image{
+  width: 23rpx;
+  height: 23rpx;
+
+}
+.commentstars text{
+  margin-left: 10rpx;
+}
+.comment_shareimg {
+  width: 600rpx;
+  padding: 20rpx 0 ;
+}
+.comment_shareimg image{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+.commentmark{
+  color: #BFBFBF;
+  font-size: 24rpx;
+}
+.commentmark image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: 12rpx;
+}
+

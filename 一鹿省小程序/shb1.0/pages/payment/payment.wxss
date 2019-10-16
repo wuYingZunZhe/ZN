@@ -1,0 +1,132 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.container{
+  width: 750rpx;
+  height: 100vh;
+  background-color: #EEEEEE;
+}
+.wrap{
+  width: 703rpx;
+  height:700rpx;
+  margin-top: 44rpx;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+/* 付款给商家 */
+.payMerchant{
+  padding: 79rpx 0 0 39rpx;
+  font-size: 28rpx;
+  color: #323232;
+}
+/* 商家头像 */
+.merchantInco{
+  position: absolute;
+  top: 39rpx;
+  right: 39rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border: 1rpx solid salmon;
+  border-radius: 50%;
+}
+/* 金额 */
+.amount{
+  padding: 40rpx 0 0 40rpx;
+  font-size: 28rpx;
+  color: #939090;
+}
+/* ￥ */
+.moneySign{
+  display: block;
+  padding-top: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 39rpx;
+  font-size: 60rpx;
+  color: #323232;
+  }
+  .inputMoney{
+    position: absolute;
+    top: 266rpx;
+    left: 105rpx;
+    width: 500rpx;
+    height: 90rpx;
+    font-size: 60rpx;
+    color: #323232;
+  }
+  .line{
+    position: absolute;
+    top: 350rpx;
+    left: 40rpx;
+    width:623rpx;
+    color: #EEEEEE;
+    border: 1rpx solid #EEEEEE;
+    display: block;
+  }
+  /* 备注 */
+  .remarks{
+    
+    margin-left: 39rpx;
+    margin-top: 60rpx;
+    font-size: 30rpx;
+    height: 60rpx;
+    color: #939090;
+  }
+  /* 备注内容 */
+  .remarksContent{
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+    color: #323232;
+    font-weight: 400;
+    overflow: scroll;
+    width:480rpx;
+    height:60rpx;
+    margin-left: 40rpx;
+    margin-top: 4rpx;
+    /* border: 1rpx solid rebeccapurple; */
+  }
+  
+  /* 桌号 */
+  .deskNum{
+    margin-top: 60rpx;
+    margin-left: 39rpx;
+    font-size: 30rpx;
+    color: #939090;
+    line-height: 60rpx;
+  }
+  
+  .inputNum{
+    /* position: absolute; */
+    /* top:-10rpx; */
+    margin-left:40rpx;
+    font-size: 30rpx;
+    color: #323232;
+    font-weight: 400;
+    overflow: scroll;
+    width: 480rpx;
+    height:60rpx;
+    /* border: 1rpx solid rebeccapurple; */
+  }
+  /* 微信支付 */
+.payForWechat{
+  width: 623rpx;
+  height: 81rpx;
+  background-color: #f94D1E;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  left: 40rpx;
+  bottom: 20rpx;
+}
+.mask{
+  position: absolute;
+  width: 623rpx;
+  height: 81rpx;
+  z-index: 99;
+}
+.place-holder{
+  font-size: 26rpx;
+}

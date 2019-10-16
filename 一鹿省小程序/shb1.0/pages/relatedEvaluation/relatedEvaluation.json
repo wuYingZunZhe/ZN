@@ -1,0 +1,8 @@
+{
+    "usingComponents": {},
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor":"white",
+    "navigationBarTitleText": "相关评价",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+}

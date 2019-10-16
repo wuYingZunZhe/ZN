@@ -1,0 +1,153 @@
+<view class="wrap">
+    <view class="menu_box">
+        <text class='menu1 {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">晒图({{list_type[1].evaluate_count}})
+        </text>
+        <text class='menu2 {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">好评({{list_type[2].evaluate_count}})
+        </text>
+        <text class='menu3 {{menuTapCurrent=="2"?"borders":""}}' data-current="2" catchtap="menuTap">低分({{list_type[3].evaluate_count}})
+        </text>
+        <text class='menu4 {{menuTapCurrent=="3"?"borders":""}}' data-current="3" catchtap="menuTap">全部({{list_type[0].evaluate_count}})
+        </text>
+    </view>
+
+    <!-- 晒图 -->
+    <view class="tab1" hidden="{{menuTapCurrent!='0'}}">
+        <view class="evaluate">
+            <!--带图片的评价  -->
+            <block wx:for="{{list_evaluate}}" wx:for-item="list_evaluate">
+                <!-- <block wx:for="{{evaHeadPic}}" wx:for-item="evaHeadPic"> -->
+                <view class="allEvaluate allEvaluateImg">
+
+                    <image class="avatar" src="{{evaHeadPic}}"></image>
+                    <text class="nickName">{{list_evaluate.user_name}}</text>
+                    <text class="evaDate">{{list_evaluate.add_time}}</text>
+                    <!-- <text class="evaStar"></text> -->
+                    <block wx:for="{{stars}}">
+                        <image class="evaStar" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:149rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:172rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:195rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:218rpx" src="{{selectedSrc}}"></image>
+                    </block>
+                    <text class="evaDescription">{{list_evaluate.evaluate}}</text>
+                    <text class="evaDetails">{{list_evaluate.content}}</text>
+                    <view class="evaImgWrap">
+                        <image class="evaImg" src="../../images/cake.png"></image>
+                        <image class="evaImg" src="../../images/cake.png"></image>
+                        <image class="evaImg" src="../../images/cake.png"></image>
+                    </view>
+                    <!-- <text class="evaInco evaIncoHaveImg"></text> -->
+                    <image class="evaInco evaIncoHaveImg" src="../../images/storeDetails/eva.png"></image>
+                    <text class="evaMore evaMoreHaveImg">{{list_evaluate.tags}}</text>
+                    <text class="evaLine evaLineImg"></text>
+
+                    <!-- <view class="allEvaluate">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">无可挑剔</text>
+                <text class="evaDetails">用户5天内未作出评价</text>
+                <text class="evaDefault"></text>
+            </view> -->
+
+                </view>
+                <!-- </block> -->
+            </block>
+        </view>
+    </view>
+    <!-- 好评 -->
+    <view class="tab2" hidden="{{menuTapCurrent!='1'}}">
+        <view class="evaluate">
+            <!-- 默认评价 -->
+            <view class="allEvaluate">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">无可挑剔</text>
+                <text class="evaDetails">用户5天内未作出评价</text>
+                <text class="evaDefault"></text>
+            </view>
+        </view>
+    </view>
+    <!-- 低分 -->
+    <view class="tab3" hidden="{{menuTapCurrent!='2'}}">
+        <view class="evaluate">
+            <!-- 默认评价 -->
+            <!-- <view class="allEvaluate">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">无可挑剔</text>
+                <text class="evaDetails">用户5天内未作出评价</text>
+                <text class="evaDefault"></text>
+            </view>
+            <view class="allEvaluate">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">无可挑剔</text>
+                <text class="evaDetails">用户5天内未作出评价</text>
+                <text class="evaDefault"></text>
+            </view> -->
+            <text class="noeva">暂无评价</text>
+        </view>
+    </view>
+    <!-- 全部 -->
+    <view class="tab4" hidden="{{menuTapCurrent!='3'}}">
+        <view class="evaluate">
+            <!-- 全部评价 -->
+            <block wx:for="{{list_evaluate}}" wx:for-item="list_evaluate">
+                <!-- <block wx:for="{{evaHeadPic}}" wx:for-item="evaHeadPic"> -->
+                <view class="allEvaluate">
+                    <image class="avatar" src="{{evaHeadPic}}"></image>
+                    <text class="nickName">{{list_evaluate.user_name}}</text>
+                    <text class="evaDate">{{list_evaluate.add_time}}</text>
+                    <block wx:for="{{stars}}">
+                        <image class="evaStar" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:149rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:172rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:195rpx" src="{{selectedSrc}}"></image>
+                        <image class="evaStar" style="left:218rpx" src="{{selectedSrc}}"></image>
+                    </block>
+                    <text class="evaDescription">{{list_evaluate.evaluate}}</text>
+                    <text class="evaDetails">{{list_evaluate.content}}</text>
+                    <image class="evaInco" src="../../images/storeDetails/eva.png"></image>
+                    <text class="evaMore">{{list_evaluate.tags}}</text>
+                    <text class="evaLine"></text>
+                </view>
+                <!-- </block> -->
+            </block>
+            <!--带图片的评价  -->
+            <!-- <view class="allEvaluate allEvaluateImg">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">非常满意</text>
+                <text class="evaDetails">呸！真难吃！！！！</text>
+                <view class="evaImgWrap">
+                    <image class="evaImg" src="../../images/cake.png"></image>
+                    <image class="evaImg" src="../../images/cake.png"></image>
+                    <image class="evaImg" src="../../images/cake.png"></image>
+                </view>
+                <text class="evaInco evaIncoHaveImg"></text>
+                <text class="evaMore evaMoreHaveImg">性价比高,体验感棒</text>
+                <text class="evaLine evaLineImg"></text>
+            </view> -->
+            <!-- 默认评价 -->
+            <!-- <view class="allEvaluate">
+                <text class="avatar"></text>
+                <text class="nickName">s**s</text>
+                <text class="evaDate">2018-5-17</text>
+                <text class="evaStar"></text>
+                <text class="evaDescription">无可挑剔</text>
+                <text class="evaDetails">用户5天内未作出评价</text>
+                <text class="evaDefault"></text>
+            </view> -->
+        </view>
+    </view>
+</view>

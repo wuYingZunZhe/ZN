@@ -1,0 +1,161 @@
+
+
+ @import "/template/wxss/waterfall.wxss"; 
+ .wrap{
+    position: relative;
+    width: 100%;
+}
+.menu_box{
+    display: flex;
+    height: 80rpx;
+}
+.menu1,.menu2,.menu3,.menu4{
+    flex: 1;
+    line-height: 80rpx;
+    text-align: center;
+    color: #939090;
+    font-size: 30rpx;
+ }
+.borders{
+ border-bottom: 4rpx solid #f00;
+ color: #f00;
+}
+.tab1,.tab2,.tab3,.tab4{
+ height: auto;
+ /* border: 1rpx solid aqua; */
+}
+.evaluate{
+  position: absolute;
+  width: 100%;
+  /* top: 885rpx; */
+  height:2000rpx;
+  overflow-x: hidden;/*禁止页面横向滚动*/
+  overflow-y: scroll;
+  /* border: 1rpx solid blue; */
+}
+.allEvaluate{
+  position:relative;
+  width: 730rpx;
+  height: 298rpx;
+  margin-left: 25rpx;
+  /* overflow: visible; */
+  /* border: 1rpx solid red; */
+}
+.allEvaluateImg{
+  height: 515rpx;
+  /* border: 1rpx solid red; */
+}
+/* 头像 */
+.avatar{
+  position: absolute;
+  top: 40rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border: 1rpx solid salmon;
+  border-radius: 50%;
+}
+/* 昵称 */
+.nickName,.evaDate{
+  position: absolute;
+  top: 35rpx;
+  left: 125rpx;
+  font-size: 26rpx;
+  color: #939090;
+}
+/* 日期 */
+.evaDate{ 
+  left: 567rpx;
+  font-size: 24rpx;
+}
+/* 星星 */
+/* .evaStar{
+  border: 1px solid blue;
+  width: 115rpx;
+  height: 23rpx;
+  position: absolute;
+  top: 80rpx;
+  left: 125rpx;
+  display: block;
+  background-color: red；
+} */
+/* 非常满意 */
+.evaDescription{
+  position: absolute;
+  left: 317rpx;
+  top: 36rpx;
+  font-size: 24rpx;
+  color: #FF1D3A;
+}
+/* 详细评价 */
+.evaDetails{
+  position: absolute;
+  left: 125rpx;
+  top: 147rpx;
+  font-size: 30rpx;
+  color: #323232;
+}
+/* 评价图标 */
+.evaInco,.evaIncoHaveImg{
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  left: 125rpx;
+  top:230rpx;
+  /* border: 1rpx solid salmon; */
+}
+.evaIncoHaveImg{
+  top:430rpx;
+}
+/* 更多评价  */
+.evaMore,.evaMoreHaveImg{
+  position: absolute;
+  left: 160rpx;
+  font-size: 24rpx;
+  color: #BFBFBF;
+  top: 230rpx;
+}
+.evaMoreHaveImg{
+  top:430rpx;
+}
+/* 分割线 */
+.evaLine,.evaLineImg,.evaDefault{
+  position: absolute;
+  left: 127rpx;
+  top:310rpx;
+  width: 621rpx;
+  border: 1rpx solid #EEEEEE;
+}
+/* 带有图片评论的分割线 */
+.evaLineImg{
+  top:485rpx;
+}
+/* 默认评论分割线分割线 */
+.evaDefault{
+    top: 250rpx;
+}
+.evaImgWrap{
+   margin-left: 95rpx;
+}
+.evaImg{
+  float: left;
+  /* position: absolute; */
+  width: 190rpx;
+  height: 190rpx;
+  margin-left: 15rpx;
+  margin-top: 205rpx;
+  /* border: 1rpx solid yellow; */
+}
+.noeva{
+    position: absolute;
+    text-align: center;
+    margin-top:100rpx;
+    color: gray;
+    margin-left: 40%;
+}
+.evaStar {
+    width: 23rpx;
+    height: 23rpx;
+    position: absolute;
+    top: 85rpx;
+    left: 125rpx;
+}

@@ -1,0 +1,206 @@
+<!-- 公共头部 -->
+<template name ='head'>
+  <navigator  open-type='navigateBack' target delta='1' class="backhome {{redBack?'backhome1':''}} " wx:if="{{redBack}}" ><image  src="../../images/back.png"></image></navigator>
+
+  <navigator  open-type='navigateBack' target delta='1' wx:else class="backhome" ><image  src="../../images/left.png"></image></navigator>
+  <view class="header {{redBack?'header1':''}}">
+    <view><text class="ellipsis">{{titlename}}</text></view>
+  </view>
+</template>
+<!-- 分类显示商铺 -->
+<template name ='waterfall'>
+    <navigator wx:for='{{stores}}' class="store_item radiusbox flexbox {{item.list_store_tag.length==0?'addHmarks':''}}" url='../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{city}} ' wx:key="item">  
+      <image src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}" lazy-load="true" mode="aspectFill"></image>
+      <view class="store_info">
+         <view class="store_title  flexbox spaceBetween">
+            <text class="ellipsis">{{item.store_name}}</text>
+            <image class="pinkBox" mode="aspectFill" src="../../images/th.png" wx:if="{{item.discount>0}}"></image>
+        </view>
+        <view class="store_score">
+          <text class="pinkB">{{item.store_score}}</text><text class="smallsize">分</text>{{item.discount}}条点评
+        </view>
+        <view class="marks">
+          <text wx:if='{{item.discount}}' class=" {{item.discount>0?'gold':''}}">{{item.discount}}.0折特惠</text>
+          <text wx:for="{{item.list_store_tag}}" class="pink" wx:key='item' wx:for-item='tag'>{{tag}}</text>
+        </view>
+        <view class="address ">
+          <text>{{item.store_area}}</text>
+          <text class="textover">{{item.store_desc}}</text>
+        </view>
+        <view class="money  flexbox">
+          <text>距您{{item.distance}}公里</text>
+          <view wx:if="{{item.average_price!='0.00'}}">
+            <!-- <text class="formal">￥567</text> -->
+            <text class="pink">￥</text>
+            <text class="pinkB">{{item.average_price}}</text>起
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view>
+      <!-- <view class="loading"></view> -->
+    </view>
+    <image src="../../images/top.png" mode="aspectFit" class="toTop"  hidden='{{!floorstatus}}'  bindtap="toTop"> </image>
+</template>
+<!-- 搜索显示商铺 -->
+<!-- <template name ='selectShow'>
+    <navigator  wx:for='{{stores}}' class="store_item radiusbox flexbox  " url='../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{city}} ' wx:key="item">  
+      <image src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}" lazy-load="true" mode="aspectFill"></image>
+      <view class="store_info">
+         <view class="store_title  flexbox spaceBetween">
+            <text>{{item.store_name}}</text>
+            <image class="pinkBox" mode="aspectFill" src="../../images/th.png" wx:if="{{item.discount>0}}"></image>
+        </view>
+        <view class="store_score">
+          <text class="pinkB">{{item.store_score}}</text><text class="smallsize">分</text>{{item.comment_count}}条点评
+        </view>
+        <view class="marks">
+          <text wx:if='{{item.discount}}' class=" {{item.discount>0?'gold':''}}">{{item.discount}}.0折特惠</text>
+          <text wx:for="{{item.list_store_tag}}" wx:key='item' wx:for-item='tag'>{{tag.tag_name}}</text>
+        </view>
+        <view class="address ">
+          <text>{{item.store_area}}</text>
+          <text class="textover">{{}}</text>
+        </view>
+        <view class="money  flexbox">
+          <text>距您{{item.distance}}公里</text>
+          <view hidden>
+            <text class="formal">￥{{item.goods_price}}</text>
+            <text class="pink">￥</text>
+            <text class="pinkB">{{item.discount_price}}</text>起
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view>
+    </view>
+    <image src="../../images/top.png" mode="aspectFit" class="toTop"  hidden='{{!floorstatus}}'  lazy-load="true" bindtap="toTop"> </image>
+</template> -->
+
+
+<!-- 更多显示商铺 -->
+<template name ='morefall'>
+    <navigator class="store_item radiusbox flexbox" wx:for='{{stores}}' url='../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{curCity}} ' wx:key="item">  
+      <image src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}" lazy-load="true" mode="aspectFill"></image>
+      <view class="store_info store_info_more">
+         <view class="store_title  flexbox spaceBetween">
+            <text class="ellipsis">{{item.store_name}}</text>
+            <image class="pinkBox" mode="aspectFill" src="../../images/th.png" wx:if="{{item.discount>0}}"></image>
+        </view>
+        <view class="store_score">
+          <text class="pinkB">{{item.store_score}}</text><text class="smallsize">分</text>{{item.comment_count}}条点评
+        </view>
+        <view class="marks">
+          <text wx:if='{{item.discount}}' class=" {{item.discount>0?'gold':''}}">{{item.discount}}.0折特惠</text>
+          <text wx:for="{{item.list_store_tag}}" wx:key='item' wx:for-item='tag'>{{tag.tag_name}}</text>
+        </view>
+        <view class="address ">
+          <text>{{item.store_area}}</text>
+          <text class="textover">{{item.store_desc}}</text>
+        </view>
+        <view class="money  flexbox">
+          <text>距您{{item.distance}}公里</text>
+          <view wx:if="{{item.discount>0}}" >
+            <!-- <text class="formal">￥{{item.goods_price}}</text> -->
+            <text class="pink">￥</text>
+            <text class="pinkB">{{item.discount}}折</text>起
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <image src="../../images/top.png" mode="aspectFit" class="toTop"  hidden='{{!floorstatus}}'  lazy-load="true"  bindtap="toTop"> </image>
+    
+</template>
+
+
+<!-- 省到爆显示 -->
+<template name ='waterfall_save'>
+    <navigator  wx:for='{{stores}}'  class="store_item save_item flexbox {{index==stores.length?'save_item1':''}}" url='../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{city}} ' wx:key="item" >  
+      <image src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}" class="showImg" lazy-load="true" mode="aspectFill"></image>
+      <view class="store_info">
+         <view class="save_title flexbox">
+            <text>{{item.store_name}}</text>
+            <image class="pinkBox" mode="aspectFill" src="../../images/th.png" wx:if="{{item.discount>0}}"></image>
+        
+        </view>
+        <view class="store_score">
+          <image  src="{{item.store_score>0?'../../images/redstar.png':'../../images/star.png'}}" lazy-load="true" mode="aspectFill" wx:key='index'></image>
+          <image  src="{{item.store_score>1?'../../images/redstar.png':'../../images/star.png'}}" lazy-load="true" mode="aspectFill" wx:key='index'></image>
+          <image  src="{{item.store_score>2?'../../images/redstar.png':'../../images/star.png'}}" lazy-load="true" mode="aspectFill" wx:key='index'></image>
+          <image  src="{{item.store_score>3?'../../images/redstar.png':'../../images/star.png'}}" lazy-load="true" mode="aspectFill" wx:key='index'></image>
+          <image  src="{{item.store_score>4?'../../images/redstar.png':'../../images/star.png'}}" lazy-load="true" mode="aspectFill" wx:key='index'></image>
+          <text class="pink">{{item.store_score}}分</text>
+        </view>
+        <view class="address flexbox">
+          <text class="fz24">均价 ¥ {{item.average_price}}</text>
+          <text class="fz18">月售{{item.month_count}}</text>
+        </view>
+        <view class="fz20 flexbox">
+          <text>[{{item.store_area}}]{{item.store_desc}}</text>
+        </view>
+        <view  class="money flexbox" >
+          <view class=" fz18" >
+            <text wx:if='{{item.discount>0}}' class=" {{item.discount>0?'gold':''}}">{{item.discount}}.0折特惠</text>
+            <text  wx:for="{{item.list_store_tag}}" wx:for-item='listitem' wx:key="{{listitem.tag_name}}" class="{{listitem.tag_name=='特惠'?'':'pink'}}">{{listitem.tag_name}}</text></view>
+          <view >
+            <text class="fz23">{{item.distance}}km</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <view>
+      <!-- <view class="loading"></view> -->
+    </view>
+    <image src="../../images/top.png" mode="aspectFit" class="toTop"  hidden='{{!floorstatus}}'  lazy-load="true" bindtap="toTop"> </image>
+</template>
+<!-- 小鹿精选显示 -->
+<template name ='waterfall_choice'>
+  <navigator  wx:for='{{stores}}' url='../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{city}} ' class="store_item choice_item radiusbox "  wx:key="item" >  
+      <view class="flexbox">
+        <image src="{{item.store_logo?item.store_logo:'../../images/noImg.png'}}" lazy-load="true" class="store_logo" mode="aspectFill"></image>
+        <view class="store_info">
+            <view class="store_title flexbox spaceBetween">
+              <text class="store_title_name ellipsis">{{item.store_name}}</text>
+              <text class="fz24">月售{{item.month_count}}</text>
+          </view>
+          <view class="fz18">
+          <text wx:if='{{item.discount}}' class=" {{item.discount>0?'gold':''}}">{{item.discount}}.0折特惠</text>
+            <text class="pink" wx:for="{{item.list_store_tag}}" wx:for-item="tag" wx:key="{{tag.tag_name}}">{{tag.tag_name}}</text>
+          </view>
+        </view>
+      </view>
+      
+      <view class="choice_list flexbox">
+        <view class="choice_list_good" wx:for="{{item.list_goods}}" wx:for-item='goods' wx:key='{{goods.goods_name}}'>
+          <image src="{{goods.goods_pic}}" lazy-load="true"  mode="aspectFill"></image>
+          <view>{{goods.goods_name}}</view>
+          <view class="pink">¥ <text class="fz22">{{goods.discount_price}}</text></view>
+        </view>
+      </view>
+      <view class="choice_evaluate ellipsis" wx:if="{{item.evaluate !='暂无用户评价'}}">顾客评论：“{{item.evaluate}}”</view>
+    </navigator>
+  <image src="../../images/top.png" mode="aspectFit" class="toTop"  hidden='{{!floorstatus}}'  lazy-load="true" bindtap="toTop"> </image>
+</template>
+
+<template name ='showModal'>
+  <view class="showmaskbox"  wx:if='{{ isPhone||isUser  || istoStore}}'>
+    <view class="box">
+      <view class="mind" wx:if="{{isPhone || isUser}}">
+        <text>温馨提示</text>
+        <view> 需要您授权{{isUser?'个人信息':'手机号码'}}哦！</view>
+      </view>
+      <view class="mind" wx:if="{{istoStore}}">
+        <text>订单未完成，要离开吗？</text>
+        <view>离开后您的订单将在倒计时后自动取消，可在待付款订单中查看</view>
+      </view>
+      <view class="flexbox" bindtap="closeshowModal">
+        <view class="cancle" data-index="{{isUser?'1':'2'}}">{{istoStore?'再看看':'取消'}}</view>
+        <view>
+          <button wx:if='{{istoStore}}' bindtap="istoStore">确定</button>
+          <button wx:if='{{isUser}}' bindtap='showLoading'  open-type="getUserInfo" bindgetuserinfo="getUserInfo">确定</button>
+          <button wx:if="{{isPhone}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

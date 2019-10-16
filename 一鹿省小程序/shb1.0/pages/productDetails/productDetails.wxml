@@ -1,0 +1,74 @@
+<view class="content">
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename}}"></template>
+    <!-- 轮播图 -->
+    <view class="swiperWrap">
+        <swiper autoplay="{{true}}" source interval="{{5000}}" duration="{{1000}}" class="swiper" >
+            <block wx:for="{{imgUrls}}" wx:key='index'>
+                <swiper-item>
+                    <image src="{{item.goods_pic}}" mode="aspectFit" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <block wx:if="{{goodsDetails}}" >
+      <view class="goodsDetails">
+          <text class="productName">{{goodsDetails.goods_name}}</text>
+          <text class="monthSale">月售{{goodsDetails.month_count}}</text>
+          <text class="platformPrice">平台价:￥{{goodsDetails.discount_price}}</text>
+          <text class="storePrice">门店价:¥{{goodsDetails.goods_price}}</text>
+          <text class="remainder">剩余{{goodsDetails.stock_count}}份</text>
+          <text class="range"></text>
+          
+      </view>
+  
+    </block>
+
+  <view class="wrapa" wx:if='{{goodsDetails.goods_desc}}'>
+      <view class="proDetails">商品详情</view>
+      <view class="detailsName">{{goodsDetails.goods_desc}}</view>
+      <view wx:if="{{goodsDetails.goods_remark}}">
+        <view class="remark" >备注</view> 
+        <view class="productContent">{{goodsDetails.goods_remark}}</view><br/>
+        <view class="remarkWrap">
+            <view class="productNameNum">田园沙拉冰淇淋（2份）</view>
+            <!-- <view class="productNameNum">盐酥鸡（1份）</view>
+            <view class="productNameNum">饮料(2杯)</view> -->
+        </view> 
+      </view>
+      <!-- <view class="parting"></view> -->
+  </view>
+  
+  <view class="evaluatebox" wx:if="{{list_evaluate1}}">
+      <view class="proDetails">相关评价</view>
+    <block  wx:for="{{list_evaluate1}}" wx:for-item="list_evaluate1" wx:for-index="index" wx:key="list_evaluate1" hidden="{{len==0}}">
+      <view class="comment_item flexbox">
+          <view  class="userimg">
+            <image mode="aspectFill" src="{{list_evaluate1.head_pic}}" ><view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap=""></view>
+                                <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap=""></view></image>
+          </view>
+          <view class="comment_infos {{index==len-1?'noBor':''}}">
+            <view class="username flexbox">
+              <view>{{list_evaluate1.user_name}}</view>
+              <view>{{list_evaluate1.add_time}}</view>
+            </view>
+            <view class="commentstars">
+              <block wx:for="{{stars}}" wx:key="stars">
+                <image  src="{{store_score > item ?(store_score == 0.5?halfSrc:selectedSrc) : normalSrc}}"></image>
+              </block>
+              <text>{{list_evaluate1.evaluate}}</text>
+            </view>
+            <view class="commentinfo">{{list_evaluate1.content}}</view>
+            <scroll-view scroll-x="true" wx:if="{{list_evaluate1.pics}}" class="comment_shareimg flexbox">
+                <image  src="{{list_evaluate1.pics}}" ></image>
+            </scroll-view>
+            <view class="commentmark flexbox">
+              <image  src="../../images/storeDetails/eva.png" ></image>
+              <text>{{list_evaluate1.tags}}</text>
+            </view>
+          </view>
+      </view>
+    </block>
+  </view>
+    
+</view>

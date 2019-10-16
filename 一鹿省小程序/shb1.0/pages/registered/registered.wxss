@@ -1,0 +1,134 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+.container{
+  width: 750rpx;
+  height: 1334rpx;
+  position: relative;
+  /* border: 1px solid rebeccapurple; */
+}
+/* 手机号注册 */
+.registered{
+  position: absolute;
+  top: 5px;
+  left: 24rpx;
+  color: #2B2A2A;
+  font-size: 40rpx;
+  font-weight:500;
+}
+/* 登录注册表示用户同意《用户协议》 */
+.agree,.userAgreement{
+  position: absolute;
+  top:90rpx;
+  left: 23rpx;
+  color: #939090;
+  font-size: 24rpx;
+}
+/* 用户协议 */
+.userAgreement{
+  left: 145px;
+  color: #FF1D3A;
+  cursor: pointer;
+}
+/* 手机号,验证码,推荐人图标 */
+.phoneNum,.verificationCode,.referrer{
+  position: absolute;
+  top:187rpx;
+  left: 24rpx;
+  width: 33rpx;
+  height: 39rpx;
+  /* border: 1px solid salmon; */
+}
+/* 手机号,验证码,推荐人输入框 */
+.inputPhone,.inputVerificationCode,.inputReferrer{
+  position: absolute;
+  top: 185rpx;
+  left: 91rpx;
+  width: 450rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #666666;
+  letter-spacing: 2rpx;
+}
+input::placeholder{
+  color: #C8C7C8;
+  
+}
+/* 分割线 */
+.line,.line1,.line2{
+  position: absolute;
+  top: 267rpx;
+  width: 702rpx;
+  left: 24rpx;
+  display: block;
+  border: 1rpx solid #000000;
+  opacity: 0.1;
+}
+/* 验证码图标 */
+.verificationCode{
+  width: 39rpx;
+  height: 45rpx;
+  top:316rpx;
+}
+/* 验证码输入框 */
+.inputVerificationCode{
+  top: 315rpx;
+  /* border: 1rpx solid rebeccapurple; */
+}
+/* 倒计时 */
+.waitTime,.reacquire{
+  position: absolute;
+  left: 550rpx;
+  top: 310rpx;
+  width: 176rpx;
+  height: 61rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid rgba(200,199,200,1);
+  color: #C8C7C8;
+  font-size: 22rpx;
+  line-height: 61rpx;
+  text-align: center;
+}
+/* 重新获取 */
+.reacquire{
+/* border:1rpx solid #FF1D3A;  */
+background-color: #FF1D3A;
+color: #FFFFFF;
+}
+/* 分割线 */
+.line1{
+   top: 395rpx;
+}
+/* 推荐人图标 */
+.referrer{
+  width: 38rpx;
+  height: 42rpx;
+  top: 435rpx;
+}
+/* 推荐人输入框 */
+.inputReferrer{
+  top: 435rpx;
+}
+/* 分割线 */
+.line2{
+  top: 510rpx;
+}
+/*账号密码登录 */
+.login{
+  position: absolute;
+  top: 553rpx;
+  left: 571rpx;
+  font-size: 26rpx;
+  color: #FF1D3A;
+}
+/* 进入按钮 */
+.enter{
+  position: absolute;
+  top: 650rpx;
+  left: 24rpx;
+  width: 702rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  background-color: #FF1D3A!important;
+  border-radius: 10rpx;
+  color: #FFFFFF;
+}

@@ -1,0 +1,11 @@
+<!--pages/changeLocaltion/changeLocaltion.wxml-->
+<view class="selectHead flexbox">
+  <image src="../../images/close.png" class="close" mode="aspectFit"></image>
+  
+  <view class="selectbtn flexbox">
+    <label><image src="../../images/select.png" mode="aspectFit"></image></label>
+    <input  placeholder="一鹿省全新升级" bindinput='inputup' value="{{value}}" placeholder-class="placeholder" ></input> 
+  </view>
+  <text bindtap="select" data-fromselect="select">搜索</text>
+</view>
+

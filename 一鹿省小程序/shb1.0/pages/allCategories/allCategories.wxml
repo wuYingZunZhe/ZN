@@ -1,0 +1,64 @@
+<!--pages/allCategories /allCategories.wxml-->
+<import src="/template/wxml/waterfall.wxml" />
+<template is="head" data="{{titlename,redBack}}"></template>
+
+<view class="selection flexbox">
+  <view class="selectbtn flexbox">
+    <label><image src="../../images/select.png" mode="aspectFill"></image></label>
+    <input  placeholder="一鹿省全新升级" bindinput='inputup' value="{{value}}" placeholder-class="placeholder" ></input> 
+  </view>
+    <text bindtap="select" class="allSelect" data-fromselect="select">搜索</text>
+</view>
+
+<view class="result" wx:if="{{resultData}}" catchtouchmove="returnTap" style="height:{{resultH}}px">
+  <view>
+    <navigator wx:for="{{resultData}}" wx:for-item='second' wx:key='index' data-category_id="{{second.category_id}}"  class="categoriesLi" url="../../pages/classification/classification?category_id={{second.category_id}}&sec_category_id={{second.category_id_sec}}&category_name={{second.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}"  >
+      {{second.category_name}}
+    </navigator>
+  </view>
+</view>
+<!-- 分类导航 -->  
+<scroll-view class="nav_fl nav_content"  scroll-x="true"  scroll-left="{{scrollLeft}}" >
+ 
+    <view bindtap="toLoop"  wx:for="{{goodlist}}" data-index="{{index}}" wx:key='index' data-category_id="a{{item.category_id}}"  catchtouchend="clickcategory"  class='nav_label {{index==navActive?"navactive":""}}' ><view>{{item.category_name}}  </view>     
+    </view>  
+
+</scroll-view >  
+<view style='clear:both;'></view> 
+<scroll-view class="scrollView" scroll-y="true" style="height:{{winHeight}}px"  scroll-with-animation='true' scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}" bindscroll="contentScroll">  
+
+  <block  wx:for="{{goodlist}}"  wx:key='index'>
+    <view id="a{{item.category_id}}" class="listLi"  hidden="{{result.length>0}}">
+      <view class="scrollTitle" >
+        <image class="{{item.category_id=='1'?'changeleft':''}} {{item.category_id=='6'?'changeleft1':''}}  {{item.category_id=='4'?'changeleft2':''}} {{item.category_id=='9'?'changeleft9':''}}  {{item.category_id=='132' || item.category_id=='3'  || item.category_id=='14'|| item.category_id=='133'?'changeleft132':''}}  {{item.category_id=='12'?'changeleft12':''}}"  src="{{item.category_pic}}" data-category_id="{{itme.category_id}}" data-category_name="{{item.category_name}}" mode="aspectFit"></image>
+      </view>
+      <view class="categoriesUl flexbox" >
+        <block  wx:for="{{item.list_second}}"  wx:for-index='index'  wx:for-item='second' wx:key='index'>
+          <navigator wx:if='{{index==0}}'  data-category_id="{{item.category_id}}"  class="categoriesLi" url="../../pages/classification/classification?category_id={{item.category_id}}&category_name={{item.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}"  >
+            全部
+          </navigator>
+          <navigator data-category_id="{{second.category_id}}"  class="categoriesLi" url="../../pages/classification/classification?category_id={{item.category_id}}&sec_category_id={{second.category_id}}&category_name={{second.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}"  >
+            {{second.category_name}}
+          </navigator>
+        </block>
+      </view>
+    </view>
+  
+  </block>
+  <!-- <block  wx:for="{{result}}"  wx:key='index'>
+    <view id="a{{item.category_id}}" class="listLi"  hidden="{{result.length==0}}">
+      <view class="scrollTitle" >
+        <image class="{{item.category_id=='1'?'changeleft':''}} {{item.category_id=='6'?'changeleft1':''}}  {{item.category_id=='4'?'changeleft2':''}} {{item.category_id=='9'?'changeleft9':''}}  {{item.category_id=='132' || item.category_id=='3'  || item.category_id=='14'|| item.category_id=='133'?'changeleft132':''}}  {{item.category_id=='12'?'changeleft12':''}}"  src="{{item.category_pic}}" data-category_id="{{item.category_id}}" data-category_name="{{item.category_name}}" bindtap="navigate" mode="aspectFill"></image>
+      </view>
+      <view class="categoriesUl flexbox" >
+          <navigator wx:for="{{item.list_second}}" wx:if="{{item.list_second}}" wx:for-item='second' wx:key='index' data-category_id="{{second.category_id}}"  class="categoriesLi" url="../../pages/classification/classification?category_id={{second.category_id}}&category_name={{second.category_name}}&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}"  >
+            {{second.category_name}}
+          </navigator>
+          <navigator wx:if="{{item.category_id_sec}}"  data-category_id="{{item.category_id_sec}}"  class="categoriesLi" url="../../pages/classification/classification?category_id={{item.category_id_sec}}&category_name={{item.category_name_sec}}&longitude={{longitude}}&latitude={{latitude}}&store_city={{curCity}}"  >
+            {{item.category_name_sec}}
+          </navigator>
+      </view>
+    </view>
+  
+  </block> -->
+</scroll-view> 

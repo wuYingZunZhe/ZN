@@ -1,0 +1,311 @@
+
+ @import "/template/wxss/waterfall.wxss"; 
+ .header{
+   margin-bottom: -1px;
+ }
+ .header view{
+   background: #FD0D1A;
+ }
+.wrap{
+    position: relative;
+    width: 100%;
+    height:1840rpx;
+    background: #eeeeee;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.topBackground{
+    position: absolute;
+    width: 100%;
+    height: 190rpx;
+    background:linear-gradient(180deg,rgba(253,13,26,1),rgba(255,39,78,1),rgba(254,149,139,1));
+    opacity:1;
+}
+.paidText{
+    padding-top: 41rpx;
+    padding-left: 57rpx;
+    color:rgba(255,255,255,1);
+    font-size: 36rpx;
+}
+.storePanel{
+    position: absolute;
+    top: 120rpx;
+    left: 24rpx;
+    width:702rpx;
+    height:168rpx;
+    background:rgba(255,255,255,1);
+    border-radius:10rpx;
+    /* border: 1rpx solid skyblue; */
+    z-index: 1000;
+}
+.storeInco{
+    position: relative;
+    top: 17rpx;
+    left: 30rpx;
+    width:133rpx;
+    height:133rpx;
+    border-radius:5rpx;
+    /* border: 1rpx solid blue; */
+}
+.storeName{
+    position: absolute;
+    top: 24rpx;
+    left: 175rpx;
+    font-size:30rpx;
+    color:rgba(50,50,50,1);
+}
+.useTime{
+    position:  absolute ;
+    top: 73rpx;
+    left: 174rpx;
+    font-size:24rpx;
+    color:#939090;
+}
+.enter,.enterInco{
+    position: absolute;
+    top: 72rpx;
+    right: 71rpx;
+    font-size: 24rpx;
+    color: #939090;
+}
+.enterInco{
+    top: 60rpx;
+    right: 30rpx;
+    font-size: 40rpx;
+}
+.timeOut{
+    position: absolute;
+    top: 119rpx;
+    left: 175rpx;
+    font-size: 24rpx;
+    color: #939090;
+}
+.timeStyle{
+    color: #FF274E;
+}
+.packagePanel{
+    position: absolute;
+    top: 310rpx;
+    left: 24rpx;
+    width:702rpx;
+    height:500rpx;
+    background:rgba(255,255,255,1);
+    border-radius:10rpx;
+    /* border: 1rpx solid darkorange; */
+}
+.ainco,.ainco1,.ainco2{
+    position: absolute;
+    top:25rpx;
+    left: 24rpx;
+    color: #FF274E;
+    font-weight: bold;
+    font-size: 40rpx;
+}
+/* .ainco1{
+    top:24rpx;
+}
+.ainco2{
+    top: 2440rpx;
+} */
+.all{
+    position: absolute;
+    top:97rpx;
+    left: 30rpx;
+    color: #939090;
+    font-size: 30rpx;
+}
+.count{
+    font-size: 24rpx;
+    color: #939090;
+}
+.amount{
+    position: absolute;
+    top: 156rpx;
+    right: 30rpx;
+    color: #323232;
+    
+}
+.lineA{
+    position: absolute;
+    top: 220rpx;
+    left: 29rpx;
+    width:643rpx;
+    height:2rpx;
+    background:rgba(27,27,27,1);
+    z-index: 1000;
+    opacity:0.05;
+}
+.proDetails,.evaluateText,.ownBusiness{
+    position: absolute;
+    top:35rpx;
+    left: 49rpx;
+    color: #111111;
+    font-size: 30rpx;
+}
+
+.evaluateText{
+    top: 35rpx;
+}
+.ownBusiness{
+    top: 2450rpx;
+}
+.detailsName{
+    position: absolute;
+    top: 120rpx;
+    left: 30rpx;
+    color: #323232;
+    font-size: 30rpx;
+}
+.remark{
+    position: absolute;
+    top:227rpx;
+    left: 24rpx;
+    color: #939090;
+    font-size: 30rpx;
+}
+.productContent{
+    position: absolute;
+    top: 280rpx;
+    left: 24rpx;
+}
+.remarkWrap{
+    position: absolute;
+    top:325rpx;
+    left: 24rpx;
+    width:672rpx;
+    height: 150rpx;
+    /* border: 1rpx solid red; */
+    overflow-y: scroll;
+}
+.productNameNum{
+    margin-top: 10rpx;
+    font-size: 30rpx;
+    color: #323232;
+    display: block;
+    width: 600rpx;
+    height: 40rpx;
+}
+.parting{
+    position: absolute;
+    left: 0;
+    top: 1366rpx;
+    width:750rpx;
+    height:10rpx;
+    background:rgba(238,238,238,1);
+}
+.addMessagePanel{
+    position: absolute;
+    top:837rpx;/*837*/
+    left: 24rpx;
+    width:702rpx;
+    height:243rpx;
+    background:rgba(255,255,255,1);
+    border-radius:10rpx;
+}
+.addDeskNum,.addRemark{
+    position: absolute;
+    top: 47rpx;
+    left: 29rpx;
+    font-size: 30rpx;
+    color: #323232;
+}
+.addRemark{
+    top: 166rpx;
+}
+.addInput{
+    position: absolute;
+    top: 45rpx;
+    left: 109rpx;
+    width: 560rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    /* border: 1rpx solid red; */
+}
+.addRemarkTextarea{
+    position: absolute;
+    top: 169rpx;
+    left: 109rpx;
+    width: 560rpx;
+    /* height: 40rpx; */
+    /* line-height: 40rpx; */
+    font-size: 28rpx;
+    /* border: 1rpx solid red; */
+    overflow: hidden;
+}
+.partingLine{
+    position: absolute;
+    top: 121rpx;
+    left: 29rpx;
+    width:643rpx;
+    height:1rpx;
+    background:rgba(27,27,27,1);
+    opacity:0.1;
+}
+.billingDetailsPanel{
+    position: absolute;
+    top:1105rpx;/*837*/
+    left: 24rpx;
+    width:702rpx;
+    height:599rpx;
+    background:rgba(255,255,255,1);
+    border-radius:10rpx;
+}
+.moneyDetailsWrap{
+    position: absolute;
+    top: 114rpx;
+    width:702rpx;
+    height: 366rpx;
+    overflow-y: scroll;
+    /* border: 3rpx solid darkorange; */
+}
+.moneyDetails{
+    position: relative;
+    /* top: 10rpx; */
+    left: 31rpx;
+    width: 643rpx;
+    height:70rpx;
+    border-bottom: 1rpx solid #f2f2f2;
+    font-size: 30rpx;
+    color: #737370;
+    line-height: 60rpx; 
+}
+.money{
+    padding-left:380rpx;
+    color: #FF274E;
+}
+.actualPay{
+    position: absolute;
+    top: 515rpx;
+    left: 31rpx;
+    font-size: 30rpx;
+    color:rgba(17,17,17,1);
+    font-weight: 500;
+}
+.actualMoney{
+    position: absolute;
+    top: 506rpx;
+    left: 535rpx;
+    font-size: 36rpx;
+    color: #FF274E;
+    font-weight: 500;
+    /* width: 50rpx;height: 40rpx;
+    border: 1rpx solid darkblue; */
+}
+.payForWechat,.cancleOrder{
+    position: absolute;
+    top: 1735rpx;
+    right: 31rpx;
+    width:178rpx;
+    height:81rpx;
+    background-color: #FF274E;
+    border-radius:10rpx;
+    text-align: center;
+    line-height: 81rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+}
+.cancleOrder{
+    right: 224rpx;
+    background-color: #FB953E;
+}

@@ -1,0 +1,155 @@
+/* pages/allCategories /allCategories.wxss */
+
+ @import "/template/wxss/waterfall.wxss"; 
+ 
+.backhome {
+  left: 30rpx;
+}
+
+
+.selection{
+  width: 100%;
+  padding: 20rpx 0 40rpx;
+  color: #FF2041;
+   background-color: #fff;
+}
+.selectbtn{
+  width:600rpx;
+  height: 64rpx;
+  overflow: hidden;
+  margin-left: 40rpx;
+  border-radius:32rpx;
+  font-size: 28rpx;
+   background-color: #f3f3f3;
+}
+.selectbtn image {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 16rpx 16rpx 16rpx 24rpx;
+
+}
+
+.selectbtn .logo{
+  width:70rpx;
+  height: 70rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.placeholder{
+  color: #939090;
+}
+.selectbtn input {
+  width: 100%;
+  height: 60rpx;
+  color: #000;
+}
+.selection text{
+  line-height: 60rpx;
+  margin-left: 20rpx;
+}
+.paddingbox{
+  padding:20rpx 0 20rpx 20rpx ;
+  background-color: #fff;
+  margin-bottom: 6rpx;
+}
+.allSelect{
+  color: #808080;
+}
+.result{
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 130px;
+  width: 100%;
+  padding:0 20rpx 20rpx;
+  background-color: #fff;
+  height: 100%;
+}
+.result navigator{
+  border-bottom: 1px solid #eee;
+  color: #FF2041;
+  padding: 24rpx 0;
+  width: 100%;
+text-align: left;
+
+}
+
+.scrollView{
+  background-color: #eee;
+  padding:0  25rpx 25rpx 25rpx;
+}
+.nav_fl{
+  white-space: nowrap; 
+}
+
+.nav_content .nav_label{
+  display: inline-block;
+  margin: 0 24rpx;
+}
+.nav_label view{
+  padding: 10rpx 0;
+  white-space: nowrap;
+  color: #666666;
+  border-bottom: 2px solid transparent;
+}
+.nav_content .navactive view{
+  color:#FF2041;
+  border-bottom-color:#FF2041;
+}
+.scrollTitle{
+  height: 60rpx;
+
+  padding:60rpx 0 20rpx; 
+}
+.categoriesUl{
+  width: 700rpx;
+  flex-wrap:wrap;
+}
+.categoriesLi{
+  background-color: #fff;
+  width: 173rpx;
+  line-height: 34rpx;
+  text-align: center;
+  color: #666666;
+  font-size: 30rpx;
+  padding: 23rpx 0;
+  margin:0 2rpx 2rpx 0;
+}
+
+.scrollTitle image{
+  width: 180rpx;
+  height: 50rpx;
+}
+.scrollTitle  .changeleft{
+  width: 150rpx;
+  height: 44rpx;
+  margin-top: 16rpx;
+
+}
+
+.scrollTitle .changeleft1{
+  /* margin-left: -30rpx; */
+  width: 120rpx;
+  /* height: 56rpx; */
+}
+
+.scrollTitle .changeleft2{
+  margin: 10rpx 0 0 -10rpx; 
+  height: 46rpx;
+  width: 166rpx;
+
+}
+
+.scrollTitle .changeleft9{
+  height: 60rpx;
+}
+.scrollTitle .changeleft12{
+  width: 150rpx;
+  height: 38rpx;
+  margin-top: 20rpx;
+
+}
+
+.scrollTitle .changeleft132{
+  margin-top: 10rpx;
+}
