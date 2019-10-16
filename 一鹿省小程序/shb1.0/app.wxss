@@ -1,0 +1,160 @@
+/**app.wxss**/
+.usermask{
+  position: fixed;
+  z-index: 99;
+  background: transparent;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.phonemask{
+  z-index: 999
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: scroll;
+} 
+.scrollBox{
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+
+}
+/*flexbox盒模型  */
+.flexbox{
+  display: flex;
+  flex-direction: row;
+}
+/* 圆角背景盒子 */
+.radiusbox {
+  width: 662rpx;
+  padding: 0 20rpx 20rpx;
+  margin: 0 auto 34rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+
+}
+
+.spaceBetween{
+  justify-content: space-between
+}
+/* 下边框为0 */
+.nobottomB{
+  border-bottom:0;
+}
+
+.ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.navigator-hover {
+  background-color:transparent;
+
+}
+
+.nomore-tip image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+ 
+}
+.help{
+  position: fixed;
+  right: 30rpx;
+  bottom: 200rpx;
+  width: 90rpx;
+  height: 90rpx;
+  z-index: 999;
+}
+.help image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+.help button{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 1;
+}
+.popup,
+.popup .mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, .1);
+}
+.popup .mask{
+  position: absolute;
+  background: rgba(0, 0, 0, .1);
+  z-index: 1;
+}
+.popupbox{
+  height: 488rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  color: #737373;
+  font-size: 26rpx;
+  position: absolute;
+  top: 50%;
+  left: 60rpx;
+  right: 60rpx;
+  z-index: 9;
+  margin-top: -200rpx;
+}
+.popupbg{
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.popupbg view{
+  width: 450rpx;
+  line-height: 1.6;
+  text-align: center;
+  height: 88rpx;
+}
+.popupbox image{
+  width: 398rpx;
+  height: 220rpx;
+}
+.popupbutton{
+  width: 500rpx;
+  margin: 20rpx auto;
+}
+.popupbutton button{
+  width: 174rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size:30rpx;
+  border-radius: 35rpx;
+}
+.popupbutton .cancle{
+  color:rgba(115,115,115,1);
+  background-color: #EEE;
+}
+.popupbutton .sure{
+  color:#fff;
+  background-color: #FF274E;
+}
