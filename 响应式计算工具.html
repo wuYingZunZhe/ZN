@@ -1,0 +1,19 @@
+<!DOCTYPE >
+<html >
+ <head>
+  <title> 响应式计算 </title>
+ </head>
+
+ <body>
+ 	<input type='text' id='input' onblur='getNum()'>
+
+  <script>
+	function getNum(){
+		var num1=document.getElementById("input").value;
+		var num2=(num1 / 1240) * 100
+		console.log(num2 +'%')
+
+	}
+  </script>
+ </body>
+</html>
