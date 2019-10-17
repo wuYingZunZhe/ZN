@@ -1,0 +1,10 @@
+/* pages/APP/APP.wxss */
+.appImg{
+  width:80vw;
+  height:80vw;
+  margin-top:30%;
+  margin-left:10vw;
+}
+.webView{
+  width:100%;
+}

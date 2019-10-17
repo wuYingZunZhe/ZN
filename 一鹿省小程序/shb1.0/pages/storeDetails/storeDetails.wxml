@@ -12,6 +12,11 @@
                 </swiper-item>
             </block>
         </swiper>
+        <!----搜索------>
+        <image lazy-load='true' src="../../images/storeDetails/search.png"  class="search" />
+        <!----收藏------>
+        <image lazy-load='true' src="{{collect_show? '../../images/storeDetails/collect.png':'../../images/storeDetails/collect_not.png'}}"  class="collect" bindtap="collect"/>
+        
         <!-- 页码 -->
         <!-- <view class="dots">
           <block>
@@ -123,9 +128,9 @@
                             </navigator>
                             <view class="goodsInfosbox " style="line-height:{{gooditem.goods_desc?'1.2':'2'}}">
                               <view class="productDescription flexbox spaceBetween">
-                                <view>{{gooditem.goods_name}}</view><text class="saleMonth">月售{{gooditem.month_count}} </text>
+                                <view class="name">{{gooditem.goods_name}}</view><text class="saleMonth">月售{{gooditem.month_count}} </text>
                               </view>
-                              <view class="name" wx:if='{{gooditem.goods_desc}}'>
+                              <view class="desc" wx:if='{{gooditem.goods_desc}}'>
                                 <text>{{gooditem.goods_desc}}</text><text class="diningNum">{{gooditem.diningNum}}</text>
                               </view>
                               <view class="platformPrice">

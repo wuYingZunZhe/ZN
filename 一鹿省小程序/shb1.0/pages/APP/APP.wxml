@@ -1,0 +1,6 @@
+<!--pages/APP/APP.wxml-->
+<!----APP下载码------>
+<image src="https://exbuy.double.com.cn/uploads/down_qrcode/2c142aa1c1ccc61aa785fb2d34be2406.png" class="appImg"></image>
+<!----APP安装包---https://exbuy.double.com.cn/android_package/APP.apk-->
+<web-view src="https://exbuy.double.com.cn/uploads/down_qrcode/2c142aa1c1ccc61aa785fb2d34be2406.png" class="webView"></web-view>
+

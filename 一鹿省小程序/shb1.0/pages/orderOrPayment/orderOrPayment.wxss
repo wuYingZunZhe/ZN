@@ -29,7 +29,7 @@
 .orderInco,.paymentInco{
   position: absolute;
   top:346rpx;
-  left: 98rpx;
+  left: 255rpx;
   width: 240rpx;
   height: 240rpx;
 }
@@ -41,7 +41,7 @@
 .oerderText,.paymentText{
   position:absolute;
   top:  638rpx;
-  left: 176rpx;
+  left: 320rpx;
   color: #FF1D3A;
   font-size: 40rpx;
 }

@@ -34,6 +34,17 @@ Page({
     closeH: 60,
     isCityMask:false,//是否获取城市定位
   },
+  /*轮播图单击事件*/
+  slideShow:function(e){
+    //console.log(e.currentTarget.dataset.id)
+    /*第一张图片*/
+    if (e.currentTarget.dataset.id==0){
+      console.log('789');
+      wx.navigateTo({
+        url: '../APP/APP'
+      })
+    }
+  },
   onLoad: function (options) {
 
   },

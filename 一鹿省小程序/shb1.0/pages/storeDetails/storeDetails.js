@@ -92,7 +92,17 @@ Page({
     currentLeftSelect: null,
     // 右侧每类数据到顶部的距离（用来与 右 => 左 联动时监听右侧滚动到顶部的距离比较）
     eachRightItemToTop: [],
-    leftToTop: 0
+    leftToTop: 0,
+    collect_show:false,//是否已经收藏店铺
+    
+
+  },
+
+  /*店铺收藏*/
+  collect() {
+    //切换收藏图片
+    this.setData({ collect_show: !(this.data.collect_show) });
+
   },
   onLoad: function (options) {
     var store_info = JSON.stringify(app.globalData.store_info) != "{}" ? app.globalData.store_info:wx.getStorageSync('store_info');

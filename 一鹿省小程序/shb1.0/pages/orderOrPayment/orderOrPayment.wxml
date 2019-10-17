@@ -18,7 +18,8 @@
   </view>
    <image wx:else class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png" bindtap="getStoreData" data-index="1"></image>
     <text class="oerderText">点单</text>
-  <view bindtap="gotoPay"> 
+
+  <view bindtap="gotoPay" wx:if='{{false}}'> 
     
       <image class="paymentInco" mode="aspectFit" src="../../images/orderOrPayment/pay.png"></image>
       

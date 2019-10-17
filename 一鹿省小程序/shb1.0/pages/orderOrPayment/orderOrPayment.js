@@ -22,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options, 242424242424242424242424)
+    //console.log(options, 242424242424242424242424)
     let that = this;
     this.options = options;
     let store_info = wx.getStorageSync('store_info');

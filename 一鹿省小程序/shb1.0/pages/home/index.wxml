@@ -49,7 +49,7 @@
   <view class="swiperbox">
     <swiper id='loop'	 circular class="swiper" source current="{{swiperCurrent}}"  bindchange="swiperChange">
       <block wx:for="{{list_ad}}"  wx:key="item">
-          <swiper-item>
+          <swiper-item data-id="{{index}}" bindtap="slideShow">
               <image lazy-load='true' src="{{item.ad_pic}}" mode="widthFix" class="slide-image" />
           </swiper-item>
       </block>
@@ -61,7 +61,7 @@
               <view class="dot {{index == swiperCurrent ? ' dotactive' : ''}}"></view>  
           </block>  
       </view> 
-  </view>
+  </view>  
   <view wx:if='{{isShowCate}}' class="nav flexbox">
     <block  wx:for='{{list_category}}' wx:key='index'>
         <navigator class="nav_item"  url="../../pages/classification/classification?category_id={{item.category_id}}&sec_category_id={{item.sec_category_id}}&category_name={{item.category_name}}&&longitude={{longitude}}&latitude={{latitude}}&store_city={{store_area !=''?fcity:curCity}}&store_area={{store_area}}&store_street={{store_street}}" hover-class="navigator-hover" >
