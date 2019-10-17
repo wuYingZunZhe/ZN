@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="js/html5shiv.min.js"></script> -->
+		<script type="text/javascript">
+			(function (doc, win) {   
+				var docEl = doc.documentElement,   
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',   
+				recalc = function () {   
+				var clientWidth = docEl.clientWidth;   
+				if (!clientWidth) return;   
+				docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';   
+			};
+			if (!doc.addEventListener) return;   
+			win.addEventListener(resizeEvt, recalc, false);   
+			doc.addEventListener('DOMContentLoaded', recalc, false);   
+			})(document, window);  
+		</script>
+	</head>
+	<body class="graybody">
+		<header class="myheader">
+			<div class="bigblack"></div>
+			<div class="box">
+				<div class="headcontent clearfix">
+					<a class="logo fl" title="一鹿省">
+						<img  src="img/myorderlogo.png" >
+					</a>
+					<div class=" fr">
+						<a href="" title="首页" class="active">首页</a>
+						<a href=""  title="入驻加盟">入驻加盟</a>
+						<a href=""  title="社会责任">社会责任</a>
+						<a href="" title="下载APP">下载APP</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div class="box">
+			<div class="join_box">
+				<h3>招聘职位</h3>
+				<ul class="positons clearfix">
+					<li class="active"><a href="#">一鹿省市场经理1</a></li>
+					<li><a href="#">一鹿省市场运营</a></li>
+					<li><a href="#">一鹿省市场经理</a></li>
+					<li><a href="#">一鹿省市场运营</a></li>
+					<li><a href="#">一鹿省市场经理</a></li>
+					<li><a href="#">一鹿省市场运营</a></li>
+					<li><a href="#">一鹿省市场经理</a></li>
+					<li><a href="#">一鹿省市场运营</a></li>
+					<li><a href="#">一鹿省市场经理</a></li>
+					<li><a href="#">一鹿省市场运营</a></li>
+				</ul>
+				<h3>职位简介</h3>
+				<div class="pname">一鹿省市场经理1</div>
+				<p>一鹿省市场经理 一鹿省成立于xxxx年，现已稳居行业前茅，为互联网行业发展最快&潜力最大的企业之一。一鹿省于xxxx年xx月正</p>
+				<p>一鹿省的理念：“让天下没有闲置资源”</p>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer_content">
+				<div class="box  clearfix">
+					<dl class="cooperate fl">
+						<dt>品牌合作</dt>
+						<dl class="towpbg"><a href="">wpbg.marketing@double.com.cn</a></dl>
+						<dl>海南省翻贝花电子商务有限公司</dl>
+						<dl>原创作品，版权所有。禁止装载</dl>
+						<dl>© double.com.cn 海ICP证070791号</dl>
+						<dl>版权所有 © 海南省翻贝花电子商务有限公司 </dl>
+						<dl>湘ICP备11010502025545号</dl>
+						<dl>联网备案号：12345645678912345</dl>
+					</dl>
+					<dl class="fl elusn">
+						<dt>elusn</dt>
+						<dl><a href="">资讯标题</a></dl>
+						<dl><a href="">入驻加盟</a></dl>
+						<dl><a href="">常见问题</a></dl>
+						<dl><a href="">用户反馈</a></dl>
+						<dl><a href="">诚信举报</a></dl>
+						<dl><a href="">加入我们</a></dl>
+					</dl>
+					<dl class="fl service">
+						<dt>客服</dt>
+						<dl class="red">1010-9777</dl>
+						<dl>周一至周日9：00~23.00</dl>
+						<dl>客服不受理商务合作</dl>
+						<dl><img  data-src="img/code.png"></dl>
+					</dl>
+					<div class="fl contact"><a href=""><img  data-src="img/wechat.png" ></a><a href=""><img  data-src="img/qq.png" ></a></div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		  var swiper = new Swiper('.swiper-container', {
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			},
+			loop:true,
+			pagination: {
+				el: '.swiper-pagination',
+			},
+			lazy: {
+				loadPrevNext: true,
+			  },
+		  });
+		</script>
+	</body>
+</html>

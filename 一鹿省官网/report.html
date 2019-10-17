@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="js/html5shiv.min.js"></script> -->
+		<script type="text/javascript">
+			(function (doc, win) {   
+				var docEl = doc.documentElement,   
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',   
+				recalc = function () {   
+				var clientWidth = docEl.clientWidth;   
+				if (!clientWidth) return;   
+				docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';   
+			};
+			if (!doc.addEventListener) return;   
+			win.addEventListener(resizeEvt, recalc, false);   
+			doc.addEventListener('DOMContentLoaded', recalc, false);   
+			})(document, window);  
+		</script>
+	</head>
+	<body class="graybody">
+		<header class="myheader">
+			<div class="bigblack"></div>
+			<div class="box">
+				<div class="headcontent clearfix">
+					<a class="logo fl" title="一鹿省">
+						<img  src="img/myorderlogo.png" >
+					</a>
+					<div class=" fr">
+						<a href="" title="首页" class="active">首页</a>
+						<a href=""  title="入驻加盟">入驻加盟</a>
+						<a href=""  title="社会责任">社会责任</a>
+						<a href="" title="下载APP">下载APP</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div class="box report_box_wrap">
+			<div class="report_box">
+				<h4>诚信举报</h4>
+				<div class="text">“一鹿省”是海南省翻贝花电子商务有限公司的生活服务特惠平台,主要是利用互联网信息推广，实现对各类闲置资源的有效整合和优化，为消费者提供吃喝玩乐住等一站式生活类特惠服务，让消费者在享受品质商家提供超值体验的同时，也能帮助所有合作商家达成品牌曝光和闲置资源变现的双重目的。一鹿省始终坚持为合作方和用户“省心、省力又省钱”的宗旨，以“生活服务特惠平台”为定位，以“让天下没有闲置资源”为品牌理念，致力于打造一款真正让商家多赚钱的多功能营销引 流工具，缔造一个让消费者在省钱的同时还能赚钱的消费平台。但小鹿同学最近发现，有少数商家和用户利用不正当手段进行刷单等不诚信行为，不仅扰乱了平台的经营环境，也损害了正常用户的实际权益。
+				</div>
+				<div class="pink">为此，一鹿省决定悬赏最高300元，奖励举报刷单或其他不诚信行为的小伙伴。</div>
+				<p class="text">如果您在消费时发现以下任何一种情况，请及时填写页面下方的信息联系我们：</p>
+				<p class="text">1）商家教唆、怂恿、联合周围的商家或用户，制造虚假的销量；</p>
+				<p class="text">2）商家教唆、怂恿、联合用户通过现金支付，享受额外优惠；</p>
+				<p class="text">3）商家商品价格高于店内实际价格；</p>
+				<p class="text">4）商家“区别对待”一鹿省消费者和其他消费者；</p>
+				<p class="text">5）商家拒绝消费者使用一鹿省支付；</p>
+				<p class="text">6）其他您认为影响了市场秩序公正的行为。</p>
+				<p class="text text1">如您需要投诉商家服务或商品质量问题，请在一鹿省反馈帮助入口<span class="pink">提交投诉内容</span>，或直接致电客服400-1819-111。</p>
+				
+				<div class="form_report">
+					<div>请提交以下信息：</div>
+					<form action="#" method="post">
+						<ul>
+							<li class="clearfix"><p  class="fl"><span class="pink">*</span>所在城市</p><input type="text" name="" class="fl" id="storecity" placeholder="请填写" value="" /></li>
+							<li class="clearfix"><p class="fl"><span class="pink">*</span>订单号</p><input type="text" name=""  class="fl" id="ordernum" value="" /></li>
+							<li class="clearfix"><p class="fl"><span class="pink">*</span>商家名称</p><input type="text" name=""  class="fl" id="storename" value="" /></li>
+							<li class="clearfix"><p class="fl"><span class="pink">*</span>举报类型</p>
+							<p  class="fl radios">
+								<input id="radio1" name="radio" type="radio" ><label for="radio1">商家资质问题</label>
+								<input id="radio2" name="radio" type="radio" ><label for="radio2">商品价格问题</label>
+								<input id="radio3" name="radio" type="radio" ><label for="radio3">商家地址问题</label>
+								<input id="radio4" name="radio" type="radio" checked="checked"><label for="radio4">其他问题</label>
+							</p></li>
+							<li class="clearfix"><p class="fl"><span class="pink">*</span>具体情况</p><p class="fl textarea"><textarea id="textarea"  rows="" cols=""></textarea><span id="textareal">1/500</span></p></li>
+							<li class="clearfix telephone"><p class="fl"><span class="pink">*</span>您的联系方式<span class="p">(手机号)</span></p><input type="text"  name="" id="telephone" value=""  class="fl" /><span class="graytext">请务必填写，方便我们联系到您</span></li>
+							<li><p class="fl"></p><input type="button" value="提交" class="submit" id="submitre"/></li>
+						</ul>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="showbox" id="showbox">
+			<div class="showinner submit">
+				<p>您的投诉信息已提交成功，我们将会尽快审核并处理。</p>
+				<div><button id="hideshowbox">确定</button></div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer_content">
+				<div class="box  clearfix">
+					<dl class="cooperate fl">
+						<dt>品牌合作</dt>
+						<dl class="towpbg"><a href="">wpbg.marketing@double.com.cn</a></dl>
+						<dl>海南省翻贝花电子商务有限公司</dl>
+						<dl>原创作品，版权所有。禁止装载</dl>
+						<dl>© double.com.cn 海ICP证070791号</dl>
+						<dl>版权所有 © 海南省翻贝花电子商务有限公司 </dl>
+						<dl>湘ICP备11010502025545号</dl>
+						<dl>联网备案号：12345645678912345</dl>
+					</dl>
+					<dl class="fl elusn">
+						<dt>elusn</dt>
+						<dl><a href="">资讯标题</a></dl>
+						<dl><a href="">入驻加盟</a></dl>
+						<dl><a href="">常见问题</a></dl>
+						<dl><a href="">用户反馈</a></dl>
+						<dl><a href="">诚信举报</a></dl>
+						<dl><a href="">加入我们</a></dl>
+					</dl>
+					<dl class="fl service">
+						<dt>客服</dt>
+						<dl class="red">1010-9777</dl>
+						<dl>周一至周日9：00~23.00</dl>
+						<dl>客服不受理商务合作</dl>
+						<dl><img  data-src="img/code.png"></dl>
+					</dl>
+					<div class="fl contact"><a href=""><img  data-src="img/wechat.png" ></a><a href=""><img  data-src="img/qq.png" ></a></div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/store_join.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

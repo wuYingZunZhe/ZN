@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="js/html5shiv.min.js"></script> -->
+		<script type="text/javascript">
+			(function (doc, win) {   
+				var docEl = doc.documentElement,   
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',   
+				recalc = function () {   
+				var clientWidth = docEl.clientWidth;   
+				if (!clientWidth) return;   
+				docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';   
+			};
+			if (!doc.addEventListener) return;   
+			win.addEventListener(resizeEvt, recalc, false);   
+			doc.addEventListener('DOMContentLoaded', recalc, false);   
+			})(document, window);  
+		</script>
+	</head>
+	<body>
+		<header class="myheader">
+			<div class="bigblack"></div>
+			<div class="box">
+				<div class="headcontent clearfix">
+					<a class="logo fl" title="一鹿省">
+						<img  src="img/myorderlogo.png" >
+					</a>
+					<div class=" fr">
+						<a href="" title="首页" class="active">首页</a>
+						<a href=""  title="入驻加盟">入驻加盟</a>
+						<a href=""  title="社会责任">社会责任</a>
+						<a href="" title="下载APP">下载APP</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="help">
+			<div class="pinkbg clearfix">
+				<div class="fl">反馈通道</div>
+				<div class="fr"><span>客服电话 : 12345678</span><span>客服微信 : eluson</span></div>
+			</div>
+			<div class="hello">
+				尊敬的用户：  
+				<p>您好！为了给您提供更好的服务，我们希望收集您使用<span class="pink">一鹿省</span>时的看法或建议。对您的配合和支持表示衷心感谢！</p>
+			</div>
+			
+			<div class="pinkbg ">如果您在使用<span class="pink">一鹿省</span>时，有什么好或不好的地方，请大声说出来！我们会关注您的反馈，不断优化产品，为您提供更好的服务！</div>
+			<div class="pinkborder">
+				<div>
+					<textarea id='textarea1' rows="" cols="">111</textarea><span id="textareal">5/800</span>
+				</div>
+			</div>
+			<div class="pinkbg "><span class="pink">*</span>您对一鹿省的整体满意度如何？</div>
+			<div class="pinkborder helpradio" id="radio">
+				<div>
+					<input type="radio" name="" id="radio1" value="" class="checked"/><label for="radio1">非常满意</label><br>
+					<input type="radio" name="" id="radio2" value=""/><label for="radio2">满意</label><br>
+					<input type="radio" name="" id="radio3" value=""/><label for="radio3">一般</label><br>
+					<input type="radio" name="" id="radio4" value=""/><label for="radio4">不满意</label><br>
+					<input type="radio" name="" id="radio5" value=""/><label for="radio5">非常不满意</label><br>
+				</div>
+			</div>
+			<div class="pinkbg ">
+				我们会不定期邀请用户参与面对面的交流。如果您有意参与，请填写如下信息，方便我们与您联系，谢谢！（信息仅作为内部资料绝不外泄）
+			<p>如果您对一鹿省的使用体验有任何想法，欢迎微信搜索并关注“<span class="pink">一鹿省</span>”公众号，参与更多用户体验活动。</p>
+			</div>
+			<div class="pinkborder userinfo">
+				<ul>
+					<li><label>您的称呼</label><input type="text" name="" id="username" value="" /></li>
+					<li><label>手机号</label><input type="text" name="" id="telephone" value="" /></li>
+				</ul>
+			</div>
+			<div class="submit">
+				<button type="button" id="helpbutton">提交</button>
+			</div>
+		</div>
+		
+		<div class="showbox" id="showbox">
+			<div class="showinner submit">
+				<p>您的反馈信息已提交成功，我们将会尽快审核并处理。</p>
+				<div><button id="hideshowbox">确定</button></div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<div class="footer_content">
+				<div class="box  clearfix">
+					<dl class="cooperate fl">
+						<dt>品牌合作</dt>
+						<dl class="towpbg"><a href="">wpbg.marketing@double.com.cn</a></dl>
+						<dl>海南省翻贝花电子商务有限公司</dl>
+						<dl>原创作品，版权所有。禁止装载</dl>
+						<dl>© double.com.cn 海ICP证070791号</dl>
+						<dl>版权所有 © 海南省翻贝花电子商务有限公司 </dl>
+						<dl>湘ICP备11010502025545号</dl>
+						<dl>联网备案号：12345645678912345</dl>
+					</dl>
+					<dl class="fl elusn">
+						<dt>elusn</dt>
+						<dl><a href="">资讯标题</a></dl>
+						<dl><a href="">入驻加盟</a></dl>
+						<dl><a href="">常见问题</a></dl>
+						<dl><a href="">用户反馈</a></dl>
+						<dl><a href="">诚信举报</a></dl>
+						<dl><a href="">加入我们</a></dl>
+					</dl>
+					<dl class="fl service">
+						<dt>客服</dt>
+						<dl class="red">1010-9777</dl>
+						<dl>周一至周日9：00~23.00</dl>
+						<dl>客服不受理商务合作</dl>
+						<dl><img  data-src="img/code.png"></dl>
+					</dl>
+					<div class="fl contact"><a href=""><img  data-src="img/wechat.png" ></a><a href=""><img  data-src="img/qq.png" ></a></div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/store_join.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#textarea1").keyup(function(){
+				textareak(this,800)
+			})
+			$("#helpbutton").click(function(){
+				var textareav=$("#textarea1").val(),
+					radio1=$("#radio1").attr("checked"),
+					radio2=$("#radio2").attr("checked"),
+					radio3=$("#radio3").attr("checked"),
+					radio4=$("#radio4").attr("checked"),
+					radio5=$("#radio5").attr("checked"),
+					telephonev=$("#telephone").val();
+					usernamev=$("#username").val();
+				
+				
+				
+				var index=5;
+				if(radio1=='checked'){
+					index=1
+				} else if(radio2=='checked'){
+					index=2
+				}else if(radio3=='checked'){
+					index=3
+				}else if(radio4=='checked'){
+					index=4
+				}
+				 console.log(index,textareav,telephonev)
+				
+				$("#showbox").show();
+			})
+		</script>
+	</body>
+</html>

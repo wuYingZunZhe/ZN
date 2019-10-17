@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script type="text/javascript" src="js/html5shiv.min.js"></script> -->
+		<script type="text/javascript">
+			(function (doc, win) {   
+				var docEl = doc.documentElement,   
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',   
+				recalc = function () {   
+				var clientWidth = docEl.clientWidth;   
+				if (!clientWidth) return;   
+				docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';   
+			};
+			if (!doc.addEventListener) return;   
+			win.addEventListener(resizeEvt, recalc, false);   
+			doc.addEventListener('DOMContentLoaded', recalc, false);   
+			})(document, window);  
+		</script>
+	</head>
+	<body>
+		<header class="myheader">
+			<div class="bigblack"></div>
+			<div class="box">
+				<div class="headcontent clearfix">
+					<a class="logo fl" title="一鹿省">
+						<img  src="img/myorderlogo.png" >
+					</a>
+					<div class=" fr">
+						<a href="" title="首页" class="active">首页</a>
+						<a href=""  title="入驻加盟">入驻加盟</a>
+						<a href=""  title="社会责任">社会责任</a>
+						<a href="" title="下载APP">下载APP</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<nav class="navR">
+			<ul class="navbox">
+				<li class="tele">
+					<a href="tel:18188888888">
+						<img src="img/dianhua.png" ><p>服务热线</p><button onClick="copyUrl2()" value="18188888888" >18188888888</button><input type="text" id='text' value="18188888888"></input>
+					</a>
+				</li>
+				<li>
+					<img src="img/_dailijiameng.png" ><p>代理加盟</p>
+				</li>
+				<li>
+					<img src="img/qiyeruzhu.png" ><p>商家入驻</p>
+				</li>
+				<li class="hasNews">
+					<img src="img/kefu.png" ><p>在线客服</p><span>1</span>
+				</li>
+				<li class="nob">
+					<img src="img/fankui.png" ><p>反馈帮助</p>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="join_us">
+			<div class="box">
+				<div class="bigword">
+					<h2>加入一鹿省 收益有保证</h2>
+					<a href="">申请加盟</a>
+				</div>
+			</div>
+			<img src="img/joinbg.png" class="join_us_bg" >
+		</div>
+		
+		<div class="join_uscontent">
+			<div class="box">
+				<h3 class="introduce_title introduce_title_join_us">市场空间巨大</h3>
+				<div class="clearfix joinimg"><img class="fl" src="img/join1.png" ><img class="fr" src="img/join2.png" ></div>
+			</div>
+		</div>
+		<div class="say">
+			<div class="box">
+				<div class="say_title">城市合伙人有话说</div>
+				<ul class="clearfix">
+					<li class="fl say_left clearfix">
+						<div class="say_box box1">
+							<div><span></span></div>
+							<strong>成都市</strong>
+						</div>
+						<div class="say_box box2">
+							<div>+<strong>300%</strong></div>
+							订单量
+						</div>
+						<div class="say_box box3">
+							<div><strong>3400</strong>单</div>单品月销量
+						</div>
+					</li>
+					<li class="fl say_right">
+						<img src="img/userlogo1.png" class="fl" >
+						<div class="fl">“我们成都市 ，服务行业商数超过200万家，目前跟我们合作的商家5万家，商家对 于平台的运营理念高度认可，现在基本上所有的合作商家，都是通过一鹿省来进行服务客户的。”</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="join_get">
+			<div class="box">
+				
+				<h3 class="introduce_title introduce_title_join_us">投资回报率高</h3>
+				<ul class="clearfix countimg">
+					<li><img class="fl" src="img/get1.png" ></li>
+					<li><img  class="fr" src="img/get2.png" ></li>
+				</ul>
+			</div>
+			<div class="say">
+				<div class="say_title">城市合伙人有话说</div>
+				<ul class="clearfix">
+					<li class="fl say_left clearfix">
+						<div class="say_box box1">
+							<div><span></span></div>
+							<strong>成都市</strong>
+						</div>
+						<div class="say_box box2">
+							<div>+<strong>300%</strong></div>
+							订单量
+						</div>
+						<div class="say_box box3">
+							<div><strong>3400</strong>单</div>单品月销量
+						</div>
+					</li>
+					<li class="fl say_right">
+						<img src="img/userlogo1.png" class="fl" >
+						<div class="fl">“我们成都市 ，服务行业商数超过200万家，目前跟我们合作的商家5万家，商家对 于平台的运营理念高度认可，现在基本上所有的合作商家，都是通过一鹿省来进行服务客户的。”</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="join_uscontent">
+			<div class="box">
+				<h3 class="introduce_title introduce_title_join_us">成熟的模式和体系</h3>
+				<div class="clearfix joinimg"><img class="fl" src="img/join1.png" ><img class="fr" src="img/join2.png" ></div>
+			</div>
+		</div>
+		<div class="say">
+			<div class="box">
+				<div class="say_title">城市合伙人有话说</div>
+				<ul class="clearfix">
+					<li class="fl say_left clearfix">
+						<div class="say_box box1">
+							<div><span></span></div>
+							<strong>成都市</strong>
+						</div>
+						<div class="say_box box2">
+							<div>+<strong>300%</strong></div>
+							订单量
+						</div>
+						<div class="say_box box3">
+							<div><strong>3400</strong>单</div>单品月销量
+						</div>
+					</li>
+					<li class="fl say_right">
+						<img src="img/userlogo1.png" class="fl" >
+						<div class="fl">“我们成都市 ，服务行业商数超过200万家，目前跟我们合作的商家5万家，商家对 于平台的运营理念高度认可，现在基本上所有的合作商家，都是通过一鹿省来进行服务客户的。”</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="footer_content">
+				<div class="box  clearfix">
+					<dl class="cooperate fl">
+						<dt>品牌合作</dt>
+						<dl class="towpbg"><a href="">wpbg.marketing@double.com.cn</a></dl>
+						<dl>海南省翻贝花电子商务有限公司</dl>
+						<dl>原创作品，版权所有。禁止装载</dl>
+						<dl>© double.com.cn 海ICP证070791号</dl>
+						<dl>版权所有 © 海南省翻贝花电子商务有限公司 </dl>
+						<dl>湘ICP备11010502025545号</dl>
+						<dl>联网备案号：12345645678912345</dl>
+					</dl>
+					<dl class="fl elusn">
+						<dt>elusn</dt>
+						<dl><a href="">资讯标题</a></dl>
+						<dl><a href="">入驻加盟</a></dl>
+						<dl><a href="">常见问题</a></dl>
+						<dl><a href="">用户反馈</a></dl>
+						<dl><a href="">诚信举报</a></dl>
+						<dl><a href="">加入我们</a></dl>
+					</dl>
+					<dl class="fl service">
+						<dt>客服</dt>
+						<dl class="red">1010-9777</dl>
+						<dl>周一至周日9：00~23.00</dl>
+						<dl>客服不受理商务合作</dl>
+						<dl><img  data-src="img/code.png"></dl>
+					</dl>
+					<div class="fl contact"><a href=""><img  data-src="img/wechat.png" ></a><a href=""><img  data-src="img/qq.png" ></a></div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		  var swiper = new Swiper('.swiper-container', {
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			},
+			loop:true,
+			pagination: {
+				el: '.swiper-pagination',
+			},
+			lazy: {
+				loadPrevNext: true,
+			  },
+		  });
+		</script>
+	</body>
+</html>

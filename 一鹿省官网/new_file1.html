@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>模拟Select效果</title>
+</head>
+<body>
+ <style>
+ ul,li{list-style-type:none;padding:0;margin:0;}
+ .select{width:200px;height:22px;line-height:22px;border:1px solid #dcdcdc;}
+ #text_left{display:block;width:180px;float:left;padding:0 5px;}
+ #arrow_right{
+  display:block; 
+ border-color:#FF6600 #FFFFFF #FFFFFF #FFFFFF;
+ border-style: solid;
+ border-width: 4px;
+ display: block;
+ font-size: 0;
+ height: 0;
+ line-height: 0;
+ width: 0;
+ float:left;margin-top:8px;
+ cursor:pointer;
+ }
+ .list{width:200px;border:1px solid #dcdcdc;border-top:0;display:none;}
+ .list li{line-height:24px;padding:0 5px;}
+ .list li:hover{background:#F8F3F4;cursor:pointer;}
+ </style>
+ <div class="select">
+ <span id="text_left">脚本之家</span>
+ <span id="arrow_right"></span> 
+ </div>
+ <ul class="list">
+ <li>新浪新闻</li>
+ <li>腾讯门户</li>
+ <li>凤凰影视</li>
+ <li>奇艺高清</li> 
+ </ul>
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+ <script type="text/javascript">
+ $(function(){
+  $('#arrow_right').click(function(e){
+  $('.list').toggle();
+  e.stopPropagation();
+   $('body').click(function(){
+   $('.list').hide();
+   })
+  })
+  $('.list li').click(function(){
+  $('#text_left').text(($(this).text())); 
+  }) 
+  })
+ </script>
+</body>
+</html>
