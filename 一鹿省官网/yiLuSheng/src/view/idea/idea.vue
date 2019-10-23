@@ -64,7 +64,7 @@ export default {
 <style scoped>
 .head_img{
   width:100%;
-  height: 500px;
+  height: 100%;
 }
 .title_2{
   width:100%;
@@ -98,6 +98,8 @@ export default {
 .content_2_div > img{
   width:50px;
   height:50px;
+  max-width:50px;
+  max-height:50px;
 }
 .content_2_div > p{
   font-size:16px;

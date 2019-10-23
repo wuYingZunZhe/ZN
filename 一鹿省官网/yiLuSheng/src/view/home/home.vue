@@ -4,11 +4,11 @@
 
     <div class="content_1">
       <el-row :gutter="10" >
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="content_1_div">
+        <el-col :span="12" class="content_1_div">
             <p class="txt_1">我要入住</p>
             <p class="txt_2">吃喝玩乐商家</p>
         </el-col>
-        <el-col :xs="24" :sm="24" :md="24" :lg="12" :xl="12" class="content_1_div">
+        <el-col :span="12" class="content_1_div">
             <p class="txt_1">我要加盟</p>
             <p class="txt_2">加盟代理 城市开通</p>
         </el-col>
@@ -90,7 +90,7 @@
     </el-row>
     </div>
 
-    <div class="title_4">
+    <div class="title_2">
       品牌愿景
     </div>
 
@@ -98,7 +98,7 @@
       <video src="../../../static/imgs/home/video.mp4" controls="controls" class="video"></video>
     </div>
 
-    <div class="title_5">
+    <div class="title_2">
       合作案例
     </div>
 
@@ -106,7 +106,7 @@
       <img  src="../../../static/imgs/home/alliance.png" alt="" >
     </div>
 
-    <div class="title_6">
+    <div class="title_2">
       最新资讯
     </div>
 
@@ -152,7 +152,7 @@ export default {
 <style scoped>
 .head_img{
   width:100%;
-  height: 500px;
+  height: 100%;
 }
 /*第一部分*/
 .content_1{
@@ -226,7 +226,7 @@ export default {
 }
 .content_2_div > .txt_4 >.txt_4_div > div{
   width:100%;
-  height: 10vw;
+  height: 60%;
   border:1px solid #fff;
   border-radius: 50%;
 }
@@ -259,15 +259,7 @@ export default {
   margin:20px 10%;
 }
 /*第三部分*/
-.title_3{
-  width:100%;
-  margin:20px 0;
-  text-align: center;
-  font-size:65px;
-  font-family:SourceHanSansCN;
-  font-weight:400;
-  color:rgba(52,52,52,1);
-}
+
 .content_3{
   width:100%;
   background: #fff;
@@ -316,15 +308,7 @@ export default {
   color:#fff;
 }
 /*第四部分*/
-.title_4{
-  width:100%;
-  margin:20px 0;
-  text-align: center;
-  font-size:65px;
-  font-family:SourceHanSansCN;
-  font-weight:400;
-  color:rgba(52,52,52,1);
-}
+
 .content_4 {
   width:100%;
   text-align: center;
@@ -334,18 +318,10 @@ export default {
   margin:20px 10%;
 }
 /*第五部分*/
-.title_5{
-  width:100%;
-  margin:20px 0;
-  text-align: center;
-  font-size:65px;
-  font-family:SourceHanSansCN;
-  font-weight:400;
-  color:rgba(52,52,52,1);
-}
+
 .content_5{
   width:100%;
-  height: 500px;
+  height: 100%;
   
 }
 .content_5 > img{
@@ -354,15 +330,7 @@ export default {
   margin:20px 10%;
 }
 /*第六部分*/
-.title_6{
-  width:100%;
-  margin:20px 0;
-  text-align: center;
-  font-size:65px;
-  font-family:SourceHanSansCN;
-  font-weight:400;
-  color:rgba(52,52,52,1);
-}
+
 .content_6_div > img{
   width:80%;
   height: 80%;
@@ -392,6 +360,44 @@ export default {
   width:80%;
   position:relative;
  
+}
+@media screen and (max-device-width:960px){
+  .content_1{
+    width:80%;
+    margin-left:10%;
+    text-align: center;
+    margin-top:-50px;
+  }
+  .content_1_div{
+    height: 80px;
+  }
+  .content_1_div > .txt_1{
+    font-size: 14px;
+  }
+  .content_1_div > .txt_2{
+    font-size: 6px;
+  }
+  .title_2{
+    font-size: 32px;
+  }
+  .content_3_div_right > p{
+    padding:0 20px;
+  }
+  .content_3_div_right >.txt_1{
+    padding-top:0;
+  }
+  .content_3_div_right >.txt_2{
+    font-size:24px;
+    text-align: center;
+    padding:10px 0;
+    margin-top:-10px;
+  }
+  .content_3_div_right >.txt_3{
+    font-size:24px;
+  }
+  .content_3_div_right > .btn_5 > .down{
+    font-size:16px;
+  }
 }
 
 

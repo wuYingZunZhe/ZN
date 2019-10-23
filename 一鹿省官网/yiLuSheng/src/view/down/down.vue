@@ -164,6 +164,8 @@ export default {
 .content_2 > .content_2_1 >.content_2_1_left >img{
   width:30px;
   height:30px;
+  max-width:30px;
+  max-height:30px;
 }
 .content_2 > .content_2_1 > .content_2_1_right{
   font-size:18px;
