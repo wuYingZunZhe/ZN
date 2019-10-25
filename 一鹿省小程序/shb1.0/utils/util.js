@@ -180,7 +180,7 @@ function login(userinfo, mobile, me, num, app, scene) {
   let globalKey = wx.getStorageSync('globalKey');
   let store_info = wx.getStorageSync('store_info');
   let localcur = wx.getStorageSync('localcur');
-
+  
   wx.setStorageSync('userInfoKey', userinfo);
   console.log(globalKey, gram, scene, 16777, 'utils', app.globalData.scene)
   let temparr = { };
@@ -202,8 +202,8 @@ function login(userinfo, mobile, me, num, app, scene) {
       nickname: userinfo.nickName,
       sex: userinfo.gender,
       headimgurl: userinfo.avatarUrl,
-      country: userinfo.country,
-      city: localcur.city || '',
+      country: userinfo.country ,
+      city: localcur.city || userinfo.city ||'',
       province: userinfo.province,
       unionid: '',
       nickname: userinfo.nickName,
@@ -217,6 +217,7 @@ function login(userinfo, mobile, me, num, app, scene) {
     method: 'POST',
     success: function (res) {
       console.log(res, 178, 'login', mobile)
+
       if (res.data.status == 1) {
         wx.hideLoading();
         temparr.user_id = res.data.data.user_id;

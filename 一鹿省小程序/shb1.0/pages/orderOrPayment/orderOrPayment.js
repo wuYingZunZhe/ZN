@@ -72,7 +72,7 @@ Page({
         url: "../storeDetails/storeDetails?store_id=" + that.data.store_id + "&user_id=" + that.data.user_id + "&token=" + that.data.token + "&category_id=" + that.data.category_id
       })
       clearTimeout(timer)
-    },500)
+    },100)
   },
   getStoreData(e){
     let that=this;
@@ -153,8 +153,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.toStoreDetail();
 
   },
+  
   gotoPay() {
     console.log(wx.getStorageSync('store_info'))
     timestamp = Date.parse(new Date());

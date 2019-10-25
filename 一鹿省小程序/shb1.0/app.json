@@ -30,7 +30,9 @@
     "pages/relatedEvaluation/relatedEvaluation",
     "pages/localtion/localtion",
     "pages/businessQualification/businessQualification",
-    "pages/APP/APP"
+    "pages/APP/APP",
+    "pages/downApp/down/down",
+    "pages/downApp/webView/webView"
   ],
   "window": {
     "backgroundTextStyle": "light",

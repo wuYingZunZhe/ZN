@@ -7,6 +7,11 @@ var amap = require('../../utils/amap-wx.js');
 var md5 = require('../../utils/md5.js');
 var time=1000;
 let homedata=[];
+//新增 10-18    导航菜单
+var store_id = '';
+var user_id = '';
+var token = '';
+var category_id='';
 Page({
   data: {
     titlename:'一鹿省',
@@ -33,6 +38,7 @@ Page({
     closeadvert: true,
     closeH: 60,
     isCityMask:false,//是否获取城市定位
+    //homedata:'012',
   },
   /*轮播图单击事件*/
   slideShow:function(e){
@@ -45,7 +51,54 @@ Page({
       })
     }
   },
+  /*菜单列表导航*/
+  toStoreDetail:function(e){
+    
+    //var index = e.currentTarget.dataset.index;
+    store_id = this.data.list_store_save[e.currentTarget.dataset.index].store_id;
+    category_id = this.data.list_store_save[e.currentTarget.dataset.index].category_id;
+    console.log(store_id);
+    console.log(token);
+    console.log(user_id);
+    console.log(category_id,'11111111111');
+    console.log(this.data.list_store_save[e.currentTarget.dataset.index]);
+    console.log(this.data.list_store_save[e.currentTarget.dataset.index].store_score);
+    
+
+
+    
+     ///+ that.data.store_id + "&user_id=" + that.data.user_id + "&token=" + that.data.token + "&category_id=" + that.data.category_id
+    
+    /*
+    let that=this;
+    app.showLoading();
+    var timer=setTimeout(function(){
+      wx.hideLoading();
+      wx.navigateTo({
+        url: "../storeDetails/storeDetails?store_id=" + store_id + "&user_id=" + user_id + "&token=" + token + "&category_id=" + category_id
+      })
+      clearTimeout(timer)
+    },500)*/
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
+    let that = this;
+    this.options = options;
+    let store_info = wx.getStorageSync('store_info');
+
+    var userInfo = wx.getStorageSync('userInfoKey');
+    var globalKey = wx.getStorageSync('globalKey');
+    if (globalKey.hasOwnProperty('user_id') && globalKey.user_id) {
+      user_id = globalKey.user_id;
+      token = globalKey.token;
+    } else {
+      app.showLoading();
+      app.checkOpenid().then(() => {
+        util.showModal(that, app);
+      })
+    }
 
   },
   closeadvert(){

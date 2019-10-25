@@ -6,7 +6,12 @@
         <div>
           <p>加入一鹿省</p>
           <p>收益有保证</p>
-          <p><a href="#">申请加盟</a></p>
+          <p>
+            <!-----
+            <a href="/league"></a>
+            ------->
+            <router-link to="/league">申请加盟</router-link>
+          </p>
         </div>
       </el-col>
     </el-row> 

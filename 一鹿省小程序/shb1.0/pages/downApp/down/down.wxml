@@ -1,0 +1,19 @@
+<!--pages/downApp/down/down.wxml-->
+
+
+<!---网址链接------>
+<view>
+  复制链接后在浏览器中搜索：
+  <input value='{{contents}}'></input>
+</view>
+
+<button bindtap='copyText' data-text="{{contents}}" class='btn'>复制链接</button>
+
+
+<!----APP下载码------>
+<image src="https://exbuy.double.com.cn/uploads/down_qrcode/2c142aa1c1ccc61aa785fb2d34be2406.png" class="appImg" bindtap="webView"></image>
+
+<!----联系客服------->
+
+<!----公众号关注组件----->
+<official-account></official-account>

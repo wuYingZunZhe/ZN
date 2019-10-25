@@ -122,7 +122,7 @@ Page({
     // 店铺详情
     
     var list = store_info.list_store_pics;
-    console.log(store_info, '店铺详情117', store_info)
+    //console.log(store_info, '店铺详情117', store_info)
     list = util.addUrl(list,'store_pic') ;
     var array1 = new Array();
     var tips = store_info.list_tips;
@@ -225,7 +225,7 @@ Page({
     let prevPage = pages[pages.length - 2];
     if (prevPage) {
       wx.navigateBack({
-        delta: 1  // 返回上一级页面。
+        delta: 2  // 返回上一级页面。
       })
     } else {
       wx.reLaunch({

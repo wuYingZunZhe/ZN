@@ -16,7 +16,9 @@ Page({
   data: {
     titlename: '支付',
     redBack: 1,
-    istoStore: false
+    istoStore: false,
+    downBox:true,
+    marginTop:250,
   },
 
   /**
@@ -39,6 +41,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+    this.setData({
+      marginTop: 100
+    })
 
   },
   closeshowModal() {
@@ -199,7 +205,23 @@ Page({
     })
   },
 
-
+  downApp:function(){
+    //console.log('下载APP')
+    wx.navigateTo({
+      url: '../APP/APP'
+    })
+  },
+  close:function(){
+    this.setData({
+      marginTop: 500
+    })
+    //console.log(this.data.marginTop)
+    
+    //console.log('关闭')
+    this.setData({
+      downBox: false
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

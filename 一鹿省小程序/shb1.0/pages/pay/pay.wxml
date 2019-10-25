@@ -22,4 +22,10 @@
     <image class="isCheck" mode="aspectFill" src="../../images/right1.png"></image>
   </view>
 </view>
+<view class="downApp" wx:if="{{downBox}}" style="margin-top:{{marginTop+'rpx'}};">
+  <image src="../../images/logoy.png"/>
+  <text>下载一鹿省APP享受更多优惠</text>
+  <button bindtap="downApp">下载APP</button>
+  <image src="../../images/closew.png" class="close" bindtap="close"/>  
+</view>
 <view class="button" bindtap="payForWechat"><view>确定支付</view></view>

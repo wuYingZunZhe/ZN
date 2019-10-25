@@ -1,18 +1,49 @@
 // pages/APP/APP.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    contents: 'https://jingyan.baidu.com/article/ac6a9a5e208f8f2b653eacaa.html'
+  },
+  copyText: function (e) {
+
+    console.log(e)
+
+    wx.setClipboardData({
+
+      data: e.currentTarget.dataset.text,
+
+      success: function (res) {
+
+        wx.getClipboardData({
+
+          success: function (res) {
+
+            wx.showToast({
+
+              title: '复制成功'
+
+            })
+
+          }
+
+        })
+
+      }
+
+    })
 
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

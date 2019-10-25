@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 13,
 			"list": [
 				{
 					"id": 0,
@@ -86,8 +86,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "支付页面",
+					"id": 5,
+					"name": "点单页面",
 					"pathName": "pages/orderOrPayment/orderOrPayment",
 					"query": "",
 					"scene": null
@@ -103,6 +103,48 @@
 					"id": -1,
 					"name": "我的订单",
 					"pathName": "pages/myorder/myorder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "城市定位",
+					"pathName": "pages/citys/citys",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付页面",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "APP下载页面",
+					"pathName": "pages/APP/APP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "下载APP页",
+					"pathName": "pages/downApp/down/down",
 					"scene": null
 				}
 			]

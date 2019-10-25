@@ -29,8 +29,8 @@
 .orderInco,.paymentInco{
   position: absolute;
   top:346rpx;
-  left: 255rpx;
-  width: 240rpx;
+  left: 30%;
+  width: 40%;
   height: 240rpx;
 }
 .paymentInco{
@@ -41,7 +41,9 @@
 .oerderText,.paymentText{
   position:absolute;
   top:  638rpx;
-  left: 320rpx;
+  /*left: 320rpx;*/
+  width:100%;
+  text-align: center;
   color: #FF1D3A;
   font-size: 40rpx;
 }

@@ -45,8 +45,8 @@ import {
     // BreadcrumbItem,
     // Form,
     // FormItem,
-    // Tabs,
-    // TabPane,
+     Tabs,
+     TabPane,
     // Tag,
     // Tree,
     // Alert,
@@ -124,8 +124,8 @@ import {
 //   Vue.use(BreadcrumbItem);
 //   Vue.use(Form);
 //   Vue.use(FormItem);
-//   Vue.use(Tabs);
-//   Vue.use(TabPane);
+   Vue.use(Tabs);
+   Vue.use(TabPane);
 //   Vue.use(Tag);
 //   Vue.use(Tree);
 //   Vue.use(Alert);
@@ -177,7 +177,7 @@ import {
 //museUi 按需引用
 import 'muse-ui/lib/styles/base.less';
 import {
-// Alert,
+ Alert,
   AppBar,
 //   AutoComplete,
 //   Avatar,
@@ -191,7 +191,7 @@ import {
 //   Chip,
 //   DateInput,
 //   DataTable,
-//   Dialog,
+   Dialog,
 //   Divider,
 //   Drawer,
 //   ExpansionPanel,
@@ -210,7 +210,7 @@ import {
 //   Progress,
 //   Radio,
 //   Select,
-//   SlidePicker,
+   SlidePicker,
 //   Slider,
 //   Snackbar,
 //   Stepper,
@@ -223,7 +223,7 @@ import {
 } from 'muse-ui';
 //import 'muse-ui/lib/styles/theme.less';
 
-// Vue.use(Alert);
+ Vue.use(Alert);
  Vue.use(AppBar);
 // Vue.use(AutoComplete);
 // Vue.use(Avatar);
@@ -237,7 +237,7 @@ import {
 // Vue.use(Chip);
 // Vue.use(DateInput);
 // Vue.use(DataTable);
-// Vue.use(Dialog);
+ Vue.use(Dialog);
 // Vue.use(Divider);
 // Vue.use(Drawer);
 // Vue.use(ExpansionPanel);
@@ -256,7 +256,7 @@ import {
 // Vue.use(Progress);
 // Vue.use(Radio);
 // Vue.use(Select);
-// Vue.use(SlidePicker);
+ Vue.use(SlidePicker);
 // Vue.use(Slider);
 // Vue.use(Snackbar);
 // Vue.use(Stepper);

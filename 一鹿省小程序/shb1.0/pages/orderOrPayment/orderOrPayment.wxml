@@ -17,13 +17,14 @@
       <image class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png"></image>
   </view>
    <image wx:else class="orderInco" mode="aspectFit"  src="../../images/orderOrPayment/order.png" bindtap="getStoreData" data-index="1"></image>
-    <text class="oerderText">点单</text>
-
-  <view bindtap="gotoPay" wx:if='{{false}}'> 
+   
+    <text class="oerderText">正在跳转..</text>
     
+<!---------
+  <view bindtap="gotoPay" wx:if='{{false}}'> 
       <image class="paymentInco" mode="aspectFit" src="../../images/orderOrPayment/pay.png"></image>
-      
       <text class="paymentText">付款</text>
   </view>
+  ---------->
   
 </view>

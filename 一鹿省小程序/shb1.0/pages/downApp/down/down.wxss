@@ -1,0 +1,7 @@
+/* pages/downApp/down/down.wxss */
+page{
+  margin-top:150rpx; 
+}
+.btn{
+  margin:20px 0;
+}

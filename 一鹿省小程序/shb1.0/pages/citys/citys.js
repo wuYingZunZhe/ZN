@@ -206,7 +206,7 @@ Page({
     })
   },
   setlocalDataCur: function (winHeight, data) {
-    // console.log(data.list_letter,103)
+    console.log(data.list_letter,103)
     var that = this;
     var searchLetter = [];
     var tempObj = [];

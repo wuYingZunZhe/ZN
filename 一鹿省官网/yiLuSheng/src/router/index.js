@@ -4,6 +4,7 @@ import Home from '@/view/home/home'
 import Join from '@/view/join/join'
 import Idea from '@/view/idea/idea'
 import Down from '@/view/down/down'
+import League from '@/view/form/league'
 
 Vue.use(Router)
 
@@ -28,6 +29,10 @@ export default new Router({
       path: '/down',
       name: 'down',
       component: Down
+    },{
+      path: '/league',
+      name: 'league',
+      component: League
     }
   ]
 })

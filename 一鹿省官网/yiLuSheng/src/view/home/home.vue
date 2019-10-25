@@ -4,11 +4,11 @@
 
     <div class="content_1">
       <el-row :gutter="10" >
-        <el-col :span="12" class="content_1_div">
+        <el-col :span="12" class="content_1_div" @click.native="join_1(1)">
             <p class="txt_1">我要入住</p>
             <p class="txt_2">吃喝玩乐商家</p>
         </el-col>
-        <el-col :span="12" class="content_1_div">
+        <el-col :span="12" class="content_1_div"  @click.native="join_1(2)">
             <p class="txt_1">我要加盟</p>
             <p class="txt_2">加盟代理 城市开通</p>
         </el-col>
@@ -143,6 +143,11 @@ export default {
   data () {
     return {
       
+    }
+  },
+  methods:{
+    join_1:function (id) {
+     this.$router.push({ path: '/league', query: { id: id }}); 
     }
   }
 }

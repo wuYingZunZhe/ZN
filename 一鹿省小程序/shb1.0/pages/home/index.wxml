@@ -103,6 +103,25 @@
     <view class="goods_item_body" wx:if='{{list_store_save.length>0}}'>
       
       <scroll-view scroll-x='true' class="goods_item_scroll" enable-flex='true' style="">
+
+      <!------!------------------
+      <view class="goods_item_detail" wx:for="{{list_store_save}}" wx:key='index' data-index='{{index}}'  bindtap="toStoreDetail">
+          <view class="goods_img">
+            <image  lazy-load="true"  src="{{item.store_logo?item.store_logo:'../../images/noImg1.png'}}"  mode="aspectFill"></image>
+          </view>
+          <view class="flexbox spaceBetween"><view class="goods_title ellipsis">{{item.store_name}}</view><image  class="tehui" src="../../images/th.png"></image></view>
+          <view class="flexbox">
+            <image class="stars"src="../../images/redstar.png"  mode="aspectFill"></image>
+            <text class="pink">{{item.store_score}}</text>
+            <text>月售{{item.month_count}}</text>
+          </view>
+        </view>
+        -------->
+
+        
+      
+
+      <!------------->
         <navigator class="goods_item_detail" wx:for="{{list_store_save}}" wx:key='index' url="../../pages/orderOrPayment/orderOrPayment?store_id={{item.store_id}}&store_name={{item.store_name}}&city={{curcity}} ">
           <view class="goods_img">
             <image  lazy-load="true"  src="{{item.store_logo?item.store_logo:'../../images/noImg1.png'}}"  mode="aspectFill"></image>
@@ -114,6 +133,7 @@
             <text>月售{{item.month_count}}</text>
           </view>
         </navigator>
+      <!------------->  
 
       </scroll-view>
     </view>
