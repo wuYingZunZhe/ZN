@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+/* 页面左右间距 */
+
+/* 文字尺寸 */
+
+/*文字颜色*/
+
+/* 边框颜色 */
+
+/* 图片加载中颜色 */
+
+/* 行为相关颜色 */
+
+page {
+  background: #ddd;
+}
+
+/*头部栏*/
+
+.user-section {
+  height: 520rpx;
+  padding: 100rpx 30rpx 0;
+  position: relative;
+}
+
+/*头部背景图片*/
+
+.user-section .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+  opacity: 0.7;
+}
+
+/*用户信息框*/
+
+.user-info-box {
+  height: 180rpx;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+/*用户头像*/
+
+.user-info-box >image:nth-child(1) {
+  width: 130rpx;
+  height: 130rpx;
+  margin-top: 20rpx;
+  position: absolute;
+  border: 5rpx solid #fff;
+  border-radius: 50%;
+}
+
+/*用户名称*/
+
+.user-info-box >text:nth-child(2) {
+  position: absolute;
+  margin: 20rpx 0 0 150rpx;
+  font-size: 38rpx;
+}
+
+/*用户手机号*/
+
+.user-info-box >text:nth-child(3) {
+  position: absolute;
+  margin: 80rpx 0 0 150rpx;
+  font-size: 38rpx;
+}
+
+/*提货二维码*/
+
+.qr {
+  width: 30%;
+  height: 50rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin: 80rpx 0 0 70%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: right;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+}
+
+.qr >image {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+/*二维码弹出框样式*/
+
+.modalDlg {
+  width: 60%;
+  height: 450rpx;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 9999;
+  background-color: #fff;
+}
+
+/*全局遮罩层*/
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+/*二维码图片*/
+
+.bg {
+  width: 100%;
+  height: 100%;
+}
+
+/*订单栏*/
+
+.my_order {
+  height: 240rpx;
+  background: #fff;
+  border-radius: 16rpx 16rpx 0 0;
+  overflow: hidden;
+  position: relative;
+  padding: 20rpx 24rpx;
+}
+
+/*订单标题*/
+
+.my_order > view:first-child {
+  font-size: 30rpx;
+  color: #303133;
+}
+
+/*订单栏状态*/
+
+.my_order > view:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  border-radius: 10rpx;
+}
+
+.my_order > view:nth-child(2) > view {
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: #303133;
+  padding: 28rpx 0;
+  margin-top: 20rpx;
+}
+
+.my_order > view:nth-child(2) > view:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.my_order > view:nth-child(2) .yticon {
+  font-size: 48rpx;
+  margin-bottom: 18rpx;
+  color: #fa436a;
+}
+
+.order-section .icon-shouhoutuikuan {
+  font-size: 44rpx;
+}
+
+/*框*/
+
+.my_box {
+  width: 92%;
+  height: 300rpx;
+  margin-left: 4%;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  position: relative;
+  font-size: 30rpx;
+}
+
+/*框标题*/
+
+.box_title {
+  height: 100rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.my_box >view:nth-child(2) {
+  height: 80rpx;
+  color: #f3453fd9;
+  border-top: 1px solid #ddd;
+  font-size: 38rpx;
+  line-height: 80rpx;
+}
+
+.my_box >view:nth-child(3) {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.my_box >view:nth-child(4) {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #111;
+  font-size: 38rpx;
+}
+
+.my_box >view:nth-child(4) > text {
+  color: #f3dc77;
+}
+
+/*提示信息*/
+
+.hint {
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 50rpx;
+  color: #666;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+
+.hint > view {
+  margin-top: 20rpx;
+}
+
+.hint > view:nth-child(2) > text {
+  color: #ff8c00;
+}
+
+/**/
+
+.go_shop {
+  width: 80%;
+  border-radius: 200rpx;
+  color: #fff;
+  background: red;
+  margin-top: 30rpx;
+}
+
+/*箭头
+.arrows {
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+  transform: rotate(45deg);
+  float: left;
+}*/
+
+/*
+
+.cover-container {
+  background: #f8f8f8;
+  margin-top: -150rpx;
+  padding: 0 30rpx;
+  position: relative;
+  background: #f5f5f5;
+  padding-bottom: 20rpx;
+}
+.cover-container .arc {
+    position: absolute;
+    left: 0;
+    top: -34rpx;
+    width: 100%;
+    height: 36rpx;
+}
+.tj-sction .tj-item {
+  flex-direction: column;
+  height: 140rpx;
+  font-size: 24rpx;
+  color: #75787d;
+}
+.tj-sction .num {
+  font-size: 32rpx;
+  color: #303133;
+  margin-bottom: 8rpx;
+}
+
+.history-section {
+  padding: 30rpx 0 0;
+  margin-top: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.history-section .sec-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #303133;
+    line-height: 40rpx;
+    margin-left: 30rpx;
+}
+.history-section .sec-header .yticon {
+      font-size: 44rpx;
+      color: #5eba8f;
+      margin-right: 16rpx;
+      line-height: 40rpx;
+}
+.history-section .h-list {
+    white-space: nowrap;
+    padding: 30rpx 30rpx 0;
+}
+.history-section .h-list image {
+      display: inline-block;
+      width: 160rpx;
+      height: 160rpx;
+      margin-right: 20rpx;
+      border-radius: 10rpx;
+}
+
+
+
+/*
+.vip-card-box {
+  display: flex;
+  flex-direction: column;
+  color: #f7d680;
+  height: 240rpx;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.8)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+  border-radius: 16rpx 16rpx 0 0;
+  overflow: hidden;
+  position: relative;
+  padding: 20rpx 24rpx;
+}
+.vip-card-box .card-bg {
+    position: absolute;
+    top: 20rpx;
+    right: 0;
+    width: 380rpx;
+    height: 260rpx;
+}
+
+.vip-card-box .b-btn {
+    position: absolute;
+    right: 20rpx;
+    top: 16rpx;
+    width: 132rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+    font-size: 22rpx;
+    color: #36343c;
+    border-radius: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#f9e6af), to(#ffd465));
+    background: -o-linear-gradient(left, #f9e6af, #ffd465);
+    background: linear-gradient(left, #f9e6af, #ffd465);
+    z-index: 1;
+}
+.vip-card-box .tit {
+    font-size: 30rpx;
+    color: #f7d680;
+    margin-bottom: 28rpx;
+}
+.vip-card-box .tit .yticon {
+      color: #f6e5a3;
+      margin-right: 16rpx;
+}
+.vip-card-box .e-b {
+    font-size: 24rpx;
+    color: #d8cba9;
+    margin-top: 10rpx;
+}*/

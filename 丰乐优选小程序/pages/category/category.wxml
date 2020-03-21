@@ -1,0 +1,68 @@
+<view class="containner">
+  <!----搜索输入框----->
+  <view class="mp-search-box">
+    <input class="ser-input" type="text" value="搜索商品" disabled/>
+  </view>
+  <view class="cont">
+    <!---左侧栏----->
+    <scroll-view scroll-y="true" class="scr_left" scroll-top="{{leftTop}}" scroll-with-animation="true">
+      <block wx:for="{{leftData}}" wx:for-item="lcai" wx:key="index">
+        <view class="sc_left_item {{cp_index==index? 'active':''}}" data-id="c_{{lcai.id}}" data-index="{{index}}" bindtap="leftTap">
+          {{lcai.name}}
+        </view>
+      </block>
+    </scroll-view>
+    <!---右侧栏----->
+    <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
+      <block wx:for="{{rightData}}" wx:for-item="rcai" wx:key="index">
+        <!---分类标题-
+        <text class="sc_right_title">{{rcai.name}}</text>
+        --->
+        <!---分类区块---->
+        <view class="sc_right_item" id="c_{{rcai.id}}" data-id="c_{{rcai.id}}" data-index="{{index}}" bindtap="rightTap">
+          <view class="goods" wx:for="{{rcai.img}}" wx:key="index">
+            <image src="{{item}}"></image>
+            <view class="goods_title">
+              <view>商品名称</view>
+              <view>
+                <view>13万</view>
+                <view>关注人数</view>
+              </view>
+            </view>
+            <view class="time">
+              <view>预售时间：03月17日</view>
+              <view>提货时间：03月18日</view>
+              <view>今日已售
+                <text>5012</text>份</view>
+              <view>限量25000份</view>
+            </view>
+            <view class="price">
+              <view>
+                <text>￥</text>29.9
+                <text>￥20</text>
+              </view>
+            </view>
+            <view class="goods_btn">
+              <view>进入家禽馆</view>
+              <view>加入购物车</view>
+            </view>
+            <view class="buyer">
+              <view>
+                <image src="/static/temp/c3.png"></image>
+                <image src="/static/temp/c4.png"></image>
+                <image src="/static/temp/c5.png"></image>
+                <image src="/static/temp/c6.png"></image>
+                <image src="/static/temp/c3.png"></image>
+                <image src="/static/temp/c4.png"></image>
+                <image src="/static/temp/c5.png"></image>
+                <image src="/static/temp/c6.png"></image>
+                <text>等购买了此商品</text>
+              </view>
+              <text class="yticon icon-you"></text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

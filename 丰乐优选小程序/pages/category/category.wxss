@@ -1,0 +1,297 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+}
+
+/*搜索输入框*/
+
+.mp-search-box {
+  position: relative;
+  left: 0;
+  padding-top: 20rpx;
+  margin-bottom: 0rpx;
+  z-index: 2;
+  width: 100%;
+  height: 80rpx;
+  padding: 10rpx 10%;
+  background: #fff;
+}
+
+.mp-search-box .ser-input {
+  flex: 1;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #606266;
+  border-radius: 20px;
+  background: #eee;
+}
+
+/*外部容器*/
+
+.containner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/*顶部标题*/
+
+.top {
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+}
+
+/*联动容器*/
+
+.cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+/*左侧栏*/
+
+.scr_left {
+  flex-shrink: 0;
+  width: 200rpx;
+  height: 100%;
+  background-color: #fff;
+}
+
+/*左侧栏激活样式*/
+
+.active {
+  color: #fa436a !important;
+  background: #f8f8f8;
+  border-left: 2px solid red;
+  opacity: 0.8;
+  transition: 1s;
+}
+
+/*隐藏滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/*左侧导航样式*/
+
+.sc_left_item {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #606266;
+  position: relative;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/*右侧栏*/
+
+.scr_right {
+  width: 520rpx;
+  height: 100%;
+}
+
+/*右侧栏样式*/
+
+.sc_right_item {
+  /*margin-bottom: 30rpx;*/
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #303133;
+  background: #ddd;
+  position: relative;
+}
+
+/*右侧栏标题样式*/
+
+.sc_right_title {
+  width: 100%;
+  font-size: 24rpx;
+  color: #303133;
+}
+
+/*商品展示*/
+
+.goods {
+  width: 100%;
+  height: 680rpx;
+  background: #fff;
+  /*margin-bottom:20rpx;*/
+}
+
+.goods image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.goods .goods_title {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.goods .goods_title> view:nth-child(1) {
+  width: 75%;
+  height: 80rpx;
+  position: absolute;
+  margin: 10rpx 0 0 20rpx;
+  padding: 15rpx 0 0 20rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-right: 1px solid #ddd;
+}
+
+.goods .goods_title> view:nth-child(2) {
+  width: 20%;
+  height: 80rpx;
+  position: absolute;
+  margin: 10rpx 0rpx;
+  padding: 10rpx 0;
+  margin-left: 80%;
+  text-align: center;
+}
+
+.goods .goods_title> view:nth-child(2) >view:nth-child(1) {
+  font-size: 24rpx;
+  color: red;
+}
+
+.goods .goods_title> view:nth-child(2) >view:nth-child(2) {
+  font-size: 20rpx;
+  color: #909399;
+}
+
+.goods .time {
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+}
+
+.goods .time > view {
+  position: absolute;
+  color: #ffa500;
+  font-size: 22rpx;
+  width: 50%;
+}
+
+.goods .time > view:nth-child(1) {
+  margin: 5rpx 0 0 5rpx;
+  padding-left: 10rpx;
+}
+
+.goods .time > view:nth-child(2) {
+  margin: 40rpx 0 0 5rpx;
+  padding-left: 10rpx;
+}
+
+.goods .time > view:nth-child(3) {
+  margin: 5rpx 0 0 50%;
+  padding-right: 10rpx;
+  text-align: right;
+}
+
+.goods .time > view:nth-child(3)>text {
+  color: red;
+}
+
+.goods .time > view:nth-child(4) {
+  margin: 40rpx 0 0 50%;
+  padding-right: 10rpx;
+  text-align: right;
+}
+
+.price >view {
+  color: red;
+  font-size: 50rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+}
+
+.price >view >text {
+  font-size: 22rpx;
+}
+
+.price >view >text:nth-child(2) {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.goods_btn {
+  width: 100%;
+  height: 80rpx;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.goods_btn>view {
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  margin: 10rpx;
+  padding: 0 10rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.goods_btn>view:nth-child(1) {
+  background: green;
+}
+
+.goods_btn>view:nth-child(2) {
+  margin-left: 70%;
+  background: red;
+}
+
+.buyer {
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+  padding: 0 10rpx 0 20rpx;
+  margin-top: 10rpx;
+  padding-top: 10rpx;
+  border-top: 1px soild #909399;
+}
+
+.buyer >view:nth-child(1) {
+  position: absolute;
+}
+
+.buyer >view:nth-child(1)> image {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  margin-left: -5rpx;
+  vertical-align: middle;
+}
+
+.buyer >view:nth-child(1)>text {
+  font-size: 22rpx;
+  margin-left: 10rpx;
+  line-height: 40rpx;
+  color: #ddd;
+}
+
+.buyer .icon-you {
+  position: absolute;
+  font-size: 34rpx;
+  color: #909399;
+  margin-left: 90%;
+  margin-top: 15rpx;
+}

@@ -1,0 +1,121 @@
+<!----头部栏------>
+<view class="user-section">
+  <!----头部背景图片------>
+  <image class="bg" src="/static/user-bg.jpg"></image>
+  <!---用户信息框--->
+  <view class="user-info-box" >
+    <!---用户头像----->
+    <image src="{{avatarUrl||'/static/missing-face.png'}}"></image>
+    <text>{{nickName||'游客'}}</text>
+    <text>{{province||'手机号'}}</text>
+    <!----二维码弹窗--- -->
+    <view class="qr" bindtap='submit'>
+      <image src="{{'/static/missing-face.png'}}"></image>
+      提货二维码
+    </view>
+  </view>
+  <view>
+  </view>
+
+  <view class="modalDlg" wx:if="{{qr}}" bindtap="close_mask">
+    <image src="{{avatarUrl||'/static/missing-face.png'}}" class="bg"></image>
+  </view>
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{qr}}" bindtap="close_mask"></view>
+
+  <!-----全部订单------>
+  <view class="my_order">
+    <view>我的订单</view>
+    <view class="order-section">
+      <view>
+        <text class="yticon icon-shouye"></text>
+        <text>全部订单</text>
+      </view>
+      <view>
+        <text class="yticon icon-daifukuan"></text>
+        <text>待付款</text>
+      </view>
+      <view>
+        <text class="yticon icon-yishouhuo"></text>
+        <text>待收货</text>
+      </view>
+      <view>
+        <text class="yticon icon-shouhoutuikuan"></text>
+        <text>已提货</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="my_box">
+  <list-cell title="我的当前自提点" tips="切换自提点" border></list-cell>
+  <view>岳阳观沙八方小区便利店</view>
+  <view>湖南省长沙市岳阳观区</view>
+  <view>门店电话：
+    <text>123456789</text>
+  </view>
+</view>
+<!---提示信息----->
+<view class="hint">
+  <view>
+    <text>1.如果您购买的商品有任何问题，请与您购买的门店联系！\n门店将为您处理，让您售后无忧！</text>
+
+  </view>
+  <view>
+    2.如果您找不到您购物的提货门店，请致电丰乐优选
+    <text>帮帮热线！\n</text>
+    <text>123456789</text>
+  </view>
+</view>
+<!---购物按钮----->
+<button class="go_shop" open-type="getUserInfo" bindgetuserinfo="getUserInfo">去购物</button>
+
+
+
+
+<!--------
+  
+    
+  <view data-event-opts="{{[['touchstart',[['coverTouchstart',['$event']]]],['touchmove',[['coverTouchmove',['$event']]]],['touchend',[['coverTouchend',['$event']]]]]}}" class="cover-container" style="{{'transform:'+(coverTransform)+';'+('transition:'+(coverTransition)+';')}}"
+    bindtouchstart="__e" bindtouchmove="__e" bindtouchend="__e">
+    <image class="arc" src="/static/arc.png"></image>
+    <view class="tj-sction">
+      <view class="tj-item">
+        <text class="num">128.8</text>
+        <text>余额</text>
+      </view>
+      <view class="tj-item">
+        <text class="num">0</text>
+        <text>优惠券</text>
+      </view>
+      <view class="tj-item">
+        <text class="num">20</text>
+        <text>积分</text>
+      </view>
+    </view>
+    
+    <view class="history-section icon">
+      <view class="sec-header">
+        <text class="yticon icon-lishijilu"></text>
+        <text>浏览历史</text>
+      </view>
+      <scroll-view class="h-list" scroll-x>
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553105186633&di=c121a29beece4e14269948d990f9e720&imgtype=0&src=http%3A%2F%2Fimg004.hc360.cn%2Fm8%2FM04%2FDE%2FDE%2FwKhQplZ-QteEBvsbAAAAADUkobU751.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}"
+          bindtap="__e"></image>
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553105231218&di=09534b9833b5243296630e6d5b728eff&imgtype=0&src=http%3A%2F%2Fimg002.hc360.cn%2Fm1%2FM05%2FD1%2FAC%2FwKhQcFQ3iN2EQTo8AAAAAHQU6_8355.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}"
+          bindtap="__e"></image>
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553105320890&di=c743386be51f2c4c0fd4b75754d14f3c&imgtype=0&src=http%3A%2F%2Fimg007.hc360.cn%2Fhb%2FMTQ1OTg4ODY0MDA3Ny05OTQ4ODY1NDQ%3D.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}"
+          bindtap="__e"></image>
+        <image src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2691146630,2165926318&fm=26&gp=0.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}" bindtap="__e"></image>
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553105443324&di=8141bf13f3f208c61524d67f9bb83942&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01ac9a5548d29b0000019ae98e6d98.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}"
+          bindtap="__e"></image>
+        <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=191678693,2701202375&fm=26&gp=0.jpg" mode="aspectFill" data-event-opts="{{[['tap',[['navTo',['/pages/product/product']]]]]}}" bindtap="__e"></image>
+      </scroll-view>
+      <list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="我的钱包" tips="您的会员还有3天过期"></list-cell>
+      <list-cell icon="icon-dizhi" iconColor="#5fcda2" title="地址管理" data-event-opts="{{[['^eventClick',[['navTo',['/pages/address/address']]]]]}}" bind:eventClick="__e"></list-cell>
+      <list-cell icon="icon-share" iconColor="#9789f7" title="分享" tips="邀请好友赢10万大礼"></list-cell>
+      <list-cell icon="icon-pinglun-copy" iconColor="#ee883b" title="晒单" tips="晒单抢红包"></list-cell>
+      <list-cell icon="icon-shoucang_xuanzhongzhuangtai" iconColor="#54b4ef" title="我的收藏"></list-cell>
+      <list-cell icon="icon-shezhi1" iconColor="#e07472" title="设置" border data-event-opts="{{[['^eventClick',[['navTo',['/pages/set/set']]]]]}}" bind:eventClick="__e"></list-cell>
+    </view>
+  </view>
+  --------->
