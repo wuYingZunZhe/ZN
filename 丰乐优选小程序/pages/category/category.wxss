@@ -102,7 +102,7 @@ page {
 /*右侧栏*/
 
 .scr_right {
-  width: 520rpx;
+  width: 530rpx;
   height: 100%;
 }
 

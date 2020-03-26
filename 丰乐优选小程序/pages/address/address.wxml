@@ -16,6 +16,8 @@
       <text data-event-opts="{{[['tap',[['addAddress',['edit','$0'],[[['addressList','',index]]]]]]]}}" class="yticon icon-bianji" catchtap="__e"></text>
     </view>
   </block>
+  <!-----------
   <text style="display:block;padding:16rpx 30rpx 10rpx;lihe-height:1.6;color:#fa436a;font-size:24rpx;">重要：添加和修改地址回调仅增加了一条数据做演示，实际开发中将回调改为请求后端接口刷新一下列表即可</text>
-  <button data-event-opts="{{[['tap',[['addAddress',['add']]]]]}}" class="add-btn" bindtap="__e">新增地址</button>
+  ------>
+  <button data-event-opts="{{[['tap',[['addAddress',['add']]]]]}}" class="add-btn" bindtap="addAddress">新增地址</button>
 </view>

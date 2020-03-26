@@ -1,0 +1,228 @@
+page{
+  background: #eee;
+}
+.purchaseTitle {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.purchaseTitle view {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+/*
+.purchaseTitle view{
+  width:50%;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  float:left;
+}*/
+
+.purchaseTitle .active {
+  color: red;
+}
+
+/**/
+
+.infoSum {
+  width: 96%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: pink;
+  margin: 20rpx 2%;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.infoSum > text {
+  color: red;
+  margin: 0 4rpx;
+}
+
+/*购买用户信息列表*/
+
+.purchaseList {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  margin: 10rpx 0;
+  position: relative;
+}
+
+.purchaseList image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 0 0 10rpx;
+  position: absolute;
+}
+
+.purchaseList view {
+  position: absolute;
+  font-size: 24rpx;
+}
+
+.purchaseList view:nth-child(2) {
+  margin: 15rpx 0 0 120rpx;
+}
+
+.purchaseList view:nth-child(3) {
+  margin: 60rpx 0 0 120rpx;
+}
+
+.purchaseList view:nth-child(4) {
+  width: 20%;
+  margin: 30rpx 0 0 75%;
+  text-align: right;
+}
+
+.purchaseList view:nth-child(4) text {
+  color: red;
+}
+
+/*商品信息查看按钮*/
+.toGoodsInfo {
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid red;
+  color: red;
+  font-size: 32rpx;
+  border-radius: 100rpx;
+  text-align: center;
+  margin: 50rpx 25%;
+}
+.toGoodsInfo > view {
+  margin-left: 10rpx;
+  border: solid red;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 8rpx;
+  transform: rotate(-45deg);
+}
+
+/*********************************直采直播********************************************/
+.live{
+  width:100%;
+  height:250rpx;
+  background: #fff;
+  position:relative;
+  margin-bottom: 20rpx;
+}
+.live > image{
+  width:30vw;
+  height:30vw;
+  position: absolute;
+  margin:20rpx;
+}
+.live > view{
+  position: absolute;
+}
+.live > view:nth-child(2){
+  font-size: 32rpx;
+  width:60%;
+  margin:20rpx 0 0 35%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.live > view:nth-child(3){
+  font-size: 28rpx;
+  color:#aaa;
+  margin:70rpx 0 0 35%;
+}
+.live > view:nth-child(4){
+  font-size: 28rpx;
+  color:red;
+  margin:120rpx 0 0 35%;
+}
+.live > view:nth-child(5){
+  font-size: 42rpx;
+  color:red;
+  margin:180rpx 0 0 35%;
+}
+.live > view:nth-child(6){
+  font-size: 28rpx;
+  color:red;
+  margin:190rpx 0 0 56%;
+}
+.live > view:nth-child(7){
+  width:25%;
+  text-align: center;
+  padding:10rpx 0;
+  border-radius: 100rpx;
+  background: red;
+  font-size: 28rpx;
+  color:#fff;
+  margin:180rpx 0 0 70%;
+}
+/*用户发布的消息*/
+.richTxt{
+  width:100%;
+  /*height: 500rpx;*/
+  background: #fff;
+  padding:0 6%;
+}
+.richTxt > text{
+  word-wrap: break-word;
+}
+.image_1 > image{
+  width: 100%;
+}
+.image_2 > image{
+  width: 50%;
+  height: 50vw;
+}
+.image_3 > image{
+  width: 33.33%;
+  height: 50vw;
+}
+/*分享及点赞*/
+.share{
+  width:100%;
+  height: 100rpx;
+  position:relative;
+}
+.share > view{
+  position:absolute;
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+.share >view:nth-child(1){
+  color:#aaa;
+  margin-left:0%;
+}
+.share >view:nth-child(2){
+  color:#222;
+  margin-left:60%;
+}
+.share >view:nth-child(3){
+  color:red;
+  margin-left:80%;
+}
+/*点赞列表*/
+.likeList{
+  width:100%;
+  background: #aaa;
+  color:#3A5FCD;
+  border-radius: 20rpx;
+  word-wrap: break-word;
+  padding:10rpx;
+}
+/*分割线样式*/
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+ margin:50rpx 0 0 0;
+}

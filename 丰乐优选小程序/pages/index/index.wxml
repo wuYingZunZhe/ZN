@@ -37,8 +37,45 @@
 </swiper>
 --->
 
+
+
+<!----商品直播-------->
+<view class="goods goodsLive" bindtap='toProduct' wx:for='{{1}}' wx:key='index'>
+  <video src="/static/temp/ad1.jpg" wx:if="{{false}}"></video>
+  <image src="/static/temp/ad1.jpg" wx:else></image>
+  <view class="goods_title">
+    <view>商品名称</view>
+    <view>
+      <view>13万</view>
+      <view>关注人数</view>
+    </view>
+  </view>
+  <view class="time">
+    <view>预售时间：03月17日</view>
+    <view>提货时间：03月18日</view>
+    <view>限量25000份</view>
+  </view>
+  <view class="price">
+    <view>
+      <text>￥</text>29.9
+      <text>￥20</text>
+    </view>
+  </view>
+  <view class="goods_btn goodsLive_btn">
+    <view>24日10点预售</view>
+  </view>
+</view>
+<!-----图片轮播----------->
+<swiper indicator-dots="true">
+  <swiper-item wx:for='{{classify[1]}}' wx:key='classify'>
+      <image src="{{item.url}}" class="swiperImage"></image>
+  </swiper-item>
+</swiper>
+
 <!----商品展示-------->
-<view class="goods" bindtap='toProduct' wx:for='{{5}}' wx:key='index'>
+<block wx:for='{{5}}' wx:key='index'>
+  <view class="goodsTitle">本商品由xxxx专供</view>
+<view class="goods" bindtap='toProduct' >
   <image src="/static/temp/ad1.jpg"></image>
   <view class="goods_title">
     <view>商品名称</view>
@@ -256,3 +293,4 @@
   </view>
   ------>
 </view>
+</block>

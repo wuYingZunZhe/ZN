@@ -10,7 +10,7 @@
     <text>{{province||'手机号'}}</text>
     <!----二维码弹窗--- -->
     <view class="qr" bindtap='submit'>
-      <image src="{{'/static/missing-face.png'}}"></image>
+      <image src="{{avatarUrl||'/static/missing-face.png'}}"></image>
       提货二维码
     </view>
   </view>

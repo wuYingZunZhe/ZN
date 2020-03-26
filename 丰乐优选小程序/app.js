@@ -9,14 +9,14 @@ App({
   //全局变量
   globalData: {
     //用户微信数据
-    avatarUrl :'',
+    avatarUrl: '',
     city: '',
     country: '',
     gender: '',
     language: '',
     nickName: '',
     province: '',
-    registerUrl:'xxxxxxxxxx',//服务器请求地址
+    registerUrl: 'xxxxxxxxxx', //服务器请求地址
   },
   //------通用功能-----
 
@@ -35,8 +35,8 @@ App({
       withCredentials: true,
 
       success: function(res) {
-        consolr.log(res,'res');
-        
+        consolr.log(res, 'res');
+
         that.globalData.avatarUrl = res.userInfo.avatarUrl;
         that.globalData.city = res.userInfo.city;
         that.globalData.country = res.userInfo.country;
@@ -45,24 +45,27 @@ App({
         that.globalData.nickName = res.userInfo.nickName;
         that.globalData.province = res.userInfo.province;
       },
-      fail: function(res) {console.log(res)},
+      fail: function(res) {
+        console.log(res)
+      },
       complete: function(res) {},
     })
   },
   //获取用户信息------------
-  getUserInfo_3: function (e, that, num) {
+  getUserInfo_3: function(e, that, num) {
     let app = this;
-    
+
     console.log('获取用户信息')
-    
+
     if (app.globalData.canIUse) {
-      if (e.detail.errMsg == "getUserInfo:ok") {//授权
+      if (e.detail.errMsg == "getUserInfo:ok") { //授权
         console.log('329getUserInfo', e)
         util.login(e.detail.userInfo, mobile, that, num, app, scene);
         that.setData({
-          logosrc: e.detail.userInfo.avatarUrl, userInfo: e.detail.userInfo
+          logosrc: e.detail.userInfo.avatarUrl,
+          userInfo: e.detail.userInfo
         })
-      } else if (e.detail.errMsg == "getUserInfo:fail auth deny") {//拒绝授权
+      } else if (e.detail.errMsg == "getUserInfo:fail auth deny") { //拒绝授权
         console.log('拒绝授权个人信息')
         app.showText('您若不登录将无法使用小程序部分功能哦', that);
       } else {
@@ -82,7 +85,8 @@ App({
             console.log(scene, 2600000, num)
             util.login(res.userInfo, mobile, that, num, app, scene);
             that.setData({
-              logosrc: res.userInfo.avatarUrl, userInfo: res.userInfo
+              logosrc: res.userInfo.avatarUrl,
+              userInfo: res.userInfo
             })
           }
           if (app.userInfoReadyCallback) {
@@ -116,39 +120,39 @@ App({
     }
   },
   //----获取微信登陆凭证---
-  register: function (ph, ver) {
+  register: function(ph, ver) {
     wx.login({
       success(res) {
         if (res.code) {
           console.log('登录成功！' + res.code)
           return res.code
-        } else (
+        } else(
           console.log('登录失败！' + res.errMsg)
         )
       }
     })
   },
   //请求封装
-  request: function (data) {
-    let that=this;
+  request: function(data) {
+    let that = this;
     wx.request({
       url: this.globalData.registerUrl,
       data: data,
       method: 'POST',
       header: {
-        'content-type': 'application/json' ,
+        'content-type': 'application/json',
       },
       success(res) {
         console.log(res.data, '请求成功！');
         return res
       },
-      fail(err){
-        console.log(err,'请求失败！');
+      fail(err) {
+        console.log(err, '请求失败！');
       }
     })
   },
   //获取当前位置信息
-  getLocation: function () {
+  getLocation: function() {
     wx.getLocation({
       type: 'wgs84',
       success(res) {
@@ -160,12 +164,57 @@ App({
       }
     })
   },
-  showLoading: function (e) {
+  showLoading: function(e) {
     wx.showLoading({
       title: '加载中',
       mask: true
     })
   },
+  //--------------------------------------
+  onLaunch: function() {
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      }
+    })
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              console.log(this.globalData)
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }
+      }
+    })
+    var that = this
+    //获取屏幕尺寸，放到全局结构中
+    wx.getSystemInfo({
+      success: function(res) {
+        that.globalData.scHeight = res.windowHeight
+        that.globalData.scWidth = res.windowWidth
+      },
+    })
+    console.log(this.globalData.scWidth)
+    console.log(this.globalData.scHeight)
+  },
+  globalData: {
+    userInfo: null,
+    scWidth: 0, //全局的屏幕尺寸，已经去掉了上边的标题栏
+    scHeight: 0
+  },
+
+  //---------------------------------------
   /*
   //同步存储数据到本地缓存
   setStorage: function(key, value) {

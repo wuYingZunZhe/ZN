@@ -1,6 +1,5 @@
 var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -117,7 +116,12 @@ Page({
   },
   updateBlogs: function () {
     var that = this
-    console.log('到底了！')
+    //console.log('到底了！');
+    wx.showToast({
+      title: '加载完了哦！',
+      icon: 'success',
+      duration: 2000
+    })
     /*
     wx.request({
       url: common.baseUrl + 'blog_rss.php',

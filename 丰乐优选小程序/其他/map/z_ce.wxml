@@ -1,0 +1,15 @@
+<map
+id="myMap"
+style="width:100vw;height:50vh"
+latitude="{{latitude}}"
+longitude="{{longitude}}"
+controls="{{mapControls}}"
+markers="{{markers}}"
+bindcontroltap="mapControlTap"
+bindregionchange="regionChanged"
+bindtap="mapTap"
+bindmarkertap="mapMarker"
+show-location
+enable-overlooking='true'
+>
+</map>

@@ -1,30 +1,34 @@
-<view class="content" bind:__l="__l">
+<view class="content" >
+<!----顶部订单状态栏----->
   <view class="navbar">
     <block wx:for="{{navList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-      <view data-event-opts="{{[['tap',[['tabClick',[index]]]]]}}" class="{{['nav-item',(tabCurrentIndex===index)?'current':'']}}" bindtap="__e">{{''+item.text+''}}</view>
+      <view data-index="{{index}}" class="{{['nav-item',(tabCurrentIndex===index)?'current':'']}}" bindtap="navbar">{{''+item.text+''}}</view>
     </block>
   </view>
-  <swiper class="swiper-box" current="{{tabCurrentIndex}}" duration="300" data-event-opts="{{[['change',[['changeTab',['$event']]]]]}}" bindchange="__e">
-    <block wx:for="{{navList}}" wx:for-item="tabItem" wx:for-index="tabIndex" wx:key="tabIndex">
+
+  <swiper class="swiper-box" current="{{tabCurrentIndex}}" duration="300">
+    <block wx:for="{{5}}" wx:for-item="tabItem" wx:for-index="tabIndex" wx:key="tabIndex">
       <swiper-item class="tab-content">
-        <scroll-view class="list-scroll-content" scroll-y data-event-opts="{{[['scrolltolower',[['loadData',['$event']]]]]}}" bindscrolltolower="__e">
-          <block wx:if="{{tabItem.loaded===true&&tabItem.orderList.length===0}}">
+        <scroll-view class="list-scroll-content" scroll-y  bindscrolltolower="loadData">
+        <!-----订单为空页面------>
+          <block wx:if="{{false}}">
             <empty></empty>
           </block>
-          <block wx:for="{{tabItem.orderList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <!-------订单列表---------->
+          <block wx:for="{{6}}" wx:for-item="item" wx:for-index="index" wx:key="index">
             <view class="order-item">
               <view class="i-top b-b">
-                <text class="time">{{item.time}}</text>
-                <text class="state" style="{{'color:'+(item.stateTipColor)+';'}}">{{item.stateTip}}</text>
+                <text class="time">2019-04-06{{item.time}}</text>
+                <text class="state" style="{{'color:'+(item.stateTipColor)+';'}}">待付款{{item.stateTip}}</text>
                 <block wx:if="{{item.state===9}}">
-                  <text data-event-opts="{{[['tap',[['deleteOrder',[index]]]]]}}" class="del-btn yticon icon-iconfontshanchu1" bindtap="__e"></text>
+                  <text class="del-btn yticon icon-iconfontshanchu1" bindtap="__e">08</text>
                 </block>
               </view>
-              <block wx:if="{{item.goodsList.length>1}}">
+              <block wx:if="{{true}}">
                 <scroll-view class="goods-box" scroll-x>
-                  <block wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
+                  <block wx:for="{{07}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
                     <view class="goods-item">
-                      <image class="goods-img" src="{{goodsItem.image}}" mode="aspectFill"></image>
+                      <image class="goods-img" src="/static/temp/h1.png" mode="aspectFill"></image>
                     </view>
                   </block>
                 </scroll-view>
@@ -32,7 +36,7 @@
               <block wx:for="{{item.goodsList}}" wx:for-item="goodsItem" wx:for-index="goodsIndex" wx:key="goodsIndex">
                 <block wx:if="{{item.goodsList.length===1}}">
                   <view class="goods-box-single">
-                    <image class="goods-img" src="{{goodsItem.image}}" mode="aspectFill"></image>
+                    <image class="goods-img" src="/static/temp/h1.png" mode="aspectFill"></image>
                     <view class="right">
                       <text class="title clamp">{{goodsItem.title}}</text>
                       <text class="attr-box">{{goodsItem.attr+"  x "+goodsItem.number}}</text>
@@ -47,7 +51,7 @@
               </view>
               <block wx:if="{{item.state!=9}}">
                 <view class="action-box b-t">
-                  <button data-event-opts="{{[['tap',[['cancelOrder',['$0'],[[['navList','',tabIndex],['orderList','',index]]]]]]]}}" class="action-btn" bindtap="__e">取消订单</button>
+                  <button  class="action-btn" bindtap="my_ce">取消订单</button>
                   <button class="action-btn recom">立即支付</button>
                 </view>
               </block>

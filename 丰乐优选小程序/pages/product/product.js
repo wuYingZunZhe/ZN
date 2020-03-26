@@ -1,80 +1,49 @@
-// pages/z_ce/new/new.js
-Page({
+//获取应用实例
+const app = getApp()
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    imgList: ['/static/temp/c1.png', '/static/temp/c2.png', '/static/temp/c3.png'],
-    //设置当前完成步数
-    Steps: 0,
+Page
+  (
+  {
+    data:
+    {
+      current: 0,//当前内容区块
+      imgList: ['/static/temp/c1.png', '/static/temp/c2.png', '/static/temp/c3.png'],
+      scrollTop: 0,//商品信息区视图高度
+      liveShow:true,//是否显示直播模块
 
-    // 当步骤为五步时步骤名不可超过五个汉字
-    StepsList: ["第一步", "第二步", "第三步", "第四步", "第五步"],
-    //步骤为五步时
-    progress: 80,
-    percent: 25,
-    //   progress: 75,
-    //   percent: 33,
-    // //步骤为三步时
-    //   progress: 67,
-    //   percent: 50,
+    },
 
-  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    //导航栏点击切换
+    switchSlider: function (e) {
+      this.setData({
+        current: e.target.dataset.index
+      })
+    },
+    //内容区左右滑动
+    changeSlider: function (e) {
+      this.setData({
+        current: e.detail.current
+      })
+    },
+    //查看基本信息
+    toProductInfo: function () {
+      this.setData({
+        current: '1',
+        scrollTop: '0',
+      })
+    },
+    //跳转到订单生成页面
+      submit: function () {
+        wx.redirectTo({
+          url: '/pages/order/createOrder'
+        });
 
-  },
+      },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
-})
+  )
+
+

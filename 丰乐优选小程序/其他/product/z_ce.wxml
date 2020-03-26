@@ -1,0 +1,84 @@
+<!--导航栏--->
+<view class="purchaseTitle">
+  <view wx:if='{{true}}' class="active">直采直播</view>
+  <view>基本信息</view>
+  <view>购买记录</view>
+</view>
+
+<!----购买记录列表----->
+<block wx:if='{{false}}'>
+  <view class="infoSum">
+    目前共
+    <text>28277</text>人参与购买，商品共销售
+    <text>38485</text>份
+  </view>
+  <view class="purchaseList" wx:for='{{5}}' wx:key='index'>
+    <image src="/static/temp/h1.png"></image>
+    <view>杨*</view>
+    <view>2020-03-21 15:15:14</view>
+    <view>
+      <text>1</text>份</view>
+  </view>
+  <view class="toGoodsInfo">点击查看商品信息
+    <view></view>
+  </view>
+</block>
+
+
+<!----直采直播列表----->
+<block wx:if='{{true}}'>
+  <view class="infoSum">
+    目前共
+    <text>28277</text>人参与购买，商品共销售
+    <text>38485</text>份
+  </view>
+  <view class="live">
+    <image src="/static/temp/h1.png"></image>
+    <view>美仁 水培富贵竹 + 玻璃花瓶1组</view>
+    <view>美仁 水培富贵竹 + 玻璃花瓶1组</view>
+    <view>03月22提货</view>
+    <view>￥9.99</view>
+    <view>￥35</view>
+    <view>立即购买</view>
+  </view>
+  <block>
+    <view class="richTxt" wx:for='{{5}}' wx:key='index'>
+      <!-----用户输入文字------>
+      <text class="text">
+    发表文字xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </text>
+      <!-----用户输入图片------>
+      <view class="image_1" wx:if='{{false}}'>
+        <image src="/static/temp/h1.png"></image>
+      </view>
+      <view class="image_2" wx:if='{{true}}'>
+        <image src="/static/temp/h1.png"></image>
+        <image src="/static/temp/h1.png"></image>
+      </view>
+      <view class="image_3" wx:if='{{false}}'>
+        <image src="/static/temp/h1.png"></image>
+        <image src="/static/temp/h1.png"></image>
+        <image src="/static/temp/h1.png"></image>
+      </view>
+      <!-----分享点赞------>
+      <view class="share">
+        <view>15小时前</view>
+        <view>分享</view>
+        <view>赞</view>
+      </view>
+      <!-----点赞列表------>
+      <view class="likeList">
+        点赞列表xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      </view>
+      <!-- 分割线 -->
+      <view class="divLine" wx:if='{{true}}'></view>
+    </view>
+
+    <!------
+  <view class="toGoodsInfo">
+    点击查看商品信息
+    <view></view>
+  </view>
+  ------>
+  </block>
+</block>
