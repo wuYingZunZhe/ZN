@@ -8,6 +8,8 @@ Page({
     time: '',
     show_if: false,
     show_if_2: false,
+    scrollTop:90,//页面滑动高度
+    floorstatus: false,
     classify: [//店铺图标测试数据
       [
         { id: '0', name: '蔬菜馆', url: '/static/temp/c8.png' },
@@ -57,11 +59,80 @@ Page({
     let index = e.currentTarget.dataset.index;
     console.log(index)
   },
+  //跳转到商品搜索页面
+  toSearch: function () {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
   //跳转到商品详情页面
   toProduct:function(){
     wx.navigateTo({
       url: '../product/product',
     })
+  },
+  /*
+  //跳到页面指定高度
+  toScrollTop:function(){
+    let top = this.data.scrollTop;
+    wx.pageScrollTo({
+      scrollTop: top,
+      duration: 1000
+    })
+  },*/
+  //上拉刷新
+  upperBoundary:function(){
+    console.log('上拉')
+  },
+  //下拉刷新
+  belowBoundary: function() {
+      var that = this
+      //console.log('到底了！');
+      wx.showToast({
+        title: '加载完了哦！',
+        icon: 'success',
+        duration: 2000
+      })
+    },
+  // 获取滚动条当前位置
+  onPageScroll: function (e) {
+    console.log(e)
+    if (e.scrollTop > 100) {
+      this.setData({
+        floorstatus: true
+      });
+    } else {
+      this.setData({
+        floorstatus: false
+      });
+    }
+  },
+
+  //回到顶部
+  goTop: function (e) {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
+  //回到顶部
+  goShop: function (e) {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 650
+      })
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
   },
 
 
@@ -69,15 +140,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.news()
+    this.news();
+    //this.getData();
+    console.log('购物车：',wx.getStorageSync('goodsItem'));
   },
-
+  getData:function(){
+    wx.request({
+      url: 'http://192.168.0.101:8080/wechat/api/index/getData',
+      method: 'POST',
+      header: {
+        'Content-Type': "application/x-www-form-urlencoded"
+      },
+      success:function(res){
+        console.log(res.data.data)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-
+    
   },
 
   /**
@@ -105,23 +188,16 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.upperBoundary();
   },
   
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.updateBlogs()
+    this.belowBoundary();
   },
-  updateBlogs: function () {
-    var that = this
-    //console.log('到底了！');
-    wx.showToast({
-      title: '加载完了哦！',
-      icon: 'success',
-      duration: 2000
-    })
+  
     /*
     wx.request({
       url: common.baseUrl + 'blog_rss.php',
@@ -142,7 +218,6 @@ Page({
         })
       }
     })*/
-  },
 
   /**
    * 用户点击右上角分享

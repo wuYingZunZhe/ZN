@@ -13,7 +13,7 @@ Page({
     userInfo:{},
   },
   // 二维码弹窗开启
-  submit: function () {
+  qr: function () {
     this.setData({
       qr: true
     })
@@ -23,6 +23,10 @@ Page({
     this.setData({
       qr: false
     })
+  },
+  //获取手机号
+  getPhoneNumber:function(res){
+    console.log('res',res);
   },
   getUserInfo: function (e) {
     let that = this;
@@ -53,6 +57,15 @@ Page({
       }
     })
   },
+  toOrder:function(e){
+    //console.log(e.currentTarget.dataset.index);
+    let index = e.currentTarget.dataset.index;
+    //console.log(index);
+    wx.navigateTo({
+      url: `/pages/order/order?state=${index}`,
+    })
+    
+  },
 
   // 打开权限设置页提示框
   showSettingToast: function (e) {
@@ -68,6 +81,18 @@ Page({
           })
         }
       }
+    })
+  },
+  //跳转到选择自提点页面
+  toAddress: function () {
+    wx.navigateTo({
+      url: '../address/address',
+    })
+  },
+  //跳转到首页
+  goShop:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
     })
   },
 

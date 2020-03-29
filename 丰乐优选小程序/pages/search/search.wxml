@@ -1,0 +1,86 @@
+<view class="SearchBox">
+  <view class="Search_input_top_box">
+    <view class="Search_ico_box">
+      <image class="Search_ico" src="/static/search.png"></image>
+    </view>
+    <input class="Search_Input" focus="{{name_focus}}" placeholder='请输入商品、店铺名称进行搜索' bindinput='inputvalue' value="{{input_value}}" type='text' focus='{true}'   bindconfirm="search"></input>
+    <view class="Search_btn" bindtap='search'>{{SearchText}}</view>
+  </view>
+  <view class="Search_xian"></view>
+  <!--搜索记录盒子-->
+  <view class="Search_record_box" wx:if="{{listarr.length}}">
+    <view class="Search_record_text">
+      <text>搜索记录</text>
+      <image bindtap='delete_list' src='/static/delete.png'></image>
+    </view>
+    <!--记录词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{listarr}}" data-text="{{item}}" wx:key="key" bindtap='this_value'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--热门搜索盒子-->
+  <view class="hot_box" wx:if="{{hostarr.length}}">
+    <view class="hot_box_text">
+      <text>热门搜索</text>
+    </view>
+    <!--热门词的盒子-->
+    <view class="History_box">
+      <view class="History-list">
+        <text wx:for="{{hostarr}}" data-text="{{item}}" wx:key="key" bindtap='this_value'>{{item}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+ 
+
+
+<!----商品展示-------->
+<block wx:for='{{5}}' wx:key='index' wx:if="{{listarr.length}}">
+  <view class="goodsTitle">本商品由xxxx专供</view>
+<view class="goods" bindtap='toProduct' >
+  <image src="/static/temp/ad1.jpg"></image>
+  <view class="goods_title">
+    <view>商品名称</view>
+    <view>
+      <view>13万</view>
+      <view>关注人数</view>
+    </view>
+  </view>
+  <view class="time">
+    <view>预售时间：03月17日</view>
+    <view>提货时间：03月18日</view>
+    <view>今日已售
+      <text>5012</text>份</view>
+    <view>限量25000份</view>
+  </view>
+  <view class="price">
+    <view>
+      <text>￥</text>29.9
+      <text>￥20</text>
+    </view>
+  </view>
+  <view class="goods_btn">
+    <view>进入家禽馆</view>
+    <view>加入购物车</view>
+  </view>
+  <view class="buyer">
+    <view>
+      <image src="/static/temp/c3.png"></image>
+      <image src="/static/temp/c4.png"></image>
+      <image src="/static/temp/c5.png"></image>
+      <image src="/static/temp/c6.png"></image>
+      <image src="/static/temp/c3.png"></image>
+      <image src="/static/temp/c4.png"></image>
+      <image src="/static/temp/c5.png"></image>
+      <image src="/static/temp/c6.png"></image>
+      <text>等购买了此商品</text>
+    </view>
+    <text class="yticon icon-you"></text>
+  </view>
+  </view>
+</block>

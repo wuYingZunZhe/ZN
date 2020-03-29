@@ -174,6 +174,18 @@ Page({
     zindex: 0,
     oneShow: true
   },
+  //跳转到商品搜索页面
+  toSearch: function () {
+    wx.navigateTo({
+      url: '../search/search',
+    })
+  },
+  //跳转到购物车页面
+  toCart: function () {
+    wx.switchTab({
+      url: '../cart/cart',
+    })
+  },
   onLoad: function () {
 
   },

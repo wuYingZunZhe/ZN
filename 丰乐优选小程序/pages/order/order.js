@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabCurrentIndex: 0,//订单状态
+    tabCurrentIndex: 1,//订单状态
     navList: [{//订单标题导航栏数据
       state: 0,
       text: '全部',
@@ -29,17 +29,10 @@ Page({
 
     {
       state: 3,
-      text: '待评价',
+      text: '已提货',
       loadingType: 'more',
       orderList: []
     },
-
-    {
-      state: 4,
-      text: '售后',
-      loadingType: 'more',
-      orderList: []
-    }
     ]
   },
   my_ce: function () {
@@ -73,9 +66,7 @@ Page({
       //防止重复加载
       return;
     }
-
     navItem.loadingType = 'loading';
-
     setTimeout(function() {
       var orderList = _Json.default.orderList.filter(function(item) {
         //添加不同状态下订单的表现形式
@@ -99,13 +90,13 @@ Page({
   },
 
 
-  /*
+  
     //swiper 切换
     changeTab: function (e) {
-      this.tabCurrentIndex = e.target.current;
-      this.loadData('tabChange');
-      this.setdata({})
-    },
+      this.tabCurrentIndex = e;
+      //this.loadData('tabChange');
+      //this.setdata({})
+  },/*
     //顶部tab点击
     tabClick: function (index) {
       this.tabCurrentIndex = index;
@@ -151,7 +142,7 @@ Page({
         uni.hideLoading();
       }, 600);
     },
-  
+  */
     //订单状态文字和颜色
     orderStateExp: function (state) {
       var stateTip = '',
@@ -170,12 +161,25 @@ Page({
   
           //更多自定义
       }
-    },*/
+    },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that=this;
+    let index;
+    console.log('options', options.state,options);
+
+    if (options.state){
+       index = Number(options.state);
+    }else{
+       index = 0;
+    }
+    
+    this.setData({
+      tabCurrentIndex:index
+    })
     //this.tabCurrentIndex = +options.state;
     //if (options.state == 0) {
     //this.loadData();

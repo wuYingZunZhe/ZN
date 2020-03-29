@@ -6,10 +6,10 @@ Page({
    */
   data: {
     addressData: {
-      name: '张三',
-      mobile: '18336598809',
-      addressName: '请在地图上选择',
-      address: '周口',
+      name: '',
+      mobile: '',
+      addressName: '',
+      address: '',
       area: '',
       default: false
     }
@@ -35,13 +35,23 @@ Page({
   switchChange: function switchChange(e) {
     this.addressData.default = e.detail;
   },
-
+  //获取联系人姓名
+  inputName: function (e) {
+    this.setData({
+      'addressData.name': e.detail.value
+    })
+  },
+  //获取手机号
+  inputNumber: function (e) {
+    this.setData({
+      'addressData.mobile': e.detail.value
+    })
+  },
   //地图选择地址
   chooseLocation: function () {
     var that = this;
     wx.chooseLocation({
       success: function (res) {
-        console.info('res',res);
         console.log('data', that.data.addressData.addressName);
         console.log(res.address)
         that.setData({
@@ -55,12 +65,11 @@ Page({
 
   //提交
   confirm: function () {
-    console.log('0123');
     var data = this.data.addressData;
     console.log(data)
     if (!data.name) {
       wx.showToast({
-        title: '请输入正确的用户名',
+        title: '请输入联系人',
         icon: 'none',
       })
       return;
@@ -87,6 +96,10 @@ Page({
       })
       return;
     }*/
+    wx.navigateBack({
+      delta: 1
+    })
+    
     /*
     //this.$api.prePage()获取上一页实例，可直接调用上页所有数据和方法，在App.vue定义
     this.$api.prePage().refreshList(data, this.manageType);
@@ -94,8 +107,9 @@ Page({
     setTimeout(function () {
       uni.navigateBack();
     }, 800);*/
-    console.log('非空验证完成')
+    
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

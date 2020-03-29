@@ -1,6 +1,6 @@
 <view class="content b-t" bind:__l="__l">
   <block wx:for="{{addressList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-    <view data-event-opts="{{[['tap',[['checkAddress',['$0'],[[['addressList','',index]]]]]]]}}" class="list b-b" bindtap="__e">
+    <view data-index="{{index}}" class="list b-b" bindtap="checkAddress">
       <view class="wrapper">
         <view class="address-box">
           <block wx:if="{{item.default}}">

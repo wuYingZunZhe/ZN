@@ -12,7 +12,7 @@ Page({
       addressName: '建业购物广场',
       address: '河南省周口市太康县建设路',
       area: '',
-      default: true
+      default: false
     },
     {
       name: '李四',
@@ -20,20 +20,34 @@ Page({
       addressName: '万家乐生活广场',
       address: '河南省周口市沈丘县槐店镇河南商贸对面',
       area: '',
-      default: false
+      default: true
     }
     ]
 
   },
-  /*
+  /**/
   //选择地址
-  checkAddress: function s(item) {
+  checkAddress: function (e) {
+    console.log(e.currentTarget.dataset.index);
+    
+    for (let i = 0; i < this.data.addressList.length;i++){
+      let str = `addressList[${i}].default`
+      this.setData({
+        [str]:false
+      })
+      console.log('456', str)
+    }
+    let strNow = `addressList[${e.currentTarget.dataset.index}].default`
+    this.setData({
+      [strNow]: true
+    })
+    /*
     if (this.source == 1) {
       //this.$api.prePage()获取上一页实例，在App.vue定义
       this.$api.prePage().addressData = item;
       uni.navigateBack();
-    }
-  },*/
+    }*/
+  },
   //添加地址
   addAddress: function (type, item) {
     wx.navigateTo({
@@ -47,6 +61,7 @@ Page({
     this.addressList.unshift(data);
     console.log(data, type);
   },*/
+  
 
   /**
    * 生命周期函数--监听页面加载

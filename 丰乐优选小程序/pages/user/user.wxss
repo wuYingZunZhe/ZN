@@ -72,30 +72,48 @@ page {
   font-size: 38rpx;
 }
 
+/*登陆按钮*/
+
+.login {
+  width: 25%;
+  position: absolute;
+  margin: 50rpx 0 0 150rpx;
+  padding: 0;
+  font-size: 38rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0);
+}
+
+.login::after {
+  border: none;
+}
+
 /*提货二维码*/
 
 .qr {
   width: 30%;
   height: 50rpx;
   left: 30rpx;
-  font-size: 30rpx;
+  font-size: 24rpx;
   line-height: 50rpx;
   margin: 80rpx 0 0 70%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.1);
-  text-align: right;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
   border-top-left-radius: 50rpx;
   border-bottom-left-radius: 50rpx;
 }
 
 .qr >image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
   vertical-align: middle;
+  float: left;
+  margin-top: 5rpx;
+  margin-left: 20rpx;
 }
 
 /*二维码弹出框样式*/
-
 .modalDlg {
   width: 60%;
   height: 450rpx;
@@ -129,7 +147,7 @@ page {
 /*订单栏*/
 
 .my_order {
-  height: 240rpx;
+  height: 200rpx;
   background: #fff;
   border-radius: 16rpx 16rpx 0 0;
   overflow: hidden;
@@ -163,22 +181,31 @@ page {
   border-radius: 10rpx;
   font-size: 24rpx;
   color: #303133;
-  padding: 28rpx 0;
-  margin-top: 20rpx;
+  padding: 20rpx 0;
+  margin-top: 10rpx;
 }
 
 .my_order > view:nth-child(2) > view:active {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.my_order > view:nth-child(2) .yticon {
+/*
+.my_order > view:nth-child(2) image {
   font-size: 48rpx;
   margin-bottom: 18rpx;
   color: #fa436a;
 }
-
-.order-section .icon-shouhoutuikuan {
+.my_order > view:nth-child(2) .icon-shouhoutuikuan {
   font-size: 44rpx;
+}*/
+
+.my_order > view:nth-child(2) > view >image {
+  width: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.my_order > view:nth-child(2) > view >text {
+  font-size: 20rpx;
 }
 
 /*框*/
@@ -207,7 +234,7 @@ page {
   height: 80rpx;
   color: #f3453fd9;
   border-top: 1px solid #ddd;
-  font-size: 38rpx;
+  font-size: 32rpx;
   line-height: 80rpx;
 }
 
@@ -219,8 +246,8 @@ page {
 .my_box >view:nth-child(4) {
   height: 80rpx;
   line-height: 80rpx;
-  color: #111;
-  font-size: 38rpx;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 32rpx;
 }
 
 .my_box >view:nth-child(4) > text {

@@ -1,14 +1,20 @@
 <view class="containner">
   <!----搜索输入框----->
-  <view class="mp-search-box">
-    <input class="ser-input" type="text" value="搜索商品" disabled/>
+  <view class="Search_input_top_box">
+    <view class="Search_ico_box">
+      <image src="/static/search.png"></image>
+    </view>
+    <input  placeholder='搜索商品'   disabled bindtap='toSearch'></input>
+     <image bindtap='toCart' src="/static/tab-cart.png"></image>
   </view>
+  
   <view class="cont">
     <!---左侧栏----->
     <scroll-view scroll-y="true" class="scr_left" scroll-top="{{leftTop}}" scroll-with-animation="true">
       <block wx:for="{{leftData}}" wx:for-item="lcai" wx:key="index">
         <view class="sc_left_item {{cp_index==index? 'active':''}}" data-id="c_{{lcai.id}}" data-index="{{index}}" bindtap="leftTap">
           {{lcai.name}}
+          <view wx:if="{{cp_index==index}}" class="borderLeft"></view>
         </view>
       </block>
     </scroll-view>
@@ -41,11 +47,16 @@
                 <text>￥</text>29.9
                 <text>￥20</text>
               </view>
+              <!-------->
+              <view class="addCart">加入购物车</view>
+              
             </view>
+            <!------
             <view class="goods_btn">
               <view>进入家禽馆</view>
-              <view>加入购物车</view>
+              <view>加入购物车2</view>
             </view>
+            --->
             <view class="buyer">
               <view>
                 <image src="/static/temp/c3.png"></image>

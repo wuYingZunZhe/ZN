@@ -14,6 +14,7 @@
         <radio value="" color="#fa436a" checked="{{payType==1}}"></radio>
       </label>
     </view>
+    <!------
     <view data-event-opts="{{[['tap',[['changePayType',[2]]]]]}}" class="type-item b-b" bindtap="__e">
       <text class="icon yticon icon-alipay"></text>
       <view class="con">
@@ -23,6 +24,7 @@
         <radio value="" color="#fa436a" checked="{{payType==2}}"></radio>
       </label>
     </view>
+    ----->
     <view data-event-opts="{{[['tap',[['changePayType',[3]]]]]}}" class="type-item" bindtap="__e">
       <text class="icon yticon icon-erjiye-yucunkuan"></text>
       <view class="con">

@@ -12,7 +12,8 @@ Page({
     totalPrice: 0,//总金额 
     allselect: false,//是否全选    
     selectArr: [], //已选择的商品  
-    cartData: [
+    cartData: [],
+    cartData_: [//测试数据
       {
         "id": 1,
         "amount": 2,
@@ -56,13 +57,20 @@ Page({
     ],
 
   },
-
-
+  //获取购物车数据
+  changeFn: function () {
+    let data = this.data.cartData_;
+    this.setData({
+      cartData: data
+    })
+    wx.setStorageSync('goodsItem', data);
+    console.log(wx.getStorageSync('goodsItem'));
+  },
 
   //----------
   //计算价格
   calculateTotal: function () {
-    var that=this;
+    var that = this;
     var selectArr = this.data.selectArr;   //已选择的商品
     var totalPrice = 0;
     if (selectArr.length) {  //如果存在商品就计算价格
@@ -190,8 +198,10 @@ Page({
         cartData: cartData,
         selectArr: []   //已选择的数组置空
       })
+      wx.setStorageSync('goodsItem', cartData);
       this.calculateTotal();  //计算价格
     }
+    this.adminTap();
   },
   //编辑或完成
   adminTap: function () {  //切换四个按钮的显示
@@ -204,7 +214,7 @@ Page({
     console.log("已选择的商品:", this.data.selectArr)
   },
   //去首页
-  goHome:function(){
+  goHome: function () {
     wx.reLaunch({
       url: '../index/index'
     })
@@ -215,12 +225,45 @@ Page({
       url: '../set/set'
     })
   },
+  /*
+  // 清空购物车里的所有东西
+  deleFn: function (data) {
+
+    if (this.data.total_num > 0) {
+
+      let goodsItem = wx.getStorageSync('goodsItem');
+
+      for (var i in goodsItem) {
+        goodsItem[i].select_nums = 0;
+        for (var j in goodsItem[i].list_goods) {
+          goodsItem[i].list_goods[j].num = 0;
+        }
+
+      }
+      wx.setStorageSync('goodsItem', goodsItem);
+      let order_info = [];
+      let choosedList = [];
+      wx.setStorageSync('choosedList', choosedList);
+      wx.setStorageSync('order_info', order_info);
+      this.setData({
+        total_num: 0,
+        cartBoxStatus: false,
+        order_cost: 0,
+        goodsItem,
+        choosedList,
+        order_info
+      });
+    }
+  },
+*/
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.changeFn();
   },
 
   /**

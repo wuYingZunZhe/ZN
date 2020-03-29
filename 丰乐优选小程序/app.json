@@ -19,7 +19,9 @@
     "pages/category/category",
     "pages/product/list",
     "pages/z_ce/z_ce",
-    "pages/z_ce/new/new"
+    "pages/z_ce/new/new",
+    "pages/search/search",
+    "pages/logIn/logIn"
   ],
   "subPackages": [],
   "window": {
@@ -61,5 +63,10 @@
     ]
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap42.json"
+  "sitemapLocation": "sitemap42.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
 }

@@ -1,6 +1,8 @@
 require('./common/runtime.js')
 require('./common/vendor.js')
 require('./common/main.js')
+//自定义组件
+var md5 = require('./utils/md5.js');
 
 
 
@@ -8,15 +10,12 @@ require('./common/main.js')
 App({
   //全局变量
   globalData: {
-    //用户微信数据
-    avatarUrl: '',
-    city: '',
-    country: '',
-    gender: '',
-    language: '',
-    nickName: '',
-    province: '',
-    registerUrl: 'xxxxxxxxxx', //服务器请求地址
+    userInfo: '',//用户个人微信数据
+    requestUrl: 'xxxxxxxxxx', //服务器请求地址
+    address:'',//当前自取点地址
+    currentAddress: '',//用户当前位置
+    chooseAddress:'',//用户地图选择的地址
+    
   },
   //------通用功能-----
 
@@ -30,20 +29,12 @@ App({
   },
   //获取用户信息并存入全局变量
   getUserInfo: function() {
+    console.log('getUserInfo')
     let that = this;
     wx.getUserInfo({
       withCredentials: true,
-
       success: function(res) {
-        consolr.log(res, 'res');
-
-        that.globalData.avatarUrl = res.userInfo.avatarUrl;
-        that.globalData.city = res.userInfo.city;
-        that.globalData.country = res.userInfo.country;
-        that.globalData.gender = res.userInfo.gender;
-        that.globalData.language = res.userInfo.language;
-        that.globalData.nickName = res.userInfo.nickName;
-        that.globalData.province = res.userInfo.province;
+        that.globalData.userInfo = res.userInfo;
       },
       fail: function(res) {
         console.log(res)
@@ -54,9 +45,7 @@ App({
   //获取用户信息------------
   getUserInfo_3: function(e, that, num) {
     let app = this;
-
-    console.log('获取用户信息')
-
+    console.log('获取用户信息');
     if (app.globalData.canIUse) {
       if (e.detail.errMsg == "getUserInfo:ok") { //授权
         console.log('329getUserInfo', e)
@@ -151,25 +140,7 @@ App({
       }
     })
   },
-  //获取当前位置信息
-  getLocation: function() {
-    wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const speed = res.speed
-        const accuracy = res.accuracy
-        console.log(res)
-      }
-    })
-  },
-  showLoading: function(e) {
-    wx.showLoading({
-      title: '加载中',
-      mask: true
-    })
-  },
+  
   //--------------------------------------
   onLaunch: function() {
     // 登录
@@ -215,7 +186,7 @@ App({
   },
 
   //---------------------------------------
-  /*
+  
   //同步存储数据到本地缓存
   setStorage: function(key, value) {
     try {
@@ -228,9 +199,198 @@ App({
     }
     var dep_value = wx.getStorageSync(key);
     console.log(dep_value);
-  },*/
+  },
+  //自动获取用户个人信息
+  getUserInfo: function () {
+    let that = this;
+    wx.getLocation({
+      success: function (res) {
+        that.globalData.userInfo = res;
+        console.log('用户个人信息：', that.globalData.userInfo);
+      },
+      fail: function () {
+        wx.getSetting({
+          success: function (res) {
+            var statu = res.authSetting;
+            if (!statu['scope.userInfo']) {
+              wx.showModal({
+                title: '是否授权个人信息',
+                content: '需要获取您的个人信息，请确认授权，否则登录功能将无法使用',
+                success: function (tip) {
+                  if (tip.confirm) {
+                    wx.openSetting({
+                      success: function (data) {
+                        if (data.authSetting['scope.userInfo'] === true) {
+                          wx.showToast({
+                            title: '授权成功',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                          //授权成功之后，再调用getLocation获取地理位置
+                          wx.getLocation({
+                            success: function (res) {
+                              that.globalData.userInfo = res.address;
+                              console.log('个人信息：', that.globalData.userInfo);
+                            },
+                          })
+                        } else {
+                          wx.showToast({
+                            title: '授权失败',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                        }
+                      }
+                    })
+                  }
+                }
+              })
+            }
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '调用授权窗口失败',
+              icon: 'success',
+              duration: 1000
+            })
+          }
+        })
+      }
+    })
+  },
 
-  //当小程序初始化完成时触发 （全局只触发一次）
+  //自动获取用户当前位置
+  getLocation: function () {
+    let that = this;
+    wx.getLocation({
+      success: function (res) {
+        that.globalData.currentAddress=res;
+        console.log('选择地址：', that.globalData.currentAddress);
+      },
+      fail: function () {
+        wx.getSetting({
+          success: function (res) {
+            var statu = res.authSetting;
+            if (!statu['scope.userLocation']) {
+              wx.showModal({
+                title: '是否授权当前位置',
+                content: '需要获取您的地理位置，请确认授权，否则地图功能将无法使用',
+                success: function (tip) {
+                  if (tip.confirm) {
+                    wx.openSetting({
+                      success: function (data) {
+                        if (data.authSetting["scope.userLocation"] === true) {
+                          wx.showToast({
+                            title: '授权成功',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                          //授权成功之后，再调用getLocation获取地理位置
+                          wx.getLocation({
+                            success: function (res) {
+                              that.globalData.currentAddress = res.address;
+                              console.log('选择地址：', that.globalData.currentAddress);
+                            },
+                          })
+                        } else {
+                          wx.showToast({
+                            title: '授权失败',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                        }
+                      }
+                    })
+                  }
+                }
+              })
+            }
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '调用授权窗口失败',
+              icon: 'success',
+              duration: 1000
+            })
+          }
+        })
+      }
+    })
+  },
+
+  //手动获取用户选择的地图位置
+  getChooseLocation: function () {
+    let that = this;
+    wx.chooseLocation({
+      success: function (res) {
+
+        that.globalData.chooseAddress = res;
+        console.log('选择地址：', that.globalData.chooseAddress);
+        /*
+        that.setData({ //调用成功直接设置地址
+          addr: res.address
+        })*/
+      },
+      fail: function () {
+        wx.getSetting({
+          success: function (res) {
+            var statu = res.authSetting;
+            if (!statu['scope.userLocation']) {
+              wx.showModal({
+                title: '是否授权当前位置',
+                content: '需要获取您的地理位置，请确认授权，否则地图功能将无法使用',
+                success: function (tip) {
+                  if (tip.confirm) {
+                    wx.openSetting({
+                      success: function (data) {
+                        if (data.authSetting["scope.userLocation"] === true) {
+                          wx.showToast({
+                            title: '授权成功',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                          //授权成功之后，再调用chooseLocation选择地方
+                          wx.chooseLocation({
+                            success: function (res) {
+                              that.globalData.chooseAddress = res.address;
+                              console.log('选择地址：', that.globalData.chooseAddress);
+                              /*
+                              that.setData({//调用成功直接设置地址
+                                addr: res.address
+                              })*/
+                            },
+                          })
+                        } else {
+                          wx.showToast({
+                            title: '授权失败',
+                            icon: 'success',
+                            duration: 1000
+                          })
+                        }
+                      }
+                    })
+                  }
+                }
+              })
+            }
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '调用授权窗口失败',
+              icon: 'success',
+              duration: 1000
+            })
+          }
+        })
+      }
+    })
+  },
+  //页面加载
+  onLoad() {
+    
+  },
+
+  //当小程序初始化完成时触发
   onLaunch: function() {
     //this.getUserInfo(); //获取用户信息
     //console.log('小程序启动', this.globalData.userInfo)

@@ -17,10 +17,16 @@
     </block>
   </view>
 </block>
-
-
 <!---购物车内容---->
 <block wx:else>
+  <view class="addresNow">
+    <view>
+      <text wx:if='{{true}}'>当前自提点</text>
+      <text wx:else>未设置自提点</text>
+    </view>
+    <view catchtap='adminTap' wx:if="{{adminShow}}">编辑</view>
+    <view catchtap='adminTap' wx:else>完成</view>
+  </view>
   <view class="cart_body">
     <view class="cart_item">
       <label wx:for="{{cartData}}" wx:key="this" data-index="{{index}}" catchtap="checkTap">
@@ -29,21 +35,20 @@
           <image class="check_img" hidden="{{item.checked}}" src="/static/select.png"></image>
           <image class="check_img" hidden="{{!item.checked}}" src="/static/selected.png"></image>
         </view>
-
         <view class="cart_image">
-          <image class="cart_img" src="{{item.image}}" mode='aspectFill'></image>
+          <image  src="{{item.image}}" mode='aspectFill'></image>
         </view>
-
         <view class="cart_content">
-          <view class="content_title fs_12 fc_333">{{item.name}}</view>
+          <view class="content_title">{{item.name}}</view>
+          <view class="content_title content_size ">{{item.name}}</view>
           <view class="content_price">
-            <view class="fc_price fs_18 fw_bold">¥{{item.price}}</view>
+            <view >¥<text>{{item.price}}</text></view>
             <view class="goods_number_container">
               <view class="goods_number_icon_container">
                 <image class="goods_number_icon" src="/static/minus.png" data-types="minus" data-index="{{index}}" catchtap="numchangeTap"></image>
               </view>
               <view class="goods_number">{{item.amount}}</view>
-              <view class="goods_number_icon_container">
+              <view class="goods_number_icon_container red">
                 <image class="goods_number_icon" src="/static/add.png" data-types="add" data-index="{{index}}" catchtap="numchangeTap"></image>
               </view>
             </view>
@@ -58,13 +63,7 @@
     <image class="checkAllBox" src="/static/selected.png" hidden="{{!allselect}}" catchtap="allcheckTap"></image>
     <view class="fs_12 fc_333" catchtap="allcheckTap">全选</view>
     <view class="fc_333 fs_12 totalPrice">合计：¥ {{totalPrice}}</view>
-    <view class="clearingBox" wx:if="{{adminShow}}">
-      <view class="btn editbtn fs_12 fc_666" catchtap='adminTap'>编辑</view>
-      <view class="btn clearbtn fs_12" bindtap="toApply">去结算({{selectArr.length}})</view>
-    </view>
-    <view class="clearingBox" wx:else>
-      <view class="btn editbtn fs_12 fc_666" catchtap="deleteshopTap">删除</view>
-      <view class="btn clearbtn fs_12" catchtap='adminTap'>完成</view>
-    </view>
+    <view class="btn clearbtn fs_12" bindtap="toApply" wx:if="{{adminShow}}">去结算({{selectArr.length}})</view>
+    <view class="btn clearbtn fs_12" bindtap="deleteshopTap" wx:else>删除</view>
   </view>
 </block>

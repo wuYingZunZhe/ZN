@@ -3,14 +3,21 @@
   <!----头部背景图片------>
   <image class="bg" src="/static/user-bg.jpg"></image>
   <!---用户信息框--->
-  <view class="user-info-box" >
+<!------
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号</button>
+-------->
+  <view class="user-info-box">
     <!---用户头像----->
     <image src="{{avatarUrl||'/static/missing-face.png'}}"></image>
-    <text>{{nickName||'游客'}}</text>
-    <text>{{province||'手机号'}}</text>
+
+    <block wx:if='{{nickName}}'>
+      <text>{{nickName||'游客'}}</text>
+      <text>{{province||'手机号'}}</text>
+    </block>
+    <button class="login" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:else>登录</button>
     <!----二维码弹窗--- -->
-    <view class="qr" bindtap='submit'>
-      <image src="{{avatarUrl||'/static/missing-face.png'}}"></image>
+    <view class="qr" bindtap='qr'>
+      <image src="{{avatarUrl||'/static/qr.png'}}"></image>
       提货二维码
     </view>
   </view>
@@ -25,21 +32,21 @@
   <!-----全部订单------>
   <view class="my_order">
     <view>我的订单</view>
-    <view class="order-section">
-      <view>
-        <text class="yticon icon-shouye"></text>
+    <view>
+      <view data-index='0' bindtap="toOrder">
+        <image src="/static/order_1.png"></image>
         <text>全部订单</text>
       </view>
-      <view>
-        <text class="yticon icon-daifukuan"></text>
+      <view data-index='1' bindtap="toOrder">
+        <image src="/static/order_2.png"></image>
         <text>待付款</text>
       </view>
-      <view>
-        <text class="yticon icon-yishouhuo"></text>
+      <view data-index='2' bindtap="toOrder">
+        <image src="/static/order_3.png"></image>
         <text>待收货</text>
       </view>
-      <view>
-        <text class="yticon icon-shouhoutuikuan"></text>
+      <view data-index='3' bindtap="toOrder">
+        <image src="/static/order_4.png"></image>
         <text>已提货</text>
       </view>
     </view>
@@ -47,7 +54,7 @@
 </view>
 
 <view class="my_box">
-  <list-cell title="我的当前自提点" tips="切换自提点" border></list-cell>
+  <list-cell title="我的当前自提点" tips="切换自提点" border bindtap="toAddress"></list-cell>
   <view>岳阳观沙八方小区便利店</view>
   <view>湖南省长沙市岳阳观区</view>
   <view>门店电话：
@@ -58,7 +65,6 @@
 <view class="hint">
   <view>
     <text>1.如果您购买的商品有任何问题，请与您购买的门店联系！\n门店将为您处理，让您售后无忧！</text>
-
   </view>
   <view>
     2.如果您找不到您购物的提货门店，请致电丰乐优选
@@ -67,7 +73,7 @@
   </view>
 </view>
 <!---购物按钮----->
-<button class="go_shop" open-type="getUserInfo" bindgetuserinfo="getUserInfo">去购物</button>
+<button class="go_shop" bindtap="goShop">去购物</button>
 
 
 
