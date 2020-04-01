@@ -1,0 +1,333 @@
+page{
+  background: #fff;
+}
+/*门店地址*/
+.shopSite {
+  width: 100%;
+  height: 60rpx;
+  background: #eee;
+  position: relative;
+}
+
+.shopSite >image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  margin: 10rpx 20rpx;
+}
+
+.shopSite >text {
+  width: 90%;
+  position: absolute;
+  font-size: 24rpx;
+  color: #333;
+  margin: -20rpx 60rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.shopSite >text  text{
+  color:rgb(17, 146, 233);
+  margin-left:10rpx;
+}
+/*订单排行*/
+.orderRanking{
+  width:100%;
+  height:150rpx;
+  position:relative;
+  background: #fff;
+}
+.orderRanking > text{
+  position: absolute;
+}
+.orderRanking >text:nth-child(1){
+  margin: 10rpx 0 0 20rpx;
+  color: #111;
+  font-size: 28rpx;
+  font-weight:600;
+}
+.orderRanking >text:nth-child(2){
+  margin: 50rpx 0 0 20rpx;
+  color: #666;
+  font-size: 23rpx;
+}
+.orderRanking >text:nth-child(2) text{
+  color:rgba(240, 95, 95, 0.9);
+}
+.orderRanking >text:nth-child(3){
+  margin: 80rpx 0 0 20rpx;
+  color: #666;
+  font-size: 23rpx;
+}
+.orderRanking >text:nth-child(3) text{
+  color:rgba(240, 95, 95, 0.9);
+}
+.orderRanking >text:nth-child(4){
+  width:15%;
+  margin: 30rpx 0 0 80%;
+  padding:5rpx;
+  font-size: 23rpx;
+  text-align: center;
+  color:rgb(17, 146, 233);
+  border:1rpx solid rgb(17, 146, 233);
+  border-radius: 10rpx;
+}
+/*canvas绘图*/
+.statistics{
+  width:100%;
+  height: 250rpx;
+  position: relative
+}
+.statistics > text{
+  position: absolute;
+  font-size: 18rpx;
+  color:#aaa;
+}
+.statistics >.Canvas{
+  width:220rpx;
+  height:110px;
+  position: absolute;
+  margin-left:280rpx;
+}
+.statistics > text:nth-child(1){
+  margin:80rpx 0 0 20rpx;
+}
+.statistics > text:nth-child(3){
+  width:30%;
+  margin:80rpx 0 0 70%;
+}
+.earnings{
+  width:96%;
+  height:80rpx;
+  position: relative;
+  margin-left: 2%;
+  border-top:1rpx solid #eee;
+}
+.earnings >text{
+  position: absolute;
+  color:#333;
+  font-size: 18rpx;
+}
+.earnings >text:nth-child(1){
+  margin-top:10rpx;
+}
+.earnings >text:nth-child(2){
+  width:20%;
+  margin:10rpx 0 0 80%;
+  text-align: right;
+  overflow: hidden;
+  color:rgb(235, 45, 45);
+}
+.earnings >text:nth-child(3){
+  margin-top:50rpx;
+}
+.earnings >text:nth-child(4){
+  width:20%;
+  margin:50rpx 0 0 80%;
+  text-align: right;
+  overflow: hidden;
+  color:rgb(235, 45, 45);
+}
+/*订单管理*/
+.orderNav{
+  width:100%;
+  height: 220rpx;
+  background: #eee;
+  margin:20rpx 0 10rpx 0;
+  border-top:1rpx solid #eee;
+  padding-top:20rpx;
+  position: relative;
+}
+.orderNav > view:nth-child(1){
+  width:100%;
+  height: 50rpx;
+  position: absolute;
+  border-top:1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+  color:#333;
+  font-size: 24rpx;
+  padding-left:2%;
+  line-height: 50rpx;
+}
+.orderNav > view:nth-child(1) >text:nth-child(2){
+  position: absolute;
+  line-height: 30rpx;
+  margin-left:20rpx;
+  color:red;
+  font-style:italic;
+  font-size: 18rpx;
+}
+.orderNav > view:nth-child(2){
+  width:100%;
+  height:160rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  margin-top:50rpx;
+  justify-content: space-between;
+}
+.orderNav > view:nth-child(2)>view{
+  width:25%;
+  height: 100%;
+  color:#666;
+  font-size: 22rpx;
+  position: relative;
+}
+.orderNav > view:nth-child(2)>view > image{
+  width:30%;
+  height: 60rpx;
+  margin-left:40%;
+  margin-top:20rpx;
+  position: absolute;
+}
+.orderNav > view:nth-child(2)>view > view{
+  width:100%;
+  margin-top:100rpx;
+  text-align: center;
+  position: absolute;
+  color:#333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*个人面板*/
+.positionPanel{
+  width:100%;
+  height: 160rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+.positionPanel view{
+  position: absolute;
+}
+.positionPanel>image:nth-child(1){
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+  margin:20rpx 30rpx;
+  position: absolute;
+  background: #eee;
+}
+.positionPanel>view:nth-child(1)>image{
+  width:100%;
+  height:100%;
+}
+.positionPanel>view:nth-child(2){
+  width:20%;
+  color:#999;
+  text-align: center;
+  margin:130rpx 0 0 0rpx;
+  font-size: 18rpx;
+}
+.positionPanel>view:nth-child(3){
+  width:60%;
+  height:80rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  margin:30rpx 0 0 150rpx;
+  font-size: 28rpx;
+  color:#333;
+}
+.positionPanel>view:nth-child(4){
+  width:75%;
+  margin:110rpx 0 0 150rpx;
+  font-size: 20rpx;
+  color:#888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+.positionPanel>view:nth-child(4) image{
+  width:30rpx;
+  height: 30rpx;
+  margin-left:10rpx;
+}
+.positionPanel>view:nth-child(5){
+  width:20%;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin:50rpx 0 0 80%;
+ 
+  background: #eee;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  /*vertical-align:middle;*/
+  overflow: hidden;
+}
+
+.positionPanel>view:nth-child(5) image{
+  width:40rpx;
+  height: 40rpx;
+  margin:5rpx 0 0 10rpx;
+}
+.positionPanel>view:nth-child(5) text{
+  float:right;
+  color:#333;
+  font-size: 22rpx;
+  margin-right:5rpx;
+}
+
+/*图片九宫格*/
+
+.tui-grid-icon {
+  width: 74rpx;
+  height: 74rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tui-grid-icon image {
+  display: block;
+}
+
+.tui-grid-icon + .tui-grid-label {
+  margin-top: 10rpx;
+}
+
+.tui-grid-label {
+  display: block;
+  text-align: center;
+  font-weight: 400;
+  color: #333;
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*小程序码*/
+
+.applet {
+  width: 100vw;
+  margin: 20rpx 0;
+}
+
+.applet image {
+  width: 50%;
+  height: 50vw;
+  margin-left:25%;
+}
+
+/*退出按钮*/
+
+.quit {
+  /**/
+  width: 80% !important;
+  border: 1rpx solid red;
+  color: rgba(240, 95, 95, 0.9);
+  margin: 50rpx 0;
+}

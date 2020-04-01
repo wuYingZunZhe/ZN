@@ -1,0 +1,44 @@
+<!----搜索输入框----->
+<view class="searchBox">
+  <view>
+    <image src="../../static/images/order/search.png"></image>
+  </view>
+  <input placeholder='请输入门店编号或名称'></input>
+  <view>搜索</view>
+</view>
+
+
+<!--导航栏--->
+<view class="navBox">
+  <view class="navBar">
+    <block wx:for='{{navTextArr}}' wx:key='index'>
+      <view class="{{navIndex == index ? 'active' : ''}}" catchtap="navChange" data-index="{{index}}">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-----我的排名--------->
+<view class="salesListTitle">
+  <text>我的排名</text>
+</view>
+<view class="salesListContent">
+  <text>兴盛优选李奕琦店</text>
+  <text>99+</text>
+  <text>销量：<text>5</text>件 提成： ￥4.20</text>
+</view>
+<view class="salesShopTitle">
+  <text>人气店铺Top10</text>
+</view>
+<view class="salesShopList" wx:for="{{5}}" wx:key="index">
+  <text>兴盛优选李奕琦店</text>
+  <text>99+</text>
+  <text>销量：<text>5</text>件 提成： ￥4.20</text>
+</view>
+
+<!-----底部按钮-------->
+<view class="bottomBtn">
+  <view >人气店铺</view>
+  <view class="active">热卖榜</view>
+</view>

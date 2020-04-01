@@ -1,0 +1,69 @@
+<!--导航栏--->
+<view class="navBox">
+  <view class="navBar">
+    <block wx:for='{{navTextArr}}' wx:key='index'>
+      <view class="{{navIndex == index ? 'active' : ''}}" catchtap="navChange" data-index="{{index}}">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!----前三个内容区块------>
+<block wx:if="{{navIndex != 3}}">
+  <!----总提成金额---->
+  <view class="deductSum">
+    ￥
+    <text>4.50</text>
+  </view>
+  <!-----提成明细标题-------->
+  <view class="deductDetailTitle">
+    <text>提成明细</text>
+  </view>
+  <!-----提成明细-------->
+  <view class="deductDetailList" wx:for="{{15}}" wx:key="index">
+    <view>
+      <view>日期：2020-03-31</view>
+      <view>巧巧兔 简笔画1000例 1本 189x210mm</view>
+    </view>
+    <view>
+      <view>提成单位</view>
+      <view>1.60</view>
+      <view>元/份</view>
+    </view>
+    <view>
+      <view>提成单位</view>
+      <view>1.60</view>
+      <view>元/份</view>
+    </view>
+    <view>
+      <view>提成单位</view>
+      <view>1.60</view>
+      <view>元/份</view>
+    </view>
+  </view>
+</block>
+
+<!----第四个内容区块------>
+<block wx:else>
+  <!----总提成金额---->
+  <view class="fourthBlock">
+    <view>累计提成</view>
+    <view>￥
+      <text>134.45</text>
+    </view>
+  </view>
+  <!-----日期选择----->
+  <picker bindchange="pickerChange" value="{{pickerIndex}}" range="{{pickerArray}}">
+    <view class="picker">
+      <text>{{pickerArray[pickerIndex]}}</text>
+      <view></view>
+      <view>￥138.65</view>
+    </view>
+  </picker>
+  <!---详细列表----->
+  <view class="detailList" wx:for="{{15}}" wx:key="index">
+    <text>2020年04月</text>
+    <text>￥4.20</text>
+  </view>
+</block>

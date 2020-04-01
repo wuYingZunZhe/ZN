@@ -1,0 +1,84 @@
+<!----搜索输入框----->
+<view class="searchBox">
+  <view>
+    <image src="../../../static/images/order/search.png"></image>
+  </view>
+  <input placeholder='提货单号、手机号、收货人、微信昵称查询' disabled bindtap='showModal'></input>
+</view>
+
+
+<!--导航栏--->
+<view class="navBar">
+  <block wx:for='{{navTextArr}}' wx:key='index'>
+    <view class="{{navIndex == index ? 'active' : ''}}" catchtap="navChange" data-index="{{index}}">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+
+<!---订单列表----->
+<view class="orderList" wx:for="{{5}}" wx:key="index">
+  <view>
+    <text>订单编号：200401001101060724562</text>
+    <text>待提货</text>
+  </view>
+  <view>
+    <image src="../../../static/images/home/message.png"></image>
+    <image src="../../../static/images/home/message.png"></image>
+    <image src="../../../static/images/home/message.png"></image>
+    <image src="../../../static/images/home/message.png"></image>
+    <view class="arrows"></view>
+  </view>
+  <view>
+    <text>2020-04-01 00:27:57</text>
+    <text>共5件商品<text>￥39.86</text></text>
+  </view>
+  <view>
+    <text>李奕琦</text>
+    <text>提货单号:<text>1</text>1395864889</text>
+  </view>
+</view>
+
+<!------订单为空--------->
+<view class="empty" wx:if='{{true}}'>
+  <text>没有更多订单了~~~~</text>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-----底部弹出框------>
+<view class=" {{ showModal ? 'modalShow' : '' }}">
+  <view class="modalBg" bindtap="showModal" />
+  <view class="modalBox">
+    <view>组合搜索</view>
+    <view class="boxInput">
+      <text>按提货单号查询 <text>（选填）</text></text>
+      <input placeholder='选填'></input>
+    </view>
+    <view class="boxInput">
+      <text>按手机号查询</text>
+      <input placeholder='选填'></input>
+    </view>
+    <view class="boxInput">
+      <text>按收货人查询</text>
+      <input placeholder='选填'></input>
+    </view>
+    <view class="boxInput">
+      <text>按微信昵称查询</text>
+      <input placeholder='选填'></input>
+    </view>
+    <view class="boxBtn">
+      <button>重置</button>
+      <button>确定</button>
+    </view>
+  </view>
+</view>

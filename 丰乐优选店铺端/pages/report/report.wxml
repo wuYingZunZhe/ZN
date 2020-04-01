@@ -1,0 +1,19 @@
+<view class="reportTitle">
+  <text>（456789456123）丰乐优选李奕琦店-4月1号 报单</text>
+  <text>总销售量：￥39.86</text>
+  <text>总销量：5件</text>
+  <text>总提成：￥<text>4.20</text></text>
+</view>
+
+<!----商品销售详情---------->
+<view class="sellDetails">
+  <view>
+    商品销售详情
+  </view>
+  <view class="sellDetailList" wx:for="{{10}}" wx:key='index'>
+    <text>亮帆 1.5无磁36CM反边面盆1个 实际直径35cm 高11cm</text>
+    <text>销量：2件</text>
+    <text>销售额：<text>￥5.90</text></text>
+    <text>提成： ￥0.40</text>
+  </view>
+</view>

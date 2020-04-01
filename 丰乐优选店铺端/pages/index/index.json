@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "index",
+  "usingComponents": {
+    "tui-grid": "../../components/grid/grid",
+    "tui-grid-item": "../../components/grid-item/grid-item"
+  }
+}

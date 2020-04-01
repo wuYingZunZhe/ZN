@@ -1,0 +1,9 @@
+
+  
+  <picker bindchange="bindPickerChange" value="{{pickerIndex}}" range="{{array}}">
+    <view>
+      当前选择：{{array[pickerIndex]}}
+    </view>
+  </picker>
+
+

@@ -1,0 +1,79 @@
+/* pages/report/report.wxss */
+page{
+  background: #eee;
+}
+.reportTitle{
+  width:100%;
+  height:120rpx;
+  background: #fff;
+  position: relative;
+}
+.reportTitle >text{
+  position:absolute;
+  color:#333;
+  font-size: 20rpx;
+}
+.reportTitle >text:nth-child(1){
+  margin:10rpx 0 0 20rpx;
+}
+.reportTitle >text:nth-child(2){
+  margin:60rpx 0 0 20rpx;
+}
+.reportTitle >text:nth-child(3){
+  margin:90rpx 0 0 20rpx;
+  color:red;
+}
+.reportTitle >text:nth-child(4){
+  margin:80rpx 0 0 520rpx;
+  color:#999;
+}
+.reportTitle >text:nth-child(4) text{
+  color:#333;
+}
+/*商品销售详情*/
+.sellDetails{
+  width:100%;
+  margin-top:20rpx;
+}
+.sellDetails >view:nth-child(1){
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+  color:#111;
+  font-size: 28rpx;
+  border-bottom:1rpx solid #ddd;
+}
+.sellDetails > .sellDetailList{
+  position: relative;
+  height:100rpx;
+  border-bottom: 1rpx solid #ddd;
+  background: #fff;
+}
+.sellDetails > .sellDetailList>text{
+  color:#333;
+  font-size: 20rpx;
+  position: absolute;
+}
+.sellDetails > .sellDetailList>text:nth-child(1){
+  width:90%;
+  margin:10rpx 0 0 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sellDetails > .sellDetailList>text:nth-child(2){
+  color:red;
+  margin:50rpx 0 0 20rpx;
+}
+.sellDetails > .sellDetailList>text:nth-child(3){
+  margin:50rpx 0 0 250rpx;
+  color:#aaa;
+  font-size:18rpx;
+}
+.sellDetails > .sellDetailList>text:nth-child(3) text{
+  color:#333;
+}
+.sellDetails > .sellDetailList>text:nth-child(4){
+  margin:50rpx 0 0 70%;
+  color:#333;
+}

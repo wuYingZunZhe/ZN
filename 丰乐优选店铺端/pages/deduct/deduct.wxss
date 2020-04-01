@@ -1,0 +1,202 @@
+/* pages/deduct/deduct.wxss */
+
+page {
+  background: #eee;
+}
+
+.navBox {
+  width: 100%;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  background: #fff;
+}
+
+.navBar {
+  width: 90%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin: 20rpx 5%;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8rpx;
+  border: 1rpx solid red;
+}
+
+.navBar> view {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: relative;
+  border-left: 1rpx solid red;
+}
+
+.navBar> view:nth-child(1) {
+  border: 0;
+}
+
+.navBar .active {
+  color: #fff;
+  background: red;
+}
+
+/*总提成金额*/
+
+.deductSum {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  text-align: center;
+  color: red;
+  padding: 5rpx 0;
+  font-size: 24rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.deductSum > text {
+  font-size: 64rpx;
+}
+
+/*提成明细标题*/
+
+.deductDetailTitle {
+  width: 100%;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-weight: 600;
+  background: #fff;
+  margin: 20rpx 0 0 0;
+  border-top: 1rpx solid #ccc;
+}
+
+/**/
+
+.deductDetailList {
+  width: 100%;
+  height: 110rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 20rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.deductDetailList >view {
+  width: 20%;
+  height: 110rpx;
+  float: left;
+  border-left: 1px solid #ccc;
+  overflow: auto;
+}
+
+.deductDetailList >view>view:nth-child(1) {
+  font-size: 20rpx;
+  color: #666;
+}
+
+.deductDetailList >view>view:nth-child(2) {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.deductDetailList >view>view:nth-child(3) {
+  font-size: 24rpx;
+  color: #ddd;
+}
+
+.deductDetailList >view {
+  width: 18%;
+  padding: 0 10rpx;
+  text-align: center;
+}
+
+.deductDetailList >view:nth-child(1) {
+  width: 30%;
+  border: 0;
+  padding: 0 10rpx;
+}
+
+.deductDetailList >view:nth-child(1)>view:nth-child(2) {
+  font-size: 24rpx;
+  color: #333;
+}
+
+/*第四区块*/
+
+.fourthBlock {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  text-align: center;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  margin-bottom: 20rpx;
+}
+
+.fourthBlock >view:nth-child(1) {
+  font-size: 24rpx;
+}
+
+.fourthBlock >view:nth-child(2) {
+  font-size: 42rpx;
+  color: red;
+}
+/*日期选择*/
+.picker {
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+  position: relative;
+  padding-top:30rpx;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+.picker >text:nth-child(1){
+  position: absolute;
+  margin:10rpx 0 0 20rpx;
+  color:#333;
+  font-size: 28rpx;
+
+}
+.picker >view:nth-child(2){
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid black;
+  margin:20rpx 0 0 16%;
+  position: absolute;
+}
+.picker >view:nth-child(3){
+  margin:50rpx 0 0 20rpx;
+  position: absolute;
+  color:red;
+  font-size: 28rpx;
+}
+/*详情列表*/
+.detailList{
+  width:100%;
+  height:60rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #ddd;
+  position: relative;
+}
+.detailList >text{
+  position: absolute;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+.detailList >text:nth-child(1){
+  margin-left:20rpx;
+  color:#333;
+}
+.detailList >text:nth-child(2){
+  width:40%;
+  margin-left:58%;
+  text-align: right;
+  color: red;
+}

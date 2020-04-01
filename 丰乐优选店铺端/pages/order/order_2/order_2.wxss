@@ -1,0 +1,269 @@
+
+page {
+  background: #eee;
+}
+/*搜索输入框*/
+.searchBox {
+  position: relative;
+  background: #ececec;
+  padding:20rpx 0;
+}
+.searchBox > view:nth-child(1) {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 99;
+}
+.searchBox > view:nth-child(1) >image {
+  width: 100%;
+  height: 100%;
+}
+.searchBox >input:nth-child(2) {
+  width: 96%;
+  height: 58rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 68rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  color: #333;
+  border:1rpx solid #ddd;
+}
+/*订单*/
+.navBar {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  margin: 20rpx 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color:#333;
+}
+
+.navBar> view {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  position: relative;
+  border-left: 1rpx solid #ddd;
+}
+
+.navBar> view:nth-child(1) {
+  border-left: 0;
+}
+
+.navBar .active {
+  color: red;
+  border-bottom:1rpx solid red;
+}
+
+/*订单列表*/
+.orderList{
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top:20rpx;
+}
+.orderList >view:nth-child(1){
+  width:100%;
+  height:80rpx;
+  position: relative;
+}
+.orderList >view:nth-child(1)>text{
+  font-size: 24rpx;
+  line-height: 80rpx;
+  position: absolute;
+}
+.orderList >view:nth-child(1)>text:nth-child(1){
+  margin-left:20rpx;
+}
+.orderList >view:nth-child(1)>text:nth-child(2){
+  width:20%;
+  margin-left: 78%;
+  text-align: right;
+  color:red;
+  font-size: 28rpx;
+}
+.orderList >view:nth-child(2){
+  width:100%;
+  position: relative;
+  padding:20rpx 10rpx;
+  border-top:1rpx solid #ddd;
+}
+.orderList >view:nth-child(2)>image{
+  width:100rpx;
+  height:100rpx;
+}
+.arrows {
+  padding-right: 13px;
+  position: absolute;
+  margin:-50rpx 0 0 90%;
+}
+.arrows:after {
+  content: " ";
+  height: 11px;
+  width: 11px;
+  border-width: 2px 2px 0 0;
+  border-color: #b2b2b2;
+  border-style: solid;
+  transform: matrix(0.5, 0.5, -0.5, 0.5, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -7px;
+  right: 2px;
+}
+.orderList >view:nth-child(3){
+  width:100%;
+  height:80rpx;
+  color:#999;
+  font-size: 18rpx;
+  position: relative;
+  border-top:1rpx solid #ddd;
+  line-height: 80rpx;
+}
+.orderList >view:nth-child(3)>text{
+  position: absolute;
+}
+.orderList >view:nth-child(3)>text:nth-child(1){
+  margin-left:20rpx;
+}
+.orderList >view:nth-child(3)>text:nth-child(2){
+  width:40%;
+  margin-left: 58%;
+  text-align: right;
+  color:#333;
+  font-size: 24rpx;
+}
+.orderList >view:nth-child(3)>text:nth-child(2) text{
+  font-size: 32rpx;
+  color:red;
+}
+.orderList >view:nth-child(4){
+  width:100%;
+  height:80rpx;
+  color:#666;
+  font-size: 18rpx;
+  position: relative;
+  border-top:1rpx solid #ddd;
+}
+.orderList >view:nth-child(4)>text{
+  position: absolute;
+}
+.orderList >view:nth-child(4)>text:nth-child(1){
+  margin:10rpx 0 0 20rpx;
+}
+.orderList >view:nth-child(4)>text:nth-child(2){
+  margin:40rpx 0 0 20rpx;
+}
+.orderList >view:nth-child(4)>text:nth-child(2) text{
+  color:red;
+  margin:0 10rpx;
+}
+/*订单为空*/
+.empty{
+  width:100%;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color:#666;
+  font-size: 18rpx;
+}
+
+/*弹出框*/
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, .4);
+  display: none;
+}
+
+.modalBox {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  /*height: 600rpx;*/
+  background: #f8f8f8;
+  transform: translateY(300%);
+  transition: all 0.4s ease;
+  z-index: 12;
+}
+
+.modalShow .modalBg {
+  display: block;
+}
+
+.modalShow .modalBox {
+  transform: translateY(0);
+}
+/*弹出框内容*/
+.modalBox >view:nth-child(1){
+  width:100%;
+  height:60rpx;
+  background: #eee;
+  text-align: center;
+  color:#333;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  border-top:1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.boxInput{
+  width:92%;
+  margin:0 4%;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.boxInput>text{
+  font-size: 18rpx;
+  color:#666;
+}
+.boxInput>text text{
+  color:#999;
+}
+.boxInput>input{
+  width:98%;
+  border-radius: 10rpx;
+  margin:10rpx 0;
+  border:1rpx solid #ddd;
+  padding-left:20rpx;
+  font-size: 18rpx;
+}
+.boxBtn{
+  width:100%;
+  height:80rpx;
+  position: relative;
+}
+.boxBtn >button{
+  width:50%;
+  height: 80rpx;
+  margin:0;
+  padding:0;
+  float:left;
+  border-radius: 0;
+  box-shadow:none;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  position: absolute;
+}
+.boxBtn >button:nth-child(1){
+  background: #eee;
+}
+.boxBtn >button:nth-child(2){
+  background: red;
+  color:#fff;
+  margin-left:50%;
+}

@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/share/share",
+    "pages/consult/consult",
+    "pages/refund/refund",
+    "pages/deduct/deduct",
+    "pages/withdraw/withdraw",
+    "pages/sales/sales",
+    "pages/bask/bask",
+    "pages/image-text/image-text",
+    "pages/report/report",
+    "pages/member/member",
+    "pages/scan/scan",
+    "pages/password/password",
+    "pages/entering/entering",
+    "pages/comment/comment",
+    "pages/close/close",
+    "pages/client/client",
+    "pages/order/order_1/order_1",
+    "pages/order/order_2/order_2",
+    "pages/order/order_3/order_3",
+    "pages/order/order_4/order_4",
+    "pages/z_ce/z_ce"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1192E9",
+    "navigationBarTextStyle": "white",
+    "backgroundColorTop": "#fafafa",
+    "backgroundColorBottom": "#fafafa"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#5677FC",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/client/client",
+        "text": "client",
+        "iconPath": "static/images/tabbar/code_gray.png",
+        "selectedIconPath": "static/images/tabbar/code_active.png"
+      },
+      {
+        "pagePath": "pages/client/client",
+        "text": "client",
+        "iconPath": "static/images/tabbar/extend_gray.png",
+        "selectedIconPath": "static/images/tabbar/extend_active.png"
+      },
+      {
+        "pagePath": "pages/client/client",
+        "text": "client",
+        "iconPath": "static/images/tabbar/thor_gray.png",
+        "selectedIconPath": "static/images/tabbar/thor_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
