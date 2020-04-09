@@ -1,0 +1,47 @@
+
+/* 自定义头部 */
+
+
+.header {
+  height: 70px;
+}
+.header view{
+  width: 90%;
+  height: 44px;
+  background-color: #FF2041;
+  color: #FFFFFF;
+  padding: 26px 10% 0 0;
+  line-height: 34px;
+  text-align: center;
+  font-size: 38rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.header view text{
+  display: inline-block;
+  width: 60%;
+  margin: 0 auto 0;
+}
+.header1 view {
+    background-color: #FFFFFF;
+    color: #666;
+
+ }
+ .backhome{
+   position: fixed;
+   top:32px;
+   left: 8rpx;
+   z-index: 999999999999;
+ }
+ .backhome image{
+   width: 48rpx;
+   height: 44rpx;
+ }
+ .backhome1 image{
+  width: 50rpx;
+  height: 46rpx;
+
+
+ }

@@ -1,3 +1,0 @@
-001
-<button bindtap='getChooseLocation'>002</button>
-<button bindtap="g_idata">003</button>

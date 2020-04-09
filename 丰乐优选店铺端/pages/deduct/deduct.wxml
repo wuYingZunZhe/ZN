@@ -54,9 +54,9 @@
     </view>
   </view>
   <!-----日期选择----->
-  <picker bindchange="pickerChange" value="{{pickerIndex}}" range="{{pickerArray}}">
+  <picker bindchange="pickerChange" value="{{pickerDate}}" mode='date' fields='year' start='2020-4-1'>
     <view class="picker">
-      <text>{{pickerArray[pickerIndex]}}</text>
+      <text>{{pickerDate}}年</text>
       <view></view>
       <view>￥138.65</view>
     </view>

@@ -1,0 +1,99 @@
+/* 进度条 */
+
+/* 创建步骤数字计数器 */
+.navSteps{
+  width:100%;
+  height:100rpx;
+  text-align: center;
+}
+.steps {
+  width: 100%;
+  position: relative;
+  margin-bottom: 30rpx;
+  counter-reset: step;
+  margin: 5rpx 0;
+  overflow: hidden;
+}
+
+/* 步骤描述 */
+
+.steps li {
+  list-style-type: none;
+  font-size: 20rpx;
+  color: #ddd;
+  text-align: center;
+  width: 32%;
+  position: relative;
+  float: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 10rpx 0;
+}
+
+/* 步骤数字 */
+
+.steps li:before {
+  display: block;
+  content: counter(step); /* 设定计数器内容 */
+  counter-increment: step; /* 计数器值递增 */
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #ccc;
+  line-height: 30rpx;
+  border-radius: 50%;
+  font-size: 3;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 auto 9rpx auto;
+}
+
+/* 连接线 */
+
+.steps li ~ li:after {
+  content: '';
+  width: 90%;
+  height: 6rpx;
+  background-color: #ccc;
+  position: absolute;
+  left: -42%;
+  top: 20rpx;
+  z-index: 0;
+}
+
+/* 将当前/完成步骤之前的数字及连接线变绿 */
+
+.steps li.active:before, .steps li.active:after {
+  background-color: #ee3838;
+}
+
+.steps .active {
+  color: #ee3838;
+}
+/* 表单样式 */
+.form{
+  width:100%;
+}
+.form >view{
+  width:92%;
+  height: 80rpx;
+  margin-left: 4%;
+  border-bottom: 1rpx solid #ddd;
+}
+.form >view >text:nth-child(1){
+  font-size: 24rpx;
+  color:#333;
+  line-height: 80rpx;
+}
+.form >view >text:nth-child(1) text{
+  color:red;
+  margin:0 6rpx;
+}
+.form >view >input{
+  width:60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+  float: right;
+  font-size: 24rpx;
+}

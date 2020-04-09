@@ -1,5 +1,20 @@
 //app.js
+const request = require('./utils/request.js')
 App({
+  // 文件上传的函数，返回一个promise
+  uplaodFile(files) {
+    // console.log('upload files', files)
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject('some error')
+      }, 1000)
+    })
+  },
+  // 页面加载
+  onLoad: function (options) {
+    console.log('89652')
+    request.getToken()
+  },
   onLaunch: function () {
     // 获取小程序更新机制兼容
     if (wx.canIUse('getUpdateManager')) {
@@ -38,8 +53,10 @@ App({
    
   },
   globalData: {
-    isLogin: wx.getStorageSync("thorui_mobile") ? true : false,
-    version: "1.4.2",
-    isOnline: false
+    isLogin: false,//是否登陆
+    baseUrl:'http://192.168.0.118:8080',//服务器地址
+    phoneNumber: "18888888888",
+    password: "123",
+    storeToken:'',
   }
 })

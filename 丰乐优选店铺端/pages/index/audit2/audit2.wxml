@@ -1,0 +1,83 @@
+<!-- 头部步骤条 -->
+<view class="navSteps">
+  <ul class="steps">
+    <li class="{{step>=0 ? 'active':''}}">
+      <text>门店老板信息提交</text>
+    </li>
+    <li class="{{step>=1 ? 'active':''}}">
+      <text>开店信息提交</text>
+    </li>
+    <li class="{{step>=2 ? 'active':''}}">
+      <text>完成</text>
+    </li>
+  </ul>
+</view>
+
+<!-- 开店信息提交 -->
+<form bindsubmit="formSubmit" bindreset="formReset" class="form">
+  <view class="form">
+    <view class='formInput'>
+      <text><text>*</text>门店名称</text>
+      <input placeholder='请输入门店详细名称' name='detailShopName' value='{{detailShopName}}' bindblur='detailShopName'></input>
+    </view>
+    <view class="textRemind">
+      门店名称系统中不可重复输入
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>门店面积</text>
+      <input placeholder='请输入门店面积' name='shopArea' value='{{shopArea}}' bindblur='shopArea'></input>
+    </view>
+
+
+    <picker mode="region" name='selectLocation' value="{{selectLocation}}" bindchange="selectLocation" class="picker">
+      <view class='formInput'>
+        <text><text>*</text>选择省市区</text>
+        <view class="formInputSite" wx:if="{{selectLocation}}">{{selectLocation[0]}}-{{selectLocation[1]}}-{{selectLocation[2]}}</view>
+        <view class="formInputChoice" wx:else>--请选择--</view>
+      </view>
+    </picker>
+    <!-- <view class="weui-cells__title">文本域</view> -->
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea textArea" name='detailAddress' value="{{detailAddress}}" bindblur="detailAddress" placeholder="门店详细地址填写：如道路、门牌号、小区、楼栋号等" style="height: 3.3em" />
+          <!-- <view class="weui-textarea-counter">0/200</view> -->
+        </view>
+      </view>
+    </view>
+
+
+    <view class="textRemind">
+      请填写门店收货地址，如填写不清除，可能会导致该门店无法审核通过。乡镇村无法获取精确定位的门店地址，请一定写明门店旁的标志性建筑。
+    </view>
+    <view class="upImg">
+      <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}"  files="{{files}}" max-count="2" title="" tips="上传门店门头照"></mp-uploader>
+    </view>
+
+
+    <view class='formInput'>
+      <text><text>*</text>名称</text>
+      <input placeholder='请输入营业执照中的名称' name='licenseName' value='{{licenseName}}' bindblur='licenseName'></input>
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>注册号</text>
+      <input placeholder='请输入统一社会信息代码或注册号' name='registrationNum' value='{{registrationNum}}' bindblur='registrationNum'></input>
+    </view>
+    <view class="upImg">
+      <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" max-count="2" title="" tips="上传营业执照"></mp-uploader>
+
+      <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" max-count="2" title="" tips="食品流通许可证"></mp-uploader>
+    </view>
+
+    <view class="submit">
+      <view class="active" bindtap="toAudit">上一步</view>
+      <view wx:if="{{false}}">提交</view>
+      <view wx:else class="active" bindtap="submit">提交</view>
+    </view>
+
+  </view>
+  <view class="submit">
+
+    <button formType="submit" class="active">下一步</button>
+  </view>
+</form>

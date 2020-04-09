@@ -1,2 +1,4 @@
-<!--pages/scan/scan.wxml-->
-<text>pages/scan/scan.wxml</text>
+<view>
+  <text wx:if="{{result}}">参数：{{result}}</text>
+  <text wx:else>扫码失败</text>
+</view>

@@ -1,4 +1,23 @@
+<!----搜索输入框----->
+<view class="searchBox">
+  <view>
+    <image src="../../static/images/order/search.png"></image>
+  </view>
+  <input placeholder='请输入手机号码,查询会员'></input>
+  <view>搜索</view>
+</view>
+
 <view class="memberList">
-
-
+  <view wx:for="{{15}}" wx:key="index">
+    <view>123456789</view>
+    <view>张三</view>
+    <view>
+      <view>订单数量</view>
+      <view>25</view>
+    </view>
+    <view>
+      <view>订单金额</view>
+      <view>468.15</view>
+    </view>
+  </view>
 </view>

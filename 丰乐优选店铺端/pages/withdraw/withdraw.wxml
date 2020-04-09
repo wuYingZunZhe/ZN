@@ -1,18 +1,49 @@
-
-  <scroll-view scroll-x scroll-with-animation class="tab-view tui-flex" scroll-left="{{scrollLeft}}">
-    <view wx:for="{{tabbar}}" wx:key="index" class="tab-bar-item {{currentTab==index ? 'active' : ''}} tui-center  tui-col-3" data-current="{{index}}" catchtap="swichNav">
-      <text class="tab-bar-title">{{item}}</text>
+<view class="withdrawTitle">
+  <image src="../../static/images/withdraw/money.png"></image>
+  <text bindtap="toTransactionRecord">明细></text>
+  <text>可提现金额（元）</text>
+  <text>￥<text>40.33</text></text>
+</view>
+<!-----申请提现------->
+<view class="applyMoney">
+  <view>可提现金额 = 总金额 - 审核中的金额</view>
+  <view>
+    <view>
+      <view>总金额 （元）</view>
+      <view>40.33</view>
     </view>
-  </scroll-view>001
-  
-  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}px">003
-    <swiper-item wx:for="5" wx:key="index">002
-      <scroll-view scroll-y class="scoll-y">00001
-        11
-        
-        
-      </scroll-view>
-    </swiper-item>
-  </swiper>
-009
+    <view>
+      <view>审核中的金额</view>
+      <view>0</view>
+    </view>
+  </view>
+  <view bindtap="toApplyWithdraw">申请提现</view>
+</view>
 
+
+<!-- 导航菜单 -->
+<view class="menuList" bindtap="toTransactionRecord">
+  <image src="../../static/images/withdraw/record.png"></image>
+  <text>交易记录</text>
+  <view></view>
+</view>
+<view class="menuList" bindtap="toAccountQuery">
+  <image src="../../static/images/withdraw/query.png"></image>
+  <text>到账查询</text>
+  <view></view>
+</view>
+<view class="menuList" bindtap="toWithdrawRecord">
+  <image src="../../static/images/withdraw/bring.png"></image>
+  <text>提现记录</text>
+  <view></view>
+</view>
+<view class="menuList" bindtap="toMyDeduct">
+  <image src="../../static/images/withdraw/deduct.png"></image>
+  <text>我的提成</text>
+  <view></view>
+</view>
+<view class="menuList" bindtap="toWithdrawAccount">
+  <image src="../../static/images/withdraw/account.png"></image>
+  <text>提现账户</text>
+  <view></view>
+</view>

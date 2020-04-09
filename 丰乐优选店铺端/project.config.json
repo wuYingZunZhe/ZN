@@ -71,13 +71,6 @@
 				},
 				{
 					"id": -1,
-					"name": "查看会员",
-					"pathName": "pages/member/member",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "测试",
 					"pathName": "pages/z_ce/z_ce",
 					"query": "",
@@ -108,6 +101,147 @@
 					"id": -1,
 					"name": "快捷报单",
 					"pathName": "pages/report/report",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息中心",
+					"pathName": "pages/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息详情",
+					"pathName": "pages/news/newsDetal/newsDetal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "结算中心",
+					"pathName": "pages/withdraw/withdraw",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "交易记录",
+					"pathName": "pages/withdraw/transactionRecord/transactionRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请提现",
+					"pathName": "pages/withdraw/applyWithdraw/applyWithdraw",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "到账查询",
+					"pathName": "pages/withdraw/accountQuery/accountQuery",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现记录",
+					"pathName": "pages/withdraw/withdrawRecord/withdrawRecord",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提现账户",
+					"pathName": "pages/withdraw/withdrawAccount/withdrawAccount",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修改密码",
+					"pathName": "pages/password/password",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "售后",
+					"pathName": "pages/refund/refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "歇业申请",
+					"pathName": "pages/close/close",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查看会员",
+					"pathName": "pages/member/member",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "退款",
+					"pathName": "pages/refund/after/after",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "提醒取货",
+					"pathName": "pages/order/order_4/order_4",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "启动页",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登陆",
+					"pathName": "pages/index/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请入驻",
+					"pathName": "pages/index/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店驳回管理",
+					"pathName": "pages/index/notPass/notPass",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店录入信息",
+					"pathName": "pages/index/audit/audit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店信息提交2",
+					"pathName": "pages/index/audit2/audit2",
+					"query": "",
 					"scene": null
 				}
 			]

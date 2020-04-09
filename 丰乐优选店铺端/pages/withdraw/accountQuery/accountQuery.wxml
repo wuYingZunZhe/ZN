@@ -1,0 +1,18 @@
+<!--pages/withdraw/accountQuery/accountQuery.wxml-->
+
+<!-- 到账查询头部 -->
+<picker mode="date" start="2020-01-01" fields="month" bindchange="bindDateChange">
+  <view class="accountQuery">
+    <view class="picker">
+      <text>{{queryYear}}年</text>
+      <view>
+        <text>{{queryMonth}}<text>月</text></text>
+        <view></view>
+      </view>
+    </view>
+    <view>
+      <text>收入（元）</text>
+      <view>0.00</view>
+    </view>
+  </view>
+</picker>

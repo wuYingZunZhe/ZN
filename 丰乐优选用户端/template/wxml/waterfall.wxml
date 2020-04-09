@@ -1,0 +1,25 @@
+<!-- 公共头部 -->
+<template name='head'>
+  <navigator open-type='navigateBack' target delta='1' class="backhome">
+    <image src="/static/goBack.png"></image>
+  </navigator>
+
+  <view class="header">
+    <view>
+      <text class="ellipsis">{{titlename}}</text>
+    </view>
+  </view>
+</template>
+
+<!------
+template name ='head'>
+  <navigator  open-type='navigateBack' target delta='1' class="backhome {{redBack?'backhome1':''}} " wx:if="{{redBack}}" ><image  src="/static/goBack.png"></image></navigator>
+
+  <navigator  open-type='navigateBack' target delta='1' wx:else class="backhome" ><image  src="../../images/left.png"></image></navigator>
+  <view class="header {{redBack?'header1':''}}">
+    <view><text class="ellipsis">{{titlename}}</text></view>
+  </view>
+</template>
+
+
+------------>

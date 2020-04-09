@@ -1,23 +1,19 @@
 Page({
   data: {
+    addressData:'',//门店地址
+    signText:'一天又一天，温暖陪伴，我一直在！',//个性签名
     routers: [{
         name: '商品分享',
         url: 'share',
         width: 60,
         height: 60
       },
-      {
-        name: '我要咨询',
-        url: 'consult',
-        width: 60,
-        height: 60
-      },
-      {
-        name: '我要售后',
-        url: 'refund',
-        width: 60,
-        height: 60
-      },
+      // {
+      //   name: '我要咨询',
+      //   url: 'consult',
+      //   width: 60,
+      //   height: 60
+      // },
       {
         name: '我的提成',
         url: 'deduct',
@@ -47,13 +43,13 @@ Page({
         url: 'image-text',
         width: 68,
         height: 68
-      },
+      },*/
       {
         name: '快捷报单',
         url: 'report',
         width: 48,
         height: 48
-      },*/
+      },
       {
         name: '查看会员',
         url: 'member',
@@ -65,6 +61,12 @@ Page({
         url: 'scan',
         width: 74,
         height: 48
+      },
+      {
+        name: '我要售后',
+        url: 'refund',
+        width: 60,
+        height: 60
       },
       {
         name: '修改密码',
@@ -99,11 +101,50 @@ Page({
     ],
    
   },
+  //地图选择地址
+  chooseLocation: function () {
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        console.log('data', that.data.addressData.addressName);
+        console.log(res.address)
+        that.setData({
+          'addressData.address': res.address,
+          'addressData.addressName': res.name
+        })
+      },
+    });
+
+  },
+  //个性签名 
+  signature:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      signText: e.detail.value
+    })
+    wx.showToast({
+      title: '设置完成！',
+      icon: 'success',
+      duration: 2000
+    })
+  },
   //跳转到订单页面
-  orderNav:function(e){
+  toOrder:function(e){
     let index = e.currentTarget.dataset.index;
     wx.navigateTo({
       url: '../order/order_'+index+'/order_'+index,
+    })
+  },
+  //跳转到人气店铺页面
+  toSales: function () {
+    wx.navigateTo({
+      url: '../sales/sales'
+    })
+  },
+  //跳转到消息中心页面
+  toNews: function () {
+    wx.navigateTo({
+      url: '../news/news'
     })
   },
   canvas:function(sum,num){
@@ -135,6 +176,26 @@ Page({
       context.stroke();
     }
     context.draw();
+  },
+  // 上传图片
+  putPortrait: function () {
+    wx.chooseImage({
+      success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://xxxxxxxxx', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success(res) {
+            const data = res.data
+            //do something
+          }
+        })
+      }
+    })
   },
   onLoad: function(options) {
     this.canvas(100,5);

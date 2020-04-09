@@ -1,0 +1,9 @@
+<button class="refund" bindtap="toAudit">
+  <image src="../../../static/images/index/register.png"></image>
+  <view>新门店录入</view>
+</button>
+
+<button class="refund" bindtap="toNotPass">
+  <image src="../../../static/images/index/notPass.png"></image>
+  <view>门店驳回管理</view>
+</button>

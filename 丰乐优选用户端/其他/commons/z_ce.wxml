@@ -1,0 +1,3 @@
+<Title v-title="自定义头部" bind:commonNavAttr="commonNavAttr"></Title>
+
+<view>index</view>

@@ -1,5 +1,6 @@
 /**app.wxss**/
 @import '/static/style/thorui.wxss';
+@import './components/weui-wxss/dist/style/weui.wxss';
 /*.container {
   height: 100%;
   display: flex;

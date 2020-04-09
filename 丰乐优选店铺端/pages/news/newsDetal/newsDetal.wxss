@@ -1,0 +1,29 @@
+/* pages/news/newsDetal/newsDetal.wxss */
+.newDetalTitle{
+  width:92%;
+  height: 130rpx;
+  margin-left: 4%;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+.newDetalTitle >text{
+  position: absolute;
+}
+.newDetalTitle >text:nth-child(1){
+  margin: 10rpx 0 0 0rpx;
+  font-size: 42rpx;
+  color:#333;
+  font-weight: 600;
+}
+.newDetalTitle >text:nth-child(2){
+  margin: 80rpx 0 0 0;
+  font-size: 24rpx;
+  color:#999;
+}
+.newDetalContent{
+  padding:20rpx 4%;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color:#666;
+  
+}

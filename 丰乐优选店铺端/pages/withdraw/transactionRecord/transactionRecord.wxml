@@ -1,0 +1,22 @@
+<!--pages/withdraw/transactionRecord/transactionRecord.wxml-->
+<!--导航栏--->
+<view class="navBox">
+  <view class="navBar">
+    <block wx:for='{{navTextArr}}' wx:key='index'>
+      <view class="{{navIndex == index ? 'active' : ''}}" catchtap="navChange" data-index="{{index}}">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!----记录列表------->
+<view class="dealList" wx:for="{{15}}" wx:key="index">
+  <text>结算入账</text>
+  <text>2020-04-01 00:45</text>
+  <text>+ ￥9.10</text>
+  <text>余额<text>￥40.33</text></text>
+</view>
+<!------结束--------->
+<view class="overList">
+  <text>没有更多记录了~~~</text>
+</view>

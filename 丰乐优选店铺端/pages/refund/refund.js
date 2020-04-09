@@ -7,6 +7,18 @@ Page({
   data: {
 
   },
+  // 跳转退款页面
+  toAfter:function(){
+    wx.navigateTo({
+      url: './after/after'
+    })
+  },
+  // 跳转客服页面
+  toService: function () {
+    wx.navigateTo({
+      url: './service/service'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

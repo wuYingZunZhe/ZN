@@ -1,2 +1,31 @@
-<!--pages/close/close.wxml-->
-<text>pages/close/close.wxml</text>
+
+<button bindtap='showModal' wx:if="{{!showModal}}">歇业申请</button>
+
+
+
+<!-----底部弹出框------>
+<view class=" {{ showModal ? 'modalShow' : '' }}">
+  <view class="modalBg" bindtap="showModal" />
+    <!-- 弹窗内容 -->
+    <view class="modalBoxContent">
+      <view>请设置歇业时间</view>
+      <view>
+        <!-- 选择日期 -->
+        <picker mode="date" start="2020-01-01" bindchange="bindDateChange" class="chooseDate">
+          <text>歇业开始时间：</text>
+          <text wx:if="{{queryDate}}">{{queryDate}}</text>
+          <text wx:else>顾客不能下单</text>
+        </picker>
+        <!-- 输入手机号 -->
+        <view class="inputPhone">
+          <text>您的联系电话：</text>
+          <input placeholder='请输入联系电话' type='number' value="{{phone}}" bindinput="bindPhoneInput" maxlength="11"></input>
+        </view>
+        <!-- 底部按钮 -->
+        <view class="btn">
+          <view bindtap='confirm'>确认</view>
+          <view bindtap='showModal'>取消</view>
+        </view>
+      </view>
+  </view>
+</view>

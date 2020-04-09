@@ -1,24 +1,23 @@
 <!----门店地址------>
 <view class="shopSite">
   <image src="../../static/images/home/site.png" />
-  <text>
-    门店位置<text>碧桂圆·翡翠山（苏仙区青年大道832号）</text>
+  <text bindtap="chooseLocation">
+    门店位置：<text wx:if="{{addressData.addressName}}">{{addressData.addressName}}</text><text wx:else>未设置</text>
   </text>
 </view>
 <!-----个人面板---->
 <view class="positionPanel">
 
-  <image src="../../static/images/home/user.png"></image>
+  <image src="../../static/images/home/user.png" bindtap="putPortrait"></image>
   <view>点击修改头像</view>
   <view>
     <text>(431003100870)丰乐优选李奕琦店</text>
   </view>
   <view>
-
-    <text>一天又一天，温暖陪伴，我一直在！</text>
+    <input value="{{signText}}" placeholder='快来设置属于自己的个性签名！' bindblur="signature"></input>
     <image src="../../static/images/home/write.png" wx:if='{{true}}'></image>
   </view>
-  <view>
+  <view bindtap="toNews">
     <image src="../../static/images/home/message.png"></image>
     <text>我的消息</text>
   </view>
@@ -28,7 +27,7 @@
   <text>今日丰乐优选订单数</text>
   <text>您的订单占比：<text>0.00%</text></text>
   <text>您的订单排名：<text>第6059名</text></text>
-  <text>查看排名</text>
+  <text bindtap="toSales" wx:if="{{false}}">查看排名</text>
 </view>
 <!-------统计图------->
 <view class="statistics">
@@ -55,19 +54,19 @@
     <text>NEW!</text>
   </view>
   <view>
-    <view data-index='1'  bindtap="orderNav">
+    <view data-index='1' bindtap="toOrder">
       <image src="../../static/images/home/order_1.png"></image>
       <view>今日订单</view>
     </view>
-    <view data-index='2' bindtap="orderNav">
+    <view data-index='2' bindtap="toOrder">
       <image src="../../static/images/home/order_2.png"></image>
       <view>本月订单</view>
     </view>
-    <view data-index='3' bindtap="orderNav">
+    <view data-index='3' bindtap="toOrder">
       <image src="../../static/images/home/order_3.png"></image>
       <view>待提货页面</view>
     </view>
-    <view data-index='4' bindtap="orderNav">
+    <view data-index='4' bindtap="toOrder">
       <image src="../../static/images/home/order_4.png"></image>
       <view>提醒取货</view>
     </view>
@@ -77,28 +76,18 @@
 
 
 <!-------图片九宫格-------->
-<tui-grid>
+<grid>
   <block wx:for="{{routers}}" wx:key="index">
     <navigator url="../{{item.url}}/{{item.url}}" hover-class='none'>
-      <tui-grid-item>
+      <grid-item>
         <view class="tui-grid-icon">
           <image src="../../static/images/home/{{item.url}}.png" style='width:60rpx;height:60rpx' />
         </view>
         <text class="tui-grid-label">{{item.name}}</text>
-      </tui-grid-item>
+      </grid-item>
     </navigator>
   </block>
-  <!------
-  <navigator url="../client/client" hover-class='none' open-type='switchTab'>
-    <tui-grid-item>
-      <view class="tui-grid-icon">
-        <image src="../../static/images/home/client.png" style='width:60rpx;height:60rpx' />
-      </view>
-      <text class="tui-grid-label">代课下单</text>
-    </tui-grid-item>
-  </navigator>
-  ------>
-</tui-grid>
+</grid>
 
 <view class="applet">
   <image src="../../static/images/home/applet.png"></image>

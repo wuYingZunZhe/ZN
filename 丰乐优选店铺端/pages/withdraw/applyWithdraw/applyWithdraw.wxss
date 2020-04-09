@@ -1,0 +1,79 @@
+/* pages/withdraw/applyWithdraw/applyWithdraw.wxss */
+/* 可提现金额 */
+.canUse{
+  width:100%;
+  height: 100rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+.canUse > text{
+  position: absolute;
+  font-weight: 600;
+}
+.canUse > text:nth-child(1){
+  margin:50rpx 0 0 20rpx;
+  font-size: 24rpx;
+  color:#333;
+}
+.canUse > text:nth-child(2){
+  width:20%;
+  text-align: right;
+  margin:50rpx 0 0 78%;
+  color:red;
+}
+/* 提现金额 */
+.applyInput{
+  width:100%;
+  height: 180rpx;
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+}
+.applyInput > text{
+  position: absolute;
+  margin: 20rpx 0 0 20rpx;
+  color:#333;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+.applyInput > view{
+  position: absolute;
+  margin:80rpx 0 0 0;
+}
+.applyInput > view >text{
+  float: left;
+  line-height: 60rpx;
+  font-size: 38rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  color:red;
+}
+.applyInput > view >input{
+  height: 60rpx;
+  float: left;
+  font-size: 42rpx;
+  font-weight: 600;
+  line-height: 60rpx;
+}
+/* 提示文字 */
+.bulletinTxt{
+  height: 100rpx;
+  border-bottom: 1rpx solid #ddd;
+  margin:50rpx 20rpx 10rpx 20rpx;
+  color:#999;
+  line-height: 40rpx;
+  font-size: 20rpx;
+}
+/* 提现按钮 */
+.applyBtn{
+  width:90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#fff;
+  text-align: center;
+  border-radius: 8rpx;
+  margin:30rpx 5%;
+  background: green;
+}
+
+
+

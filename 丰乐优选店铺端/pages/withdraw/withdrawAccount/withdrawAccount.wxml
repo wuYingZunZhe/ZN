@@ -1,0 +1,18 @@
+<view class="withdrawAccount">
+<view>
+<image src="/static/images/withdraw/safety.png"></image>
+信息强加密处理，保障个人隐私不泄露
+</view>
+<view>
+  <text>姓名</text>
+  <text>李奕琦</text>
+</view>
+<view>
+  <text>开户行</text>
+  <text>中国建设银行股份有限公司xx支行</text>
+</view>
+<view>
+  <text>银行卡号</text>
+  <text>123*******9555</text>
+</view>
+</view>

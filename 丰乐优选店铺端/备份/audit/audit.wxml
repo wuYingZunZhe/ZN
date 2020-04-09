@@ -1,0 +1,38 @@
+<!-- 头部步骤条 -->
+<view class="navSteps">
+  <ul class="steps">
+    <li class="{{step>=0 ? 'active':''}}">
+      <text>门店老板信息提交</text>
+    </li>
+    <li class="{{step>=1 ? 'active':''}}">
+      <text>开店信息提交</text>
+    </li>
+    <li class="{{step>=2 ? 'active':''}}">
+      <text>完成</text>
+    </li>
+  </ul>
+</view>
+
+<view class="form">
+  <view>
+    <text><text>*</text>门店老板姓名</text>
+    <input placeholder='请输入门店老板姓名' value='{{shopName}}' bindblur='binShopName'></input>
+  </view>
+  <view>
+    <text><text>*</text>身份证号码</text>
+    <input placeholder='请输入门店老板姓名' value='{{shopName}}' bindblur='binShopName'></input>
+  </view>
+  <view>
+    <text><text>*</text>手机号码</text>
+    <input placeholder='请输入门店老板姓名' value='{{shopName}}' bindblur='binShopName'></input>
+  </view>
+  <view>
+    <text><text>*</text>常用微信号</text>
+    <input placeholder='请输入门店老板姓名' value='{{shopName}}' bindblur='binShopName'></input>
+  </view>
+  <view>
+    <text><text>*</text>银行卡号</text>
+    <input placeholder='请输入门店老板姓名' value='{{shopName}}' bindblur='binShopName'></input>
+  </view>
+  
+</view>

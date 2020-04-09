@@ -1,0 +1,22 @@
+
+<button open-type="contact">进入客服会话</button>
+
+
+<!--现在的客服-->
+<view class='col-100'>
+  <button open-type="contact" class='contacButton'>
+    <view class='contacButtonView' wx:for='{{connectButton}}' wx:key='key'>
+      <text class='floatL {{item.className}}'>{{item.text}}</text>
+      <text class='icon-right {{item.className}}'>〉</text>
+    </view>
+  </button>
+</view>
+ 
+<!--原来的客服-->
+<view class='col-100'>
+  <view class='button-setting' wx:for='{{connectButton}}' wx:key='key'>
+    <text class='{{item.className}}'>{{item.text}}</text>
+    <text class='icon-right {{item.className}}'>〉</text>
+  </view>
+</view>
+

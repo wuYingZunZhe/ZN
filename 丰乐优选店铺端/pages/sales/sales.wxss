@@ -4,6 +4,7 @@ page {
 }
 /*搜索输入框*/
 .searchBox {
+  width:100%;
   height:60rpx;
   position: relative;
   background: #ececec;

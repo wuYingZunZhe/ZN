@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/index/index/index",
+    "pages/index/login/login",
+    "pages/index/register/register",
     "pages/home/home",
-    "pages/index/index",
     "pages/share/share",
     "pages/consult/consult",
     "pages/refund/refund",
@@ -22,7 +24,20 @@
     "pages/order/order_2/order_2",
     "pages/order/order_3/order_3",
     "pages/order/order_4/order_4",
-    "pages/z_ce/z_ce"
+    "pages/z_ce/z_ce",
+    "pages/news/news",
+    "pages/news/newsDetal/newsDetal",
+    "pages/withdraw/transactionRecord/transactionRecord",
+    "pages/withdraw/accountQuery/accountQuery",
+    "pages/withdraw/withdrawRecord/withdrawRecord",
+    "pages/withdraw/withdrawAccount/withdrawAccount",
+    "pages/withdraw/applyWithdraw/applyWithdraw",
+    "pages/refund/after/after",
+    "pages/refund/service/service",
+    "pages/index/notPass/notPass",
+    "pages/index/audit/audit",
+    "pages/index/audit2/audit2",
+    "pages/index/succe/succe"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -31,30 +46,11 @@
     "backgroundColorTop": "#fafafa",
     "backgroundColorBottom": "#fafafa"
   },
-  "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#5677FC",
-    "backgroundColor": "#FFFFFF",
-    "list": [
-      {
-        "pagePath": "pages/client/client",
-        "text": "client",
-        "iconPath": "static/images/tabbar/code_gray.png",
-        "selectedIconPath": "static/images/tabbar/code_active.png"
-      },
-      {
-        "pagePath": "pages/client/client",
-        "text": "client",
-        "iconPath": "static/images/tabbar/extend_gray.png",
-        "selectedIconPath": "static/images/tabbar/extend_active.png"
-      },
-      {
-        "pagePath": "pages/client/client",
-        "text": "client",
-        "iconPath": "static/images/tabbar/thor_gray.png",
-        "selectedIconPath": "static/images/tabbar/thor_active.png"
-      }
-    ]
+  "usingComponents": {
+    "mp-dialog": "/components/dialog/dialog",
+    "mp-uploader": "/components/uploader/uploader",
+    "mp-cells": "/components/cells/cells",
+    "mp-cell": "/components/cell/cell"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

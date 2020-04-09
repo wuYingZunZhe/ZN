@@ -7,8 +7,7 @@ Page({
   data: {
     navIndex: 3,//记录当前点击的类目
     navTextArr: ["今日","本周","本月","累计"],
-    pickerArray: ['2018年', '2019年', '2020年'],
-    pickerIndex: 2,//
+    pickerDate: '2020',//
   },
   //导航栏点击切换
   navChange:function(e) {
@@ -20,7 +19,7 @@ Page({
   pickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      pickerIndex: e.detail.value
+      pickerDate: e.detail.value
     })
   },
 

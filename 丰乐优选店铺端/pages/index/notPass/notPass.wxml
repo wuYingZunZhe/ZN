@@ -1,0 +1,4 @@
+<view class="notPass">
+  <image src="../../../static/images/index/empty.png"></image>
+  <view>暂无数据</view>
+</view>

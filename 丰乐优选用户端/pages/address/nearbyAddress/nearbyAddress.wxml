@@ -1,0 +1,20 @@
+<view class="currentSite">
+  <image src="/static/location.png"></image>
+  <text>{{addressData.addressName}}</text>
+  <text bindtap="chooseLocation">选择其他地区的门店</text>
+</view>
+
+<!---自提点列表------>
+<view class="siteBox">
+  <view class="siteList" wx:for="{{15}}" wx:key="index">
+    <image src="/static/location.png"></image>
+    <text>商店名称xxx</text>
+    <text>门店编号：44190010026</text>
+    <text class="open" wx:if="{{true}}">营业中</text>
+    <text class="close" wx:else>关闭</text>
+  </view>
+</view>
+<!-- 提示文字 -->
+<view class="footerTxt" wx:if="{{false}}">
+  <text decode="{{true}}">当前位置范围内，暂时没有兴盛优选门店哦！</text>
+</view>

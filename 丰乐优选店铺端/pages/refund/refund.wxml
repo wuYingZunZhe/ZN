@@ -1,2 +1,9 @@
-<!--pages/refund/refund.wxml-->
-<text>pages/refund/refund.wxml</text>
+<button class="refund" bindtap="toAfter">
+  <image src="../../static/images/refund/refund.png"></image>
+  <view>申请退款</view>
+</button>
+
+<button class="refund" open-type="contact">
+  <image src="../../static/images/refund/service.png"></image>
+  <view>客服回复</view>
+</button>

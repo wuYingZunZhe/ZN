@@ -1,0 +1,24 @@
+<!-- 头部自提点搜索 -->
+<view class="selectAddress">
+  <view>
+    <image src="/static/location.png" bindtap="goNearbyAddress"></image>
+    <view bindtap="goNearbyAddress">附近门店</view>
+  </view>
+  <input placeholder="搜索门店名称、编号" bindtap='toSearch'></input>
+  <view>搜索</view>
+</view>
+
+<!---自提点列表------>
+<view class="siteBox">
+  <view class="siteList" wx:for="{{15}}" wx:key="index">
+    <image src="/static/location.png"></image>
+    <text>商店名称xxx</text>
+    <text>门店编号：44190010026</text>
+    <text class="open" wx:if="{{true}}">营业中</text>
+    <text class="close" wx:else>关闭</text>
+  </view>
+</view>
+<!-- 提示文字 -->
+<view class="footerTxt" wx:if="{{false}}">
+  <text decode="{{true}}">更改您的提货门店：\n 请输入你要搜索的门店名称、编号，或通过附近门店查找！</text>
+</view>

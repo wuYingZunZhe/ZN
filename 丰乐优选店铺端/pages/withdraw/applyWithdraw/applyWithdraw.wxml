@@ -1,0 +1,19 @@
+<!-- 可提现金额 -->
+<view class="canUse">
+  <text>可提现金额：</text>
+  <text>￥42.23</text>
+</view>
+<!-- 提现金额 -->
+<view class="applyInput">
+  <text>提现金额:</text>
+  <view>
+    <text>￥</text>
+    <input placeholder='请输入金额（元）' bindinput='inputvalue' value="{{inputValue}}" placeholder-style=" font-size:.6em;"></input>
+  </view>
+</view>
+<!-- 文本提示 -->
+<view class="bulletinTxt">
+  <text>提现申请提交后，预计24小时到账 （国家法定节假日顺延），请到提现账户绑定的银行卡查看是否到账！</text>
+</view>
+<!-- 提现按钮 -->
+<view class="applyBtn" bindtap="applyBtn">提现</view>

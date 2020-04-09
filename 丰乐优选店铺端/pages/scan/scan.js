@@ -5,6 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
+    result: ''
+  },
+  getScancode: function () {
+    var that = this;
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success: (res) => {
+        wx.navigateTo({
+          url: '../navigator/navigator?title=' + res.result
+
+        })
+        var result = res.result;
+
+        that.setData({
+          result: result,
+
+        })
+      }
+    })
 
   },
 
@@ -12,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getScancode();
   },
 
   /**

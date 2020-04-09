@@ -1,0 +1,10 @@
+<view class="withdrawRecordList" wx:for="{{15}}" wx:key="index">
+  <text>提现</text>
+  <text>提款到银行卡</text>
+  <text>2020-03-30 15:34:35</text>
+  <text>- ￥ 100.00</text>
+  <text>余额: <text>￥18.55</text></text>
+</view>
+<view class="loadOver" wx:if="{{false}}">
+  已全部加载完成
+</view>

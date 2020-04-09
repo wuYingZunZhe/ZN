@@ -1,0 +1,119 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+}
+
+/* 头部自提点搜索 */
+
+.selectAddress {
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  position: fixed;
+  top: 0;
+}
+
+.selectAddress >view:nth-child(1) {
+  width: 15%;
+  padding-top: 10rpx;
+  padding-left: 2%;
+  text-align: center;
+  font-size: 18rpx;
+  float: left;
+  color: rgb(176, 212, 241);
+}
+
+.selectAddress >view:nth-child(1) image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.selectAddress >input:nth-child(2) {
+  width: 70%;
+  height: 58rpx;
+  background: #eee;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+  margin-top: 10rpx;
+  float: left;
+}
+
+.selectAddress >view:nth-child(3) {
+  width: 10%;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 自提点列表 */
+
+.siteBox {
+  margin-top: 80rpx;
+}
+
+.siteList {
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #ddd;
+  margin: 10rpx 0;
+  position: relative;
+}
+
+.siteList >image:nth-child(1) {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx 20rpx;
+  position: absolute;
+}
+
+.siteList >text {
+  position: absolute;
+  font-size: 24rpx;
+}
+
+.siteList >text:nth-child(2) {
+  margin: 20rpx 0 0 250rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.siteList >text:nth-child(3) {
+  margin: 80rpx 0 0 250rpx;
+  font-size: 20rpx;
+}
+
+.siteList >.open {
+  width: 12%;
+  margin: 20rpx 0 0 86%;
+  font-size: 20rpx;
+  background: green;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.siteList >.close {
+  width: 12%;
+  margin: 20rpx 0 0 86%;
+  font-size: 20rpx;
+  background: red;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+}
+
+/* 底部提示文字 */
+
+.footerTxt {
+  margin-top: 150rpx;
+  padding: 0 20rpx;
+  font-size: 20rpx;
+  color: #999;
+}

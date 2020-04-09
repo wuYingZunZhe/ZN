@@ -1,1 +1,92 @@
-/* pages/close/close.wxss */
+
+page {
+  background: #eee;
+}
+
+/*弹出框*/
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, .4);
+  display: none;
+}
+
+.modalBoxContent {
+  height: 500rpx;
+  margin-left:10%; 
+  bottom: 30vh;
+  background: #fff;
+  color:#333;
+  position: fixed;
+  background: #f8f8f8;
+  transform: translateY(300%);
+  transition: all 0.4s ease;
+  z-index: 12;
+  width:80%;
+  
+}
+
+.modalShow .modalBg {
+  display: block;
+}
+.modalShow .modalBoxContent {
+  transform: translateY(0);
+}
+
+
+
+
+
+
+/* 弹窗内容 */
+.modalBoxContent > view:nth-child(1){
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: rgba(62, 150, 231, 0.808);
+  color:#fff;
+}
+.modalBoxContent >view:nth-child(2) >.chooseDate ,.modalBoxContent >view:nth-child(2) >.inputPhone{
+  width:80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 2%;
+  margin:50rpx 8%; 
+  background: #ddd;
+  font-size: 24rpx;
+  border-radius: 4rpx;
+}
+.modalBoxContent >view:nth-child(2) >.chooseDate text:nth-child(2){
+  color:#666;
+}
+.modalBoxContent >view:nth-child(2) >.inputPhone text{
+  float: left;
+}
+.modalBoxContent >view:nth-child(2) >.inputPhone > input{
+  height: 100%;
+  float: left;
+}
+.btn{
+  background: #fff;
+}
+.btn >view{
+  width:30%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin:20rpx 10%;
+  border-radius: 8rpx;
+  color:#fff;
+  font-size: 24rpx;
+  text-align: center;
+  float:left;
+}
+.btn >view:nth-child(1){
+  background: rgba(33, 102, 231, 0.795);
+}
+.btn >view:nth-child(2){
+  background: rgba(154, 156, 158, 0.849);
+}

@@ -1,0 +1,102 @@
+/* pages/address/nearbyAddress/nearbyAddress.wxss */
+page{
+  /* background: #ddd; */
+}
+.currentSite{
+  width: 100%;
+  height: 60rpx;
+  background: #ddd;
+  position: fixed;
+  top: 0;
+}
+.currentSite >image:nth-child(1){
+  width: 30rpx;
+  height: 30rpx;
+  margin: 10rpx 0 0 10rpx;
+  position: absolute;
+}
+.currentSite >text:nth-child(2){
+  font-size: 20rpx;
+  line-height: 60rpx;
+  position: absolute;
+  margin-left:60rpx;
+  color:#333;
+}
+.currentSite >text:nth-child(3){
+  width:30%;
+  font-size: 20rpx;
+  line-height: 60rpx;
+  position: absolute;
+  margin-left:70%;
+  color:rgba(55, 137, 243, 0.94);
+}
+
+
+/* 自提点列表 */
+
+.siteBox {
+  margin-top: 80rpx;
+}
+
+.siteList {
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #ddd;
+  margin: 10rpx 0;
+  position: relative;
+}
+
+.siteList >image:nth-child(1) {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 10rpx 20rpx;
+  position: absolute;
+}
+
+.siteList >text {
+  position: absolute;
+  font-size: 24rpx;
+}
+
+.siteList >text:nth-child(2) {
+  margin: 20rpx 0 0 250rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+
+.siteList >text:nth-child(3) {
+  margin: 80rpx 0 0 250rpx;
+  font-size: 20rpx;
+}
+
+.siteList >.open {
+  width: 12%;
+  margin: 20rpx 0 0 86%;
+  font-size: 20rpx;
+  background: green;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.siteList >.close {
+  width: 12%;
+  margin: 20rpx 0 0 86%;
+  font-size: 20rpx;
+  background: red;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+}
+
+/* 底部提示文字 */
+
+.footerTxt {
+  margin-top: 150rpx;
+  padding: 0 20rpx;
+  font-size: 20rpx;
+  color: #999;
+}

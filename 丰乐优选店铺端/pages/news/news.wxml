@@ -1,0 +1,17 @@
+<!-----消息卡片------->
+<view class="newCart" wx:for='{{3}}' wx:key="index" bindtap="toNewsDetal" data-index="{{index}}">
+  <view>2020-04-01 14:50:57</view>
+  <view>
+    <view>
+      <text>{{index}}《系统升级通知》</text>
+    </view>
+    <view>
+      系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知系统更新通知
+    </view>
+    <view></view>
+  </view>
+</view>
+<!----底部----->
+<view class="footer" wx:if="{{footerShow}}">
+  <text>我也是有底线的</text>
+</view>

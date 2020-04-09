@@ -1,0 +1,64 @@
+<!-- 头部步骤条 -->
+<view class="navSteps">
+  <ul class="steps">
+    <li class="{{step>=0 ? 'active':''}}">
+      <text>门店老板信息提交</text>
+    </li>
+    <li class="{{step>=1 ? 'active':''}}">
+      <text>开店信息提交</text>
+    </li>
+    <li class="{{step>=2 ? 'active':''}}">
+      <text>完成</text>
+    </li>
+  </ul>
+</view>
+<!-- 门店老板表单信息 -->
+
+<form bindsubmit="formSubmit" bindreset="formReset" class="form">
+  <view class="form">
+    <view>
+      <text><text>*</text>门店老板姓名</text>
+      <input placeholder='请输入门店老板姓名' name='bossName' value="{{bossName}}" bindblur='bossName'></input>
+    </view>
+    <view>
+      <text><text>*</text>身份证号码</text>
+      <input placeholder='请输入门店老板身份证' name='bossIdentity' value="{{bossIdentity}}" bindblur='bossIdentity'></input>
+    </view>
+    <view>
+      <text><text>*</text>手机号码</text>
+      <input placeholder='请输入门店老板手机号' name='bossPhone' value="{{bossPhone}}" bindblur='bossPhone'></input>
+    </view>
+    <view>
+      <text><text>*</text>常用微信号</text>
+      <input placeholder='请输入常用微信号' name='bossWeChat' value="{{bossWeChat}}" bindblur='bossWeChat'></input>
+    </view>
+    <view>
+      <text><text>*</text>银行卡号</text>
+      <input placeholder='请输入银行卡号' name='bossBankCard' value="{{bossBankCard}}" bindblur='bossBankCard'></input>
+    </view>
+    <view>
+      <text><text>*</text>开户行名称</text>
+      <input placeholder='请输入开户行名称' name='bankOpenName' value="{{bankOpenName}}" bindblur='bankOpenName'></input>
+    </view>
+    <view>
+      <text><text>*</text>开户行行号</text>
+      <input placeholder='请输入开户行行号' name='bankOpenId' value="{{bankOpenId}}" bindblur='bankOpenId'></input>
+    </view>
+  </view>
+  <!-- 文字提示 -->
+  <view class="textRemind">
+    门店老板信息会进行实名认证，所填写信息必须真实有效。
+  </view>
+  <view class="textRemind">
+    一位门店老板只能在丰乐优选开通一家门店。如需开通多家门店，请提供不同门店老板信息。
+  </view>
+  <view class="textRemind">
+    银行信息暂时只支持工商银行普通储蓄卡（卡号为19位），信用卡/存折现不支持。
+  </view>
+
+
+  <view class="submit">
+    <button formType="text" wx:if="{{!formComplete}}" bindtap="formCheck">下一步</button>
+    <button formType="submit" wx:else class="active" >下一步</button>
+  </view>
+</form>

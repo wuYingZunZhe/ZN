@@ -1,6 +1,111 @@
-/* pages/member/member.wxss */
+page {
+  background: #eee;
+}
+/*搜索输入框*/
+.searchBox {
+  width:100%;
+  height:60rpx;
+  position: fixed;
+  top: 0;
+  background: #eee;
+  padding:20rpx 0;
+}
+.searchBox > view:nth-child(1) {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 99;
+}
+.searchBox > view:nth-child(1) >image {
+  width: 100%;
+  height: 100%;
+}
+.searchBox >input:nth-child(2) {
+  width: 80%;
+  height: 58rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 68rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  color: #333;
+  border:1rpx solid #ddd;
+  position: absolute;
+}
+.searchBox >view:nth-child(3){
+  position: absolute;
+  width:10%;
+  height:50rpx;
+  background: #ddd;
+  float: left;
+  border-radius: 8rpx;
+  margin-left:85%;
+  padding:5rpx 10rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color:#333;
+}
+/* 会员列表 */
 .memberList{
   width:100%;
-  height:100rpx;
-  background: #ddd;
+  margin-top:100rpx;
+}
+.memberList > view{
+  width:100%;
+  height: 100rpx;
+  border-top:1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+  margin-bottom: 10rpx;
+  background: #fff;
+}
+.memberList > view >view{
+  height: 50rpx;
+  line-height: 50rpx;
+  float:left;
+  margin-top:25rpx;
+  border-left: 1rpx solid #ddd;
+  text-align: center;
+}
+.memberList > view >view:nth-child(1){
+  width:30%;
+  font-size: 20rpx;
+  color:#333;
+  border:0;
+}
+.memberList > view >view:nth-child(2){
+  width:20%;
+  font-size: 20rpx;
+  color:#999;
+}
+.memberList > view >view:nth-child(3){
+  width:20%;
+}
+.memberList > view >view:nth-child(3) >view:nth-child(1){
+  font-size: 18rpx;
+  line-height: 12rpx;
+  color:#999;
+}
+.memberList > view >view:nth-child(3) >view:nth-child(2){
+  font-size: 28rpx;
+  line-height: 62rpx;
+  color:#333;
+}
+.memberList > view >view:nth-child(4){
+  width:26%;
+}
+.memberList > view >view:nth-child(4) >view:nth-child(1){
+  font-size: 18rpx;
+  line-height: 12rpx;
+  color:#999;
+}
+.memberList > view >view:nth-child(4) >view:nth-child(2){
+  font-size: 28rpx;
+  line-height: 62rpx;
+  color:#333;
 }

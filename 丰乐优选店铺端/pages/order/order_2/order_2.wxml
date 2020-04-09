@@ -1,3 +1,5 @@
+<view class="flexBox">
+
 <!----搜索输入框----->
 <view class="searchBox">
   <view>
@@ -15,7 +17,8 @@
     </view>
   </block>
 </view>
-
+</view>
+<view class="myHr"></view>
 <!---订单列表----->
 <view class="orderList" wx:for="{{5}}" wx:key="index">
   <view>

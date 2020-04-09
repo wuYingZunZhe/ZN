@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "提现记录"
+  "navigationBarTitleText": "结算中心",
+  "usingComponents": {
+    
+  }
 }
