@@ -58,7 +58,6 @@
 
 
   <view class="submit">
-    <button formType="text" wx:if="{{!formComplete}}" bindtap="formCheck">下一步</button>
-    <button formType="submit" wx:else class="active" >下一步</button>
+    <button formType="submit" disabled="{{!formComplete}}">下一步</button>
   </view>
 </form>

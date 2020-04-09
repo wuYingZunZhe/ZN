@@ -50,7 +50,8 @@
     "mp-dialog": "/components/dialog/dialog",
     "mp-uploader": "/components/uploader/uploader",
     "mp-cells": "/components/cells/cells",
-    "mp-cell": "/components/cell/cell"
+    "mp-cell": "/components/cell/cell",
+    "mp-loading": "/components/loading/loading"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

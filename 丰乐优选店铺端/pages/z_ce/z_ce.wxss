@@ -1,6 +1,0 @@
-.myBox{
-  width:500rpx;
-  height: 500rpx;
-  background: red;
-  text-align: center;
-}

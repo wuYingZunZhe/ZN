@@ -8,7 +8,7 @@
 <!-----个人面板---->
 <view class="positionPanel">
 
-  <image src="../../static/images/home/user.png" bindtap="putPortrait"></image>
+  <image src="{{false?  '' :'../../static/images/home/user.png'}}" bindtap="putPortrait"></image>
   <view>点击修改头像</view>
   <view>
     <text>(431003100870)丰乐优选李奕琦店</text>

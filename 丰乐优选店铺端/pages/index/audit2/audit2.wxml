@@ -69,15 +69,15 @@
       <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" max-count="2" title="" tips="食品流通许可证"></mp-uploader>
     </view>
 
-    <view class="submit">
+    <!-- <view class="submit">
       <view class="active" bindtap="toAudit">上一步</view>
       <view wx:if="{{false}}">提交</view>
       <view wx:else class="active" bindtap="submit">提交</view>
-    </view>
+    </view> -->
 
   </view>
   <view class="submit">
-
-    <button formType="submit" class="active">下一步</button>
+    <button bindtap="toAudit">上一步</button>
+    <button formType="submit" class="active" disabled="{{!formComplete}}">提交</button>
   </view>
 </form>

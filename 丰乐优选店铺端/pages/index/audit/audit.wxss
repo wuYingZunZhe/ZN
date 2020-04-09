@@ -116,10 +116,6 @@
 }
 .submit >button{
   border-radius: 30rpx;
-  background: #ddd;
-  color:#333;
-}
-.submit >.active{
   background: red;
   color:#fff;
 }

@@ -13,7 +13,7 @@ Page({
     detailAddress: '',//详细地址
     licenseName: '',//营业执照中的名称
     registrationNum: '',//统一社会信息代码或注册号
-    formComplete: true,//表单验证状态
+    formComplete: false,//表单验证状态
 
   },
   
@@ -75,26 +75,26 @@ Page({
       detailAddress:e.detail.value
     })
   },
-  // 上传门店门头照
-  putShopPhoto: function (){
-    wx.chooseImage({
-      success(res) {
-        const tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://xxxxxxxxx', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'user': 'test'
-          },
-          success(res) {
-            const data = res.data
-            //do something
-          }
-        })
-      }
-    })
-  },
+  // // 上传门店门头照
+  // putShopPhoto: function (){
+  //   wx.chooseImage({
+  //     success(res) {
+  //       const tempFilePaths = res.tempFilePaths
+  //       wx.uploadFile({
+  //         url: 'https://xxxxxxxxx', //仅为示例，非真实的接口地址
+  //         filePath: tempFilePaths[0],
+  //         name: 'file',
+  //         formData: {
+  //           'user': 'test'
+  //         },
+  //         success(res) {
+  //           const data = res.data
+  //           //do something
+  //         }
+  //       })
+  //     }
+  //   })
+  // },
   //图片上传到服务器
   chooseImage: function (e) {
     var that = this;
@@ -106,7 +106,9 @@ Page({
           filePath: tempFilePaths[0],
           name: 'file',
           formData: {
-            'user': 'test'
+            "phoneNumber": "18888888888",
+            "password": "123",
+            "token":'',
           },
           success: function (res) {
             var data = res.data

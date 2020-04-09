@@ -1,6 +1,33 @@
 //app.js
 const request = require('./utils/request.js')
 App({
+  //刷新Token
+  refreshToken: function () {
+    console.log(wx.getStorageSync('phoneNumber'))
+    console.log(wx.getStorageSync('password'))
+    if (wx.getStorageSync('phoneNumber') != '' && wx.getStorageSync('password') == '') {
+      wx.request({
+        url: app.globalData.baseUrl + "/wechat/store/api/login",
+        data: {
+          "phoneNumber": wx.getStorageSync('phoneNumber'),
+          "password": wx.getStorageSync('password')
+        },
+        header: {
+          'Content-Type': 'application/json'
+        },
+        method: 'post',
+        success: function (res) {
+          console.log("登陆成功：", res.data.msg)
+          wx.setStorageSync('storeToken', res.data.msg); // 更新Token
+        }
+      })
+
+    } else {
+      wx.navigateTo({
+        url: '/pages/index/login/login'
+      })
+    }
+  },
   // 文件上传的函数，返回一个promise
   uplaodFile(files) {
     // console.log('upload files', files)
@@ -55,8 +82,5 @@ App({
   globalData: {
     isLogin: false,//是否登陆
     baseUrl:'http://192.168.0.118:8080',//服务器地址
-    phoneNumber: "18888888888",
-    password: "123",
-    storeToken:'',
   }
 })
