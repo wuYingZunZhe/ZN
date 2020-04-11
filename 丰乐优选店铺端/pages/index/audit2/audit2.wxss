@@ -64,11 +64,11 @@
 /* 将当前/完成步骤之前的数字及连接线变绿 */
 
 .steps li.active:before, .steps li.active:after {
-  background-color: #ee3838;
+  background-color: #EAB737;
 }
 
 .steps .active {
-  color: #ee3838;
+  color: #EAB737;
 }
 /* 表单样式 */
 .form{
@@ -126,7 +126,7 @@
 .textRemind{
   width:92%;
   line-height: 50rpx;
-  color:red;
+  color:#EAB737;
   font-size: 20rpx;
   margin-left: 4%;
 }
@@ -150,7 +150,7 @@
   width:40% !important;
   margin:0 5% !important;
   float: left;
-  background: red;
+  background: #EAB737;
   border-radius: 50rpx;
   color:#fff;
 }

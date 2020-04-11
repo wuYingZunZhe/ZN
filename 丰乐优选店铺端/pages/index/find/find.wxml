@@ -1,0 +1,32 @@
+
+  
+<view class="form">
+  <view class="Input">
+    <view>手机号</view>
+    <input type='number' maxlength='11' placeholder='请输入手机号' value='{{phoneNumber}}' bindblur='binPhone'/>
+    <view bindtap="sendMsg">发送验证码</view>
+  </view>
+  <view class="Input">
+    <view>验证码</view>
+    <input type='number'  placeholder='请输入验证码' value='{{code}}' bindblur='binCode'/>
+  </view>
+  <view class="Input">
+    <view>新密码</view>
+    <input type='number'  placeholder='请输入新密码' value='{{passWord}}' bindblur='binpassWord'/>
+  </view>
+
+  <button class='btn' bindtap="find">发送</button>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,30 +1,32 @@
+//index.js
+//获取应用实例
 const app = getApp();
-Page({
-  //刷新Token
-  refreshToken: function() {
-    console.log(wx.getStorageSync('phoneNumber'))
-    console.log(wx.getStorageSync('password'))
-    if (wx.getStorageSync('phoneNumber') != '' && wx.getStorageSync('password') == '') {
-      wx.request({
-        url: app.globalData.baseUrl + "/wechat/store/api/login",
-        data: {
-          "phoneNumber": wx.getStorageSync('phoneNumber'),
-          "password": wx.getStorageSync('password')
-        },
-        header: {
-          'Content-Type': 'application/json'
-        },
-        method: 'post',
-        success: function(res) {
-          console.log("登陆成功：", res.data.msg)
-          wx.setStorageSync('storeToken', res.data.msg); // 更新Token
-        }
-      })
+// 这里写你的js路径
+var request = require('../../utils/request');
 
-    } else {
-      wx.navigateTo({
-        url: '/pages/index/login/login'
-      })
-    }
-  }
+Page({
+  data: {
+
+  },
+  ce: function() {
+    app.test();
+    // let postData = {
+    //   "phoneNumber": wx.getStorageSync('phoneNumber'),
+    //   "password": wx.getStorageSync('password')
+    // };
+    // request.check('/wechat/store/api/login', 'post', postData, (res)=>{
+    //   console.log('成功:', res);
+    // });
+  },
+  test: function () {
+    console.log('123')
+    let postData = {
+      "phoneNumber": wx.getStorageSync('phoneNumber'),
+      "password": wx.getStorageSync('password')
+    };
+    request.check('/wechat/store/api/login', 'post', postData, (res) => {
+      console.log('成功:', res);
+    });
+  },
+  
 })

@@ -1,9 +1,9 @@
-<button class="refund" bindtap="toLogin">
+<button class="refund"  open-type="getUserInfo" bindgetuserinfo="toLogin">
   <image src="../../../static/images/index/login.png"></image>
   <view>账户登陆</view>
 </button>
 
-<button class="refund" bindtap="toRegister">
+<button class="refund" open-type="getUserInfo" bindgetuserinfo="toRegister">
   <image src="../../../static/images/index/register.png"></image>
   <view>申请入驻</view>
 </button>

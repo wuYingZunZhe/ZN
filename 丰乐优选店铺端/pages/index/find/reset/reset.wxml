@@ -1,0 +1,32 @@
+
+  
+<view class="form">
+  <view class="Input">
+    <view>手机号</view>
+    <input type='number' maxlength='11' placeholder='请输入手机号' value='{{phoneNumber}}' bindblur='binPhone'/>
+  </view>
+  <view class="Input">
+    <view>密码</view>
+    <input type='number'  placeholder='请输入新密码' value='{{passWord}}' bindblur='binPassWord'/>
+  </view>
+  <view class="Input">
+    <view>确认密码</view>
+    <input type='number'  placeholder='请确认密码' value='{{verify}}' bindblur='binVerify'/>
+  </view>
+
+  <button class='btn' bindtap="reset">确定</button>
+  
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

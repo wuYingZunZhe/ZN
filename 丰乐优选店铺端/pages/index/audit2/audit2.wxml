@@ -29,18 +29,26 @@
     </view>
 
 
-    <picker mode="region" name='selectLocation' value="{{selectLocation}}" bindchange="selectLocation" class="picker">
+    <!-- <picker mode="region" name='selectLocation' value="{{selectLocation}}" bindchange="selectLocation" class="picker" disabled="{{true}}">
       <view class='formInput'>
         <text><text>*</text>选择省市区</text>
         <view class="formInputSite" wx:if="{{selectLocation}}">{{selectLocation[0]}}-{{selectLocation[1]}}-{{selectLocation[2]}}</view>
         <view class="formInputChoice" wx:else>--请选择--</view>
       </view>
-    </picker>
+    </picker> -->
+     <view class='formInput' bindtap="ce">
+        <text><text>*</text>选择位置</text>
+        <view class="formInputSite" wx:if="{{chooseLocation}}">{{chooseLocation.name}}</view>
+        <view class="formInputChoice" wx:else>请在地图上选择</view>
+      </view>
+
+
+
     <!-- <view class="weui-cells__title">文本域</view> -->
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">
-          <textarea class="weui-textarea textArea" name='detailAddress' value="{{detailAddress}}" bindblur="detailAddress" placeholder="门店详细地址填写：如道路、门牌号、小区、楼栋号等" style="height: 3.3em" />
+          <textarea class="weui-textarea textArea" name='detailAddress' value="{{chooseLocation.address}}" bindblur="detailAddress" placeholder="门店详细地址填写：如道路、门牌号、小区、楼栋号等" style="height: 3.3em" />
           <!-- <view class="weui-textarea-counter">0/200</view> -->
         </view>
       </view>
@@ -68,12 +76,6 @@
 
       <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" upload="{{uplaodFile}}" files="{{files}}" max-count="2" title="" tips="食品流通许可证"></mp-uploader>
     </view>
-
-    <!-- <view class="submit">
-      <view class="active" bindtap="toAudit">上一步</view>
-      <view wx:if="{{false}}">提交</view>
-      <view wx:else class="active" bindtap="submit">提交</view>
-    </view> -->
 
   </view>
   <view class="submit">

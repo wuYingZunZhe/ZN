@@ -14,7 +14,23 @@ Page({
     licenseName: '',//营业执照中的名称
     registrationNum: '',//统一社会信息代码或注册号
     formComplete: false,//表单验证状态
+    chooseLocation:'',//选取位置
 
+  },
+  ce:function(){
+    let that=this;
+    console.log('123')
+    wx.chooseLocation({
+      success: function (res) {
+        wx.setStorageSync('chooseLocation', res);
+        that.setData({
+          chooseLocation:res
+        }) 
+      },
+      fail: function () {
+        app.getChooseLocation();
+      }
+    })  
   },
   
   //店铺详细名称非空验证
@@ -154,8 +170,11 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      uplaodFile: app.uplaodFile.bind(this)
-    })
+      uplaodFile: app.uplaodFile.bind(this),
+      chooseLocation: wx.getStorageSync('chooseLocation'),//选择位置
+    });
+    // app.getUserInfo(); //获取个人信息
+    
   },
 
   /**

@@ -1,1 +1,3 @@
-<button  bindtap="refreshToken">确定</button>
+
+<button bindtap="ce">001</button>
+<button bindtap="test">002</button>

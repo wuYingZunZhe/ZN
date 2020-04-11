@@ -1,32 +1,15 @@
-<mp-form id="form" rules="{{rules}}" models="{{formData}}">
 
-  <mp-cells title="" footer="">
-    <!-- <mp-cell prop="mobile" title="手机号" required ext-class=" weui-cell_vcode">
-      <input bindinput="formInputChange" data-field="mobile" class="weui-input" placeholder="请输入手机号" />
-      <view slot="footer" class="weui-vcode-btn">获取验证码</view>
-    </mp-cell>
-    <mp-cell prop="vcode" title="验证码" ext-class=" weui-cell_vcode">
-      <input bindinput="formInputChange" data-field="vcode" class="weui-input" placeholder="请输入验证码" />
-      <image slot="footer" class="weui-vcode-img" src="../images/vcode.jpg" style="width: 108px"></image>
-    </mp-cell> -->
-    <mp-cell  title="手机号">
-      <input type='number' maxlength='11' placeholder='请输入手机号' value='{{phoneNumber}}' bindblur='binPhone' class="weui-input"/>
-    </mp-cell>
-    <mp-cell  title="密码">
-      <input password='true' placeholder='请输入密码' value='{{password}}' bindblur='binPsd' class="weui-input"/>
-    </mp-cell>
-    <mp-cell  title="确认密码">
-      <input password='true' placeholder='请确认密码' value='{{verify}}' bindblur='binVer' class="weui-input"/>
-    </mp-cell>
-    
-    
-  </mp-cells>
-
-  <!-- <view class="weui-btn-area">
-    <button class="weui-btn" type="primary"  bindtap="binLogin">确定</button>
-  </view> -->
-
-  <checkbox-group bindchange="bindAgreeChange">
+    <image src="../../../static/images/index/loginBg.png" class=".bgImg"/>
+<view class="form">
+  <view class="Input">
+    <view>手机号</view>
+    <input type='number' maxlength='11' placeholder='请输入手机号' value='{{phoneNumber}}' bindblur='binPhone' />
+  </view>
+  <view class="Input">
+    <view>验证码</view>
+    <input password='true' placeholder='请输入密码' value='{{password}}' bindblur='binPsd'/>
+  </view>
+  <!-- <checkbox-group bindchange="bindAgreeChange">
     <label class="weui-agree" for="weuiAgree">
       <view class="weui-agree__text">
         <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
@@ -37,11 +20,31 @@
         <navigator url="" class="weui-agree__link">《相关条款》</navigator>
       </view>
     </label>
-  </checkbox-group>
+  </checkbox-group> 
+  <button class='btn'  type="primary" disabled="{{!isAgree}}" bindtap="binLogin">确定</button>-->
 
-  <view class="weui-btn-area">
-    <button class="weui-btn" type="primary" disabled="{{!isAgree}}" bindtap="binLogin">确定</button>
-  </view>
-</mp-form>
+  
+  <button class='btn'   bindtap="binLogin">确定</button>
+  <view class="forget" bindtap="forget">忘记密码</view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+  
 
 <mp-loading type="circle" show="{{showLoading}}" tips="正在登陆..."></mp-loading>
+
+<!-- 
+<text>所在城市：</text>
+<text class='m-bbt'>{{province}} {{city}}</text>
+<text>{{latitude}}--- {{longitude}}</text>
+<text>{{userInfo.nickName}} {{userInfo.gender}} </text>
+<image src="{{userInfo.avatarUrl}}"></image> -->

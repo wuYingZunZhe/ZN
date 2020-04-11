@@ -37,7 +37,9 @@
     "pages/index/notPass/notPass",
     "pages/index/audit/audit",
     "pages/index/audit2/audit2",
-    "pages/index/succe/succe"
+    "pages/index/succe/succe",
+    "pages/index/find/find",
+    "pages/index/find/reset/reset"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -45,6 +47,11 @@
     "navigationBarTextStyle": "white",
     "backgroundColorTop": "#fafafa",
     "backgroundColorBottom": "#fafafa"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "usingComponents": {
     "mp-dialog": "/components/dialog/dialog",

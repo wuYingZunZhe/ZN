@@ -251,6 +251,19 @@
 					"pathName": "pages/index/audit2/audit2",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "忘记密码",
+					"pathName": "pages/index/find/find",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "重置密码",
+					"pathName": "pages/index/find/reset/reset",
+					"scene": null
 				}
 			]
 		}
