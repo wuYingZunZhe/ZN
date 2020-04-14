@@ -24,8 +24,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
-	"appid": "wxb47b1266d917c060",
-	"projectname": "%E4%B8%B0%E4%B9%90%E4%BC%98%E9%80%89%E5%BA%97%E9%93%BA%E7%AB%AF",
+	"appid": "wx1c08777f0b6cd05d",
+	"projectname": "丰乐优选",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -219,7 +219,7 @@
 				},
 				{
 					"id": -1,
-					"name": "登陆",
+					"name": "登录",
 					"pathName": "pages/index/login/login",
 					"query": "",
 					"scene": null
@@ -263,6 +263,13 @@
 					"id": -1,
 					"name": "重置密码",
 					"pathName": "pages/index/find/reset/reset",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店信息录入3",
+					"pathName": "pages/index/audit3/audit3",
 					"scene": null
 				}
 			]

@@ -1,6 +1,6 @@
 <button class="refund"  open-type="getUserInfo" bindgetuserinfo="toLogin">
   <image src="../../../static/images/index/login.png"></image>
-  <view>账户登陆</view>
+  <view>账户登录</view>
 </button>
 
 <button class="refund" open-type="getUserInfo" bindgetuserinfo="toRegister">

@@ -45,7 +45,6 @@ App({
                             icon: 'success',
                             duration: 1000
                           })
-                          //授权成功，
                           wx.getUserInfo({
                             success: function(res) {
                               wx.setStorageSync('userInfo', res.userInfo);
@@ -77,14 +76,13 @@ App({
       }
     })
   },
-  //自动获取用户当前经纬度位置
+  
   getLocation: function() {
     let that = this;
     let latitude, longitude;
     wx.getLocation({
       success: function(res) {
         wx.setStorageSync('getLocation', res);
-        // console.log('当前经纬度：',wx.getStorageSync('getLocation'));
         that.getCity(res.latitude, res.longitude);
       },
       fail: function() {
@@ -105,7 +103,6 @@ App({
                             icon: 'success',
                             duration: 1000
                           })
-                          //授权成功之后，再调用getLocation获取地理位置
                           wx.getLocation({
                             success: function(res) {
                               wx.setStorageSync('getLocation', res);
@@ -139,7 +136,7 @@ App({
     })
   },
 
-  //手动获取用户选择的地图位置
+
   getChooseLocation: function() {
     let that = this;
     wx.chooseLocation({
@@ -166,11 +163,9 @@ App({
                             icon: 'success',
                             duration: 1000
                           })
-                          //授权成功之后，再调用chooseLocation选择地方
                           wx.chooseLocation({
                             success: function(res) {
                               wx.setStorageSync('chooseLocation', res);
-                              // console.log('选取地址', wx.getStorageSync('chooseLocation'));
                               that.getCity(res.latitude, res.longitude);
                             },
                           })
@@ -276,7 +271,7 @@ App({
 
   },
   globalData: {
-    isLogin: false, //是否登陆
+    isLogin: false, //是否登录
     baseUrl: 'http://192.168.0.118:8080', //服务器地址
     
   }

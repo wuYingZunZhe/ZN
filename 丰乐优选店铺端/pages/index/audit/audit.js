@@ -6,33 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    step: 0, //步骤条状态
-    bossName: '', //老板姓名
-    bossIdentity: '', //老板身份证
-    bossPhone: '18888888888', //老板手机号
-    bossPhoneUse:false,//手机号是否已注册
-    bossWeChat: '', //常用微信号
-    bossBankCard: '', //银行卡号
-    bankOpenName: '', //开户行名称
-    bankOpenId: '', //开户行行号
-    formComplete: false, //表单验证状态
+    step: 0, 
+    bossName: '', 
+    bossIdentity: '', 
+    bossPhone: '18888888888', 
+    bossPhoneUse:false,
+    bossWeChat: '', 
+    bossBankCard: '', 
+    bankOpenName: '', 
+    bankOpenId: '', 
+    formComplete: true, 
+    
 
   },
-  //老板姓名非空验证
   bossName: function(e) {
     this.setData({
       bossName: e.detail.value
     })
     this.formCheck();
   },
-  //老板身份证非空验证
+
   bossIdentity: function(e) {
     this.setData({
       bossIdentity: e.detail.value
     })
     this.formCheck();
   },
-  //老板手机号非空验证
+
   bossPhone: function(e) {
     let that =this;
     console.log(e.detail.value)
@@ -69,28 +69,28 @@ Page({
 
     this.formCheck();
   },
-  //常用微信号非空验证
+
   bossWeChat: function(e) {
     this.setData({
       bossWeChat: e.detail.value
     })
     this.formCheck();
   },
-  //银行卡号非空验证
+
   bossBankCard: function(e) {
     this.setData({
       bossBankCard: e.detail.value
     })
     this.formCheck();
   },
-  //开户行名称非空验证
+  
   bankOpenName: function(e) {
     this.setData({
       bankOpenName: e.detail.value
     })
     this.formCheck();
   },
-  //开户行行号非空验证
+
   bankOpenId: function(e) {
     this.setData({
       bankOpenId: e.detail.value
@@ -98,7 +98,6 @@ Page({
     this.formCheck();
   },
 
-  //表单数据检查
   formCheck: function() {
     let that = this;
     //console.log(this.data)
@@ -106,11 +105,17 @@ Page({
       that.setData({
         formComplete: true,
       })
+    }else{
+      that.setData({
+        formComplete: false,
+      })
     }
   },
-  //表单数据提交
+ 
   formSubmit: function(e) {
-    console.log('提交', e.detail.value)
+    
+    wx.setStorageSync('bossInfo', e.detail.value);
+
     if (true) {
       wx.navigateTo({
         url: '../audit2/audit2'

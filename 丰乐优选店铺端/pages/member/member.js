@@ -1,18 +1,42 @@
-// pages/member/member.js
+const app = getApp();
+const request = require('../../utils/request.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    memberData:'',
+    queryValue:'',
+  },
+  binQueryValue:function(e){
+    console.log(e.detail.value)
+    this.setData({
+      queryValue: e.detail.value
+    })
+  },
+  binQuery:function(){
+    let that = this;
+    request.getData(`/wechat/store/user/list/${that.data.queryValue}`, (res) => {
+      that.setData({
+        memberData: res.data
+      })
+    });
+  },
+  getMember: function () {
+    let that = this;
+    request.getData(`/wechat/store/user/list`, (res) => {
+      that.setData({
+        memberData: res.data
+      })
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMember();
   },
 
   /**

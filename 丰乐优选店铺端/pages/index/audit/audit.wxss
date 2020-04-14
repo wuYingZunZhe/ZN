@@ -1,6 +1,6 @@
 /* 进度条 */
 
-/* 创建步骤数字计数器 */
+
 .navSteps{
   width:100%;
   height:100rpx;
@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-/* 步骤描述 */
+
 
 .steps li {
   list-style-type: none;
@@ -30,12 +30,12 @@
   padding: 10rpx 0;
 }
 
-/* 步骤数字 */
+
 
 .steps li:before {
   display: block;
-  content: counter(step); /* 设定计数器内容 */
-  counter-increment: step; /* 计数器值递增 */
+  content: counter(step); 
+  counter-increment: step; 
   width: 30rpx;
   height: 30rpx;
   background-color: #ccc;
@@ -48,7 +48,6 @@
   margin: 0 auto 9rpx auto;
 }
 
-/* 连接线 */
 
 .steps li ~ li:after {
   content: '';
@@ -61,7 +60,7 @@
   z-index: 0;
 }
 
-/* 将当前/完成步骤之前的数字及连接线变绿 */
+
 
 .steps li.active:before, .steps li.active:after {
   background-color: #EAB737;
@@ -70,7 +69,7 @@
 .steps .active {
   color: #EAB737;
 }
-/* 表单样式 */
+
 .form{
   width:100%;
 }
@@ -98,7 +97,7 @@
   font-size: 24rpx;
 }
 
-/* 文字提示 */
+
 .textRemind{
   width:92%;
   line-height: 50rpx;
@@ -107,7 +106,6 @@
   margin-left: 4%;
 }
 
-/* 底部按钮 */
 .submit{
   width:100%;
   height: 100rpx;
@@ -116,6 +114,6 @@
 }
 .submit >button{
   border-radius: 30rpx;
-  background: red;
+  background: #EAB737;
   color:#fff;
 }

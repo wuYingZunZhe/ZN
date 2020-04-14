@@ -14,13 +14,12 @@ Page({
 
   
 
-  // 跳转登陆页面
   toLogin: function() {
     wx.navigateTo({
       url: '../login/login'
     })
   },
-  // 跳转申请入驻页面
+ 
   toRegister: function() {
     wx.navigateTo({
       url: '../register/register'

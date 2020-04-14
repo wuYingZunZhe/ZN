@@ -1,0 +1,117 @@
+ page {
+  background: #fff;
+}
+.bg{
+
+  /* background-image: url("../imgs/enter.png");
+  background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%; */
+}
+
+.bg >image {
+  width: 100%;
+  height: 500rpx;
+  z-index: 1;
+}
+
+.form{
+  width:96%;
+  height: 500rpx;
+  margin-left: 2%;
+  margin-top:0rpx;
+  background: rgba(216, 210, 210, 0.137) !important; 
+  border-radius: 5rpx;
+  z-index: 99;
+}
+.form .title{
+  font-size: 32rpx;
+  color:#EAB737;
+  padding:20rpx;
+}
+.form > .Input{
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left:2%; 
+  border-bottom: 1rpx solid #ddd;
+  font-size: 24rpx;
+}
+.form > .Input >view:nth-child(1),.form > .Input >view:nth-child(3){
+  width:20%;
+  text-align: center;
+  font-size: 24rpx;
+  color:#333;
+  float:left;
+}
+.form > .Input > input{
+  width:40%;
+  margin-left:10%; 
+  height: 100%;
+  float:left;
+}
+.form > .Input >view:nth-child(3){
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top:20rpx;
+  color:#999;
+  border:1rpx solid #ddd;
+  border-radius: 50rpx;
+}
+.form > .Input >.active{
+  background: #EAB737;
+  color:#fff !important;
+}
+.btn{
+  margin-top:80rpx;
+  margin-bottom: 100rpx;
+  background: #EAB737;
+  color:#fff;
+}
+
+.formInput{
+  width:92%;
+  height: 80rpx;
+  margin-left: 4%;
+  border-bottom: 1rpx solid #ddd;
+}
+.formInput >text:nth-child(1){
+  font-size: 24rpx;
+  color:#333;
+  line-height: 80rpx;
+}
+.formInput >text:nth-child(1) text,.phone > view >text:nth-child(1) text{
+  color:red;
+  margin:0 6rpx;
+}
+.formInput >input{
+  width:50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: left;
+  float: right;
+  font-size: 24rpx;
+  margin-right:20%; 
+}
+.formInput >.picker{
+  width:60%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: right;
+  float: right;
+  font-size: 24rpx;
+  color:#333;
+}
+.formInput > .formInputSite{
+  width:60%;
+  margin:-50rpx 0 0 30%;
+  text-align: right;
+  position: absolute;
+  color:#333;
+  font-size: 24rpx;
+}
+.formInput > .formInputChoice{
+  width:60%;
+  margin:-50rpx 0 0 26%;
+  text-align: left;
+  position: absolute;
+  color:#888;
+  font-size: 24rpx;
+}

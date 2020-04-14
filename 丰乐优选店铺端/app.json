@@ -39,11 +39,12 @@
     "pages/index/audit2/audit2",
     "pages/index/succe/succe",
     "pages/index/find/find",
-    "pages/index/find/reset/reset"
+    "pages/index/find/reset/reset",
+    "pages/index/audit3/audit3"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#1192E9",
+    "navigationBarBackgroundColor": "#EAB737",
     "navigationBarTextStyle": "white",
     "backgroundColorTop": "#fafafa",
     "backgroundColorBottom": "#fafafa"

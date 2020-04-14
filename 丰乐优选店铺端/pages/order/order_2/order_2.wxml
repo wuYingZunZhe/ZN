@@ -20,25 +20,24 @@
 </view>
 <view class="myHr"></view>
 <!---订单列表----->
-<view class="orderList" wx:for="{{5}}" wx:key="index">
+<view class="orderList" wx:for="{{orderData}}" wx:key="index">
   <view>
-    <text>订单编号：200401001101060724562</text>
-    <text>待提货</text>
+    <text>订单编号：{{item.orderId}}</text>
+    <text>{{item.statusName}}</text>
   </view>
   <view>
-    <image src="../../../static/images/home/message.png"></image>
-    <image src="../../../static/images/home/message.png"></image>
-    <image src="../../../static/images/home/message.png"></image>
-    <image src="../../../static/images/home/message.png"></image>
+    <block wx:for="{{item.productPicList}}" wx:for-item='url' wx:key="index">
+      <image src="{{url}}" ></image>
+    </block>
     <view class="arrows"></view>
   </view>
   <view>
-    <text>2020-04-01 00:27:57</text>
-    <text>共5件商品<text>￥39.86</text></text>
+    <text>{{item.addTime}}</text>
+    <text>共{{item.totalNum}}件商品<text>￥{{item.totalPrice}}</text></text>
   </view>
   <view>
-    <text>李奕琦</text>
-    <text>提货单号:<text>1</text>1395864889</text>
+    <text>{{item.realName}}</text>
+    <text>提货单号:<text>{{item.pickupId}}</text>{{item.userPhone}}</text>
   </view>
 </view>
 

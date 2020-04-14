@@ -1,33 +1,50 @@
-// pages/order/order_1/order_1.js
+const app = getApp();
+const request = require('../../../utils/request.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navIndex: 0,//记录当前点击的类目
+    navIndex: 0,
     navTextArr: ["全部", "消费者订单", "代客下单"],
-    showModal: false,//是否显示弹出框
+    showModal: false,
+//----------
+    orderData:{},
+    orderId:'',
+    realName:'',
+    userPhone:'',
+
   },
-  //导航栏点击切换
+
   navChange: function (e) {
     this.setData({
       navIndex: e.currentTarget.dataset.index
     })
   },
-  //弹出框显示隐藏
+ 
   showModal() {
     this.setData({
       showModal: !this.data.showModal
     });
 
   },
+  
+  getToday: function () {
+    let that = this;  
+    request.getData(`/wechat/store/order/today?orderId=${that.data.orderId}&realName=${that.data.realName}&userPhone=${that.data.userPhone}`, (res) => {
+      console.log('成功002:', res);
+      that.setData({
+        orderData: res.data
+      })
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getToday();
   },
 
   /**

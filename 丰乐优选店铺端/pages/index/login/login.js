@@ -6,39 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "phoneNumber": "18888888888", //手机号
-    "password": "123", //密码
-    isAgree: false, //表单信息是否填完
-    showLoading: false, //是否显示loading
+    "phoneNumber": "18888888888",
+    "password": "123",
+    isAgree: false,
   },
-  // 手机输入框
   binPhone: function(e) {
     this.setData({
       phoneNumber: e.detail.value
     })
+    console.log(e.detail.value)
     wx.setStorageSync('phoneNumber', e.detail.value);
-    console.log(wx.getStorageSync('phoneNumber'));
   },
-  // 密码输入框
   binPsd: function(e) {
     this.setData({
       password: e.detail.value
     })
+    console.log(e.detail.value)
     wx.setStorageSync('password', e.detail.value);
-    console.log(wx.getStorageSync('password'));
   },
-  
-  // 店铺登陆
   binLogin: function(e) {
-
     let that = this;
     let phone = that.data.phoneNumber;
     let psd = that.data.password;
-    
+    console.log(phone, psd)
+
     if (phone == '') {
       wx.showToast({
         title: '请填写手机号',
-        icon: 'success',
+        icon: 'none',
         duration: 2000
       })
       return
@@ -46,44 +41,67 @@ Page({
       if (!(/^1[34578]\d{9}$/.test(phone))) {
         wx.showToast({
           title: '手机号有误',
-          icon: 'success',
+          icon: 'none',
           duration: 2000
         })
         return
       }
     }
-    // 密码验证
     if (psd == '') {
       wx.showToast({
         title: '请输入密码',
-        icon: 'success',
+        icon: 'none',
         duration: 2000
       })
       return
     }
-    
-    console.log('验证成功')
 
-    // // 店铺登陆
-    that.setData({
-      showLoading: true
+    wx.showNavigationBarLoading()
+    wx.showLoading({
+      title: '正在登录',
     })
+    wx.request({
+      url: app.globalData.baseUrl + "/wechat/store/api/login",
+      header: {
+        'context-type': 'application/json'
+      },
+      method: 'post',
+      data: {
+        phoneNumber: that.data.phoneNumber,
+        password: that.data.password,
+      },
+      success: function(res) {
+        console.log(res.data);
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
 
-
-
-    let postData = {
-      phoneNumber: that.data.phoneNumber,//手机号
-      password: that.data.password,//账户密码
-    };
-    request.check('/wechat/store/api/login', 'post', postData, (res) => {
-      console.log('成功:', res);
-    });
-
-
-
-
-
-
+        if (res.data.code == '200') {
+          wx.setStorageSync('phoneNumber', that.data.phoneNumber);
+          wx.setStorageSync('password', that.data.password);
+          wx.setStorageSync('storeToken', res.data.msg);
+          console.log(wx.getStorageSync('phoneNumber'));
+          console.log(wx.getStorageSync('password'));
+          wx.navigateTo({
+            url: '../../home/home'
+          })
+        } else {
+          wx.showToast({
+            title: '登录失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      },
+      fail:function(err){
+        wx.hideNavigationBarLoading()
+        wx.hideLoading()
+        wx.showToast({
+          title: '登录失败',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   },
   //相关条款
   bindAgreeChange: function() {
@@ -93,10 +111,10 @@ Page({
     })
   },
   //忘记密码 
-  forget:function(){
+  forget: function() {
     console.log('123');
     wx.navigateTo({
-      url: '../find/find'
+      url: `../find/find?phone=${this.data.phoneNumber}`
     })
   },
 
@@ -104,15 +122,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    app.getUserInfo(); //获取个人信息
-    this.setData({
-      province: wx.getStorageSync('address').ad_info.province,
-      city: wx.getStorageSync('address').ad_info.city,
-      latitude: wx.getStorageSync('address').ad_info.location.lat,
-      longitude: wx.getStorageSync('address').ad_info.location.lng,
-      userInfo: wx.getStorageSync('userInfo'),
-    })
-    console.log('852', this.data)
+    // app.getUserInfo(); //获取个人信息
+    // this.setData({
+    //   "phoneNumber": wx.getStorageSync('phoneNumber')? wx.getStorageSync('phoneNumber'):'',
+    //   "password": wx.getStorageSync('password') ? wx.getStorageSync('password') : wx.getStorageSync('password'), 
+    // })
+
   },
 
   /**

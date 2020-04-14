@@ -7,13 +7,13 @@ Page({
   data: {
 
   },
-  // 跳转新门店审核页面
+ 
   toAudit: function () {
     wx.navigateTo({
       url: '../audit/audit'
     })
   },
-  // 跳转门店驳回管理页面
+ 
   toNotPass: function () {
     wx.navigateTo({
       url: '../notPass/notPass'

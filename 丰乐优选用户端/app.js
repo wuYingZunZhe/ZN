@@ -219,12 +219,12 @@ App({
     console.log(dep_value);
   },
   //自动获取用户个人信息
-  getUserInfo: function () {
+  getUserInfo: function (e) {
     let that = this;
-    wx.getLocation({
+    wx.getUserInfo({
       success: function (res) {
-        that.globalData.userInfo = res;
-        console.log('用户个人信息：', that.globalData.userInfo);
+        wx.setStorageSync('userInfo', res.userInfo);
+        console.log(wx.getStorageSync('userInfo'));
       },
       fail: function () {
         wx.getSetting({
@@ -244,11 +244,11 @@ App({
                             icon: 'success',
                             duration: 1000
                           })
-                          //授权成功之后，再调用getLocation获取地理位置
-                          wx.getLocation({
+                          //授权成功，
+                          wx.getUserInfo({
                             success: function (res) {
-                              that.globalData.userInfo = res.address;
-                              console.log('个人信息：', that.globalData.userInfo);
+                              wx.setStorageSync('userInfo', res.userInfo);
+                              console.log(wx.getStorageSync('userInfo'));
                             },
                           })
                         } else {
@@ -276,7 +276,6 @@ App({
       }
     })
   },
-
   //自动获取用户当前位置
   getLocation: function () {
     let that = this;

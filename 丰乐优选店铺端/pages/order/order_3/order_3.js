@@ -9,13 +9,13 @@ Page({
     navTextArr: ["全部", "消费者订单", "代客下单"],
     showModal: false,//是否显示弹出框
   },
-  //导航栏点击切换
+ 
   navChange: function (e) {
     this.setData({
       navIndex: e.currentTarget.dataset.index
     })
   },
-  //弹出框显示隐藏
+ 
   showModal() {
     this.setData({
       showModal: !this.data.showModal

@@ -1,3 +1,4 @@
+// pages/index/audit/audit.js
 const app = getApp();
 Page({
 
@@ -5,12 +6,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phoneNumber: "18888888888", 
-    code:'',   
+    step: 2, 
+    phoneNumber:'123',
+    invitation:'',
+    code:'',
+    formComplete: false,
+
+
+  
+
+  },
+  binInvitation:function(e){
+    this.setData({
+      invitation: e.detail.value
+    })
+    console.log(e.detail.value)
+    this.formCheck();
+  },
+  binCode: function (e) {
+    this.setData({
+      code: e.detail.value
+    })
+    this.formCheck();
+  },
+  
+
+  formCheck: function () {
+    let that = this;
+    console.log(that.data)
+    if (that.data.invitation != '' && that.data.code != '' ) {
+      that.setData({
+        formComplete: true,
+      })
+    }else{
+      that.setData({
+        formComplete: false,
+      })
+    }
   },
  
-  sendMsg:function(){
-    let that =this;
+  formSubmit: function (e) {
+    console.log('提交', e.detail.value)
+    console.log(wx.getStorageSync('bossInfo'), wx.getStorageSync('shopInfo'))
+  },
+  
+  sendMsg: function () {
+    let that = this;
     wx.request({
       url: app.globalData.baseUrl + "/wechat/store/api/sendSMS/" + that.data.phoneNumber,
       header: {
@@ -23,55 +64,12 @@ Page({
     })
   },
 
-  find:function(){
-    let that =this;
-    console.log('0123');
-    wx.request({
-      url: app.globalData.baseUrl + "/wechat/store/api/rePassword/" + that.data.phoneNumber,
-      header: {
-        'Content-Type': 'application/json'
-      },
-      method: 'PUT',
-      data:{
-        "password": that.data.passWord,
-        "code": that.data.code
-      },
-      success: function (res) {
-        console.log(res)
-        if (res.data.msg.code == 200){
-          wx.navigateTo({
-            url: '/pages/index/login/login'
-          })
-        }
-      },
-    })
-  },
-  
-  binPhone:function(e){
-    this.setData({
-      phoneNumber: e.detail.value
-    })
-  },
-  
-  binCode: function (e) {
-    this.setData({
-      code: e.detail.value
-    })
-  },
 
-  binpassWord: function (e) {
-    this.setData({
-      passWord: e.detail.value
-    })
-  },
- 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      phoneNumber: options.phone
-    })
+
   },
 
   /**

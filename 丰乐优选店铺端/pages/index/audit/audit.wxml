@@ -1,4 +1,4 @@
-<!-- 头部步骤条 -->
+
 <view class="navSteps">
   <ul class="steps">
     <li class="{{step>=0 ? 'active':''}}">
@@ -8,11 +8,11 @@
       <text>开店信息提交</text>
     </li>
     <li class="{{step>=2 ? 'active':''}}">
-      <text>完成</text>
+      <text>提交</text>
     </li>
   </ul>
 </view>
-<!-- 门店老板表单信息 -->
+
 
 <form bindsubmit="formSubmit" bindreset="formReset" class="form">
   <view class="form">
@@ -45,7 +45,7 @@
       <input placeholder='请输入开户行行号' name='bankOpenId' value="{{bankOpenId}}" bindblur='bankOpenId'></input>
     </view> -->
   </view>
-  <!-- 文字提示 -->
+  
   <view class="textRemind">
     门店老板信息会进行实名认证，所填写信息必须真实有效。
   </view>

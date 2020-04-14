@@ -1,0 +1,62 @@
+<view class='bg'>
+  <image src='../imgs/enter.png'></image>
+</view>
+
+<form bindsubmit="formSubmit">
+  
+  <view class="form">
+    <view class="title">欢迎入驻丰乐优选</view>
+    <view class='formInput'>
+      <text><text>*</text>手机号：</text>
+      <input type='number' maxlength='11' placeholder='请输入手机号' value='{{formData.phone}}' bindinput='phone' name='phone' bindblur='binPhone' placeholder-class="phcolor" />
+    </view>
+    <view class="Input phone">
+      <view><text><text>*</text>验证码：</text></view>
+      <input placeholder='请输入验证码' value='{{formData.code}}' bindinput='code' name='code' placeholder-class="phcolor" />
+      <view class="active" bindtap="sendMsg" wx:if='{{!active}}'>获取验证码</view>
+      <view wx:else>{{001}}</view>
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>联系人：</text>
+      <input placeholder='请输入联系人' value='{{formData.name}}' name='name' bindinput='name' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>身份证：</text>
+      <input type='number' maxlength='11' placeholder='请输入身份证号' name='idCard' value='{{formData.idCard}}' bindinput='idCard' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>公司名称：</text>
+      <input placeholder='请输入公司名称' value='{{formData.company}}' bindinput='company' name='company' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>法人代表：</text>
+      <input placeholder='请输入公司名称' value='{{formData.legalPerson}}' bindinput='legalPerson' name='legalPerson' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>主营商品：</text>
+      <input placeholder='请输入主营商品' value='{{formData.applyProduct}}' bindinput='applyProduct' name='applyProduct' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput ' bindtap="chooseLocation">
+      <text><text>*</text>区域</text>
+      <view class="formInputChoice" wx:if="{{formData.area}}">{{formData.area.name}}</view>
+      <view class="formInputChoice" wx:else>请在地图上选择</view>
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>推荐人：</text>
+      <input placeholder='请输入推荐人' value='{{formData.referee}}' bindinput='referee' name='referee' placeholder-class="phcolor" />
+    </view>
+    <view class='formInput'>
+      <text><text>*</text>备注：</text>
+      <input placeholder='备注' value='{{formData.remarks}}' bindinput='binRemarks' name='binRemarks' placeholder-class="phcolor" />
+    </view>
+    
+
+
+
+    
+    
+   
+    <button formType="submit" class="btn" disabled="{{!formComplete}}">提交申请</button>
+
+  </view>
+</form>

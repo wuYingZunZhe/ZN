@@ -6,22 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    step: 1,//步骤条状态
-    detailShopName:'',//店铺详细名称
-    shopArea:'',//店铺面积
-    selectLocation: '',//选择省份地址
-    detailAddress: '',//详细地址
-    licenseName: '',//营业执照中的名称
-    registrationNum: '',//统一社会信息代码或注册号
-    formComplete: false,//表单验证状态
-    chooseLocation:'',//选取位置
+    step: 1,
+    detailShopName:'',
+    shopArea:'',
+    selectLocation: '',
+    detailAddress: '',
+    licenseName: '',
+    registrationNum: '',
+    formComplete: true,
+    chooseLocation:'',
 
   },
-  ce:function(){
+  chooseLocation:function(){
     let that=this;
     console.log('123')
     wx.chooseLocation({
       success: function (res) {
+        console.log(res);
         wx.setStorageSync('chooseLocation', res);
         that.setData({
           chooseLocation:res
@@ -32,43 +33,42 @@ Page({
       }
     })  
   },
-  
-  //店铺详细名称非空验证
+ 
   detailShopName: function (e) {
     this.setData({
       detailShopName: e.detail.value
     })
     this.formCheck();
   },
-  //店铺面积非空验证
+  
   shopArea: function (e) {
     this.setData({
       shopArea: e.detail.value
     })
     this.formCheck();
   },
-  //选择省份地址非空验证
+ 
   selectLocation: function (e) {
     this.setData({
       selectLocation: e.detail.value
     })
     this.formCheck();
   },
-  //详细地址非空验证
+ 
   detailAddress: function (e) {
     this.setData({
       detailAddress: e.detail.value
     })
     this.formCheck();
   },
-  //营业执照中的名称非空验证
+  
   licenseName: function (e) {
     this.setData({
       licenseName: e.detail.value
     })
     this.formCheck();
   },
-  //统一社会信息代码或注册号非空验证
+
   registrationNum: function (e) {
     this.setData({
       registrationNum: e.detail.value
@@ -78,55 +78,32 @@ Page({
 
 
 
-  // 选择省市区地址
+ 
   selectLocation:function(e){
     console.log("123",e.detail.value)
     this.setData({
       selectLocation: e.detail.value
     })
   },
-  //输入详细地址
+ 
   detailAddress:function(e){
     this.setData({
       detailAddress:e.detail.value
     })
   },
-  // // 上传门店门头照
-  // putShopPhoto: function (){
-  //   wx.chooseImage({
-  //     success(res) {
-  //       const tempFilePaths = res.tempFilePaths
-  //       wx.uploadFile({
-  //         url: 'https://xxxxxxxxx', //仅为示例，非真实的接口地址
-  //         filePath: tempFilePaths[0],
-  //         name: 'file',
-  //         formData: {
-  //           'user': 'test'
-  //         },
-  //         success(res) {
-  //           const data = res.data
-  //           //do something
-  //         }
-  //       })
-  //     }
-  //   })
-  // },
-  //图片上传到服务器
+
   chooseImage: function (e) {
     var that = this;
     wx.chooseImage({
       success: function (res) {
         var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://xxxxxx/upload', //图片上传
+          url: app.globalData.baseUrl +'/wechat/upload', 
           filePath: tempFilePaths[0],
           name: 'file',
-          formData: {
-            "phoneNumber": "18888888888",
-            "password": "123",
-            "token":'',
-          },
+          
           success: function (res) {
+            
             var data = res.data
             that.setData({
               files: that.data.files.concat(res.tempFilePaths)
@@ -136,30 +113,43 @@ Page({
       }
     })
   },
-  // 跳到老板个人信息提交页
   toAudit: function () {
     wx.navigateTo({
       url: '../audit/audit'
     })
   },
-  // 提交审核数据
-  submit: function () {
+ 
+  submit: function (e) {
     console.log('提交数据')
+    
   },
-  //表单数据检查
   formCheck: function () {
     let that = this;
-    //console.log(this.data)
     if (that.data.detailShopName != '' && that.data.shopArea != '' && that.data.selectLocation != '' && that.data.detailAddress != '' && that.data.licenseName != '' && that.data.registrationNum != '') {
       that.setData({
         formComplete: true,
       })
+    }else{
+      that.setData({
+        formComplete: false,
+      })
     }
   },
   
-  //表单数据提交
+ 
   formSubmit: function (e) {
-    console.log('提交', e.detail.value)
+   
+    wx.setStorageSync('shopInfo', e.detail.value);
+
+    if (true) {
+      wx.navigateTo({
+        url: '../audit3/audit3'
+      })
+    }
+
+ 
+    
+
     
 
 
@@ -171,9 +161,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       uplaodFile: app.uplaodFile.bind(this),
-      chooseLocation: wx.getStorageSync('chooseLocation'),//选择位置
+      chooseLocation: wx.getStorageSync('chooseLocation'),
     });
-    // app.getUserInfo(); //获取个人信息
+    // app.getUserInfo(); 
     
   },
 

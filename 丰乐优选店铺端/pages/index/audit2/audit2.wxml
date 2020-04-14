@@ -1,4 +1,4 @@
-<!-- 头部步骤条 -->
+
 <view class="navSteps">
   <ul class="steps">
     <li class="{{step>=0 ? 'active':''}}">
@@ -8,12 +8,12 @@
       <text>开店信息提交</text>
     </li>
     <li class="{{step>=2 ? 'active':''}}">
-      <text>完成</text>
+      <text>提交</text>
     </li>
   </ul>
 </view>
 
-<!-- 开店信息提交 -->
+
 <form bindsubmit="formSubmit" bindreset="formReset" class="form">
   <view class="form">
     <view class='formInput'>
@@ -29,14 +29,7 @@
     </view>
 
 
-    <!-- <picker mode="region" name='selectLocation' value="{{selectLocation}}" bindchange="selectLocation" class="picker" disabled="{{true}}">
-      <view class='formInput'>
-        <text><text>*</text>选择省市区</text>
-        <view class="formInputSite" wx:if="{{selectLocation}}">{{selectLocation[0]}}-{{selectLocation[1]}}-{{selectLocation[2]}}</view>
-        <view class="formInputChoice" wx:else>--请选择--</view>
-      </view>
-    </picker> -->
-     <view class='formInput' bindtap="ce">
+     <view class='formInput' bindtap="chooseLocation">
         <text><text>*</text>选择位置</text>
         <view class="formInputSite" wx:if="{{chooseLocation}}">{{chooseLocation.name}}</view>
         <view class="formInputChoice" wx:else>请在地图上选择</view>
@@ -80,6 +73,6 @@
   </view>
   <view class="submit">
     <button bindtap="toAudit">上一步</button>
-    <button formType="submit" class="active" disabled="{{!formComplete}}">提交</button>
+    <button formType="submit" class="active" disabled="{{!formComplete}}">下一步</button>
   </view>
 </form>
